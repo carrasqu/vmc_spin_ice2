@@ -37,6 +37,9 @@ void initialize(int *config,int &L,double &seedin)
     }
     return;
 }
+
+// Did it work?
+
 /*obsolete code---------------------
 
 //We use a routine to output the charge before and after we flip a spin.
