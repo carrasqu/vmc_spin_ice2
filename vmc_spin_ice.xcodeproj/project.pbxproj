@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE66DE4D19BA318C007091C4 /* routines.h in Sources */ = {isa = PBXBuildFile; fileRef = FE66DE4C19BA318C007091C4 /* routines.h */; };
 		FED2FC6C19A681F7007AC496 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FED2FC6B19A681F7007AC496 /* main.cpp */; };
 		FED2FC6E19A681F7007AC496 /* vmc_spin_ice.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = FED2FC6D19A681F7007AC496 /* vmc_spin_ice.1 */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FE66DE4C19BA318C007091C4 /* routines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = routines.h; sourceTree = "<group>"; };
+		FE66DE4E19BA32E5007091C4 /* MersenneTwister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MersenneTwister.h; sourceTree = "<group>"; };
 		FED2FC6819A681F7007AC496 /* vmc_spin_ice */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = vmc_spin_ice; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED2FC6B19A681F7007AC496 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		FED2FC6D19A681F7007AC496 /* vmc_spin_ice.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = vmc_spin_ice.1; sourceTree = "<group>"; };
@@ -61,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				FED2FC6B19A681F7007AC496 /* main.cpp */,
+				FE66DE4C19BA318C007091C4 /* routines.h */,
+				FE66DE4E19BA32E5007091C4 /* MersenneTwister.h */,
 				FED2FC6D19A681F7007AC496 /* vmc_spin_ice.1 */,
 			);
 			path = vmc_spin_ice;
@@ -118,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FED2FC6C19A681F7007AC496 /* main.cpp in Sources */,
+				FE66DE4D19BA318C007091C4 /* routines.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +233,7 @@
 				FED2FC7319A681F7007AC496 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
