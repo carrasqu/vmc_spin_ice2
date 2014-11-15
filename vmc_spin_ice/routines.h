@@ -38,6 +38,66 @@ void initialize(int *config,int &L,double &seedin)
     return;
 }
 
+void initialize_spinice_q0(int *config,int &L)
+{
+    //This subroutine we initialize a spin ice configuration at q=0
+    int x,y,z,pyro,site,temp;
+    int zpro=16*pow(L,2);
+    int ypro=16*L;
+    int xpro=16;
+    for(z=0;z<L;z++)
+    {
+        for(y=0;y<L;y++)
+        {
+            for(x=0;x<L;x++)
+            {
+                for(pyro=0;pyro<4;pyro++)
+                {
+                    for(site=0;site<4;site++)
+                    {
+                        temp=site % 2;
+                        config[z*zpro+y*ypro+x*xpro+pyro*4+site]=(2*temp-1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+void initialize_spinice_X(int *config,int &L)
+{
+    //Warning!!!!!!!!!!
+    //This initialize only works if L is even.
+    int x,y,z,pyro,site,temp,qr;
+    int zpro=16*pow(L,2);
+    int ypro=16*L;
+    int xpro=16;
+    for(z=0;z<L;z++)
+    {
+        for(y=0;y<L;y++)
+        {
+            for(x=0;x<L;x++)
+            {
+                for(pyro=0;pyro<4;pyro++)
+                {
+                    for(site=0;site<4;site++)
+                    {
+                        temp=pyro*4+site;
+                        qr=2*((x+y)%2)-1;
+                        if((temp==0)||(temp==12)||(temp==4)||(temp==11)||(temp==5)||(temp==9)||(temp==1)||(temp==14))
+                        {
+                            config[z*zpro+y*ypro+x*xpro+temp]=qr;
+                        }
+                        else
+                        {
+                            config[z*zpro+y*ypro+x*xpro+temp]=-qr;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 // Did it work?
 
 /*obsolete code---------------------
@@ -47,12 +107,12 @@ void initialize(int *config,int &L,double &seedin)
 /*Based on Juan's tables and setup, we are reconstructing the single spin sweep codes
  ---------------------------------------*/
 //we are including the new tables made by Juan! In this case, we don't need ivic...
-inline int qcharge(int &t,int tetra[][4])
+inline int qcharge(int &t,int tetra[][4],int *config)
 {
     int result=0,l;
     for(l=0;l<4;l++)
     {
-        result+=tetra[t][l];
+        result+=config[tetra[t][l]];
     }
     //stagger it.
     if(t%2==0)
@@ -72,10 +132,10 @@ void singlespin_update_new(int *config,int tetra[][4],int connect[][2],int &L,in
     double endiff;
     //charge_new(config,tetra,connect,L,pos,c1,c2,f1,f2);
     t=connect[pos][0];
-    c1=qcharge(t,tetra);
+    c1=qcharge(t,tetra,config);
     f1=c1-2*config[pos];
     t=connect[pos][1];
-    c2=qcharge(t,tetra);
+    c2=qcharge(t,tetra,config);
     f2=c2+2*config[pos];
     //We note the stagered definition of charge.
     //now that we have charge before and after, we can divide into two different cases.
@@ -89,7 +149,8 @@ void singlespin_update_new(int *config,int tetra[][4],int connect[][2],int &L,in
         }
         else
         {
-            if(exp(-endiff/densitysquare)>prob)
+            double temp=exp(-endiff/densitysquare);
+            if(temp>prob)
             {
                 config[pos]=-config[pos];
             }
@@ -166,8 +227,8 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
     }
     //
     int c1,c2,f1,f2;
-    c1=qcharge(t1,tetra);
-    c2=qcharge(t2,tetra);
+    c1=qcharge(t1,tetra,config);
+    c2=qcharge(t2,tetra,config);
     f1=c1-2*config[pos];
     f2=c2-2*config[pos2];
     //now we copy the "update" part from the single spin sweep case.
@@ -201,6 +262,8 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
     }
     return;
 }
+
+
 
 void singlespin_sweep_new(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,int&flag,double&seedin)
 {

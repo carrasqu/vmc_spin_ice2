@@ -17,7 +17,7 @@ int main()
 
     // insert code here...
     // system size L*L*L*4*4
-    int L=1;
+    int L=2;
     int nh;
     int ntetra;
     //density
@@ -31,7 +31,9 @@ int main()
     double *alpha;
     config=new int[L*L*L*4*4];
     //initialization!!!!!!!!!!!!!!!!!!!! TEST
-    initialize(config,L,seedin);
+    //Notice X only works with even L. 
+    initialize_spinice_X(config,L);
+    //
     nh=16*(int)pow(L,3);
     ntetra=8*(int)pow(L,3);
     int ivic[nh][6];  // each site its 6 neighbours
@@ -40,7 +42,7 @@ int main()
     //construction of tables.
     latt(ivic,tetra,connect,L,nh,ntetra);
     int pos;
-    int c1,c2,f1,f2,t;
+    int c1,c2,f1,f2,t,flag;
     //Let's try the single spin update.
     int x,y,z,pyro,site,temp,count,total=100;
     int zpro=16*pow(L,2);
@@ -52,6 +54,7 @@ int main()
         {
             for(x=0;x<L;x++)
             {
+                std::cout<<"(x,y,z) is:"<<x<<'\t'<<y<<'\t'<<z<<'\n';
                 for(pyro=0;pyro<4;pyro++)
                 {
                     for(site=0;site<4;site++)
@@ -62,34 +65,25 @@ int main()
             }
         }
     }
-    pos=0;
+    pos=3;
     t=connect[pos][0];
-    c1=qcharge(t,tetra);
+    c1=qcharge(t,tetra,config);
     f1=c1-2*config[pos];
     t=connect[pos][1];
-    c2=qcharge(t,tetra);
+    c2=qcharge(t,tetra,config);
     f2=c2+2*config[pos];
+    double prob,density,densitysquare,tempature;
+    pos=3;
+    prob=0.1;
+    density=0.4;
+    densitysquare=pow(density,2.0);
+    flag=0;
     //charge(config,L,pos,c1,c2,f1,f2);
     //we are trying to figure out the charge of the particular tetrahedron
     //Test!!!!!!!!
     //update.
-    int flag=0;
-    double prob,density,densitysquare,tempature;
-    pos=15;
-    prob=0.2;
-    density=0.3;
-    densitysquare=pow(density,2.0);
-    std::cout<<config[pos]<<"\n";
-    //singlespin_update_new(config,L,pos,prob,densitysquare,flag);
-    std::cout<<config[pos]<<"\n";
-    //test the sweep
-    flag=1;
-    tempature=0.3;
-    for(count=0;count<total;count++)
-    {
-        seedin=myrand->rand();
-    //singlespin_sweep(config,L,tempature,flag,seedin);
-    }
+    //test: single spin update.
+    singlespin_update_new(config,tetra,connect,L,pos,prob,densitysquare,flag);
     for(z=0;z<L;z++)
     {
         for(y=0;y<L;y++)
@@ -105,6 +99,16 @@ int main()
                 }
             }
         }
+    }
+    std::cout<<config[pos]<<"\n";
+    //singlespin_update_new(config,L,pos,prob,densitysquare,flag);
+    std::cout<<config[pos]<<"\n";
+    //test the sweep
+    tempature=0.3;
+    for(count=0;count<total;count++)
+    {
+        seedin=myrand->rand();
+    //singlespin_sweep(config,L,tempature,flag,seedin);
     }
     return 0;
 }

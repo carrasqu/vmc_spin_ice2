@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5D9264E0-340E-4861-A76A-8AEE0059F8A8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>vmc_spin_ice</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>56741B3B10F93AE9007C5C8C306E971E000B1256</key>
+		<string>https://github.com/zhhhaolong/vmc_spin_ice2.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>vmc_spin_ice.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>56741B3B10F93AE9007C5C8C306E971E000B1256</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/zhhhaolong/vmc_spin_ice2.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>56741B3B10F93AE9007C5C8C306E971E000B1256</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>56741B3B10F93AE9007C5C8C306E971E000B1256</string>
+			<key>IDESourceControlWCCName</key>
+			<string>vmc_spin_ice</string>
+		</dict>
+	</array>
+</dict>
+</plist>
