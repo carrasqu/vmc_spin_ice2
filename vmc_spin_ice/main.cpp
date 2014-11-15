@@ -17,7 +17,7 @@ int main()
 
     // insert code here...
     // system size L*L*L*4*4
-    int L=2;
+    int L=1;
     int nh;
     int ntetra;
     //density
@@ -65,6 +65,7 @@ int main()
             }
         }
     }
+    //some simple test of pair update.
     pos=3;
     t=connect[pos][0];
     c1=qcharge(t,tetra,config);
@@ -78,12 +79,14 @@ int main()
     density=0.4;
     densitysquare=pow(density,2.0);
     flag=0;
+    //test
+    pair_flip(config,ivic,tetra,connect,L,densitysquare,pos,prob,seedin);
     //charge(config,L,pos,c1,c2,f1,f2);
     //we are trying to figure out the charge of the particular tetrahedron
     //Test!!!!!!!!
     //update.
     //test: single spin update.
-    singlespin_update_new(config,tetra,connect,L,pos,prob,densitysquare,flag);
+    //singlespin_update_new(config,tetra,connect,L,pos,prob,densitysquare,flag);
     for(z=0;z<L;z++)
     {
         for(y=0;y<L;y++)

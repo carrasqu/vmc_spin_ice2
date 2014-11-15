@@ -209,9 +209,19 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
             temp_holder.push_back(l);
         }
     }
+    //break
+    cout<<"the negative positions are:"<<'\t';
+    for(l=0;l<temp_holder.size();l++)
+    {
+        cout<<ivic[pos][temp_holder[l]]<<'\t'<<config[ivic[pos][temp_holder[l]]]<<'\t';
+    }
+    cout<<'\n';
     //after this, we should get a random one out of all the negative ones.
     int range=temp_holder.size();
-    pos2=myrand->randInt(range);
+    pos2=myrand->randInt(range-1);
+    pos2=ivic[pos][temp_holder[pos2]];
+    //clear temp_holder
+    temp_holder.clear();
     //now we attempt to flip the pair. We need to know the pair of tetrahedrons the pair of spins connect.
     int t1,t2;
     t1=connect[pos][0];
@@ -219,24 +229,36 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
     //repeated tetrahedra are deleted.
     if(t1==connect[pos2][0])
     {
+        //In this case, the pair of spins connect two tetrahedron on "odd sublattice"
         t1=connect[pos2][1];
     }
     else if(t2==connect[pos2][1])
     {
+        //the pair of spins connect two tetrahedron on "even sublattice"
         t2=connect[pos2][0];
     }
     //
     int c1,c2,f1,f2;
     c1=qcharge(t1,tetra,config);
     c2=qcharge(t2,tetra,config);
+    int temp=t1%2;
+    if(temp==0)
+    {
     f1=c1-2*config[pos];
     f2=c2-2*config[pos2];
+    }
+    else
+    {
+        f1=c1+2*config[pos];
+        f2=c2+2*config[pos2];
+    }
     //now we copy the "update" part from the single spin sweep case.
     if((c1==0)&&(c2==0))
     {
         if(densitysquare>prob)
         {//flip if probability (here is just density) is larger than the random number
             config[pos]=-config[pos];
+            config[pos2]=-config[pos2];
         }
     }
     if(((c1==2)&&(c2==-2))||((c1==-2)&&(c2==2)))
@@ -244,6 +266,7 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
         if((f1==0)&&(f2==0))
         {
             config[pos]=-config[pos];
+            config[pos2]=-config[pos2];
         }
     }
     if(((c1==2)&&(c2==0))||((c1==-2)&&(c2==0)))
@@ -251,6 +274,7 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
         if(((f1==0)&&(f2==2))||((f1==0)&&(f2==-2)))
         {
             config[pos]=-config[pos];
+            config[pos2]=-config[pos2];
         }
     }
     if(((c1==0)&&(c2==2))||((c1==0)&&(c2==-2)))
@@ -258,6 +282,7 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
         if(((f1==2)&&(f2==0))||((f1==-2)&&(f2==0)))
         {
             config[pos]=-config[pos];
+            config[pos2]=-config[pos2];
         }
     }
     return;
