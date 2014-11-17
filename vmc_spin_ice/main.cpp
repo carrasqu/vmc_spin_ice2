@@ -26,7 +26,7 @@ int main()
     //spin configuration and
     MTRand *myrand=new MTRand();
     myrand->seed(seedin);
-    seedin=myrand->rand();
+    //seedin=myrand->rand();
     int *config;
     double *alpha;
     config=new int[L*L*L*4*4];
@@ -80,7 +80,8 @@ int main()
     densitysquare=pow(density,2.0);
     flag=0;
     //test
-    pair_flip(config,ivic,tetra,connect,L,densitysquare,pos,prob,seedin);
+    int pos2=myrand->randInt(5);
+    pair_flip(config,ivic,tetra,connect,L,densitysquare,pos,pos2,prob);
     //charge(config,L,pos,c1,c2,f1,f2);
     //we are trying to figure out the charge of the particular tetrahedron
     //Test!!!!!!!!

@@ -194,35 +194,41 @@ void singlespin_update_new(int *config,int tetra[][4],int connect[][2],int &L,in
 }
 /* we also need code to attempt a pair spin flip. Is this better/needed?
  we generate the seed from a random process in the main program*/
-void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,int&pos,double &prob,double&seedin)
+void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,int&pos,int &pos2,double &prob)
 {
+    //pos2 will be a random number from 0 to 5.
     //We choose a random position which opposite of pos.
-    int pos2,l;
-    MTRand *myrand=new MTRand();
-    myrand->seed(seedin);
+    int l;
+    //MTRand *myrand=new MTRand();
+    //myrand->seed(seedin);
     //now we go through a process to find a neighboring spin which is opposite of config[pos];
-    std::vector<int> temp_holder;
+    /*std::vector<int> temp_holder;
     for(l=0;l<6;l++)
     {
         if(config[ivic[pos][l]]==-config[pos])
         {
             temp_holder.push_back(l);
         }
-    }
+    }*/
     //break
-    cout<<"the negative positions are:"<<'\t';
+    /*cout<<"the negative positions are:"<<'\t';
     for(l=0;l<temp_holder.size();l++)
     {
         cout<<ivic[pos][temp_holder[l]]<<'\t'<<config[ivic[pos][temp_holder[l]]]<<'\t';
     }
-    cout<<'\n';
+    cout<<'\n';*/
     //after this, we should get a random one out of all the negative ones.
-    int range=temp_holder.size();
+    /*int range=temp_holder.size();
     pos2=myrand->randInt(range-1);
     pos2=ivic[pos][temp_holder[pos2]];
     //clear temp_holder
-    temp_holder.clear();
+    temp_holder.clear();*/
     //now we attempt to flip the pair. We need to know the pair of tetrahedrons the pair of spins connect.
+    pos2=ivic[pos][pos2];
+    if(config[pos]*config[pos2]==1)
+    {
+        return;
+    }
     int t1,t2;
     t1=connect[pos][0];
     t2=connect[pos][1];
@@ -252,6 +258,7 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
         f1=c1+2*config[pos];
         f2=c2+2*config[pos2];
     }
+    //Now we know the charges. Should we add some kind of thermal update here as well?
     //now we copy the "update" part from the single spin sweep case.
     if((c1==0)&&(c2==0))
     {
@@ -299,7 +306,7 @@ void singlespin_sweep_new(int *config,int ivic[][6],int tetra[][4],int connect[]
     //update the system once.
     for(count=0;count<total;count++)
     {
-        pos=myrand->randInt(total);
+        pos=myrand->randInt(total-1);
         prob=myrand->rand();
         singlespin_update_new(config,tetra,connect,L,pos,prob,densitysquare,flag);
         /*
