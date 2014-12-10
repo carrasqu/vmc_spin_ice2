@@ -6,22 +6,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "vmc_spin_ice/main.cpp"
-            timestampString = "437711269.724775"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "main()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -42,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vmc_spin_ice/main.cpp"
-            timestampString = "437708080.985132"
+            timestampString = "438292963.054266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "main()"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,28 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vmc_spin_ice/routines.h"
-            timestampString = "437713119.692217"
+            timestampString = "439869415.929249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "825"
-            endingLineNumber = "825"
+            startingLineNumber = "823"
+            endingLineNumber = "823"
             landmarkName = "latt(int ivic[][6],int tetra[][4],int connect[][2], int &amp;L, int &amp;nh, int &amp;ntetra)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "vmc_spin_ice/main.cpp"
-            timestampString = "437711269.724775"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "main()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vmc_spin_ice/main.cpp"
-            timestampString = "437711269.724775"
+            timestampString = "438292963.054266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -122,11 +90,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vmc_spin_ice/main.cpp"
-            timestampString = "437711269.724775"
+            timestampString = "438292963.054266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "main()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vmc_spin_ice/main.cpp"
+            timestampString = "438292963.054266"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "main()"
             landmarkType = "7">
          </BreakpointContent>
@@ -185,22 +169,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "vmc_spin_ice/main.cpp"
-            timestampString = "437711269.724775"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "main()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "vmc_spin_ice/routines.h"
             timestampString = "437436145.786016"
             startingColumnNumber = "9223372036854775807"
@@ -232,12 +200,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vmc_spin_ice/routines.h"
-            timestampString = "437711309.172593"
+            timestampString = "438319625.81058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
-            landmarkName = "pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &amp;L,double &amp;densitysquare,int&amp;pos,double &amp;prob,double&amp;seedin)"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &amp;L,double &amp;densitysquare,int&amp;pos,int &amp;pos2,double &amp;prob)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vmc_spin_ice/routines.h"
+            timestampString = "438319625.81058"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &amp;L,double &amp;densitysquare,int&amp;pos,int &amp;pos2,double &amp;prob)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vmc_spin_ice/routines.h"
+            timestampString = "438319625.81058"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
+            landmarkName = "pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &amp;L,double &amp;densitysquare,int&amp;pos,int &amp;pos2,double &amp;prob)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vmc_spin_ice/routines.h"
+            timestampString = "438319625.81058"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
+            landmarkName = "pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &amp;L,double &amp;densitysquare,int&amp;pos,int &amp;pos2,double &amp;prob)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -248,11 +264,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vmc_spin_ice/main.cpp"
-            timestampString = "437711287.034031"
+            timestampString = "438312144.540173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "main()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vmc_spin_ice/main.cpp"
+            timestampString = "438312144.540173"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "main()"
             landmarkType = "7">
          </BreakpointContent>
@@ -264,12 +296,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vmc_spin_ice/routines.h"
-            timestampString = "437711656.010383"
+            timestampString = "439869415.929249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
-            landmarkName = "pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &amp;L,double &amp;densitysquare,int&amp;pos,double &amp;prob,double&amp;seedin)"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
+            landmarkName = "e0total(int *config,int tetra[][4],int &amp;L,double &amp;estep)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -280,12 +312,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vmc_spin_ice/routines.h"
-            timestampString = "437713418.792267"
+            timestampString = "438291312.547875"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
-            landmarkName = "pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &amp;L,double &amp;densitysquare,int&amp;pos,double &amp;prob,double&amp;seedin)"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "singlespin_update_new(int *config,int tetra[][4],int connect[][2],int &amp;L,int &amp;pos,double &amp;prob,double &amp;densitysquare, int &amp;flag)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -296,12 +328,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vmc_spin_ice/routines.h"
-            timestampString = "437713107.640003"
+            timestampString = "438291375.681805"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
-            landmarkName = "pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &amp;L,double &amp;densitysquare,int&amp;pos,double &amp;prob,double&amp;seedin)"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "singlespin_update_new(int *config,int tetra[][4],int connect[][2],int &amp;L,int &amp;pos,double &amp;prob,double &amp;densitysquare, int &amp;flag)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -312,12 +344,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vmc_spin_ice/routines.h"
-            timestampString = "437713343.479989"
+            timestampString = "438291403.950889"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
-            landmarkName = "pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &amp;L,double &amp;densitysquare,int&amp;pos,double &amp;prob,double&amp;seedin)"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "singlespin_update_new(int *config,int tetra[][4],int connect[][2],int &amp;L,int &amp;pos,double &amp;prob,double &amp;densitysquare, int &amp;flag)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -328,12 +360,124 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vmc_spin_ice/routines.h"
-            timestampString = "437713637.547621"
+            timestampString = "438319625.81058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
-            landmarkName = "pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &amp;L,double &amp;densitysquare,int&amp;pos,double &amp;prob,double&amp;seedin)"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
+            landmarkName = "singlespin_sweep_new(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &amp;L,double &amp;densitysquare,int&amp;flag,MTRand *myrand)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vmc_spin_ice/main.cpp"
+            timestampString = "438312144.540173"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "main()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vmc_spin_ice/main.cpp"
+            timestampString = "438319063.684447"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "main()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vmc_spin_ice/main.cpp"
+            timestampString = "438312055.928654"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "main()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vmc_spin_ice/main.cpp"
+            timestampString = "438318569.36064"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "main()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vmc_spin_ice/main.cpp"
+            timestampString = "438318649.845358"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "main()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vmc_spin_ice/main.cpp"
+            timestampString = "438318667.308476"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "main()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vmc_spin_ice/main.cpp"
+            timestampString = "438318689.047665"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "main()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include "MersenneTwister.h"
 #include "routines.h"
@@ -29,6 +30,7 @@ int main()
     //seedin=myrand->rand();
     int *config;
     double *alpha;
+    double cp;
     config=new int[L*L*L*4*4];
     //initialization!!!!!!!!!!!!!!!!!!!! TEST
     //Notice X only works with even L. 
@@ -44,7 +46,8 @@ int main()
     int pos;
     int c1,c2,f1,f2,t,flag;
     //Let's try the single spin update.
-    int x,y,z,pyro,site,temp,count,total=100;
+    int x,y,z,pyro,site,temp,count,x0,total=10;
+    int stat=1000000;
     int zpro=16*pow(L,2);
     int ypro=16*L;
     int xpro=16;
@@ -82,38 +85,47 @@ int main()
     //test
     int pos2=myrand->randInt(5);
     pair_flip(config,ivic,tetra,connect,L,densitysquare,pos,pos2,prob);
-    //charge(config,L,pos,c1,c2,f1,f2);
-    //we are trying to figure out the charge of the particular tetrahedron
-    //Test!!!!!!!!
-    //update.
-    //test: single spin update.
-    //singlespin_update_new(config,tetra,connect,L,pos,prob,densitysquare,flag);
-    for(z=0;z<L;z++)
-    {
-        for(y=0;y<L;y++)
-        {
-            for(x=0;x<L;x++)
-            {
-                for(pyro=0;pyro<4;pyro++)
-                {
-                    for(site=0;site<4;site++)
-                    {
-                        std::cout<<config[z*zpro+y*ypro+x*xpro+pyro*4+site]<<'\n';
-                    }
-                }
-            }
-        }
-    }
-    std::cout<<config[pos]<<"\n";
-    //singlespin_update_new(config,L,pos,prob,densitysquare,flag);
-    std::cout<<config[pos]<<"\n";
-    //test the sweep
-    tempature=0.3;
-    for(count=0;count<total;count++)
+    /*Specific heat: single spin flip----------------------------------------------------*/
+    //define a file stream.
+    double esquare=0,eclassical=0,estep;
+    ofstream spec_heat;
+    spec_heat.open("/Users/zhao/Documents/XCode/vmc_spin_ice/vmc_spin_ice/spec.txt");
+    //thermalization
+    flag=1;
+    for(count=0;count<total*zpro;count++)
     {
         seedin=myrand->rand();
-    //singlespin_sweep(config,L,tempature,flag,seedin);
+        //seedin=30.0;
+        //singlespin_sweep(config,L,tempature,flag,seedin);
+        singlespin_sweep_new(config,ivic,tetra,connect,L,tempature,flag,myrand);
     }
+    for(tempature=0.1;tempature<3.0;tempature+=0.05)
+    {
+        //We are trying to measure the specific heat
+        esquare=0;
+        eclassical=0;
+    for(count=0;count<stat;count++)
+    {
+        //update
+        for(x0=0;x0<total;x0++)
+        {
+            seedin=myrand->randInt();
+            singlespin_sweep_new(config,ivic,tetra,connect,L,tempature,flag,myrand);
+        }
+        //now we measure
+        e0total(config,tetra,L,estep);
+        eclassical+=estep;
+        estep=pow(estep,2.0);
+        esquare+=estep;
+    }
+    //we now compute specific heat per cubic unit cell.
+        eclassical=eclassical/((double)stat);
+        esquare=esquare/((double)stat);
+        cp=(esquare-pow(eclassical,2.0))/tempature/(double)(pow(L,3));
+        eclassical=eclassical/(double)(pow(L,3));
+        spec_heat<<tempature<<'\t'<<eclassical<<'\t'<<cp<<'\n';
+    }
+    spec_heat.close();
     return 0;
 }
 

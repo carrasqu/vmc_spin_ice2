@@ -141,8 +141,8 @@ void singlespin_update_new(int *config,int tetra[][4],int connect[][2],int &L,in
     //now that we have charge before and after, we can divide into two different cases.
     if(flag)
     {
-        //thermalize with proper
-        endiff=(double)(pow(f1,2)+pow(f2,2)-pow(c1,2)-pow(c2,2))/4.0 ;
+        //thermalize with proper 1/(4*2), 1/4 for spin length. 1/2 for charge square.
+        endiff=(double)(pow(f1,2)+pow(f2,2)-pow(c1,2)-pow(c2,2))/8.0;
         if(endiff<=0)
         {//flip
             config[pos]=-config[pos];
@@ -199,31 +199,6 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
     //pos2 will be a random number from 0 to 5.
     //We choose a random position which opposite of pos.
     int l;
-    //MTRand *myrand=new MTRand();
-    //myrand->seed(seedin);
-    //now we go through a process to find a neighboring spin which is opposite of config[pos];
-    /*std::vector<int> temp_holder;
-    for(l=0;l<6;l++)
-    {
-        if(config[ivic[pos][l]]==-config[pos])
-        {
-            temp_holder.push_back(l);
-        }
-    }*/
-    //break
-    /*cout<<"the negative positions are:"<<'\t';
-    for(l=0;l<temp_holder.size();l++)
-    {
-        cout<<ivic[pos][temp_holder[l]]<<'\t'<<config[ivic[pos][temp_holder[l]]]<<'\t';
-    }
-    cout<<'\n';*/
-    //after this, we should get a random one out of all the negative ones.
-    /*int range=temp_holder.size();
-    pos2=myrand->randInt(range-1);
-    pos2=ivic[pos][temp_holder[pos2]];
-    //clear temp_holder
-    temp_holder.clear();*/
-    //now we attempt to flip the pair. We need to know the pair of tetrahedrons the pair of spins connect.
     pos2=ivic[pos][pos2];
     if(config[pos]*config[pos2]==1)
     {
@@ -297,29 +272,50 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
 
 
 
-void singlespin_sweep_new(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,int&flag,double&seedin)
+void singlespin_sweep_new(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,int&flag,MTRand *myrand)
 {
     int count,total=16*(int)pow(L,3),pos;
     double prob;
-    MTRand *myrand=new MTRand();
-    myrand->seed(seedin);
     //update the system once.
     for(count=0;count<total;count++)
     {
         pos=myrand->randInt(total-1);
         prob=myrand->rand();
         singlespin_update_new(config,tetra,connect,L,pos,prob,densitysquare,flag);
-        /*
-         if(flag==0)
-         {
-            pair_flip(config,ivic,tetra,connect,L,densitysquare,pos,prob,seedin);
-         }
-         */
     }
     return;
 }
 
-
+//measuring the total energy of the system
+void e0total(int *config,int tetra[][4],int &L,double &estep)
+{
+    //we only go through the zero sublattice. 
+    int x,y,z,t,pyro;
+    int ztemp=16*pow(L,2);
+    int ytemp=16*L;
+    int temp;
+    estep=0;
+    for(z=0;z<L;z++)
+    {
+        for(y=0;y<L;y++)
+        {
+            for(x=0;x<L;x++)
+            {
+                for(pyro=0;pyro<4;pyro++)
+                {
+                    ///the last part should multiply by 2. We only have 0, 1,2,3
+                    t=z*ztemp+y*ytemp+x*16+pyro*2;
+                    temp=qcharge(t,tetra,config);
+                    estep+=((double)pow(temp,2.0))/8.0;
+                    t+=1;
+                    temp=qcharge(t,tetra,config);
+                    estep+=((double)pow(temp,2.0))/8.0;
+                }
+            }
+        }
+    }
+    return;
+}
 
 //Now we need the routines to do measurement
 //
@@ -357,6 +353,9 @@ double e0_step(int *config,int &c1,int&c2,int&f1,int&f2,double&density)
     }
     return step;
 }
+
+
+
 
 //auxilliary inline function
 
@@ -403,7 +402,6 @@ int searchit (int site, int ntetra, int z, int tetra[][4])
         }
         
     }
-    
     return tetraout;
 }
 
