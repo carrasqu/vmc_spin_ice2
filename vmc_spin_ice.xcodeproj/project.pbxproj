@@ -28,6 +28,7 @@
 /* Begin PBXFileReference section */
 		FE66DE4C19BA318C007091C4 /* routines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = routines.h; sourceTree = "<group>"; };
 		FE66DE4E19BA32E5007091C4 /* MersenneTwister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MersenneTwister.h; sourceTree = "<group>"; };
+		FEBF59091A3BACA100291359 /* estimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = estimator.h; sourceTree = "<group>"; };
 		FED2FC6819A681F7007AC496 /* vmc_spin_ice */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = vmc_spin_ice; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED2FC6B19A681F7007AC496 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		FED2FC6D19A681F7007AC496 /* vmc_spin_ice.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = vmc_spin_ice.1; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 				FE66DE4C19BA318C007091C4 /* routines.h */,
 				FE66DE4E19BA32E5007091C4 /* MersenneTwister.h */,
 				FED2FC6D19A681F7007AC496 /* vmc_spin_ice.1 */,
+				FEBF59091A3BACA100291359 /* estimator.h */,
 			);
 			path = vmc_spin_ice;
 			sourceTree = "<group>";

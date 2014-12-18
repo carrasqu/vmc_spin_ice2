@@ -11,6 +11,7 @@
 #include <vector>
 #include "MersenneTwister.h"
 #include "routines.h"
+#include "estimator.h"
 
 
 int main()
