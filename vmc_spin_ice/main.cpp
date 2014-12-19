@@ -6,9 +6,11 @@
 //  Copyright (c) 2014 Zhihao Hao. All rights reserved.
 //
 
+
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <stdlib.h>
 #include "MersenneTwister.h"
 #include "routines.h"
 #include "estimator.h"
@@ -69,6 +71,7 @@ int main()
             }
         }
     }
+    //Now we are trying to test the energy estimator.
     //some simple test of pair update.
     pos=3;
     t=connect[pos][0];
@@ -77,18 +80,21 @@ int main()
     t=connect[pos][1];
     c2=qcharge(t,tetra,config);
     f2=c2+2*config[pos];
-    double prob,density,densitysquare,tempature;
+    double prob,density,densitysquare,tempature,jp,estep;
     pos=3;
     prob=0.1;
     density=0.4;
+    jp=0.08;
     densitysquare=pow(density,2.0);
+    //
+    energy_est(config,tetra,connect,L,density,jp,estep);
     flag=0;
     //test
     int pos2=myrand->randInt(5);
     pair_flip(config,ivic,tetra,connect,L,densitysquare,pos,pos2,prob);
     /*Specific heat: single spin flip----------------------------------------------------*/
     //define a file stream.
-    double esquare=0,eclassical=0,estep;
+    double esquare=0,eclassical=0;
     ofstream spec_heat;
     spec_heat.open("/Users/zhao/Documents/XCode/vmc_spin_ice/vmc_spin_ice/spec.txt");
     //thermalization
