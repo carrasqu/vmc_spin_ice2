@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 Zhihao Hao. All rights reserved.
 //
 using namespace std;
-
+#include <iostream>     // std::cout
+#include <cmath>        // std::abs
 
 void initialize(int *config,int &L,double &seedin)
 {
@@ -100,11 +101,11 @@ void initialize_spinice_X(int *config,int &L)
 }
 // Did it work?
 
-/*obsolete code---------------------
+/*obsolete code---------------------*/
 
 //We use a routine to output the charge before and after we flip a spin.
 //c1: uptetrahedron, before flipping. c2:down tetrahedron, before flipping. f1:uptetrahedron, after flipping. f2:downtetrahedron after flipping.
-/*Based on Juan's tables and setup, we are reconstructing the single spin sweep codes
+/* Based on Juan's tables and setup, we are reconstructing the single spin sweep codes
  ---------------------------------------*/
 //we are including the new tables made by Juan! In this case, we don't need ivic...
 inline int qcharge(int &t,int tetra[][4],int *config)
@@ -281,6 +282,7 @@ void singlespin_sweep_new(int *config,int ivic[][6],int tetra[][4],int connect[]
     {
         pos=myrand->randInt(total-1);
         prob=myrand->rand();
+        //cout<< pos <<"  " << "  "<< prob <<"  \n";
         singlespin_update_new(config,tetra,connect,L,pos,prob,densitysquare,flag);
     }
     return;
@@ -926,14 +928,44 @@ void inoutspin(int & ctetra,int *config, int tetra[][4],int spin[2])
     return;
 }
 
-void loopupdate(int *config, int ivic[][6],int tetra[][4],int connect[][2], int &L, int &nh, int &ntetra)
+void collect(double&tempature, double&eclassical,double&esquare,double data[],double data2[],int&ndat ,int&nh, int&msteps, int&i)
+{
+    double err[ndat];
+    double aver[ndat];
+    int ii;
+    data[0]=data[0]+eclassical/(msteps);
+    data[1]=data[1]+esquare/msteps;
+    data2[0]=data2[0]+pow(eclassical/(msteps),2.0);
+    data2[1]=data2[1]+pow(esquare/msteps,2.0);
+ 
+    for(ii=0;ii<ndat;ii++)
+    {
+     aver[ii]=data[ii]/((double)i+1.0);  
+     err[ii]=sqrt( abs( pow(data[ii]/((double)i+1.0),2.0)-data2[ii]/((double)i+1.0)  )/( (double)i+1.0)); 
+    }
+
+    ofstream output;
+    output.open("results.txt");
+    output << "bins:     " << i+1  <<"\n";  
+    output << "Energy:   " << aver[0]/(nh/16) <<" pm "<<err[0]/(nh/16)<< "\n";
+    output << "Specific: " << (aver[1]-pow(aver[0],2.0))/(pow(tempature,2.0))/(nh/16) <<" pm "<<(err[1]+2.0*err[0]*aver[0] )/(pow(tempature,2.0))/(nh/16)<< "\n"; 
+    output.close();
+    eclassical=0.0;
+    esquare=0.0; 
+
+}
+
+
+void loopupdate(int *config, int ivic[][6],int tetra[][4],int connect[][2], int &L, int &nh, int &ntetra,int &visits,int &went, MTRand *myrand)
 {
     int itetra,v,ctetra,ii,vstart,vfinal,tet,toflip;
     int go = 0,ar,outs,tcharge;
     int spin[2],coun,countervisits = 0;
     int visited[ntetra][3]; // 0: visited or not. 1: order in the line of visits. 2: which spin was visited.
     int ordered[ntetra];   //  which tetrahedra are visited in order
-    
+  
+     
+    //initializating variables tracking which tetrahedra are visited and in what order.
     tcharge=0;
     for (v=0;v<ntetra;v++)
     {
@@ -945,16 +977,20 @@ void loopupdate(int *config, int ivic[][6],int tetra[][4],int connect[][2], int 
         } 
     }
     
-    cout<<"total charge in configuration= "<<tcharge<<"\n";
-    
-    itetra=rand() % ntetra;
-    ctetra=itetra;
-    cout<<"random tetrahedron"<<itetra<<"\n";
+    //cout<<"total charge in configuration= "<<tcharge<<"\n";
+ 
+
+    // select a random tetrahedra to start the loop   
+    //itetra=rand() % ntetra; // old random number generator
+     itetra=myrand->randInt(ntetra-1); 
+   
+    ctetra=itetra; // current tetrahedra ctetra
+    //cout<<"random tetrahedron"<<itetra<<"\n";
     
     
     do {
         
-        cout<<"visited ctetra= "<<ctetra<<"visited="<< visited[ctetra][0]<<"  \n";
+        //cout<<"visited ctetra= "<<ctetra<<"visited="<< visited[ctetra][0]<<"  \n";
         if (visited[ctetra][0]==-1)
         {
             
@@ -963,7 +999,7 @@ void loopupdate(int *config, int ivic[][6],int tetra[][4],int connect[][2], int 
             visited[ctetra][1]=countervisits;
             countervisits=countervisits+1;
             
-            cout<<"defected?=    "<<defected(ctetra,config,tetra)<<"     "; 
+            //cout<<"defected?=    "<<defected(ctetra,config,tetra)<<"     "; 
             if (defected(ctetra,config,tetra)==0)
             {
                 
@@ -972,8 +1008,9 @@ void loopupdate(int *config, int ivic[][6],int tetra[][4],int connect[][2], int 
                 {
                     // even tetrahedron: up (+1) means in; down (-1) means out.
                     inoutspin(ctetra,config,tetra,spin);
-                    outs=rand()%2;
-                    cout<<"out spins"<<spin[0]<<spin[1]<<"chosen"<<spin[outs]<<"\n";
+                    //outs=rand()%2; // old random number
+                    outs=myrand->randInt(1);               
+                    //cout<<"out spins"<<spin[0]<<spin[1]<<"chosen"<<spin[outs]<<"\n";
                     visited[ctetra][2]=spin[outs];
                     if (connect[spin[outs]][0]==ctetra)
                     { 
@@ -983,15 +1020,16 @@ void loopupdate(int *config, int ivic[][6],int tetra[][4],int connect[][2], int 
                     { 
                         ctetra=connect[spin[outs]][0];      
                     }
-                    cout << "next chosen tetrahedron "  <<ctetra<<"\n";
+                    //cout << "next chosen tetrahedron "  <<ctetra<<"\n";
                     
                 }
                 else if (ctetra%2==1)
                 {
                     // odd tetrahedron: up (+1) means out; down (-1) means in.
                     inoutspin(ctetra,config,tetra,spin);
-                    outs=rand()%2; 
-                    cout<<"out spins"<<spin[0]<<spin[1]<<"chosen"<<spin[outs]<<"\n";   
+                    //outs=rand()%2; 
+                    outs=myrand->randInt(1); 
+                    //cout<<"out spins"<<spin[0]<<spin[1]<<"chosen"<<spin[outs]<<"\n";   
                     visited[ctetra][2]=spin[outs];
                     if (connect[spin[outs]][0]==ctetra)
                     { 
@@ -1001,7 +1039,7 @@ void loopupdate(int *config, int ivic[][6],int tetra[][4],int connect[][2], int 
                     {
                         ctetra=connect[spin[outs]][0];   
                     }
-                    cout << "next chosen tetrahedron "  <<ctetra<<"\n"; 
+                    //cout << "next chosen tetrahedron "  <<ctetra<<"\n"; 
                 }  
                 
             }
@@ -1021,7 +1059,7 @@ void loopupdate(int *config, int ivic[][6],int tetra[][4],int connect[][2], int 
             go=1; 
         }
         
-        cout<<"  counting visits  "<<countervisits <<"  \n";
+        //cout<<"  counting visits  "<<countervisits <<"  \n";
         
     } while (go==0);
     
@@ -1031,7 +1069,7 @@ void loopupdate(int *config, int ivic[][6],int tetra[][4],int connect[][2], int 
     // flipping the spins along the loop
     if (go==1)
     {  
-        cout<<"THERE WAS A LOOP vstart"<<vstart<<"vfinal="<<vfinal<<"\n";
+        //cout<<"THERE WAS A LOOP vstart"<<vstart<<"vfinal="<<vfinal<<"\n";
         for (ii=vstart;ii<=vfinal;ii++)  
         {
             
@@ -1048,8 +1086,12 @@ void loopupdate(int *config, int ivic[][6],int tetra[][4],int connect[][2], int 
         tcharge=tcharge+defected(v,config,tetra);
     }
     
-    cout<<"total charge in final configuration= "<<tcharge<<"\n";
-    
+    //cout<<"total charge in final configuration= "<<tcharge<<"\n";
+
+    went=go;
+    visits=countervisits;
     
     return;
 }
+
+
