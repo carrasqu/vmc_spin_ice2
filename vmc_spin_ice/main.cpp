@@ -6,11 +6,14 @@
 //  Copyright (c) 2014 Zhihao Hao. All rights reserved.
 //
 
+
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <stdlib.h>
 #include "MersenneTwister.h"
 #include "routines.h"
+#include "estimator.h"
 
 
 int main()
@@ -18,9 +21,7 @@ int main()
 
     // insert code here...
     // system size L*L*L*4*4
-    int L=2;
-    cout << "give me L"<<"\n";
-    cin >> L; 
+    int L=1;
     int nh;
     int ntetra;
     //density
@@ -70,6 +71,7 @@ int main()
             }
         }
     }
+    //Now we are trying to test the energy estimator.
     //some simple test of pair update.
     pos=3;
     t=connect[pos][0];
@@ -78,113 +80,59 @@ int main()
     t=connect[pos][1];
     c2=qcharge(t,tetra,config);
     f2=c2+2*config[pos];
-    double prob,density,densitysquare,tempature;
+    double prob,density,densitysquare,tempature,jp,estep;
     pos=3;
     prob=0.1;
     density=0.4;
+    jp=0.08;
     densitysquare=pow(density,2.0);
+    //
+    energy_est(config,tetra,connect,L,density,jp,estep);
     flag=0;
     //test
     int pos2=myrand->randInt(5);
     pair_flip(config,ivic,tetra,connect,L,densitysquare,pos,pos2,prob);
-
-
-    // VMC data
-    int thbins; // number of bins during thermalization
-    int nbins; // number of bins production run
-    int msteps; // bin  length  
-    int nloops; // number of loops per monte carlo step
-    int k,i,lo; // counters
-    int cloop,went,avvisit,visits; //
-    double ave;
-    int ndat=2;
-    double data[ndat],data2[ndat];
-    double esquare=0,eclassical=0,estep;
-    
-    thbins=100;
-    nbins=5000;
-    msteps=1000;
-    nloops=100;
-    
-    
-    tempature=0.0;     
-    cout << "give me temperature"<<"\n"; 
-    cin >> tempature;
+    /*Specific heat: single spin flip----------------------------------------------------*/
+    //define a file stream.
+    double esquare=0,eclassical=0;
+    ofstream spec_heat;
+    spec_heat.open("/Users/zhao/Documents/XCode/vmc_spin_ice/vmc_spin_ice/spec.txt");
+    //thermalization
     flag=1;
-  
-    // Thermalization
-    seedin=myrand->randInt();
-    for(i=0;i<thbins;i++)
+    for(count=0;count<total*zpro;count++)
     {
-      for(k=0;k<msteps;k++)
-      {
-         // single spin flip
-         singlespin_sweep_new(config,ivic,tetra,connect,L,tempature,flag,myrand);
-         
-         //loop update
-         avvisit=0; 
-         cloop=0;
-         for(lo=0;lo<nloops;lo++)
-         {
-           loopupdate(config,ivic,tetra,connect,L,nh,ntetra,visits,went,myrand);
-           if(went==1)
-           {        
-             avvisit=avvisit+visits;
-             cloop=cloop+1;   
-           }
-         }
-         
-         //adjusting the required number of loops 
-         if(cloop>0)
-         { 
-           ave=(double)avvisit/(double)cloop;
-           cout<<"avvisit "<<ave <<" nloops "<<nloops <<"\n";
-           if(nloops<nh/(2*(int)ave))
-           {
-              nloops=nloops+1; //*abs(nloops-nh/(2*(int)ave));
-           }   
-           else
-           {
-              nloops=nloops-1; //*abs(nloops-nh/(2*(int)ave)); 
-              if(nloops<1)nloops=1;
-           } 
-         } 
-          
-      }  
- 
+        seedin=myrand->rand();
+        //seedin=30.0;
+        //singlespin_sweep(config,L,tempature,flag,seedin);
+        singlespin_sweep_new(config,ivic,tetra,connect,L,tempature,flag,myrand);
     }
-
-    // initialize measurements
-    eclassical=0.0;
-    estep=0.0;
-    for(i=0;i<ndat;i++)
+    for(tempature=0.1;tempature<3.0;tempature+=0.05)
     {
-     data[i]=0.0;
-     data2[i]=0.0;
-    }   
- 
-    for(i=0;i<nbins;i++) 
+        //We are trying to measure the specific heat
+        esquare=0;
+        eclassical=0;
+    for(count=0;count<stat;count++)
     {
-      for(k=0;k<msteps;k++)
-      {
-         //single spin flip     
-         singlespin_sweep_new(config,ivic,tetra,connect,L,tempature,flag,myrand);
-         // loopupdate
-         for(lo=0;lo<nloops;lo++)
-         {
-          loopupdate(config,ivic,tetra,connect,L,nh,ntetra,visits,went,myrand);
-         }
-        
-         // measurements
-         e0total(config,tetra,L,estep);
-         eclassical+=estep;
-         estep=pow(estep,2.0);
-         esquare+=estep;   
-      }
-      collect(tempature,eclassical,esquare,data,data2,ndat,nh,msteps,i);
-      //cout <<"eclassical zero?"<< eclassical <<"\n"; 
+        //update
+        for(x0=0;x0<total;x0++)
+        {
+            seedin=myrand->randInt();
+            singlespin_sweep_new(config,ivic,tetra,connect,L,tempature,flag,myrand);
+        }
+        //now we measure
+        e0total(config,tetra,L,estep);
+        eclassical+=estep;
+        estep=pow(estep,2.0);
+        esquare+=estep;
     }
- 
+    //we now compute specific heat per cubic unit cell.
+        eclassical=eclassical/((double)stat);
+        esquare=esquare/((double)stat);
+        cp=(esquare-pow(eclassical,2.0))/tempature/(double)(pow(L,3));
+        eclassical=eclassical/(double)(pow(L,3));
+        spec_heat<<tempature<<'\t'<<eclassical<<'\t'<<cp<<'\n';
+    }
+    spec_heat.close();
     return 0;
 }
 

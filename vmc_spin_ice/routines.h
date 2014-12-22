@@ -118,10 +118,12 @@ inline int qcharge(int &t,int tetra[][4],int *config)
     //stagger it.
     if(t%2==0)
     {
+        //cout<<"charge"<<result<<"\n";   
         return result;
     }
     else
-    {
+    {   
+        //cout<<"charge"<<-result<<"\n"; 
         return -result;
     }
 }
@@ -289,35 +291,50 @@ void singlespin_sweep_new(int *config,int ivic[][6],int tetra[][4],int connect[]
 }
 
 //measuring the total energy of the system
-void e0total(int *config,int tetra[][4],int &L,double &estep)
+void e0total(int *config,int tetra[][4],int &ntetra,int &L,double &estep)
 {
     //we only go through the zero sublattice. 
     int x,y,z,t,pyro;
-    int ztemp=16*pow(L,2);
-    int ytemp=16*L;
+    int ztemp=8*pow(L,2);
+    int ytemp=8*L;
     int temp;
     estep=0;
-    for(z=0;z<L;z++)
+
+    for(z=0;z<ntetra;z++)
     {
-        for(y=0;y<L;y++)
-        {
-            for(x=0;x<L;x++)
-            {
-                for(pyro=0;pyro<4;pyro++)
-                {
-                    ///the last part should multiply by 2. We only have 0, 1,2,3
-                    t=z*ztemp+y*ytemp+x*16+pyro*2;
-                    temp=qcharge(t,tetra,config);
-                    estep+=((double)pow(temp,2.0))/8.0;
-                    t+=1;
-                    temp=qcharge(t,tetra,config);
-                    estep+=((double)pow(temp,2.0))/8.0;
-                }
-            }
-        }
+     estep+=pow((double)qcharge(z,tetra,config),2.0)/8.0;
+     //cout<<"z="<<z; 
     }
     return;
-}
+}  
+    //cout<<"energylocal tetras"<<estep<<"\n";
+//    estep=0;  
+//    for(z=0;z<L;z++)
+//    {
+//        for(y=0;y<L;y++)
+//        {
+//            for(x=0;x<L;x++)
+//            {
+//                for(pyro=0;pyro<4;pyro++)
+//                {
+//                    ///the last part should multiply by 2. We only have 0, 1,2,3
+//                    t=z*ztemp+y*ytemp+x*8+pyro*2;
+//                    temp=qcharge(t,tetra,config);
+//                     //cout<<"t="<<t;     
+//                    estep+=((double)pow(temp,2.0))/8.0;
+//                    t+=1;
+//                    
+//                    temp=qcharge(t,tetra,config);
+//                    // cout<<"t="<<t;
+//                    estep+=((double)pow(temp,2.0))/8.0;
+//                    
+//                }
+//            }
+//        }
+//    }
+//    cout<<"energylocal?"<<estep<<"\n";
+//    return;
+//}
 
 //Now we need the routines to do measurement
 //
@@ -977,7 +994,7 @@ void loopupdate(int *config, int ivic[][6],int tetra[][4],int connect[][2], int 
         } 
     }
     
-    //cout<<"total charge in configuration= "<<tcharge<<"\n";
+    //if(tcharge!=0) cout<<"total charge in configuration= "<<tcharge<<"\n";
  
 
     // select a random tetrahedra to start the loop   
@@ -1086,7 +1103,7 @@ void loopupdate(int *config, int ivic[][6],int tetra[][4],int connect[][2], int 
         tcharge=tcharge+defected(v,config,tetra);
     }
     
-    //cout<<"total charge in final configuration= "<<tcharge<<"\n";
+    //if(tcharge!=0)cout<<"total charge in final configuration= "<<tcharge<<"\n";
 
     went=go;
     visits=countervisits;
