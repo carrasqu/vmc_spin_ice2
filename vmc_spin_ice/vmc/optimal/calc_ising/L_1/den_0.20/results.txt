@@ -1,0 +1,3 @@
+bins:          10000
+Energy:        -0.0154304 pm 2.45676e-06
+Variance TotE: 0.0165342 pm -5.85182e-06
