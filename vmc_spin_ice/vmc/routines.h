@@ -202,6 +202,69 @@ void singlespin_update_new(int *config,int tetra[][4],int connect[][2],int &L,in
     }
     return;
 }
+
+/*We are contributing two routines: 1. create a table of data using routine spinon_correlation so that we can
+ model the positive and negative monopole correlator using non-interacting bosons. 
+ 2. create a pair of static monopoles along high symmetry directions
+*/
+inline double correl_compute(double &z,double &y,double&x,int&L,double &t_tilde)
+{
+    double pi=3.14159265359,result=0.0,rho;
+    double kx,ky,kz;
+    for(int nx=-L;nx<L;nx++){
+        for(int ny=-L;ny<L;ny++){
+            for(int nz=-L;nz<L;nz++){
+                //compute momentum
+                kx=2*pi*((double)nx)/((double)(L));
+                ky=2*pi*((double)ny)/((double)(L));
+                kz=2*pi*((double)nz)/((double)(L));
+                //compute rho factor
+                rho=4.0*(cos(kx/2.0)*cos(ky/2.0)+cos(kx/2.0)*cos(kz/2.0)+cos(ky/2.0)*cos(kz/2.0));
+                //accumulate
+                result+=cos(kx*x+ky*y+kz*z)*((1.0-0.5*t_tilde*rho)/pow(1.0-t_tilde*rho,0.5)+1.0);
+            }
+        }
+    }
+    //divide by two factors of twos. The first one is from the reciprocal space normalization. the second one is from the formula to compute the correlation. 
+    return result/((double)pow(L,3)*2.0*2.0);
+}
+
+void spinon_correlation(double correl[][16],double &t_tilde,double &eta,int &L)
+{
+    //correl is the holder for the table, t_tilde/4 is the hopping amplitude of spinons, eta is the overlap between the RK state and the interacting ground state. eta is usually approximated to be 1.
+    //double pi=3.14159265359;
+    int x,y,z;
+    double ztemp,ytemp,xtemp;
+    int zprod=pow(L,2);
+    int mu_1,mu_2;
+    //define an array storing all the displacement vectors
+    double disvec[4][3]={{0.0,0.0,0.0},{0.0,0.5,0.5},{0.5,0.0,0.5},{0.5,0.5,0.0}};
+    double temp;
+    int indtemp;
+    for(z=0;z<L;z++){
+        for(y=0; y<L; y++) {
+            for(x=0;x<L;x++){
+                indtemp=z*zprod+y*L+x;
+                //the four contributions: the first contribution: diagonal. 00,11,22,33. The "displacement is just x\hat{x}+y\hat{y}+\z\hat{z}
+                for(mu_1=0;mu_1<4;mu_1++){
+                    for(mu_2=0;mu_2<4;mu_2++){
+                        //determine the real dispacement vector
+                        ztemp=(double)z+disvec[mu_1][2]-disvec[mu_2][2];
+                        ytemp=(double)y+disvec[mu_1][1]-disvec[mu_2][1];
+                        xtemp=(double)x+disvec[mu_1][0]-disvec[mu_2][0];
+                        //determine the correlator
+                        temp=eta*correl_compute(ztemp,ytemp,xtemp,L,t_tilde);
+                        //stock the table
+                        correl[indtemp][mu_1*4+mu_2]=temp;
+                    }
+                }
+            }
+        }
+    }
+    return;
+}
+
+
 /* we also need code to attempt a pair spin flip. Is this better/needed?
  we generate the seed from a random process in the main program*/
 void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,int&pos,int &pos2,double &prob)

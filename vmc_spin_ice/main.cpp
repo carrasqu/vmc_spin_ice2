@@ -21,7 +21,7 @@ int main()
 
     // insert code here...
     // system size L*L*L*4*4
-    int L=1;
+    int L=2;
     int nh;
     int ntetra;
     //density
@@ -44,6 +44,7 @@ int main()
     int ivic[nh][6];  // each site its 6 neighbours
     int tetra[ntetra][4]; // each tetrahedron and their 4 sites
     int connect[nh][2]; // each site connects two tetrahedra
+    double disvec[4][3]={{0.0,0.0,0.0},{0.0,0.5,0.5},{0.5,0.0,0.5},{0.5,0.5,0.0}};
     //construction of tables.
     latt(ivic,tetra,connect,L,nh,ntetra);
     int pos;
@@ -54,25 +55,33 @@ int main()
     int zpro=16*pow(L,2);
     int ypro=16*L;
     int xpro=16;
+    //Now we are trying to test the energy estimator.
+    //some simple test of pair update.
+    /* we now test the new routine we set up*/
+    int llgg=pow(L,3);
+    double t_tilde=0.01,eta=1.0;
+    double correl[llgg][16];
+    //now we call the function
+    spinon_correlation(correl, t_tilde, eta, L);
+    zpro=pow(L,2);
+    ypro=L;
     for(z=0;z<L;z++)
     {
         for(y=0;y<L;y++)
         {
             for(x=0;x<L;x++)
             {
-                std::cout<<"(x,y,z) is:"<<x<<'\t'<<y<<'\t'<<z<<'\n';
                 for(pyro=0;pyro<4;pyro++)
                 {
                     for(site=0;site<4;site++)
                     {
-                        std::cout<<config[z*zpro+y*ypro+x*xpro+pyro*4+site]<<'\n';
+                        std::cout<<"(x,y,z) is:"<<(double)x+disvec[pyro][0]-disvec[site][0]<<'\t'<<(double)y+disvec[pyro][1]-disvec[site][1]<<'\t'<<(double)z+disvec[pyro][2]-disvec[site][2]<<'\n';
+                        std::cout<<"mu_1: "<<pyro<<", "<<"mu_2: "<<site<<"\t"<<correl[z*zpro+y*ypro+x][pyro*4+site]<<'\n';
                     }
                 }
             }
         }
     }
-    //Now we are trying to test the energy estimator.
-    //some simple test of pair update.
     pos=3;
     t=connect[pos][0];
     c1=qcharge(t,tetra,config);
@@ -120,7 +129,7 @@ int main()
             singlespin_sweep_new(config,ivic,tetra,connect,L,tempature,flag,myrand);
         }
         //now we measure
-        e0total(config,tetra,L,estep);
+        //e0total(config,tetra,L,estep);
         eclassical+=estep;
         estep=pow(estep,2.0);
         esquare+=estep;

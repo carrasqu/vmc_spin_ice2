@@ -136,10 +136,17 @@ void singlespin_update_new(int *config,int tetra[][4],int connect[][2],int &L,in
     //charge_new(config,tetra,connect,L,pos,c1,c2,f1,f2);
     t=connect[pos][0];
     c1=qcharge(t,tetra,config);
-    f1=c1-2*config[pos];
+    //f1=c1-2*config[pos];
     t=connect[pos][1];
     c2=qcharge(t,tetra,config);
-    f2=c2+2*config[pos];
+    //f2=c2+2*config[pos];
+    config[pos]=-config[pos];
+    t=connect[pos][0]; 
+    f1=qcharge(t,tetra,config);
+    t=connect[pos][1];
+    f2=qcharge(t,tetra,config);
+    config[pos]=-config[pos]; 
+       
     //We note the stagered definition of charge.
     //now that we have charge before and after, we can divide into two different cases.
     if(flag)
@@ -195,16 +202,92 @@ void singlespin_update_new(int *config,int tetra[][4],int connect[][2],int &L,in
     }
     return;
 }
+
+/*We are contributing two routines: 1. create a table of data using routine spinon_correlation so that we can
+ model the positive and negative monopole correlator using non-interacting bosons. 
+ 2. create a pair of static monopoles along high symmetry directions
+*/
+inline double correl_compute(double &z,double &y,double&x,int&L,double &t_tilde)
+{
+    double pi=3.14159265359,result=0.0,rho;
+    double kx,ky,kz;
+    for(int nx=-L;nx<L;nx++){
+        for(int ny=-L;ny<L;ny++){
+            for(int nz=-L;nz<L;nz++){
+                //compute momentum
+                kx=2*pi*((double)nx)/((double)(L));
+                ky=2*pi*((double)ny)/((double)(L));
+                kz=2*pi*((double)nz)/((double)(L));
+                //compute rho factor
+                rho=4.0*(cos(kx/2.0)*cos(ky/2.0)+cos(kx/2.0)*cos(kz/2.0)+cos(ky/2.0)*cos(kz/2.0));
+                //accumulate
+                result+=cos(kx*x+ky*y+kz*z)*((1.0-0.5*t_tilde*rho)/pow(1.0-t_tilde*rho,0.5)+1.0);
+            }
+        }
+    }
+    //divide by two factors of twos. The first one is from the reciprocal space normalization. the second one is from the formula to compute the correlation. 
+    return result/((double)pow(L,3)*2.0*2.0);
+}
+
+void spinon_correlation(double correl[][16],double &t_tilde,double &eta,int &L)
+{
+    //correl is the holder for the table, t_tilde/4 is the hopping amplitude of spinons, eta is the overlap between the RK state and the interacting ground state. eta is usually approximated to be 1.
+    //double pi=3.14159265359;
+    int x,y,z;
+    double ztemp,ytemp,xtemp;
+    int zprod=pow(L,2);
+    int mu_1,mu_2;
+    //define an array storing all the displacement vectors
+    double disvec[4][3]={{0.0,0.0,0.0},{0.0,0.5,0.5},{0.5,0.0,0.5},{0.5,0.5,0.0}};
+    double temp;
+    int indtemp;
+    for(z=0;z<L;z++){
+        for(y=0; y<L; y++) {
+            for(x=0;x<L;x++){
+                indtemp=z*zprod+y*L+x;
+                //the four contributions: the first contribution: diagonal. 00,11,22,33. The "displacement is just x\hat{x}+y\hat{y}+\z\hat{z}
+                for(mu_1=0;mu_1<4;mu_1++){
+                    for(mu_2=0;mu_2<4;mu_2++){
+                        //determine the real dispacement vector
+                        ztemp=(double)z+disvec[mu_1][2]-disvec[mu_2][2];
+                        ytemp=(double)y+disvec[mu_1][1]-disvec[mu_2][1];
+                        xtemp=(double)x+disvec[mu_1][0]-disvec[mu_2][0];
+                        //determine the correlator
+                        temp=eta*correl_compute(ztemp,ytemp,xtemp,L,t_tilde);
+                        //stock the table
+                        correl[indtemp][mu_1*4+mu_2]=temp;
+                    }
+                }
+            }
+        }
+    }
+    return;
+}
+
+
 /* we also need code to attempt a pair spin flip. Is this better/needed?
  we generate the seed from a random process in the main program*/
 void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,int&pos,int &pos2,double &prob)
 {
     //pos2 will be a random number from 0 to 5.
     //We choose a random position which opposite of pos.
-    int l;
+  
+    int l,nhh;
+//    
+//    cout<<"config"<< "\n ";  
+//    nhh=pow(L,3)*16;
+//
+//    for(l=0;l<nhh;l++)
+//    {
+//    cout<<config[l]<<"\n";
+//      }
+//    cout<<"-------------------"<<"\n";
+
+ 
     pos2=ivic[pos][pos2];
     if(config[pos]*config[pos2]==1)
     {
+       // cout<<"nospin flip"<<"\n";
         return;
     }
     int t1,t2;
@@ -225,17 +308,36 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
     int c1,c2,f1,f2;
     c1=qcharge(t1,tetra,config);
     c2=qcharge(t2,tetra,config);
-    int temp=t1%2;
-    if(temp==0)
-    {
-    f1=c1-2*config[pos];
-    f2=c2-2*config[pos2];
-    }
-    else
-    {
-        f1=c1+2*config[pos];
-        f2=c2+2*config[pos2];
-    }
+    
+    config[pos]=-config[pos];
+    config[pos2]=-config[pos2];
+    f1=qcharge(t1,tetra,config);
+    f2=qcharge(t2,tetra,config);
+    config[pos]=-config[pos];
+    config[pos2]=-config[pos2];
+    
+
+ 
+    
+//    int temp=t1%2;
+//    if(temp==0)
+//    {
+//       f1=c1-2*config[pos];
+//       f2=c2-2*config[pos2];
+//    }
+//    else
+//    {
+//       f1=c1+2*config[pos];
+//       f2=c2+2*config[pos2];
+//    }
+
+//    cout<<"which case"<<"\n";
+//    cout<<"pos pos2 "<<pos<<" "<<pos2<<" \n";   
+//    cout<<"tetras t1 t2 "<<t1<<" "<<t2<<" \n";
+//    cout<<"c1,c2,f1,f2 " <<c1<<" "<<c2<<" "<<f1<<" "<<f2<<" \n";
+//    cout<<"accepted rho^2 prob "<<densitysquare<<" "<<prob<<" \n";
+//    cout <<"\n";  
+
     //Now we know the charges. Should we add some kind of thermal update here as well?
     //now we copy the "update" part from the single spin sweep case.
     if((c1==0)&&(c2==0))
@@ -244,9 +346,10 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
         {//flip if probability (here is just density) is larger than the random number
             config[pos]=-config[pos];
             config[pos2]=-config[pos2];
+            //cout << "accepted??? WTF"<<"\n"; 
         }
     }
-    if(((c1==2)&&(c2==-2))||((c1==-2)&&(c2==2)))
+    if(((c1==2)&&(c2==-2))||((c1==-2)&&(c2==2))) // S+S- annihilates oposite charges on two tetrahaedra on the same sublatttice
     {
         if((f1==0)&&(f2==0))
         {
@@ -254,7 +357,7 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
             config[pos2]=-config[pos2];
         }
     }
-    if(((c1==2)&&(c2==0))||((c1==-2)&&(c2==0)))
+    if(((c1==2)&&(c2==0))||((c1==-2)&&(c2==0))) // S+S- moves charges from tetrahedon 1 to 2 and viceversa
     {
         if(((f1==0)&&(f2==2))||((f1==0)&&(f2==-2)))
         {
@@ -262,7 +365,7 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
             config[pos2]=-config[pos2];
         }
     }
-    if(((c1==0)&&(c2==2))||((c1==0)&&(c2==-2)))
+    if(((c1==0)&&(c2==2))||((c1==0)&&(c2==-2))) // S+S- moves charges from tetrahedon 1 to 2 and viceversa
     {
         if(((f1==2)&&(f2==0))||((f1==-2)&&(f2==0)))
         {
@@ -273,6 +376,73 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
     return;
 }
 
+
+void pair_flip2(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,double &density,int&pos,int &pos2,double &prob)
+{
+   
+    int l,nhh;
+    double rat; 
+ 
+    pos2=ivic[pos][pos2];
+    if(config[pos]*config[pos2]==1)
+    {
+       // cout<<"nospin flip"<<"\n";
+        return;
+    }
+    int t1,t2;
+    t1=connect[pos][0];
+    t2=connect[pos][1];
+    //repeated tetrahedra are deleted.
+    if(t1==connect[pos2][0])
+    {
+        //In this case, the pair of spins connect two tetrahedron on "odd sublattice"
+        t1=connect[pos2][1];
+    }
+    else if(t2==connect[pos2][1])
+    {
+        //the pair of spins connect two tetrahedron on "even sublattice"
+        t2=connect[pos2][0];
+    }
+    //
+    int c1,c2,f1,f2;
+    c1=qcharge(t1,tetra,config);
+    c2=qcharge(t2,tetra,config);
+    
+    config[pos]=-config[pos];
+    config[pos2]=-config[pos2];
+    f1=qcharge(t1,tetra,config);
+    f2=qcharge(t2,tetra,config);
+    config[pos]=-config[pos];
+    config[pos2]=-config[pos2];
+    
+    if(abs(f1)==4||abs(f2)==4)
+    {
+         // wave function for Q =\pm 2  charges is zero  	 
+     	 return;
+
+    }  
+   
+    //cout<<"charges c1 c2 f1 f2 "<<c1<<" "<<c2<<" "<<f1<<" "<<f2<<" \n"; 
+    //cout<<"prob "<<prob<<" \n"; 
+    rat=pow(density,abs(f1/2)+abs(f2/2))/pow(density,abs(c1/2)+abs(c2/2));
+     //cout<<"ratio "<<rat<<" \n"; 
+    if(rat<1.0)
+    {
+      if(prob<rat)
+      {
+      	config[pos]=-config[pos];
+        config[pos2]=-config[pos2];
+      }	
+    	
+    }
+    else
+    {
+     	config[pos]=-config[pos];
+        config[pos2]=-config[pos2];
+    } 
+   
+    return;
+}
 
 
 void singlespin_sweep_new(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,int&flag,MTRand *myrand)
@@ -881,6 +1051,13 @@ void latt(int ivic[][6],int tetra[][4],int connect[][2], int &L, int &nh, int &n
     {
         cout<<"x="<<z<<"   tetrahedra "<<connect[z][0]<<" "<<connect[z][1]<<"\n";
     }
+
+    cout<<" table of nearest neighbors of site x "<<"\n";
+    for (z=0;z<nh;z++)
+    {
+        cout<<"x="<<z<<" "<<ivic[z][0]<<" "<<ivic[z][1]<<" "<<ivic[z][2]<<" "<<ivic[z][3]<<" "<<ivic[z][4]<<" "<<ivic[z][5]<<"\n ";
+    }
+
     
 }
 
@@ -954,7 +1131,7 @@ void collect(double&tempature, double&eclassical,double&esquare,double data[],do
     data[1]=data[1]+esquare/msteps;
     data2[0]=data2[0]+pow(eclassical/(msteps),2.0);
     data2[1]=data2[1]+pow(esquare/msteps,2.0);
- 
+   
     for(ii=0;ii<ndat;ii++)
     {
      aver[ii]=data[ii]/((double)i+1.0);  
@@ -963,9 +1140,10 @@ void collect(double&tempature, double&eclassical,double&esquare,double data[],do
 
     ofstream output;
     output.open("results.txt");
-    output << "bins:     " << i+1  <<"\n";  
-    output << "Energy:   " << aver[0]/(nh/16) <<" pm "<<err[0]/(nh/16)<< "\n";
-    output << "Specific: " << (aver[1]-pow(aver[0],2.0))/(pow(tempature,2.0))/(nh/16) <<" pm "<<(err[1]+2.0*err[0]*aver[0] )/(pow(tempature,2.0))/(nh/16)<< "\n"; 
+    output << "bins:          " << i+1  <<"\n";  
+    output << "Energy:        " << aver[0]/(nh) <<" pm "<<err[0]/(nh)<< "\n";
+    output << "Variance TotE: " << (aver[1]-pow(aver[0],2.0)) <<" pm "<<(err[1]+2.0*err[0]*aver[0])<< "\n"; 
+    //output << "Specific: " << (aver[1]-pow(aver[0],2.0))/(pow(tempature,2.0))/(nh/16) <<" pm "<<(err[1]+2.0*err[0]*aver[0] )/(pow(tempature,2.0))/(nh/16)<< "\n"; 
     output.close();
     eclassical=0.0;
     esquare=0.0; 
