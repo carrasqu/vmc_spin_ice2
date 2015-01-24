@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
             endingLineNumber = "48"
-            landmarkName = "initialize_spinice_q0(int *config,int &amp;L)"
+            landmarkName = "initialize(int *config,int &amp;L,double &amp;seedin)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "825"
             endingLineNumber = "825"
-            landmarkName = "latt(int ivic[][6],int tetra[][4],int connect[][2], int &amp;L, int &amp;nh, int &amp;ntetra)"
+            landmarkName = "e0_step(int *config,int &amp;c1,int&amp;c2,int&amp;f1,int&amp;f2,double&amp;density)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -174,7 +174,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
-            endingLineNumber = "104">
+            endingLineNumber = "104"
+            landmarkName = "initialize_spinice_X(int *config,int &amp;L)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -204,9 +206,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "216"
-            endingLineNumber = "216"
-            landmarkName = "correl_compute(double &amp;z,double &amp;y,double&amp;x,int&amp;L,double &amp;t_tilde)"
-            landmarkType = "7">
+            endingLineNumber = "216">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -221,7 +221,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "232"
             endingLineNumber = "232"
-            landmarkName = "spinon_correlation(double correl[][16],double &amp;t_tilde,double &amp;eta,int &amp;L)"
+            landmarkName = "correl_compute(double &amp;z,double &amp;y,double&amp;x,int&amp;L,double &amp;t_tilde)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -236,7 +236,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "205"
-            endingLineNumber = "205">
+            endingLineNumber = "205"
+            landmarkName = "singlespin_update_new(int *config,int tetra[][4],int connect[][2],int &amp;L,int &amp;pos,double &amp;prob,double &amp;densitysquare, int &amp;flag)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -283,7 +285,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "314"
             endingLineNumber = "314"
-            landmarkName = "pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &amp;L,double &amp;densitysquare,int&amp;pos,int &amp;pos2,double &amp;prob)"
+            landmarkName = "correl_index(int &amp;t1,int &amp;t2,int&amp;L)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -347,7 +349,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "286"
             endingLineNumber = "286"
-            landmarkName = "pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &amp;L,double &amp;densitysquare,int&amp;pos,int &amp;pos2,double &amp;prob)"
+            landmarkName = "correl_index(int &amp;t1,int &amp;t2,int&amp;L)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -11,6 +11,7 @@
 #include <fstream>
 #include <vector>
 #include <stdlib.h>
+#include <algorithm>
 #include "MersenneTwister.h"
 #include "routines.h"
 #include "estimator.h"
@@ -45,6 +46,8 @@ int main()
     int tetra[ntetra][4]; // each tetrahedron and their 4 sites
     int connect[nh][2]; // each site connects two tetrahedra
     double disvec[4][3]={{0.0,0.0,0.0},{0.0,0.5,0.5},{0.5,0.0,0.5},{0.5,0.5,0.0}};
+    //location to determine the pair of charges.
+    charge_pair chargepairs;
     //construction of tables.
     latt(ivic,tetra,connect,L,nh,ntetra);
     int pos;
@@ -54,7 +57,7 @@ int main()
     int stat=1000000;
     int zpro=16*pow(L,2);
     int ypro=16*L;
-    int xpro=16;
+    //int xpro=16;
     //Now we are trying to test the energy estimator.
     //some simple test of pair update.
     /* we now test the new routine we set up*/
@@ -100,7 +103,7 @@ int main()
     flag=0;
     //test
     int pos2=myrand->randInt(5);
-    pair_flip(config,ivic,tetra,connect,L,densitysquare,pos,pos2,prob);
+    pair_flip(config,ivic,tetra,connect,L,densitysquare,pos,pos2,prob,chargepairs,correl,myrand);
     /*Specific heat: single spin flip----------------------------------------------------*/
     //define a file stream.
     double esquare=0,eclassical=0;

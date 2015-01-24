@@ -9,6 +9,14 @@ using namespace std;
 #include <iostream>     // std::cout
 #include <cmath>        // std::abs
 
+class charge_pair{
+public:
+    vector<int> pposeven;//position of a positive charge on the even sublattice
+    vector<int> nposeven;//position of a negative charge on the even sublattice
+    vector<int> pposodd;//position of a positive charge on the odd sublattice
+    vector<int> nposodd;//position of a negative charge on the odd sublattice
+};
+
 void initialize(int *config,int &L,double &seedin)
 {
     //give random configuration. First define a random number.
@@ -146,7 +154,6 @@ void singlespin_update_new(int *config,int tetra[][4],int connect[][2],int &L,in
     t=connect[pos][1];
     f2=qcharge(t,tetra,config);
     config[pos]=-config[pos]; 
-       
     //We note the stagered definition of charge.
     //now that we have charge before and after, we can divide into two different cases.
     if(flag)
@@ -221,12 +228,12 @@ inline double correl_compute(double &z,double &y,double&x,int&L,double &t_tilde)
                 //compute rho factor
                 rho=4.0*(cos(kx/2.0)*cos(ky/2.0)+cos(kx/2.0)*cos(kz/2.0)+cos(ky/2.0)*cos(kz/2.0));
                 //accumulate
-                result+=cos(kx*x+ky*y+kz*z)*((1.0-0.5*t_tilde*rho)/pow(1.0-t_tilde*rho,0.5)+1.0);
+                result+=cos(kx*x+ky*y+kz*z)*0.5*t_tilde*rho/pow(1.0-t_tilde*rho,0.5);
             }
         }
     }
     //divide by two factors of twos. The first one is from the reciprocal space normalization. the second one is from the formula to compute the correlation. 
-    return result/((double)pow(L,3)*2.0*2.0);
+    return log(result/((double)pow(L,3)*2.0*2.0));
 }
 
 void spinon_correlation(double correl[][16],double &t_tilde,double &eta,int &L)
@@ -263,16 +270,114 @@ void spinon_correlation(double correl[][16],double &t_tilde,double &eta,int &L)
     }
     return;
 }
+//Let us use one more simple routine to compute indtemp from x1,y1,z1,x2,y2,z2
+int correl_index(int &t1,int &t2,int&L)
+{
+    int zpro=pow(L,2);
+    int x1,y1,z1,x2,y2,z2;
+    z1=t1/zpro;
+    y1=(t1-z1*zpro)/L;
+    x1=t1-zpro*z1-y1*L;
+    z2=t2/zpro;
+    y2=(t2-z2*zpro)/L;
+    x2=t2-z2*zpro-y2*L;
+    //8 different cases
+    if((z1>=z2)&&(y1>=y2)&&(x1>=x2))
+    {
+        return (z1-z2)*zpro+(y1-y2)*L+(x1-x2);
+    }
+    else if((z1<z2)&&(y1>=y2)&&(x1>=x2))
+    {
+        return (z1-z2+L)*zpro+(y1-y2)*L+(x1-x2);
+    }
+    else if((z1>=z2)&&(y1<y2)&&(x1>=x2))
+    {
+        return (z1-z2)*zpro+(y1-y2+L)*L+(x1-x2);
+    }
+    else if((z1>=z2)&&(y1>=y2)&&(x1<x2))
+    {
+        return (z1-z2)*zpro+(y1-y2)*L+(x1-x2+L);
+    }
+    //the next four cases, the "2" is in front of 1.
+    else if((z1<z2)&&(y1<y2)&&(x1>=x2))
+    {
+        return (z2-z1)*zpro+(y2-y1)*L+(x2-x1+L)%L;
+    }
+    else if((z1>=z2)&&(y1<y2)&&(x1<x2))
+    {
+        return ((z2-z1+L)%L)*zpro+(y2-y1)*L+(x2-x1);
+    }
+    else if((z1<z2)&&(y1>=y2)&&(x1<x2))
+    {
+        return (z2-z1)*zpro+((y2-y1+L)%L)*L+(x2-x1);
+    }
+    else
+    {
+        return (z2-z1)*zpro+(y2-y1)*L+(x2-x1);
+    }
+}
 
+
+//we need to define more functions which take a special spinon configuration, charge_pair, to compute the would-be coefficient of the configuration
+//amp is the computed amplitude
+void many_spinon_amplitude(charge_pair &chargepairs,double &densitysquare,double &amp,int &statlimit,int&flag,double correl[][16],int &L,MTRand *myrand)
+{//flag tells us whether we are dealing with the bosons on the even sublattice or the odd sublattice.
+    int n;
+    double ntemp;
+    int t1,t2,mu1,mu2;//holders for pairs of tetrahedrons and their sublattices.
+    //int x1,y1,z1,x2,y2,z2;
+    //int zpro=pow(L,2);
+    int indtemp;
+    if(flag==0){
+        //even sublattice
+        //n store the size of the vector.
+        n=chargepairs.pposeven.size();
+        ntemp=(double)n-1.0;
+        //several different cases: n=1, 1<n<nc, n>nc.
+        if(n==1){
+            //directly using the pair wise
+            mu1=chargepairs.pposeven[0];
+            mu2=chargepairs.nposeven[0];
+            //a tetrahedron is labelled as z*8*L^2+y*8*L+x*8+mu
+            t1=mu1/8;
+            t2=mu2/8;
+            //back out sublattice
+            mu1-=t1*8;
+            mu2-=t2*8;
+            //back out the indtemp!!!!!!!!!!!!!!(Is this correct? No. We need to figure out dx1,dy1 and dz1//Now we consider different cases.
+            indtemp=correl_index(t1,t2,L);
+            //We already know that mu1 and mu2 are on the even sublattice! so mu1 and mu2 must be even!
+            if(mu1%2==1){std::cout<<"What? Mismatching sublattices! /n";
+                return;
+            }
+            mu1=mu1/2;
+            mu2=mu2/2;
+            //now we use t1,mu1 and t2,mu2 to find the amplitude!
+            amp=correl[indtemp][mu1*4+mu2];
+        }
+        else if(2*pow(2*3.1415926535*ntemp,0.5)*pow(ntemp/2.71828,ntemp)<statlimit){
+            //in this case, we directly compute the "partition function"
+            
+        }
+        else{
+            //in this case, we sample the partition function by statlimit
+            
+        }
+    }
+    else{
+        //odd sublattice.
+    }
+    return;
+}
 
 /* we also need code to attempt a pair spin flip. Is this better/needed?
  we generate the seed from a random process in the main program*/
-void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,int&pos,int &pos2,double &prob)
+void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,int&pos,int &pos2,double &prob,charge_pair&chargepairs,double correl[][16],MTRand *myrand)
 {
     //pos2 will be a random number from 0 to 5.
     //We choose a random position which opposite of pos.
   
-    int l,nhh;
+    int l,nhh,flag=0;
 //    
 //    cout<<"config"<< "\n ";  
 //    nhh=pow(L,3)*16;
@@ -283,7 +388,7 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
 //      }
 //    cout<<"-------------------"<<"\n";
 
- 
+    //charge_pair cpairtemp;
     pos2=ivic[pos][pos2];
     if(config[pos]*config[pos2]==1)
     {
@@ -298,11 +403,13 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
     {
         //In this case, the pair of spins connect two tetrahedron on "odd sublattice"
         t1=connect[pos2][1];
+        flag=1;
     }
     else if(t2==connect[pos2][1])
     {
         //the pair of spins connect two tetrahedron on "even sublattice"
         t2=connect[pos2][0];
+        flag=0;
     }
     //
     int c1,c2,f1,f2;
@@ -346,7 +453,33 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
         {//flip if probability (here is just density) is larger than the random number
             config[pos]=-config[pos];
             config[pos2]=-config[pos2];
-            //cout << "accepted??? WTF"<<"\n"; 
+            //cout << "accepted??? WTF"<<"\n";
+            //The proposal is accepted! we now keep track the position of charges created!
+            //Now we determine where are the charges and what values are them
+            if(flag==0)
+            {//even sublattice
+                if(f1==2){
+                    //now we push t1 into the vectors
+                    chargepairs.pposeven.push_back(t1);
+                    chargepairs.nposeven.push_back(t2);
+                }
+                else{
+                    chargepairs.pposeven.push_back(t2);
+                    chargepairs.nposeven.push_back(t1);
+                }
+            }
+            else if(flag==1)
+            {//odd sublattice
+                if(f1==2){
+                    //we push t1 and t2 to odd stacks
+                    chargepairs.pposodd.push_back(t1);
+                    chargepairs.nposodd.push_back(t2);
+                }
+                else{
+                    chargepairs.pposodd.push_back(t2);
+                    chargepairs.nposodd.push_back(t1);
+                }
+            }
         }
     }
     if(((c1==2)&&(c2==-2))||((c1==-2)&&(c2==2))) // S+S- annihilates oposite charges on two tetrahaedra on the same sublatttice
@@ -355,6 +488,30 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
         {
             config[pos]=-config[pos];
             config[pos2]=-config[pos2];
+            //we now need to delete the two charges from the respective stacks!
+            if(flag==0)
+            {
+                //delete the two charges on the even sublattice
+                if(c1==2)
+                {//we need to search and delete. This generically cost order length of the vectors.
+                    chargepairs.pposeven.erase(std::remove(chargepairs.pposeven.begin(),chargepairs.pposeven.end(),t1),chargepairs.pposeven.end());
+                    chargepairs.nposeven.erase(std::remove(chargepairs.nposeven.begin(),chargepairs.nposeven.end(),t2),chargepairs.nposeven.end());
+                }
+                else{
+                    chargepairs.pposeven.erase(std::remove(chargepairs.pposeven.begin(),chargepairs.pposeven.end(),t2),chargepairs.pposeven.end());
+                    chargepairs.nposeven.erase(std::remove(chargepairs.nposeven.begin(),chargepairs.nposeven.end(),t1),chargepairs.nposeven.end());
+                }
+            }
+            else{
+                if(c1==2){
+                    chargepairs.pposodd.erase(std::remove(chargepairs.pposodd.begin(),chargepairs.pposodd.end(),t1),chargepairs.pposodd.end());
+                    chargepairs.nposodd.erase(std::remove(chargepairs.nposodd.begin(),chargepairs.nposodd.end(),t2),chargepairs.nposodd.end());
+                }
+                else{
+                    chargepairs.pposodd.erase(std::remove(chargepairs.pposodd.begin(),chargepairs.pposodd.end(),t2),chargepairs.pposodd.end());
+                    chargepairs.nposodd.erase(std::remove(chargepairs.nposodd.begin(),chargepairs.nposodd.end(),t1),chargepairs.nposodd.end());
+                }
+            }
         }
     }
     if(((c1==2)&&(c2==0))||((c1==-2)&&(c2==0))) // S+S- moves charges from tetrahedon 1 to 2 and viceversa
