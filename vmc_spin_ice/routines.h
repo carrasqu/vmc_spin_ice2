@@ -214,7 +214,7 @@ void singlespin_update_new(int *config,int tetra[][4],int connect[][2],int &L,in
  model the positive and negative monopole correlator using non-interacting bosons. 
  2. create a pair of static monopoles along high symmetry directions
 */
-inline double correl_compute(double &z,double &y,double&x,int&L,double &t_tilde)
+inline double correl_compute(double &z,double &y,double&x,int&L,double &t_tilde,double &densitysquare)
 {
     double pi=3.14159265359,result=0.0,rho;
     double kx,ky,kz;
@@ -233,10 +233,10 @@ inline double correl_compute(double &z,double &y,double&x,int&L,double &t_tilde)
         }
     }
     //divide by two factors of twos. The first one is from the reciprocal space normalization. the second one is from the formula to compute the correlation. 
-    return log(result/((double)pow(L,3)*2.0*2.0));
+    return log(result/((double)pow(L,3)*2.0*2.0*pow(densitysquare,0.5)));
 }
 
-void spinon_correlation(double correl[][16],double &t_tilde,double &eta,int &L)
+void spinon_correlation(double correl[][16],double &t_tilde,double &eta,int &L,double &densitysquare)
 {
     //correl is the holder for the table, t_tilde/4 is the hopping amplitude of spinons, eta is the overlap between the RK state and the interacting ground state. eta is usually approximated to be 1.
     //double pi=3.14159265359;
@@ -260,7 +260,7 @@ void spinon_correlation(double correl[][16],double &t_tilde,double &eta,int &L)
                         ytemp=(double)y+disvec[mu_1][1]-disvec[mu_2][1];
                         xtemp=(double)x+disvec[mu_1][0]-disvec[mu_2][0];
                         //determine the correlator
-                        temp=eta*correl_compute(ztemp,ytemp,xtemp,L,t_tilde);
+                        temp=eta*correl_compute(ztemp,ytemp,xtemp,L,t_tilde,densitysquare);
                         //stock the table
                         correl[indtemp][mu_1*4+mu_2]=temp;
                     }

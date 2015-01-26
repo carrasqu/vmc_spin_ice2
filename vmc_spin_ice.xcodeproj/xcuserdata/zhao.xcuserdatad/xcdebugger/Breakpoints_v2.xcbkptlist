@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "825"
             endingLineNumber = "825"
-            landmarkName = "e0_step(int *config,int &amp;c1,int&amp;c2,int&amp;f1,int&amp;f2,double&amp;density)"
+            landmarkName = "latt(int ivic[][6],int tetra[][4],int connect[][2], int &amp;L, int &amp;nh, int &amp;ntetra)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
