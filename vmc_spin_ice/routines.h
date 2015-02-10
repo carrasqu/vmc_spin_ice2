@@ -47,7 +47,8 @@ void initialize(int *config,int &L,double &seedin)
     return;
 }
 
-void initialize_spinice_q0(int *config,int &L)
+                                   
+void initialize_spinice_q0(int *config,int spinon[],int &L,int &ntetra)
 {
     //This subroutine we initialize a spin ice configuration at q=0
     int x,y,z,pyro,site,temp;
@@ -71,6 +72,12 @@ void initialize_spinice_q0(int *config,int &L)
             }
         }
     }
+    
+    for(z=0;z<ntetra;z++)
+    {
+     spinon[z]=0;
+    }
+     
 }
 
 void initialize_spinice_X(int *config,int &L)
@@ -534,13 +541,217 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
 }
 
 
-void pair_flip2(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,double &density,int&pos,int &pos2,double &prob)
+
+void jastrow(int &ntetra, int spinonc[],double table[][2],double jast[])
+{
+
+int n,i;
+
+for(n=0;n<ntetra;n++)
+{
+   table[n][0]=0;
+   table[n][1]=0;
+   
+   if(n%2==0)
+   { 
+      for(i=0;i<ntetra;i+=2)
+      {
+        if((i!=n)&&(spinonc[i]==1))
+        {
+          //table[n][0]=table[n][0]+jast[i][n]*spinonc[i];
+          //cout<<" n i "<<n<<" "<<i<<"\n"; 
+          table[n][0]=table[n][0]+jast[i+ntetra*n]*spinonc[i];  
+        } 
+        if((i!=n)&&(spinonc[i]==-1))
+        {
+          //table[n][1]=table[n][1]+jast[i][n]*spinonc[i];
+          // cout<<" n i "<<n<<" "<<i<<"\n"; 
+          table[n][1]=table[n][1]+jast[i+ntetra*n]*spinonc[i];
+        }  
+         
+      } 
+   
+   }
+   else if(n%2==1)
+   {
+      for(i=1;i<ntetra;i+=2)
+      {
+        if((i!=n)&&(spinonc[i]==1))
+        {
+           //cout<<" n i "<<n<<" "<<i<<"\n"; 
+          table[n][0]=table[n][0]+jast[i+ntetra*n]*spinonc[i];
+        }
+        if((i!=n)&&(spinonc[i]==-1))
+        {
+           //cout<<" n i "<<n<<" "<<i<<"\n";
+          table[n][1]=table[n][1]+jast[i+ntetra*n]*spinonc[i];
+        }
+      } 
+   } 
+}
+
+return;
+}
+
+void updatejas(double table[][2],double jast[],int &t1,int &c1,int &f1,int &ntetra)
+{
+int n;
+
+
+if(c1/2==0&&f1/2==1)
+{
+  if(t1%2==0)
+  {
+     for(n=0;n<ntetra;n+=2)
+      {
+       if(n!=t1)
+       {  
+        table[n][0]=table[n][0]+jast[t1+ntetra*n];
+       } 
+      }
+  }
+  else if(t1%2==1)
+  {
+     for(n=1;n<ntetra;n+=2)
+      {
+       if(n!=t1)
+       {
+        table[n][0]=table[n][0]+jast[t1+ntetra*n];
+       }
+      }  
+  } 
+}
+
+if(c1/2==0&&f1/2==-1)
+{
+  if(t1%2==0)
+  {
+     for(n=0;n<ntetra;n+=2)
+      {
+       if(n!=t1)
+       {
+        table[n][1]=table[n][1]-jast[t1+ntetra*n];
+       }
+      }
+  }
+  else if(t1%2==1)
+  {
+     for(n=1;n<ntetra;n+=2)
+      {
+       if(n!=t1)
+       {
+        table[n][1]=table[n][1]-jast[t1+ntetra*n];
+       }
+      }
+  }
+}
+
+if(c1/2==1&&f1/2==0)
+{
+  if(t1%2==0)
+  {
+     for(n=0;n<ntetra;n+=2)
+      {
+       if(n!=t1)
+       {
+        table[n][0]=table[n][0]-jast[t1+ntetra*n];
+       }
+      }
+  }
+  else if(t1%2==1)
+  {
+     for(n=1;n<ntetra;n+=2)
+      {
+       if(n!=t1)
+       {
+        table[n][0]=table[n][0]-jast[t1+ntetra*n];
+       }
+      }
+  }
+}
+
+if(c1/2==-1&&f1/2==0)
+{
+  if(t1%2==0)
+  {
+     for(n=0;n<ntetra;n+=2)
+      {
+       if(n!=t1)
+       {
+        table[n][1]=table[n][1]+jast[t1+ntetra*n];
+       }
+      }
+  }
+  else if(t1%2==1)
+  {
+     for(n=1;n<ntetra;n+=2)
+      {
+       if(n!=t1)
+       {
+        table[n][1]=table[n][1]+jast[t1+ntetra*n];
+       }
+      }
+  }
+}
+
+return;
+}
+
+
+double jastrowfactor(double jast[],int spinonc[],int &ntetra)
+{
+
+int i,j;
+double par,impar;
+
+par=0;
+impar=0;
+for (i=0;i<ntetra;i+=2)
+{
+ for (j=i+2;j<ntetra;j+=2)
+  if(spinonc[i]*spinonc[j]==-1)
+  {
+    par=par-jast[i+ntetra*j];
+  }
+}
+
+
+for (i=1;i<ntetra;i+=2)
+{
+ for (j=i+2;j<ntetra;j+=2)
+  if(spinonc[i]*spinonc[j]==-1)
+  {
+    impar=impar-jast[i+ntetra*j];
+  }
+}
+
+par=exp(par+impar);
+
+for (i=0;i<ntetra;i++)
+{
+ cout<<"tetra spinonc "<<i<<" "<<spinonc[i]<<"\n";  
+}
+
+cout<<"par "<<par<<" \n";
+
+cout<<"manual 110 136 "<<exp(jast[110+ntetra*136]*spinonc[110]*spinonc[136])<<" \n";
+
+cout<<"jastrow[110 136]"<<jast[110+ntetra*136]<<" "<<jast[136+ntetra*110]<<" \n";
+
+return par;
+
+}
+void pair_flip2(int *config,int spinonc[],int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,double &density,int&pos,int &pos2,double &prob,int &ntetra,double table[][2], double jast[])
 {
    
     int l,nhh;
-    double rat; 
+    double rat,jastr,jasi,jasf;
+    double tablec[ntetra][2]; 
  
     pos2=ivic[pos][pos2];
+    //cout<<"spins"<<"\n";
+    //cout<<"positions "<<pos<<" "<<pos2<<"\n";
+    //cout<<"conf "<<config[pos]<<" "<<config[pos2]<<"\n"; 
     if(config[pos]*config[pos2]==1)
     {
        // cout<<"nospin flip"<<"\n";
@@ -578,10 +789,79 @@ void pair_flip2(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L
      	 return;
 
     }  
-   
-    //cout<<"charges c1 c2 f1 f2 "<<c1<<" "<<c2<<" "<<f1<<" "<<f2<<" \n"; 
+  
+     //cout<<"configuration x \n";
+     //for(l=0;l<ntetra;l++)
+     //{
+     //cout<<l<<" "<<spinonc[l]<<" table "<<table[l][0]<<" "<<table[l][1]<<"\n"; 
+        
+     //}  
+     
+    //cout<<"position changes t1="<<t1<<" t2="<<t2<<"\n";
+
+    //cout<<"charges c1 c2 f1 f2 "<<c1/2<<" "<<c2/2<<" "<<f1/2<<" "<<f2/2<<" \n"; 
     //cout<<"prob "<<prob<<" \n"; 
+
+    
+
     rat=pow(density,abs(f1/2)+abs(f2/2))/pow(density,abs(c1/2)+abs(c2/2));
+
+    jastr=1.0; 
+    if(-(f1/2+c1/2)==-1)
+    { 
+    jastr=jastr*exp(table[t1][1]*(f1/2-c1/2));
+    } 
+    else if(-(f1/2+c1/2)==1)
+    {
+    jastr=jastr*exp(table[t1][0]*(f1/2-c1/2));
+    }
+   
+    if(-(f2/2+c2/2)==-1)
+    {
+    jastr=jastr*exp(table[t2][1]*(f2/2-c2/2));
+    }  
+    else if(-(f2/2+c2/2)==1)
+    {
+    jastr=jastr*exp(table[t2][0]*(f2/2-c2/2));
+    }
+
+    //n=1 m=2
+      //cout<<"t1 t2 "<<t1<<" "<<t2<<"\n";  
+      //cout<<"f1 f2 "<< f1 << " "<<f2 <<"\n";
+     //  cout<< "f1*f2 " << jast[t1+ntetra*t2]*double(f1/2)*double(f2/2)*0.5*(1.0-double(f1/2)*double(f2/2))<<"\n";
+      // cout<<"c1 c2 "<< c1 << " "<<c2 <<"\n";
+     //  cout<< "c1*c2 " << jast[t1+ntetra*t2]*double(c1/2)*double(c2/2)*0.5*(1.0-double(c1/2)*double(c2/2))<<"\n";
+
+     //cout<<"should be 1 "<<jastr<<" \n";  
+     jastr=jastr*exp(   
+                        +jast[t1+ntetra*t2]*double(f1/2)*double(f2/2)*0.5*(1.0-double(f1/2)*double(f2/2))
+                       
+                        +jast[t1+ntetra*t2]*double(c1/2)*double(c2/2)*0.5*(1.0-double(c1/2)*double(c2/2)));   
+             //cout<<exp(   -jast[t1+ntetra*t2]*double(c1/2)*double(f2/2)*0.5*(1.0-double(c1/2)*double(f2/2))
+             //           +jast[t1+ntetra*t2]*double(f1/2)*double(f2/2)*0.5*(1.0-double(f1/2)*double(f2/2))
+             //           -jast[t1+ntetra*t2]*double(c2/2)*double(f1/2)*0.5*(1.0-double(c2/2)*double(f1/2))
+             //           +jast[t1+ntetra*t2]*double(c1/2)*double(c2/2)*0.5*(1.0-double(c1/2)*double(c2/2)))<<"\n";
+    
+     //cout<<"jastrow= "<<jastr<<"manual"<< exp( jast[t1+t2*ntetra]*f1*f2/4 )<<"\n"; 
+     rat=rat*pow(jastr,2.0); 
+
+     //jasi=jastrowfactor(jast,spinonc,ntetra);
+     //spinonc[t1]=f1/2;
+     //spinonc[t2]=f2/2;
+     //jasf=jastrowfactor(jast,spinonc,ntetra);  
+     //spinonc[t1]=c1/2;
+     //spinonc[t2]=c2/2; 
+     //rat=rat*pow(jasf/jasi,2.0);
+     //cout<<"jastrow[t1 t2]"<<jast[t1+ntetra*t2]<<" "<<jast[t2+ntetra*t1]<<" \n";  
+     //cout<<"comparison jasf/jasi vs ratio"<< jasf/jasi<<" "<<jastr <<" \n";
+
+     //if(abs(jasf/jasi-jastr)>0.00001) 
+     //{
+     // cout<<"eeeeeeeeeeeeeeeeeeeeeeeee"<< abs(jasf/jasi-jastr)<< " \n";
+         
+     // exit(0);
+     //}  
+    //cout<<"rat= "<<rat<<" prob "<<prob<<"\n";
      //cout<<"ratio "<<rat<<" \n"; 
     if(rat<1.0)
     {
@@ -589,6 +869,23 @@ void pair_flip2(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L
       {
       	config[pos]=-config[pos];
         config[pos2]=-config[pos2];
+        spinonc[t1]=f1/2;
+        spinonc[t2]=f2/2;
+        //cout<<"accepted"<<"\n";
+        updatejas(table,jast,t1,c1,f1,ntetra);
+        updatejas(table,jast,t2,c2,f2,ntetra);
+         //jastrow(ntetra,spinonc, table, jast);
+
+
+
+     //for(l=0;l<ntetra;l++)
+    //{
+     //cout<<l<<" "<<spinonc[l]<<" table "<<table[l][0]<<" "<<table[l][1]<<"\n";
+     //cout<<"V04 "<<jast[0+ntetra*4]<<" V02 "<<jast[0+ntetra*2]<<"\n";
+
+     //} 
+           
+        
       }	
     	
     }
@@ -596,6 +893,11 @@ void pair_flip2(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L
     {
      	config[pos]=-config[pos];
         config[pos2]=-config[pos2];
+        spinonc[t1]=f1/2;
+        spinonc[t2]=f2/2;
+        updatejas(table,jast,t1,c1,f1,ntetra);
+        updatejas(table,jast,t2,c2,f2,ntetra);
+        //jastrow(ntetra,spinonc, table, jast); 
     } 
    
     return;
@@ -1445,5 +1747,4 @@ void loopupdate(int *config, int ivic[][6],int tetra[][4],int connect[][2], int 
     
     return;
 }
-
 

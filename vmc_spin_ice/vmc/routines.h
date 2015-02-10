@@ -9,6 +9,14 @@ using namespace std;
 #include <iostream>     // std::cout
 #include <cmath>        // std::abs
 
+class charge_pair{
+public:
+    vector<int> pposeven;//position of a positive charge on the even sublattice
+    vector<int> nposeven;//position of a negative charge on the even sublattice
+    vector<int> pposodd;//position of a positive charge on the odd sublattice
+    vector<int> nposodd;//position of a negative charge on the odd sublattice
+};
+
 void initialize(int *config,int &L,double &seedin)
 {
     //give random configuration. First define a random number.
@@ -39,7 +47,8 @@ void initialize(int *config,int &L,double &seedin)
     return;
 }
 
-void initialize_spinice_q0(int *config,int &L)
+                                   
+void initialize_spinice_q0(int *config,int spinon[],int &L,int &ntetra)
 {
     //This subroutine we initialize a spin ice configuration at q=0
     int x,y,z,pyro,site,temp;
@@ -63,6 +72,12 @@ void initialize_spinice_q0(int *config,int &L)
             }
         }
     }
+    
+    for(z=0;z<ntetra;z++)
+    {
+     spinon[z]=0;
+    }
+     
 }
 
 void initialize_spinice_X(int *config,int &L)
@@ -146,7 +161,6 @@ void singlespin_update_new(int *config,int tetra[][4],int connect[][2],int &L,in
     t=connect[pos][1];
     f2=qcharge(t,tetra,config);
     config[pos]=-config[pos]; 
-       
     //We note the stagered definition of charge.
     //now that we have charge before and after, we can divide into two different cases.
     if(flag)
@@ -207,7 +221,7 @@ void singlespin_update_new(int *config,int tetra[][4],int connect[][2],int &L,in
  model the positive and negative monopole correlator using non-interacting bosons. 
  2. create a pair of static monopoles along high symmetry directions
 */
-inline double correl_compute(double &z,double &y,double&x,int&L,double &t_tilde)
+inline double correl_compute(double &z,double &y,double&x,int&L,double &t_tilde,double &densitysquare)
 {
     double pi=3.14159265359,result=0.0,rho;
     double kx,ky,kz;
@@ -221,15 +235,15 @@ inline double correl_compute(double &z,double &y,double&x,int&L,double &t_tilde)
                 //compute rho factor
                 rho=4.0*(cos(kx/2.0)*cos(ky/2.0)+cos(kx/2.0)*cos(kz/2.0)+cos(ky/2.0)*cos(kz/2.0));
                 //accumulate
-                result+=cos(kx*x+ky*y+kz*z)*((1.0-0.5*t_tilde*rho)/pow(1.0-t_tilde*rho,0.5)+1.0);
+                result+=cos(kx*x+ky*y+kz*z)*0.5*t_tilde*rho/pow(1.0-t_tilde*rho,0.5);
             }
         }
     }
     //divide by two factors of twos. The first one is from the reciprocal space normalization. the second one is from the formula to compute the correlation. 
-    return result/((double)pow(L,3)*2.0*2.0);
+    return log(result/((double)pow(L,3)*2.0*2.0*pow(densitysquare,0.5)));
 }
 
-void spinon_correlation(double correl[][16],double &t_tilde,double &eta,int &L)
+void spinon_correlation(double correl[][16],double &t_tilde,double &eta,int &L,double &densitysquare)
 {
     //correl is the holder for the table, t_tilde/4 is the hopping amplitude of spinons, eta is the overlap between the RK state and the interacting ground state. eta is usually approximated to be 1.
     //double pi=3.14159265359;
@@ -253,7 +267,7 @@ void spinon_correlation(double correl[][16],double &t_tilde,double &eta,int &L)
                         ytemp=(double)y+disvec[mu_1][1]-disvec[mu_2][1];
                         xtemp=(double)x+disvec[mu_1][0]-disvec[mu_2][0];
                         //determine the correlator
-                        temp=eta*correl_compute(ztemp,ytemp,xtemp,L,t_tilde);
+                        temp=eta*correl_compute(ztemp,ytemp,xtemp,L,t_tilde,densitysquare);
                         //stock the table
                         correl[indtemp][mu_1*4+mu_2]=temp;
                     }
@@ -263,16 +277,114 @@ void spinon_correlation(double correl[][16],double &t_tilde,double &eta,int &L)
     }
     return;
 }
+//Let us use one more simple routine to compute indtemp from x1,y1,z1,x2,y2,z2
+int correl_index(int &t1,int &t2,int&L)
+{
+    int zpro=pow(L,2);
+    int x1,y1,z1,x2,y2,z2;
+    z1=t1/zpro;
+    y1=(t1-z1*zpro)/L;
+    x1=t1-zpro*z1-y1*L;
+    z2=t2/zpro;
+    y2=(t2-z2*zpro)/L;
+    x2=t2-z2*zpro-y2*L;
+    //8 different cases
+    if((z1>=z2)&&(y1>=y2)&&(x1>=x2))
+    {
+        return (z1-z2)*zpro+(y1-y2)*L+(x1-x2);
+    }
+    else if((z1<z2)&&(y1>=y2)&&(x1>=x2))
+    {
+        return (z1-z2+L)*zpro+(y1-y2)*L+(x1-x2);
+    }
+    else if((z1>=z2)&&(y1<y2)&&(x1>=x2))
+    {
+        return (z1-z2)*zpro+(y1-y2+L)*L+(x1-x2);
+    }
+    else if((z1>=z2)&&(y1>=y2)&&(x1<x2))
+    {
+        return (z1-z2)*zpro+(y1-y2)*L+(x1-x2+L);
+    }
+    //the next four cases, the "2" is in front of 1.
+    else if((z1<z2)&&(y1<y2)&&(x1>=x2))
+    {
+        return (z2-z1)*zpro+(y2-y1)*L+(x2-x1+L)%L;
+    }
+    else if((z1>=z2)&&(y1<y2)&&(x1<x2))
+    {
+        return ((z2-z1+L)%L)*zpro+(y2-y1)*L+(x2-x1);
+    }
+    else if((z1<z2)&&(y1>=y2)&&(x1<x2))
+    {
+        return (z2-z1)*zpro+((y2-y1+L)%L)*L+(x2-x1);
+    }
+    else
+    {
+        return (z2-z1)*zpro+(y2-y1)*L+(x2-x1);
+    }
+}
 
+
+//we need to define more functions which take a special spinon configuration, charge_pair, to compute the would-be coefficient of the configuration
+//amp is the computed amplitude
+void many_spinon_amplitude(charge_pair &chargepairs,double &densitysquare,double &amp,int &statlimit,int&flag,double correl[][16],int &L,MTRand *myrand)
+{//flag tells us whether we are dealing with the bosons on the even sublattice or the odd sublattice.
+    int n;
+    double ntemp;
+    int t1,t2,mu1,mu2;//holders for pairs of tetrahedrons and their sublattices.
+    //int x1,y1,z1,x2,y2,z2;
+    //int zpro=pow(L,2);
+    int indtemp;
+    if(flag==0){
+        //even sublattice
+        //n store the size of the vector.
+        n=chargepairs.pposeven.size();
+        ntemp=(double)n-1.0;
+        //several different cases: n=1, 1<n<nc, n>nc.
+        if(n==1){
+            //directly using the pair wise
+            mu1=chargepairs.pposeven[0];
+            mu2=chargepairs.nposeven[0];
+            //a tetrahedron is labelled as z*8*L^2+y*8*L+x*8+mu
+            t1=mu1/8;
+            t2=mu2/8;
+            //back out sublattice
+            mu1-=t1*8;
+            mu2-=t2*8;
+            //back out the indtemp!!!!!!!!!!!!!!(Is this correct? No. We need to figure out dx1,dy1 and dz1//Now we consider different cases.
+            indtemp=correl_index(t1,t2,L);
+            //We already know that mu1 and mu2 are on the even sublattice! so mu1 and mu2 must be even!
+            if(mu1%2==1){std::cout<<"What? Mismatching sublattices! /n";
+                return;
+            }
+            mu1=mu1/2;
+            mu2=mu2/2;
+            //now we use t1,mu1 and t2,mu2 to find the amplitude!
+            amp=correl[indtemp][mu1*4+mu2];
+        }
+        else if(2*pow(2*3.1415926535*ntemp,0.5)*pow(ntemp/2.71828,ntemp)<statlimit){
+            //in this case, we directly compute the "partition function"
+            
+        }
+        else{
+            //in this case, we sample the partition function by statlimit
+            
+        }
+    }
+    else{
+        //odd sublattice.
+    }
+    return;
+}
 
 /* we also need code to attempt a pair spin flip. Is this better/needed?
  we generate the seed from a random process in the main program*/
-void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,int&pos,int &pos2,double &prob)
+void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,int&pos,int &pos2,double &prob,charge_pair&chargepairs,double correl[][16],MTRand *myrand)
 {
     //pos2 will be a random number from 0 to 5.
     //We choose a random position which opposite of pos.
   
-    int l,nhh;
+    int l,nhh,flag=0;
 //    
 //    cout<<"config"<< "\n ";  
 //    nhh=pow(L,3)*16;
@@ -283,7 +395,7 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
 //      }
 //    cout<<"-------------------"<<"\n";
 
- 
+    //charge_pair cpairtemp;
     pos2=ivic[pos][pos2];
     if(config[pos]*config[pos2]==1)
     {
@@ -298,11 +410,13 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
     {
         //In this case, the pair of spins connect two tetrahedron on "odd sublattice"
         t1=connect[pos2][1];
+        flag=1;
     }
     else if(t2==connect[pos2][1])
     {
         //the pair of spins connect two tetrahedron on "even sublattice"
         t2=connect[pos2][0];
+        flag=0;
     }
     //
     int c1,c2,f1,f2;
@@ -346,7 +460,33 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
         {//flip if probability (here is just density) is larger than the random number
             config[pos]=-config[pos];
             config[pos2]=-config[pos2];
-            //cout << "accepted??? WTF"<<"\n"; 
+            //cout << "accepted??? WTF"<<"\n";
+            //The proposal is accepted! we now keep track the position of charges created!
+            //Now we determine where are the charges and what values are them
+            if(flag==0)
+            {//even sublattice
+                if(f1==2){
+                    //now we push t1 into the vectors
+                    chargepairs.pposeven.push_back(t1);
+                    chargepairs.nposeven.push_back(t2);
+                }
+                else{
+                    chargepairs.pposeven.push_back(t2);
+                    chargepairs.nposeven.push_back(t1);
+                }
+            }
+            else if(flag==1)
+            {//odd sublattice
+                if(f1==2){
+                    //we push t1 and t2 to odd stacks
+                    chargepairs.pposodd.push_back(t1);
+                    chargepairs.nposodd.push_back(t2);
+                }
+                else{
+                    chargepairs.pposodd.push_back(t2);
+                    chargepairs.nposodd.push_back(t1);
+                }
+            }
         }
     }
     if(((c1==2)&&(c2==-2))||((c1==-2)&&(c2==2))) // S+S- annihilates oposite charges on two tetrahaedra on the same sublatttice
@@ -355,6 +495,30 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
         {
             config[pos]=-config[pos];
             config[pos2]=-config[pos2];
+            //we now need to delete the two charges from the respective stacks!
+            if(flag==0)
+            {
+                //delete the two charges on the even sublattice
+                if(c1==2)
+                {//we need to search and delete. This generically cost order length of the vectors.
+                    chargepairs.pposeven.erase(std::remove(chargepairs.pposeven.begin(),chargepairs.pposeven.end(),t1),chargepairs.pposeven.end());
+                    chargepairs.nposeven.erase(std::remove(chargepairs.nposeven.begin(),chargepairs.nposeven.end(),t2),chargepairs.nposeven.end());
+                }
+                else{
+                    chargepairs.pposeven.erase(std::remove(chargepairs.pposeven.begin(),chargepairs.pposeven.end(),t2),chargepairs.pposeven.end());
+                    chargepairs.nposeven.erase(std::remove(chargepairs.nposeven.begin(),chargepairs.nposeven.end(),t1),chargepairs.nposeven.end());
+                }
+            }
+            else{
+                if(c1==2){
+                    chargepairs.pposodd.erase(std::remove(chargepairs.pposodd.begin(),chargepairs.pposodd.end(),t1),chargepairs.pposodd.end());
+                    chargepairs.nposodd.erase(std::remove(chargepairs.nposodd.begin(),chargepairs.nposodd.end(),t2),chargepairs.nposodd.end());
+                }
+                else{
+                    chargepairs.pposodd.erase(std::remove(chargepairs.pposodd.begin(),chargepairs.pposodd.end(),t2),chargepairs.pposodd.end());
+                    chargepairs.nposodd.erase(std::remove(chargepairs.nposodd.begin(),chargepairs.nposodd.end(),t1),chargepairs.nposodd.end());
+                }
+            }
         }
     }
     if(((c1==2)&&(c2==0))||((c1==-2)&&(c2==0))) // S+S- moves charges from tetrahedon 1 to 2 and viceversa
@@ -377,13 +541,217 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
 }
 
 
-void pair_flip2(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,double &density,int&pos,int &pos2,double &prob)
+
+void jastrow(int &ntetra, int spinonc[],double table[][2],double jast[])
+{
+
+int n,i;
+
+for(n=0;n<ntetra;n++)
+{
+   table[n][0]=0;
+   table[n][1]=0;
+   
+   if(n%2==0)
+   { 
+      for(i=0;i<ntetra;i+=2)
+      {
+        if((i!=n)&&(spinonc[i]==1))
+        {
+          //table[n][0]=table[n][0]+jast[i][n]*spinonc[i];
+          //cout<<" n i "<<n<<" "<<i<<"\n"; 
+          table[n][0]=table[n][0]+jast[i+ntetra*n]*spinonc[i];  
+        } 
+        if((i!=n)&&(spinonc[i]==-1))
+        {
+          //table[n][1]=table[n][1]+jast[i][n]*spinonc[i];
+          // cout<<" n i "<<n<<" "<<i<<"\n"; 
+          table[n][1]=table[n][1]+jast[i+ntetra*n]*spinonc[i];
+        }  
+         
+      } 
+   
+   }
+   else if(n%2==1)
+   {
+      for(i=1;i<ntetra;i+=2)
+      {
+        if((i!=n)&&(spinonc[i]==1))
+        {
+           //cout<<" n i "<<n<<" "<<i<<"\n"; 
+          table[n][0]=table[n][0]+jast[i+ntetra*n]*spinonc[i];
+        }
+        if((i!=n)&&(spinonc[i]==-1))
+        {
+           //cout<<" n i "<<n<<" "<<i<<"\n";
+          table[n][1]=table[n][1]+jast[i+ntetra*n]*spinonc[i];
+        }
+      } 
+   } 
+}
+
+return;
+}
+
+void updatejas(double table[][2],double jast[],int &t1,int &c1,int &f1,int &ntetra)
+{
+int n;
+
+
+if(c1/2==0&&f1/2==1)
+{
+  if(t1%2==0)
+  {
+     for(n=0;n<ntetra;n+=2)
+      {
+       if(n!=t1)
+       {  
+        table[n][0]=table[n][0]+jast[t1+ntetra*n];
+       } 
+      }
+  }
+  else if(t1%2==1)
+  {
+     for(n=1;n<ntetra;n+=2)
+      {
+       if(n!=t1)
+       {
+        table[n][0]=table[n][0]+jast[t1+ntetra*n];
+       }
+      }  
+  } 
+}
+
+if(c1/2==0&&f1/2==-1)
+{
+  if(t1%2==0)
+  {
+     for(n=0;n<ntetra;n+=2)
+      {
+       if(n!=t1)
+       {
+        table[n][1]=table[n][1]-jast[t1+ntetra*n];
+       }
+      }
+  }
+  else if(t1%2==1)
+  {
+     for(n=1;n<ntetra;n+=2)
+      {
+       if(n!=t1)
+       {
+        table[n][1]=table[n][1]-jast[t1+ntetra*n];
+       }
+      }
+  }
+}
+
+if(c1/2==1&&f1/2==0)
+{
+  if(t1%2==0)
+  {
+     for(n=0;n<ntetra;n+=2)
+      {
+       if(n!=t1)
+       {
+        table[n][0]=table[n][0]-jast[t1+ntetra*n];
+       }
+      }
+  }
+  else if(t1%2==1)
+  {
+     for(n=1;n<ntetra;n+=2)
+      {
+       if(n!=t1)
+       {
+        table[n][0]=table[n][0]-jast[t1+ntetra*n];
+       }
+      }
+  }
+}
+
+if(c1/2==-1&&f1/2==0)
+{
+  if(t1%2==0)
+  {
+     for(n=0;n<ntetra;n+=2)
+      {
+       if(n!=t1)
+       {
+        table[n][1]=table[n][1]+jast[t1+ntetra*n];
+       }
+      }
+  }
+  else if(t1%2==1)
+  {
+     for(n=1;n<ntetra;n+=2)
+      {
+       if(n!=t1)
+       {
+        table[n][1]=table[n][1]+jast[t1+ntetra*n];
+       }
+      }
+  }
+}
+
+return;
+}
+
+
+double jastrowfactor(double jast[],int spinonc[],int &ntetra)
+{
+
+int i,j;
+double par,impar;
+
+par=0;
+impar=0;
+for (i=0;i<ntetra;i+=2)
+{
+ for (j=i+2;j<ntetra;j+=2)
+  if(spinonc[i]*spinonc[j]==-1)
+  {
+    par=par-jast[i+ntetra*j];
+  }
+}
+
+
+for (i=1;i<ntetra;i+=2)
+{
+ for (j=i+2;j<ntetra;j+=2)
+  if(spinonc[i]*spinonc[j]==-1)
+  {
+    impar=impar-jast[i+ntetra*j];
+  }
+}
+
+par=exp(par+impar);
+
+for (i=0;i<ntetra;i++)
+{
+ cout<<"tetra spinonc "<<i<<" "<<spinonc[i]<<"\n";  
+}
+
+cout<<"par "<<par<<" \n";
+
+cout<<"manual 110 136 "<<exp(jast[110+ntetra*136]*spinonc[110]*spinonc[136])<<" \n";
+
+cout<<"jastrow[110 136]"<<jast[110+ntetra*136]<<" "<<jast[136+ntetra*110]<<" \n";
+
+return par;
+
+}
+void pair_flip2(int *config,int spinonc[],int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,double &density,int&pos,int &pos2,double &prob,int &ntetra,double table[][2], double jast[])
 {
    
     int l,nhh;
-    double rat; 
+    double rat,jastr,jasi,jasf;
+    double tablec[ntetra][2]; 
  
     pos2=ivic[pos][pos2];
+    //cout<<"spins"<<"\n";
+    //cout<<"positions "<<pos<<" "<<pos2<<"\n";
+    //cout<<"conf "<<config[pos]<<" "<<config[pos2]<<"\n"; 
     if(config[pos]*config[pos2]==1)
     {
        // cout<<"nospin flip"<<"\n";
@@ -421,10 +789,79 @@ void pair_flip2(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L
      	 return;
 
     }  
-   
-    //cout<<"charges c1 c2 f1 f2 "<<c1<<" "<<c2<<" "<<f1<<" "<<f2<<" \n"; 
+  
+     //cout<<"configuration x \n";
+     //for(l=0;l<ntetra;l++)
+     //{
+     //cout<<l<<" "<<spinonc[l]<<" table "<<table[l][0]<<" "<<table[l][1]<<"\n"; 
+        
+     //}  
+     
+    //cout<<"position changes t1="<<t1<<" t2="<<t2<<"\n";
+
+    //cout<<"charges c1 c2 f1 f2 "<<c1/2<<" "<<c2/2<<" "<<f1/2<<" "<<f2/2<<" \n"; 
     //cout<<"prob "<<prob<<" \n"; 
+
+    
+
     rat=pow(density,abs(f1/2)+abs(f2/2))/pow(density,abs(c1/2)+abs(c2/2));
+
+    jastr=1.0; 
+    if(-(f1/2+c1/2)==-1)
+    { 
+    jastr=jastr*exp(table[t1][1]*(f1/2-c1/2));
+    } 
+    else if(-(f1/2+c1/2)==1)
+    {
+    jastr=jastr*exp(table[t1][0]*(f1/2-c1/2));
+    }
+   
+    if(-(f2/2+c2/2)==-1)
+    {
+    jastr=jastr*exp(table[t2][1]*(f2/2-c2/2));
+    }  
+    else if(-(f2/2+c2/2)==1)
+    {
+    jastr=jastr*exp(table[t2][0]*(f2/2-c2/2));
+    }
+
+    //n=1 m=2
+      //cout<<"t1 t2 "<<t1<<" "<<t2<<"\n";  
+      //cout<<"f1 f2 "<< f1 << " "<<f2 <<"\n";
+     //  cout<< "f1*f2 " << jast[t1+ntetra*t2]*double(f1/2)*double(f2/2)*0.5*(1.0-double(f1/2)*double(f2/2))<<"\n";
+      // cout<<"c1 c2 "<< c1 << " "<<c2 <<"\n";
+     //  cout<< "c1*c2 " << jast[t1+ntetra*t2]*double(c1/2)*double(c2/2)*0.5*(1.0-double(c1/2)*double(c2/2))<<"\n";
+
+     //cout<<"should be 1 "<<jastr<<" \n";  
+     jastr=jastr*exp(   
+                        +jast[t1+ntetra*t2]*double(f1/2)*double(f2/2)*0.5*(1.0-double(f1/2)*double(f2/2))
+                       
+                        +jast[t1+ntetra*t2]*double(c1/2)*double(c2/2)*0.5*(1.0-double(c1/2)*double(c2/2)));   
+             //cout<<exp(   -jast[t1+ntetra*t2]*double(c1/2)*double(f2/2)*0.5*(1.0-double(c1/2)*double(f2/2))
+             //           +jast[t1+ntetra*t2]*double(f1/2)*double(f2/2)*0.5*(1.0-double(f1/2)*double(f2/2))
+             //           -jast[t1+ntetra*t2]*double(c2/2)*double(f1/2)*0.5*(1.0-double(c2/2)*double(f1/2))
+             //           +jast[t1+ntetra*t2]*double(c1/2)*double(c2/2)*0.5*(1.0-double(c1/2)*double(c2/2)))<<"\n";
+    
+     //cout<<"jastrow= "<<jastr<<"manual"<< exp( jast[t1+t2*ntetra]*f1*f2/4 )<<"\n"; 
+     rat=rat*pow(jastr,2.0); 
+
+     //jasi=jastrowfactor(jast,spinonc,ntetra);
+     //spinonc[t1]=f1/2;
+     //spinonc[t2]=f2/2;
+     //jasf=jastrowfactor(jast,spinonc,ntetra);  
+     //spinonc[t1]=c1/2;
+     //spinonc[t2]=c2/2; 
+     //rat=rat*pow(jasf/jasi,2.0);
+     //cout<<"jastrow[t1 t2]"<<jast[t1+ntetra*t2]<<" "<<jast[t2+ntetra*t1]<<" \n";  
+     //cout<<"comparison jasf/jasi vs ratio"<< jasf/jasi<<" "<<jastr <<" \n";
+
+     //if(abs(jasf/jasi-jastr)>0.00001) 
+     //{
+     // cout<<"eeeeeeeeeeeeeeeeeeeeeeeee"<< abs(jasf/jasi-jastr)<< " \n";
+         
+     // exit(0);
+     //}  
+    //cout<<"rat= "<<rat<<" prob "<<prob<<"\n";
      //cout<<"ratio "<<rat<<" \n"; 
     if(rat<1.0)
     {
@@ -432,6 +869,23 @@ void pair_flip2(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L
       {
       	config[pos]=-config[pos];
         config[pos2]=-config[pos2];
+        spinonc[t1]=f1/2;
+        spinonc[t2]=f2/2;
+        //cout<<"accepted"<<"\n";
+        updatejas(table,jast,t1,c1,f1,ntetra);
+        updatejas(table,jast,t2,c2,f2,ntetra);
+         //jastrow(ntetra,spinonc, table, jast);
+
+
+
+     //for(l=0;l<ntetra;l++)
+    //{
+     //cout<<l<<" "<<spinonc[l]<<" table "<<table[l][0]<<" "<<table[l][1]<<"\n";
+     //cout<<"V04 "<<jast[0+ntetra*4]<<" V02 "<<jast[0+ntetra*2]<<"\n";
+
+     //} 
+           
+        
       }	
     	
     }
@@ -439,6 +893,11 @@ void pair_flip2(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L
     {
      	config[pos]=-config[pos];
         config[pos2]=-config[pos2];
+        spinonc[t1]=f1/2;
+        spinonc[t2]=f2/2;
+        updatejas(table,jast,t1,c1,f1,ntetra);
+        updatejas(table,jast,t2,c2,f2,ntetra);
+        //jastrow(ntetra,spinonc, table, jast); 
     } 
    
     return;
@@ -1288,5 +1747,4 @@ void loopupdate(int *config, int ivic[][6],int tetra[][4],int connect[][2], int 
     
     return;
 }
-
 

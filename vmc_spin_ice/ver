@@ -1,0 +1,5702 @@
+64
+64
+sites belongin to each tetrahedra z
+0    0 1 2 3
+1    3 73 12 70
+2    4 5 6 7
+3    7 13 40 34
+4    8 9 10 11
+5    11 17 20 14
+6    12 13 14 15
+7    15 85 48 106
+8    16 17 18 19
+9    19 89 28 86
+10    20 21 22 23
+11    23 29 56 50
+12    24 25 26 27
+13    27 1 4 30
+14    28 29 30 31
+15    31 69 32 122
+16    32 33 34 35
+17    35 105 44 102
+18    36 37 38 39
+19    39 45 8 2
+20    40 41 42 43
+21    43 49 52 46
+22    44 45 46 47
+23    47 117 16 74
+24    48 49 50 51
+25    51 121 60 118
+26    52 53 54 55
+27    55 61 24 18
+28    56 57 58 59
+29    59 33 36 62
+30    60 61 62 63
+31    63 101 0 90
+32    64 65 66 67
+33    67 9 76 6
+34    68 69 70 71
+35    71 77 104 98
+36    72 73 74 75
+37    75 81 84 78
+38    76 77 78 79
+39    79 21 112 42
+40    80 81 82 83
+41    83 25 92 22
+42    84 85 86 87
+43    87 93 120 114
+44    88 89 90 91
+45    91 65 68 94
+46    92 93 94 95
+47    95 5 96 58
+48    96 97 98 99
+49    99 41 108 38
+50    100 101 102 103
+51    103 109 72 66
+52    104 105 106 107
+53    107 113 116 110
+54    108 109 110 111
+55    111 53 80 10
+56    112 113 114 115
+57    115 57 124 54
+58    116 117 118 119
+59    119 125 88 82
+60    120 121 122 123
+61    123 97 100 126
+62    124 125 126 127
+63    127 37 64 26
+
+ site x connects which tetrahedra
+x=0   tetrahedra 0 31
+x=1   tetrahedra 0 13
+x=2   tetrahedra 0 19
+x=3   tetrahedra 0 1
+x=4   tetrahedra 2 13
+x=5   tetrahedra 2 47
+x=6   tetrahedra 2 33
+x=7   tetrahedra 2 3
+x=8   tetrahedra 4 19
+x=9   tetrahedra 4 33
+x=10   tetrahedra 4 55
+x=11   tetrahedra 4 5
+x=12   tetrahedra 6 1
+x=13   tetrahedra 6 3
+x=14   tetrahedra 6 5
+x=15   tetrahedra 6 7
+x=16   tetrahedra 8 23
+x=17   tetrahedra 8 5
+x=18   tetrahedra 8 27
+x=19   tetrahedra 8 9
+x=20   tetrahedra 10 5
+x=21   tetrahedra 10 39
+x=22   tetrahedra 10 41
+x=23   tetrahedra 10 11
+x=24   tetrahedra 12 27
+x=25   tetrahedra 12 41
+x=26   tetrahedra 12 63
+x=27   tetrahedra 12 13
+x=28   tetrahedra 14 9
+x=29   tetrahedra 14 11
+x=30   tetrahedra 14 13
+x=31   tetrahedra 14 15
+x=32   tetrahedra 16 15
+x=33   tetrahedra 16 29
+x=34   tetrahedra 16 3
+x=35   tetrahedra 16 17
+x=36   tetrahedra 18 29
+x=37   tetrahedra 18 63
+x=38   tetrahedra 18 49
+x=39   tetrahedra 18 19
+x=40   tetrahedra 20 3
+x=41   tetrahedra 20 49
+x=42   tetrahedra 20 39
+x=43   tetrahedra 20 21
+x=44   tetrahedra 22 17
+x=45   tetrahedra 22 19
+x=46   tetrahedra 22 21
+x=47   tetrahedra 22 23
+x=48   tetrahedra 24 7
+x=49   tetrahedra 24 21
+x=50   tetrahedra 24 11
+x=51   tetrahedra 24 25
+x=52   tetrahedra 26 21
+x=53   tetrahedra 26 55
+x=54   tetrahedra 26 57
+x=55   tetrahedra 26 27
+x=56   tetrahedra 28 11
+x=57   tetrahedra 28 57
+x=58   tetrahedra 28 47
+x=59   tetrahedra 28 29
+x=60   tetrahedra 30 25
+x=61   tetrahedra 30 27
+x=62   tetrahedra 30 29
+x=63   tetrahedra 30 31
+x=64   tetrahedra 32 63
+x=65   tetrahedra 32 45
+x=66   tetrahedra 32 51
+x=67   tetrahedra 32 33
+x=68   tetrahedra 34 45
+x=69   tetrahedra 34 15
+x=70   tetrahedra 34 1
+x=71   tetrahedra 34 35
+x=72   tetrahedra 36 51
+x=73   tetrahedra 36 1
+x=74   tetrahedra 36 23
+x=75   tetrahedra 36 37
+x=76   tetrahedra 38 33
+x=77   tetrahedra 38 35
+x=78   tetrahedra 38 37
+x=79   tetrahedra 38 39
+x=80   tetrahedra 40 55
+x=81   tetrahedra 40 37
+x=82   tetrahedra 40 59
+x=83   tetrahedra 40 41
+x=84   tetrahedra 42 37
+x=85   tetrahedra 42 7
+x=86   tetrahedra 42 9
+x=87   tetrahedra 42 43
+x=88   tetrahedra 44 59
+x=89   tetrahedra 44 9
+x=90   tetrahedra 44 31
+x=91   tetrahedra 44 45
+x=92   tetrahedra 46 41
+x=93   tetrahedra 46 43
+x=94   tetrahedra 46 45
+x=95   tetrahedra 46 47
+x=96   tetrahedra 48 47
+x=97   tetrahedra 48 61
+x=98   tetrahedra 48 35
+x=99   tetrahedra 48 49
+x=100   tetrahedra 50 61
+x=101   tetrahedra 50 31
+x=102   tetrahedra 50 17
+x=103   tetrahedra 50 51
+x=104   tetrahedra 52 35
+x=105   tetrahedra 52 17
+x=106   tetrahedra 52 7
+x=107   tetrahedra 52 53
+x=108   tetrahedra 54 49
+x=109   tetrahedra 54 51
+x=110   tetrahedra 54 53
+x=111   tetrahedra 54 55
+x=112   tetrahedra 56 39
+x=113   tetrahedra 56 53
+x=114   tetrahedra 56 43
+x=115   tetrahedra 56 57
+x=116   tetrahedra 58 53
+x=117   tetrahedra 58 23
+x=118   tetrahedra 58 25
+x=119   tetrahedra 58 59
+x=120   tetrahedra 60 43
+x=121   tetrahedra 60 25
+x=122   tetrahedra 60 15
+x=123   tetrahedra 60 61
+x=124   tetrahedra 62 57
+x=125   tetrahedra 62 59
+x=126   tetrahedra 62 61
+x=127   tetrahedra 62 63
+ table of nearest neighbors of site x 
+x=0 1 2 3 101 90 63
+ x=1 0 2 3 4 30 27
+ x=2 0 1 3 39 45 8
+ x=3 0 1 2 73 12 70
+ x=4 5 6 7 1 30 27
+ x=5 4 6 7 96 58 95
+ x=6 4 5 7 67 9 76
+ x=7 4 5 6 13 40 34
+ x=8 9 10 11 45 2 39
+ x=9 8 10 11 76 6 67
+ x=10 8 9 11 111 53 80
+ x=11 8 9 10 17 20 14
+ x=12 13 14 15 73 70 3
+ x=13 12 14 15 40 34 7
+ x=14 12 13 15 11 17 20
+ x=15 12 13 14 85 48 106
+ x=16 17 18 19 117 74 47
+ x=17 16 18 19 20 14 11
+ x=18 16 17 19 55 61 24
+ x=19 16 17 18 89 28 86
+ x=20 21 22 23 17 14 11
+ x=21 20 22 23 112 42 79
+ x=22 20 21 23 83 25 92
+ x=23 20 21 22 29 56 50
+ x=24 25 26 27 61 18 55
+ x=25 24 26 27 92 22 83
+ x=26 24 25 27 127 37 64
+ x=27 24 25 26 1 4 30
+ x=28 29 30 31 89 86 19
+ x=29 28 30 31 56 50 23
+ x=30 28 29 31 27 1 4
+ x=31 28 29 30 69 32 122
+ x=32 33 34 35 69 122 31
+ x=33 32 34 35 36 62 59
+ x=34 32 33 35 7 13 40
+ x=35 32 33 34 105 44 102
+ x=36 37 38 39 33 62 59
+ x=37 36 38 39 64 26 127
+ x=38 36 37 39 99 41 108
+ x=39 36 37 38 45 8 2
+ x=40 41 42 43 13 34 7
+ x=41 40 42 43 108 38 99
+ x=42 40 41 43 79 21 112
+ x=43 40 41 42 49 52 46
+ x=44 45 46 47 105 102 35
+ x=45 44 46 47 8 2 39
+ x=46 44 45 47 43 49 52
+ x=47 44 45 46 117 16 74
+ x=48 49 50 51 85 106 15
+ x=49 48 50 51 52 46 43
+ x=50 48 49 51 23 29 56
+ x=51 48 49 50 121 60 118
+ x=52 53 54 55 49 46 43
+ x=53 52 54 55 80 10 111
+ x=54 52 53 55 115 57 124
+ x=55 52 53 54 61 24 18
+ x=56 57 58 59 29 50 23
+ x=57 56 58 59 124 54 115
+ x=58 56 57 59 95 5 96
+ x=59 56 57 58 33 36 62
+ x=60 61 62 63 121 118 51
+ x=61 60 62 63 24 18 55
+ x=62 60 61 63 59 33 36
+ x=63 60 61 62 101 0 90
+ x=64 65 66 67 37 26 127
+ x=65 64 66 67 68 94 91
+ x=66 64 65 67 103 109 72
+ x=67 64 65 66 9 76 6
+ x=68 69 70 71 65 94 91
+ x=69 68 70 71 32 122 31
+ x=70 68 69 71 3 73 12
+ x=71 68 69 70 77 104 98
+ x=72 73 74 75 109 66 103
+ x=73 72 74 75 12 70 3
+ x=74 72 73 75 47 117 16
+ x=75 72 73 74 81 84 78
+ x=76 77 78 79 9 6 67
+ x=77 76 78 79 104 98 71
+ x=78 76 77 79 75 81 84
+ x=79 76 77 78 21 112 42
+ x=80 81 82 83 53 10 111
+ x=81 80 82 83 84 78 75
+ x=82 80 81 83 119 125 88
+ x=83 80 81 82 25 92 22
+ x=84 85 86 87 81 78 75
+ x=85 84 86 87 48 106 15
+ x=86 84 85 87 19 89 28
+ x=87 84 85 86 93 120 114
+ x=88 89 90 91 125 82 119
+ x=89 88 90 91 28 86 19
+ x=90 88 89 91 63 101 0
+ x=91 88 89 90 65 68 94
+ x=92 93 94 95 25 22 83
+ x=93 92 94 95 120 114 87
+ x=94 92 93 95 91 65 68
+ x=95 92 93 94 5 96 58
+ x=96 97 98 99 5 58 95
+ x=97 96 98 99 100 126 123
+ x=98 96 97 99 71 77 104
+ x=99 96 97 98 41 108 38
+ x=100 101 102 103 97 126 123
+ x=101 100 102 103 0 90 63
+ x=102 100 101 103 35 105 44
+ x=103 100 101 102 109 72 66
+ x=104 105 106 107 77 98 71
+ x=105 104 106 107 44 102 35
+ x=106 104 105 107 15 85 48
+ x=107 104 105 106 113 116 110
+ x=108 109 110 111 41 38 99
+ x=109 108 110 111 72 66 103
+ x=110 108 109 111 107 113 116
+ x=111 108 109 110 53 80 10
+ x=112 113 114 115 21 42 79
+ x=113 112 114 115 116 110 107
+ x=114 112 113 115 87 93 120
+ x=115 112 113 114 57 124 54
+ x=116 117 118 119 113 110 107
+ x=117 116 118 119 16 74 47
+ x=118 116 117 119 51 121 60
+ x=119 116 117 118 125 88 82
+ x=120 121 122 123 93 114 87
+ x=121 120 122 123 60 118 51
+ x=122 120 121 123 31 69 32
+ x=123 120 121 122 97 100 126
+ x=124 125 126 127 57 54 115
+ x=125 124 126 127 88 82 119
+ x=126 124 125 127 123 97 100
+ x=127 124 125 126 37 64 26
+ (x,y,z) is:0	0	0
+mu_1: 0, mu_2: 0	-5.31718
+(x,y,z) is:0	-0.5	-0.5
+mu_1: 0, mu_2: 1	-2.51521
+(x,y,z) is:-0.5	0	-0.5
+mu_1: 0, mu_2: 2	-2.51521
+(x,y,z) is:-0.5	-0.5	0
+mu_1: 0, mu_2: 3	-2.51521
+(x,y,z) is:0	0.5	0.5
+mu_1: 1, mu_2: 0	-2.51521
+(x,y,z) is:0	0	0
+mu_1: 1, mu_2: 1	-5.31718
+(x,y,z) is:-0.5	0.5	0
+mu_1: 1, mu_2: 2	-2.51521
+(x,y,z) is:-0.5	0	0.5
+mu_1: 1, mu_2: 3	-2.51521
+(x,y,z) is:0.5	0	0.5
+mu_1: 2, mu_2: 0	-2.51521
+(x,y,z) is:0.5	-0.5	0
+mu_1: 2, mu_2: 1	-2.51521
+(x,y,z) is:0	0	0
+mu_1: 2, mu_2: 2	-5.31718
+(x,y,z) is:0	-0.5	0.5
+mu_1: 2, mu_2: 3	-2.51521
+(x,y,z) is:0.5	0.5	0
+mu_1: 3, mu_2: 0	-2.51521
+(x,y,z) is:0.5	0	-0.5
+mu_1: 3, mu_2: 1	-2.51521
+(x,y,z) is:0	0.5	-0.5
+mu_1: 3, mu_2: 2	-2.51521
+(x,y,z) is:0	0	0
+mu_1: 3, mu_2: 3	-5.31718
+(x,y,z) is:1	0	0
+mu_1: 0, mu_2: 0	-5.70663
+(x,y,z) is:1	-0.5	-0.5
+mu_1: 0, mu_2: 1	-6.35323
+(x,y,z) is:0.5	0	-0.5
+mu_1: 0, mu_2: 2	-2.51521
+(x,y,z) is:0.5	-0.5	0
+mu_1: 0, mu_2: 3	-2.51521
+(x,y,z) is:1	0.5	0.5
+mu_1: 1, mu_2: 0	-6.35323
+(x,y,z) is:1	0	0
+mu_1: 1, mu_2: 1	-5.70663
+(x,y,z) is:0.5	0.5	0
+mu_1: 1, mu_2: 2	-2.51521
+(x,y,z) is:0.5	0	0.5
+mu_1: 1, mu_2: 3	-2.51521
+(x,y,z) is:1.5	0	0.5
+mu_1: 2, mu_2: 0	-2.51521
+(x,y,z) is:1.5	-0.5	0
+mu_1: 2, mu_2: 1	-2.51521
+(x,y,z) is:1	0	0
+mu_1: 2, mu_2: 2	-5.70663
+(x,y,z) is:1	-0.5	0.5
+mu_1: 2, mu_2: 3	-6.35323
+(x,y,z) is:1.5	0.5	0
+mu_1: 3, mu_2: 0	-2.51521
+(x,y,z) is:1.5	0	-0.5
+mu_1: 3, mu_2: 1	-2.51521
+(x,y,z) is:1	0.5	-0.5
+mu_1: 3, mu_2: 2	-6.35323
+(x,y,z) is:1	0	0
+mu_1: 3, mu_2: 3	-5.70663
+(x,y,z) is:0	1	0
+mu_1: 0, mu_2: 0	-5.70663
+(x,y,z) is:0	0.5	-0.5
+mu_1: 0, mu_2: 1	-2.51521
+(x,y,z) is:-0.5	1	-0.5
+mu_1: 0, mu_2: 2	-6.35323
+(x,y,z) is:-0.5	0.5	0
+mu_1: 0, mu_2: 3	-2.51521
+(x,y,z) is:0	1.5	0.5
+mu_1: 1, mu_2: 0	-2.51521
+(x,y,z) is:0	1	0
+mu_1: 1, mu_2: 1	-5.70663
+(x,y,z) is:-0.5	1.5	0
+mu_1: 1, mu_2: 2	-2.51521
+(x,y,z) is:-0.5	1	0.5
+mu_1: 1, mu_2: 3	-6.35323
+(x,y,z) is:0.5	1	0.5
+mu_1: 2, mu_2: 0	-6.35323
+(x,y,z) is:0.5	0.5	0
+mu_1: 2, mu_2: 1	-2.51521
+(x,y,z) is:0	1	0
+mu_1: 2, mu_2: 2	-5.70663
+(x,y,z) is:0	0.5	0.5
+mu_1: 2, mu_2: 3	-2.51521
+(x,y,z) is:0.5	1.5	0
+mu_1: 3, mu_2: 0	-2.51521
+(x,y,z) is:0.5	1	-0.5
+mu_1: 3, mu_2: 1	-6.35323
+(x,y,z) is:0	1.5	-0.5
+mu_1: 3, mu_2: 2	-2.51521
+(x,y,z) is:0	1	0
+mu_1: 3, mu_2: 3	-5.70663
+(x,y,z) is:1	1	0
+mu_1: 0, mu_2: 0	-6.35323
+(x,y,z) is:1	0.5	-0.5
+mu_1: 0, mu_2: 1	-6.35323
+(x,y,z) is:0.5	1	-0.5
+mu_1: 0, mu_2: 2	-6.35323
+(x,y,z) is:0.5	0.5	0
+mu_1: 0, mu_2: 3	-2.51521
+(x,y,z) is:1	1.5	0.5
+mu_1: 1, mu_2: 0	-6.35323
+(x,y,z) is:1	1	0
+mu_1: 1, mu_2: 1	-6.35323
+(x,y,z) is:0.5	1.5	0
+mu_1: 1, mu_2: 2	-2.51521
+(x,y,z) is:0.5	1	0.5
+mu_1: 1, mu_2: 3	-6.35323
+(x,y,z) is:1.5	1	0.5
+mu_1: 2, mu_2: 0	-6.35323
+(x,y,z) is:1.5	0.5	0
+mu_1: 2, mu_2: 1	-2.51521
+(x,y,z) is:1	1	0
+mu_1: 2, mu_2: 2	-6.35323
+(x,y,z) is:1	0.5	0.5
+mu_1: 2, mu_2: 3	-6.35323
+(x,y,z) is:1.5	1.5	0
+mu_1: 3, mu_2: 0	-2.51521
+(x,y,z) is:1.5	1	-0.5
+mu_1: 3, mu_2: 1	-6.35323
+(x,y,z) is:1	1.5	-0.5
+mu_1: 3, mu_2: 2	-6.35323
+(x,y,z) is:1	1	0
+mu_1: 3, mu_2: 3	-6.35323
+(x,y,z) is:0	0	1
+mu_1: 0, mu_2: 0	-5.70663
+(x,y,z) is:0	-0.5	0.5
+mu_1: 0, mu_2: 1	-2.51521
+(x,y,z) is:-0.5	0	0.5
+mu_1: 0, mu_2: 2	-2.51521
+(x,y,z) is:-0.5	-0.5	1
+mu_1: 0, mu_2: 3	-6.35323
+(x,y,z) is:0	0.5	1.5
+mu_1: 1, mu_2: 0	-2.51521
+(x,y,z) is:0	0	1
+mu_1: 1, mu_2: 1	-5.70663
+(x,y,z) is:-0.5	0.5	1
+mu_1: 1, mu_2: 2	-6.35323
+(x,y,z) is:-0.5	0	1.5
+mu_1: 1, mu_2: 3	-2.51521
+(x,y,z) is:0.5	0	1.5
+mu_1: 2, mu_2: 0	-2.51521
+(x,y,z) is:0.5	-0.5	1
+mu_1: 2, mu_2: 1	-6.35323
+(x,y,z) is:0	0	1
+mu_1: 2, mu_2: 2	-5.70663
+(x,y,z) is:0	-0.5	1.5
+mu_1: 2, mu_2: 3	-2.51521
+(x,y,z) is:0.5	0.5	1
+mu_1: 3, mu_2: 0	-6.35323
+(x,y,z) is:0.5	0	0.5
+mu_1: 3, mu_2: 1	-2.51521
+(x,y,z) is:0	0.5	0.5
+mu_1: 3, mu_2: 2	-2.51521
+(x,y,z) is:0	0	1
+mu_1: 3, mu_2: 3	-5.70663
+(x,y,z) is:1	0	1
+mu_1: 0, mu_2: 0	-6.35323
+(x,y,z) is:1	-0.5	0.5
+mu_1: 0, mu_2: 1	-6.35323
+(x,y,z) is:0.5	0	0.5
+mu_1: 0, mu_2: 2	-2.51521
+(x,y,z) is:0.5	-0.5	1
+mu_1: 0, mu_2: 3	-6.35323
+(x,y,z) is:1	0.5	1.5
+mu_1: 1, mu_2: 0	-6.35323
+(x,y,z) is:1	0	1
+mu_1: 1, mu_2: 1	-6.35323
+(x,y,z) is:0.5	0.5	1
+mu_1: 1, mu_2: 2	-6.35323
+(x,y,z) is:0.5	0	1.5
+mu_1: 1, mu_2: 3	-2.51521
+(x,y,z) is:1.5	0	1.5
+mu_1: 2, mu_2: 0	-2.51521
+(x,y,z) is:1.5	-0.5	1
+mu_1: 2, mu_2: 1	-6.35323
+(x,y,z) is:1	0	1
+mu_1: 2, mu_2: 2	-6.35323
+(x,y,z) is:1	-0.5	1.5
+mu_1: 2, mu_2: 3	-6.35323
+(x,y,z) is:1.5	0.5	1
+mu_1: 3, mu_2: 0	-6.35323
+(x,y,z) is:1.5	0	0.5
+mu_1: 3, mu_2: 1	-2.51521
+(x,y,z) is:1	0.5	0.5
+mu_1: 3, mu_2: 2	-6.35323
+(x,y,z) is:1	0	1
+mu_1: 3, mu_2: 3	-6.35323
+(x,y,z) is:0	1	1
+mu_1: 0, mu_2: 0	-6.35323
+(x,y,z) is:0	0.5	0.5
+mu_1: 0, mu_2: 1	-2.51521
+(x,y,z) is:-0.5	1	0.5
+mu_1: 0, mu_2: 2	-6.35323
+(x,y,z) is:-0.5	0.5	1
+mu_1: 0, mu_2: 3	-6.35323
+(x,y,z) is:0	1.5	1.5
+mu_1: 1, mu_2: 0	-2.51521
+(x,y,z) is:0	1	1
+mu_1: 1, mu_2: 1	-6.35323
+(x,y,z) is:-0.5	1.5	1
+mu_1: 1, mu_2: 2	-6.35323
+(x,y,z) is:-0.5	1	1.5
+mu_1: 1, mu_2: 3	-6.35323
+(x,y,z) is:0.5	1	1.5
+mu_1: 2, mu_2: 0	-6.35323
+(x,y,z) is:0.5	0.5	1
+mu_1: 2, mu_2: 1	-6.35323
+(x,y,z) is:0	1	1
+mu_1: 2, mu_2: 2	-6.35323
+(x,y,z) is:0	0.5	1.5
+mu_1: 2, mu_2: 3	-2.51521
+(x,y,z) is:0.5	1.5	1
+mu_1: 3, mu_2: 0	-6.35323
+(x,y,z) is:0.5	1	0.5
+mu_1: 3, mu_2: 1	-6.35323
+(x,y,z) is:0	1.5	0.5
+mu_1: 3, mu_2: 2	-2.51521
+(x,y,z) is:0	1	1
+mu_1: 3, mu_2: 3	-6.35323
+(x,y,z) is:1	1	1
+mu_1: 0, mu_2: 0	-8.75042
+(x,y,z) is:1	0.5	0.5
+mu_1: 0, mu_2: 1	-6.35323
+(x,y,z) is:0.5	1	0.5
+mu_1: 0, mu_2: 2	-6.35323
+(x,y,z) is:0.5	0.5	1
+mu_1: 0, mu_2: 3	-6.35323
+(x,y,z) is:1	1.5	1.5
+mu_1: 1, mu_2: 0	-6.35323
+(x,y,z) is:1	1	1
+mu_1: 1, mu_2: 1	-8.75042
+(x,y,z) is:0.5	1.5	1
+mu_1: 1, mu_2: 2	-6.35323
+(x,y,z) is:0.5	1	1.5
+mu_1: 1, mu_2: 3	-6.35323
+(x,y,z) is:1.5	1	1.5
+mu_1: 2, mu_2: 0	-6.35323
+(x,y,z) is:1.5	0.5	1
+mu_1: 2, mu_2: 1	-6.35323
+(x,y,z) is:1	1	1
+mu_1: 2, mu_2: 2	-8.75042
+(x,y,z) is:1	0.5	1.5
+mu_1: 2, mu_2: 3	-6.35323
+(x,y,z) is:1.5	1.5	1
+mu_1: 3, mu_2: 0	-6.35323
+(x,y,z) is:1.5	1	0.5
+mu_1: 3, mu_2: 1	-6.35323
+(x,y,z) is:1	1.5	0.5
+mu_1: 3, mu_2: 2	-6.35323
+(x,y,z) is:1	1	1
+mu_1: 3, mu_2: 3	-8.75042
+tetras considered 0 0
+tetras considered 0 2
+tetras considered 0 4
+tetras considered 0 6
+tetras considered 2 0
+tetras considered 2 2
+tetras considered 2 4
+tetras considered 2 6
+tetras considered 4 0
+tetras considered 4 2
+tetras considered 4 4
+tetras considered 4 6
+tetras considered 6 0
+tetras considered 6 2
+tetras considered 6 4
+tetras considered 6 6
+tetras considered 0 8
+tetras considered 0 10
+tetras considered 0 12
+tetras considered 0 14
+tetras considered 2 8
+tetras considered 2 10
+tetras considered 2 12
+tetras considered 2 14
+tetras considered 4 8
+tetras considered 4 10
+tetras considered 4 12
+tetras considered 4 14
+tetras considered 6 8
+tetras considered 6 10
+tetras considered 6 12
+tetras considered 6 14
+tetras considered 0 16
+tetras considered 0 18
+tetras considered 0 20
+tetras considered 0 22
+tetras considered 2 16
+tetras considered 2 18
+tetras considered 2 20
+tetras considered 2 22
+tetras considered 4 16
+tetras considered 4 18
+tetras considered 4 20
+tetras considered 4 22
+tetras considered 6 16
+tetras considered 6 18
+tetras considered 6 20
+tetras considered 6 22
+tetras considered 0 24
+tetras considered 0 26
+tetras considered 0 28
+tetras considered 0 30
+tetras considered 2 24
+tetras considered 2 26
+tetras considered 2 28
+tetras considered 2 30
+tetras considered 4 24
+tetras considered 4 26
+tetras considered 4 28
+tetras considered 4 30
+tetras considered 6 24
+tetras considered 6 26
+tetras considered 6 28
+tetras considered 6 30
+tetras considered 0 32
+tetras considered 0 34
+tetras considered 0 36
+tetras considered 0 38
+tetras considered 2 32
+tetras considered 2 34
+tetras considered 2 36
+tetras considered 2 38
+tetras considered 4 32
+tetras considered 4 34
+tetras considered 4 36
+tetras considered 4 38
+tetras considered 6 32
+tetras considered 6 34
+tetras considered 6 36
+tetras considered 6 38
+tetras considered 0 40
+tetras considered 0 42
+tetras considered 0 44
+tetras considered 0 46
+tetras considered 2 40
+tetras considered 2 42
+tetras considered 2 44
+tetras considered 2 46
+tetras considered 4 40
+tetras considered 4 42
+tetras considered 4 44
+tetras considered 4 46
+tetras considered 6 40
+tetras considered 6 42
+tetras considered 6 44
+tetras considered 6 46
+tetras considered 0 48
+tetras considered 0 50
+tetras considered 0 52
+tetras considered 0 54
+tetras considered 2 48
+tetras considered 2 50
+tetras considered 2 52
+tetras considered 2 54
+tetras considered 4 48
+tetras considered 4 50
+tetras considered 4 52
+tetras considered 4 54
+tetras considered 6 48
+tetras considered 6 50
+tetras considered 6 52
+tetras considered 6 54
+tetras considered 0 56
+tetras considered 0 58
+tetras considered 0 60
+tetras considered 0 62
+tetras considered 2 56
+tetras considered 2 58
+tetras considered 2 60
+tetras considered 2 62
+tetras considered 4 56
+tetras considered 4 58
+tetras considered 4 60
+tetras considered 4 62
+tetras considered 6 56
+tetras considered 6 58
+tetras considered 6 60
+tetras considered 6 62
+tetras considered 8 0
+tetras considered 8 2
+tetras considered 8 4
+tetras considered 8 6
+tetras considered 10 0
+tetras considered 10 2
+tetras considered 10 4
+tetras considered 10 6
+tetras considered 12 0
+tetras considered 12 2
+tetras considered 12 4
+tetras considered 12 6
+tetras considered 14 0
+tetras considered 14 2
+tetras considered 14 4
+tetras considered 14 6
+tetras considered 8 8
+tetras considered 8 10
+tetras considered 8 12
+tetras considered 8 14
+tetras considered 10 8
+tetras considered 10 10
+tetras considered 10 12
+tetras considered 10 14
+tetras considered 12 8
+tetras considered 12 10
+tetras considered 12 12
+tetras considered 12 14
+tetras considered 14 8
+tetras considered 14 10
+tetras considered 14 12
+tetras considered 14 14
+tetras considered 8 16
+tetras considered 8 18
+tetras considered 8 20
+tetras considered 8 22
+tetras considered 10 16
+tetras considered 10 18
+tetras considered 10 20
+tetras considered 10 22
+tetras considered 12 16
+tetras considered 12 18
+tetras considered 12 20
+tetras considered 12 22
+tetras considered 14 16
+tetras considered 14 18
+tetras considered 14 20
+tetras considered 14 22
+tetras considered 8 24
+tetras considered 8 26
+tetras considered 8 28
+tetras considered 8 30
+tetras considered 10 24
+tetras considered 10 26
+tetras considered 10 28
+tetras considered 10 30
+tetras considered 12 24
+tetras considered 12 26
+tetras considered 12 28
+tetras considered 12 30
+tetras considered 14 24
+tetras considered 14 26
+tetras considered 14 28
+tetras considered 14 30
+tetras considered 8 32
+tetras considered 8 34
+tetras considered 8 36
+tetras considered 8 38
+tetras considered 10 32
+tetras considered 10 34
+tetras considered 10 36
+tetras considered 10 38
+tetras considered 12 32
+tetras considered 12 34
+tetras considered 12 36
+tetras considered 12 38
+tetras considered 14 32
+tetras considered 14 34
+tetras considered 14 36
+tetras considered 14 38
+tetras considered 8 40
+tetras considered 8 42
+tetras considered 8 44
+tetras considered 8 46
+tetras considered 10 40
+tetras considered 10 42
+tetras considered 10 44
+tetras considered 10 46
+tetras considered 12 40
+tetras considered 12 42
+tetras considered 12 44
+tetras considered 12 46
+tetras considered 14 40
+tetras considered 14 42
+tetras considered 14 44
+tetras considered 14 46
+tetras considered 8 48
+tetras considered 8 50
+tetras considered 8 52
+tetras considered 8 54
+tetras considered 10 48
+tetras considered 10 50
+tetras considered 10 52
+tetras considered 10 54
+tetras considered 12 48
+tetras considered 12 50
+tetras considered 12 52
+tetras considered 12 54
+tetras considered 14 48
+tetras considered 14 50
+tetras considered 14 52
+tetras considered 14 54
+tetras considered 8 56
+tetras considered 8 58
+tetras considered 8 60
+tetras considered 8 62
+tetras considered 10 56
+tetras considered 10 58
+tetras considered 10 60
+tetras considered 10 62
+tetras considered 12 56
+tetras considered 12 58
+tetras considered 12 60
+tetras considered 12 62
+tetras considered 14 56
+tetras considered 14 58
+tetras considered 14 60
+tetras considered 14 62
+tetras considered 16 0
+tetras considered 16 2
+tetras considered 16 4
+tetras considered 16 6
+tetras considered 18 0
+tetras considered 18 2
+tetras considered 18 4
+tetras considered 18 6
+tetras considered 20 0
+tetras considered 20 2
+tetras considered 20 4
+tetras considered 20 6
+tetras considered 22 0
+tetras considered 22 2
+tetras considered 22 4
+tetras considered 22 6
+tetras considered 16 8
+tetras considered 16 10
+tetras considered 16 12
+tetras considered 16 14
+tetras considered 18 8
+tetras considered 18 10
+tetras considered 18 12
+tetras considered 18 14
+tetras considered 20 8
+tetras considered 20 10
+tetras considered 20 12
+tetras considered 20 14
+tetras considered 22 8
+tetras considered 22 10
+tetras considered 22 12
+tetras considered 22 14
+tetras considered 16 16
+tetras considered 16 18
+tetras considered 16 20
+tetras considered 16 22
+tetras considered 18 16
+tetras considered 18 18
+tetras considered 18 20
+tetras considered 18 22
+tetras considered 20 16
+tetras considered 20 18
+tetras considered 20 20
+tetras considered 20 22
+tetras considered 22 16
+tetras considered 22 18
+tetras considered 22 20
+tetras considered 22 22
+tetras considered 16 24
+tetras considered 16 26
+tetras considered 16 28
+tetras considered 16 30
+tetras considered 18 24
+tetras considered 18 26
+tetras considered 18 28
+tetras considered 18 30
+tetras considered 20 24
+tetras considered 20 26
+tetras considered 20 28
+tetras considered 20 30
+tetras considered 22 24
+tetras considered 22 26
+tetras considered 22 28
+tetras considered 22 30
+tetras considered 16 32
+tetras considered 16 34
+tetras considered 16 36
+tetras considered 16 38
+tetras considered 18 32
+tetras considered 18 34
+tetras considered 18 36
+tetras considered 18 38
+tetras considered 20 32
+tetras considered 20 34
+tetras considered 20 36
+tetras considered 20 38
+tetras considered 22 32
+tetras considered 22 34
+tetras considered 22 36
+tetras considered 22 38
+tetras considered 16 40
+tetras considered 16 42
+tetras considered 16 44
+tetras considered 16 46
+tetras considered 18 40
+tetras considered 18 42
+tetras considered 18 44
+tetras considered 18 46
+tetras considered 20 40
+tetras considered 20 42
+tetras considered 20 44
+tetras considered 20 46
+tetras considered 22 40
+tetras considered 22 42
+tetras considered 22 44
+tetras considered 22 46
+tetras considered 16 48
+tetras considered 16 50
+tetras considered 16 52
+tetras considered 16 54
+tetras considered 18 48
+tetras considered 18 50
+tetras considered 18 52
+tetras considered 18 54
+tetras considered 20 48
+tetras considered 20 50
+tetras considered 20 52
+tetras considered 20 54
+tetras considered 22 48
+tetras considered 22 50
+tetras considered 22 52
+tetras considered 22 54
+tetras considered 16 56
+tetras considered 16 58
+tetras considered 16 60
+tetras considered 16 62
+tetras considered 18 56
+tetras considered 18 58
+tetras considered 18 60
+tetras considered 18 62
+tetras considered 20 56
+tetras considered 20 58
+tetras considered 20 60
+tetras considered 20 62
+tetras considered 22 56
+tetras considered 22 58
+tetras considered 22 60
+tetras considered 22 62
+tetras considered 24 0
+tetras considered 24 2
+tetras considered 24 4
+tetras considered 24 6
+tetras considered 26 0
+tetras considered 26 2
+tetras considered 26 4
+tetras considered 26 6
+tetras considered 28 0
+tetras considered 28 2
+tetras considered 28 4
+tetras considered 28 6
+tetras considered 30 0
+tetras considered 30 2
+tetras considered 30 4
+tetras considered 30 6
+tetras considered 24 8
+tetras considered 24 10
+tetras considered 24 12
+tetras considered 24 14
+tetras considered 26 8
+tetras considered 26 10
+tetras considered 26 12
+tetras considered 26 14
+tetras considered 28 8
+tetras considered 28 10
+tetras considered 28 12
+tetras considered 28 14
+tetras considered 30 8
+tetras considered 30 10
+tetras considered 30 12
+tetras considered 30 14
+tetras considered 24 16
+tetras considered 24 18
+tetras considered 24 20
+tetras considered 24 22
+tetras considered 26 16
+tetras considered 26 18
+tetras considered 26 20
+tetras considered 26 22
+tetras considered 28 16
+tetras considered 28 18
+tetras considered 28 20
+tetras considered 28 22
+tetras considered 30 16
+tetras considered 30 18
+tetras considered 30 20
+tetras considered 30 22
+tetras considered 24 24
+tetras considered 24 26
+tetras considered 24 28
+tetras considered 24 30
+tetras considered 26 24
+tetras considered 26 26
+tetras considered 26 28
+tetras considered 26 30
+tetras considered 28 24
+tetras considered 28 26
+tetras considered 28 28
+tetras considered 28 30
+tetras considered 30 24
+tetras considered 30 26
+tetras considered 30 28
+tetras considered 30 30
+tetras considered 24 32
+tetras considered 24 34
+tetras considered 24 36
+tetras considered 24 38
+tetras considered 26 32
+tetras considered 26 34
+tetras considered 26 36
+tetras considered 26 38
+tetras considered 28 32
+tetras considered 28 34
+tetras considered 28 36
+tetras considered 28 38
+tetras considered 30 32
+tetras considered 30 34
+tetras considered 30 36
+tetras considered 30 38
+tetras considered 24 40
+tetras considered 24 42
+tetras considered 24 44
+tetras considered 24 46
+tetras considered 26 40
+tetras considered 26 42
+tetras considered 26 44
+tetras considered 26 46
+tetras considered 28 40
+tetras considered 28 42
+tetras considered 28 44
+tetras considered 28 46
+tetras considered 30 40
+tetras considered 30 42
+tetras considered 30 44
+tetras considered 30 46
+tetras considered 24 48
+tetras considered 24 50
+tetras considered 24 52
+tetras considered 24 54
+tetras considered 26 48
+tetras considered 26 50
+tetras considered 26 52
+tetras considered 26 54
+tetras considered 28 48
+tetras considered 28 50
+tetras considered 28 52
+tetras considered 28 54
+tetras considered 30 48
+tetras considered 30 50
+tetras considered 30 52
+tetras considered 30 54
+tetras considered 24 56
+tetras considered 24 58
+tetras considered 24 60
+tetras considered 24 62
+tetras considered 26 56
+tetras considered 26 58
+tetras considered 26 60
+tetras considered 26 62
+tetras considered 28 56
+tetras considered 28 58
+tetras considered 28 60
+tetras considered 28 62
+tetras considered 30 56
+tetras considered 30 58
+tetras considered 30 60
+tetras considered 30 62
+tetras considered 32 0
+tetras considered 32 2
+tetras considered 32 4
+tetras considered 32 6
+tetras considered 34 0
+tetras considered 34 2
+tetras considered 34 4
+tetras considered 34 6
+tetras considered 36 0
+tetras considered 36 2
+tetras considered 36 4
+tetras considered 36 6
+tetras considered 38 0
+tetras considered 38 2
+tetras considered 38 4
+tetras considered 38 6
+tetras considered 32 8
+tetras considered 32 10
+tetras considered 32 12
+tetras considered 32 14
+tetras considered 34 8
+tetras considered 34 10
+tetras considered 34 12
+tetras considered 34 14
+tetras considered 36 8
+tetras considered 36 10
+tetras considered 36 12
+tetras considered 36 14
+tetras considered 38 8
+tetras considered 38 10
+tetras considered 38 12
+tetras considered 38 14
+tetras considered 32 16
+tetras considered 32 18
+tetras considered 32 20
+tetras considered 32 22
+tetras considered 34 16
+tetras considered 34 18
+tetras considered 34 20
+tetras considered 34 22
+tetras considered 36 16
+tetras considered 36 18
+tetras considered 36 20
+tetras considered 36 22
+tetras considered 38 16
+tetras considered 38 18
+tetras considered 38 20
+tetras considered 38 22
+tetras considered 32 24
+tetras considered 32 26
+tetras considered 32 28
+tetras considered 32 30
+tetras considered 34 24
+tetras considered 34 26
+tetras considered 34 28
+tetras considered 34 30
+tetras considered 36 24
+tetras considered 36 26
+tetras considered 36 28
+tetras considered 36 30
+tetras considered 38 24
+tetras considered 38 26
+tetras considered 38 28
+tetras considered 38 30
+tetras considered 32 32
+tetras considered 32 34
+tetras considered 32 36
+tetras considered 32 38
+tetras considered 34 32
+tetras considered 34 34
+tetras considered 34 36
+tetras considered 34 38
+tetras considered 36 32
+tetras considered 36 34
+tetras considered 36 36
+tetras considered 36 38
+tetras considered 38 32
+tetras considered 38 34
+tetras considered 38 36
+tetras considered 38 38
+tetras considered 32 40
+tetras considered 32 42
+tetras considered 32 44
+tetras considered 32 46
+tetras considered 34 40
+tetras considered 34 42
+tetras considered 34 44
+tetras considered 34 46
+tetras considered 36 40
+tetras considered 36 42
+tetras considered 36 44
+tetras considered 36 46
+tetras considered 38 40
+tetras considered 38 42
+tetras considered 38 44
+tetras considered 38 46
+tetras considered 32 48
+tetras considered 32 50
+tetras considered 32 52
+tetras considered 32 54
+tetras considered 34 48
+tetras considered 34 50
+tetras considered 34 52
+tetras considered 34 54
+tetras considered 36 48
+tetras considered 36 50
+tetras considered 36 52
+tetras considered 36 54
+tetras considered 38 48
+tetras considered 38 50
+tetras considered 38 52
+tetras considered 38 54
+tetras considered 32 56
+tetras considered 32 58
+tetras considered 32 60
+tetras considered 32 62
+tetras considered 34 56
+tetras considered 34 58
+tetras considered 34 60
+tetras considered 34 62
+tetras considered 36 56
+tetras considered 36 58
+tetras considered 36 60
+tetras considered 36 62
+tetras considered 38 56
+tetras considered 38 58
+tetras considered 38 60
+tetras considered 38 62
+tetras considered 40 0
+tetras considered 40 2
+tetras considered 40 4
+tetras considered 40 6
+tetras considered 42 0
+tetras considered 42 2
+tetras considered 42 4
+tetras considered 42 6
+tetras considered 44 0
+tetras considered 44 2
+tetras considered 44 4
+tetras considered 44 6
+tetras considered 46 0
+tetras considered 46 2
+tetras considered 46 4
+tetras considered 46 6
+tetras considered 40 8
+tetras considered 40 10
+tetras considered 40 12
+tetras considered 40 14
+tetras considered 42 8
+tetras considered 42 10
+tetras considered 42 12
+tetras considered 42 14
+tetras considered 44 8
+tetras considered 44 10
+tetras considered 44 12
+tetras considered 44 14
+tetras considered 46 8
+tetras considered 46 10
+tetras considered 46 12
+tetras considered 46 14
+tetras considered 40 16
+tetras considered 40 18
+tetras considered 40 20
+tetras considered 40 22
+tetras considered 42 16
+tetras considered 42 18
+tetras considered 42 20
+tetras considered 42 22
+tetras considered 44 16
+tetras considered 44 18
+tetras considered 44 20
+tetras considered 44 22
+tetras considered 46 16
+tetras considered 46 18
+tetras considered 46 20
+tetras considered 46 22
+tetras considered 40 24
+tetras considered 40 26
+tetras considered 40 28
+tetras considered 40 30
+tetras considered 42 24
+tetras considered 42 26
+tetras considered 42 28
+tetras considered 42 30
+tetras considered 44 24
+tetras considered 44 26
+tetras considered 44 28
+tetras considered 44 30
+tetras considered 46 24
+tetras considered 46 26
+tetras considered 46 28
+tetras considered 46 30
+tetras considered 40 32
+tetras considered 40 34
+tetras considered 40 36
+tetras considered 40 38
+tetras considered 42 32
+tetras considered 42 34
+tetras considered 42 36
+tetras considered 42 38
+tetras considered 44 32
+tetras considered 44 34
+tetras considered 44 36
+tetras considered 44 38
+tetras considered 46 32
+tetras considered 46 34
+tetras considered 46 36
+tetras considered 46 38
+tetras considered 40 40
+tetras considered 40 42
+tetras considered 40 44
+tetras considered 40 46
+tetras considered 42 40
+tetras considered 42 42
+tetras considered 42 44
+tetras considered 42 46
+tetras considered 44 40
+tetras considered 44 42
+tetras considered 44 44
+tetras considered 44 46
+tetras considered 46 40
+tetras considered 46 42
+tetras considered 46 44
+tetras considered 46 46
+tetras considered 40 48
+tetras considered 40 50
+tetras considered 40 52
+tetras considered 40 54
+tetras considered 42 48
+tetras considered 42 50
+tetras considered 42 52
+tetras considered 42 54
+tetras considered 44 48
+tetras considered 44 50
+tetras considered 44 52
+tetras considered 44 54
+tetras considered 46 48
+tetras considered 46 50
+tetras considered 46 52
+tetras considered 46 54
+tetras considered 40 56
+tetras considered 40 58
+tetras considered 40 60
+tetras considered 40 62
+tetras considered 42 56
+tetras considered 42 58
+tetras considered 42 60
+tetras considered 42 62
+tetras considered 44 56
+tetras considered 44 58
+tetras considered 44 60
+tetras considered 44 62
+tetras considered 46 56
+tetras considered 46 58
+tetras considered 46 60
+tetras considered 46 62
+tetras considered 48 0
+tetras considered 48 2
+tetras considered 48 4
+tetras considered 48 6
+tetras considered 50 0
+tetras considered 50 2
+tetras considered 50 4
+tetras considered 50 6
+tetras considered 52 0
+tetras considered 52 2
+tetras considered 52 4
+tetras considered 52 6
+tetras considered 54 0
+tetras considered 54 2
+tetras considered 54 4
+tetras considered 54 6
+tetras considered 48 8
+tetras considered 48 10
+tetras considered 48 12
+tetras considered 48 14
+tetras considered 50 8
+tetras considered 50 10
+tetras considered 50 12
+tetras considered 50 14
+tetras considered 52 8
+tetras considered 52 10
+tetras considered 52 12
+tetras considered 52 14
+tetras considered 54 8
+tetras considered 54 10
+tetras considered 54 12
+tetras considered 54 14
+tetras considered 48 16
+tetras considered 48 18
+tetras considered 48 20
+tetras considered 48 22
+tetras considered 50 16
+tetras considered 50 18
+tetras considered 50 20
+tetras considered 50 22
+tetras considered 52 16
+tetras considered 52 18
+tetras considered 52 20
+tetras considered 52 22
+tetras considered 54 16
+tetras considered 54 18
+tetras considered 54 20
+tetras considered 54 22
+tetras considered 48 24
+tetras considered 48 26
+tetras considered 48 28
+tetras considered 48 30
+tetras considered 50 24
+tetras considered 50 26
+tetras considered 50 28
+tetras considered 50 30
+tetras considered 52 24
+tetras considered 52 26
+tetras considered 52 28
+tetras considered 52 30
+tetras considered 54 24
+tetras considered 54 26
+tetras considered 54 28
+tetras considered 54 30
+tetras considered 48 32
+tetras considered 48 34
+tetras considered 48 36
+tetras considered 48 38
+tetras considered 50 32
+tetras considered 50 34
+tetras considered 50 36
+tetras considered 50 38
+tetras considered 52 32
+tetras considered 52 34
+tetras considered 52 36
+tetras considered 52 38
+tetras considered 54 32
+tetras considered 54 34
+tetras considered 54 36
+tetras considered 54 38
+tetras considered 48 40
+tetras considered 48 42
+tetras considered 48 44
+tetras considered 48 46
+tetras considered 50 40
+tetras considered 50 42
+tetras considered 50 44
+tetras considered 50 46
+tetras considered 52 40
+tetras considered 52 42
+tetras considered 52 44
+tetras considered 52 46
+tetras considered 54 40
+tetras considered 54 42
+tetras considered 54 44
+tetras considered 54 46
+tetras considered 48 48
+tetras considered 48 50
+tetras considered 48 52
+tetras considered 48 54
+tetras considered 50 48
+tetras considered 50 50
+tetras considered 50 52
+tetras considered 50 54
+tetras considered 52 48
+tetras considered 52 50
+tetras considered 52 52
+tetras considered 52 54
+tetras considered 54 48
+tetras considered 54 50
+tetras considered 54 52
+tetras considered 54 54
+tetras considered 48 56
+tetras considered 48 58
+tetras considered 48 60
+tetras considered 48 62
+tetras considered 50 56
+tetras considered 50 58
+tetras considered 50 60
+tetras considered 50 62
+tetras considered 52 56
+tetras considered 52 58
+tetras considered 52 60
+tetras considered 52 62
+tetras considered 54 56
+tetras considered 54 58
+tetras considered 54 60
+tetras considered 54 62
+tetras considered 56 0
+tetras considered 56 2
+tetras considered 56 4
+tetras considered 56 6
+tetras considered 58 0
+tetras considered 58 2
+tetras considered 58 4
+tetras considered 58 6
+tetras considered 60 0
+tetras considered 60 2
+tetras considered 60 4
+tetras considered 60 6
+tetras considered 62 0
+tetras considered 62 2
+tetras considered 62 4
+tetras considered 62 6
+tetras considered 56 8
+tetras considered 56 10
+tetras considered 56 12
+tetras considered 56 14
+tetras considered 58 8
+tetras considered 58 10
+tetras considered 58 12
+tetras considered 58 14
+tetras considered 60 8
+tetras considered 60 10
+tetras considered 60 12
+tetras considered 60 14
+tetras considered 62 8
+tetras considered 62 10
+tetras considered 62 12
+tetras considered 62 14
+tetras considered 56 16
+tetras considered 56 18
+tetras considered 56 20
+tetras considered 56 22
+tetras considered 58 16
+tetras considered 58 18
+tetras considered 58 20
+tetras considered 58 22
+tetras considered 60 16
+tetras considered 60 18
+tetras considered 60 20
+tetras considered 60 22
+tetras considered 62 16
+tetras considered 62 18
+tetras considered 62 20
+tetras considered 62 22
+tetras considered 56 24
+tetras considered 56 26
+tetras considered 56 28
+tetras considered 56 30
+tetras considered 58 24
+tetras considered 58 26
+tetras considered 58 28
+tetras considered 58 30
+tetras considered 60 24
+tetras considered 60 26
+tetras considered 60 28
+tetras considered 60 30
+tetras considered 62 24
+tetras considered 62 26
+tetras considered 62 28
+tetras considered 62 30
+tetras considered 56 32
+tetras considered 56 34
+tetras considered 56 36
+tetras considered 56 38
+tetras considered 58 32
+tetras considered 58 34
+tetras considered 58 36
+tetras considered 58 38
+tetras considered 60 32
+tetras considered 60 34
+tetras considered 60 36
+tetras considered 60 38
+tetras considered 62 32
+tetras considered 62 34
+tetras considered 62 36
+tetras considered 62 38
+tetras considered 56 40
+tetras considered 56 42
+tetras considered 56 44
+tetras considered 56 46
+tetras considered 58 40
+tetras considered 58 42
+tetras considered 58 44
+tetras considered 58 46
+tetras considered 60 40
+tetras considered 60 42
+tetras considered 60 44
+tetras considered 60 46
+tetras considered 62 40
+tetras considered 62 42
+tetras considered 62 44
+tetras considered 62 46
+tetras considered 56 48
+tetras considered 56 50
+tetras considered 56 52
+tetras considered 56 54
+tetras considered 58 48
+tetras considered 58 50
+tetras considered 58 52
+tetras considered 58 54
+tetras considered 60 48
+tetras considered 60 50
+tetras considered 60 52
+tetras considered 60 54
+tetras considered 62 48
+tetras considered 62 50
+tetras considered 62 52
+tetras considered 62 54
+tetras considered 56 56
+tetras considered 56 58
+tetras considered 56 60
+tetras considered 56 62
+tetras considered 58 56
+tetras considered 58 58
+tetras considered 58 60
+tetras considered 58 62
+tetras considered 60 56
+tetras considered 60 58
+tetras considered 60 60
+tetras considered 60 62
+tetras considered 62 56
+tetras considered 62 58
+tetras considered 62 60
+tetras considered 62 62
+tetra1 0 tetra2 0 jas -5.31718
+tetra1 0 tetra2 1 jas 0
+tetra1 0 tetra2 2 jas -2.51521
+tetra1 0 tetra2 3 jas 0
+tetra1 0 tetra2 4 jas -2.51521
+tetra1 0 tetra2 5 jas 0
+tetra1 0 tetra2 6 jas -2.51521
+tetra1 0 tetra2 7 jas 0
+tetra1 0 tetra2 8 jas -5.70663
+tetra1 0 tetra2 9 jas 0
+tetra1 0 tetra2 10 jas -6.35323
+tetra1 0 tetra2 11 jas 0
+tetra1 0 tetra2 12 jas -2.51521
+tetra1 0 tetra2 13 jas 0
+tetra1 0 tetra2 14 jas -2.51521
+tetra1 0 tetra2 15 jas 0
+tetra1 0 tetra2 16 jas -5.70663
+tetra1 0 tetra2 17 jas 0
+tetra1 0 tetra2 18 jas -2.51521
+tetra1 0 tetra2 19 jas 0
+tetra1 0 tetra2 20 jas -6.35323
+tetra1 0 tetra2 21 jas 0
+tetra1 0 tetra2 22 jas -2.51521
+tetra1 0 tetra2 23 jas 0
+tetra1 0 tetra2 24 jas -6.35323
+tetra1 0 tetra2 25 jas 0
+tetra1 0 tetra2 26 jas -6.35323
+tetra1 0 tetra2 27 jas 0
+tetra1 0 tetra2 28 jas -6.35323
+tetra1 0 tetra2 29 jas 0
+tetra1 0 tetra2 30 jas -2.51521
+tetra1 0 tetra2 31 jas 0
+tetra1 0 tetra2 32 jas -5.70663
+tetra1 0 tetra2 33 jas 0
+tetra1 0 tetra2 34 jas -2.51521
+tetra1 0 tetra2 35 jas 0
+tetra1 0 tetra2 36 jas -2.51521
+tetra1 0 tetra2 37 jas 0
+tetra1 0 tetra2 38 jas -6.35323
+tetra1 0 tetra2 39 jas 0
+tetra1 0 tetra2 40 jas -6.35323
+tetra1 0 tetra2 41 jas 0
+tetra1 0 tetra2 42 jas -6.35323
+tetra1 0 tetra2 43 jas 0
+tetra1 0 tetra2 44 jas -2.51521
+tetra1 0 tetra2 45 jas 0
+tetra1 0 tetra2 46 jas -6.35323
+tetra1 0 tetra2 47 jas 0
+tetra1 0 tetra2 48 jas -6.35323
+tetra1 0 tetra2 49 jas 0
+tetra1 0 tetra2 50 jas -2.51521
+tetra1 0 tetra2 51 jas 0
+tetra1 0 tetra2 52 jas -6.35323
+tetra1 0 tetra2 53 jas 0
+tetra1 0 tetra2 54 jas -6.35323
+tetra1 0 tetra2 55 jas 0
+tetra1 0 tetra2 56 jas -8.75042
+tetra1 0 tetra2 57 jas 0
+tetra1 0 tetra2 58 jas -6.35323
+tetra1 0 tetra2 59 jas 0
+tetra1 0 tetra2 60 jas -6.35323
+tetra1 0 tetra2 61 jas 0
+tetra1 0 tetra2 62 jas -6.35323
+tetra1 0 tetra2 63 jas 0
+tetra1 1 tetra2 0 jas 0
+tetra1 1 tetra2 1 jas -5.31718
+tetra1 1 tetra2 2 jas 0
+tetra1 1 tetra2 3 jas -2.51521
+tetra1 1 tetra2 4 jas 0
+tetra1 1 tetra2 5 jas -2.51521
+tetra1 1 tetra2 6 jas 0
+tetra1 1 tetra2 7 jas -2.51521
+tetra1 1 tetra2 8 jas 0
+tetra1 1 tetra2 9 jas -5.70663
+tetra1 1 tetra2 10 jas 0
+tetra1 1 tetra2 11 jas -6.35323
+tetra1 1 tetra2 12 jas 0
+tetra1 1 tetra2 13 jas -2.51521
+tetra1 1 tetra2 14 jas 0
+tetra1 1 tetra2 15 jas -2.51521
+tetra1 1 tetra2 16 jas 0
+tetra1 1 tetra2 17 jas -5.70663
+tetra1 1 tetra2 18 jas 0
+tetra1 1 tetra2 19 jas -2.51521
+tetra1 1 tetra2 20 jas 0
+tetra1 1 tetra2 21 jas -6.35323
+tetra1 1 tetra2 22 jas 0
+tetra1 1 tetra2 23 jas -2.51521
+tetra1 1 tetra2 24 jas 0
+tetra1 1 tetra2 25 jas -6.35323
+tetra1 1 tetra2 26 jas 0
+tetra1 1 tetra2 27 jas -6.35323
+tetra1 1 tetra2 28 jas 0
+tetra1 1 tetra2 29 jas -6.35323
+tetra1 1 tetra2 30 jas 0
+tetra1 1 tetra2 31 jas -2.51521
+tetra1 1 tetra2 32 jas 0
+tetra1 1 tetra2 33 jas -5.70663
+tetra1 1 tetra2 34 jas 0
+tetra1 1 tetra2 35 jas -2.51521
+tetra1 1 tetra2 36 jas 0
+tetra1 1 tetra2 37 jas -2.51521
+tetra1 1 tetra2 38 jas 0
+tetra1 1 tetra2 39 jas -6.35323
+tetra1 1 tetra2 40 jas 0
+tetra1 1 tetra2 41 jas -6.35323
+tetra1 1 tetra2 42 jas 0
+tetra1 1 tetra2 43 jas -6.35323
+tetra1 1 tetra2 44 jas 0
+tetra1 1 tetra2 45 jas -2.51521
+tetra1 1 tetra2 46 jas 0
+tetra1 1 tetra2 47 jas -6.35323
+tetra1 1 tetra2 48 jas 0
+tetra1 1 tetra2 49 jas -6.35323
+tetra1 1 tetra2 50 jas 0
+tetra1 1 tetra2 51 jas -2.51521
+tetra1 1 tetra2 52 jas 0
+tetra1 1 tetra2 53 jas -6.35323
+tetra1 1 tetra2 54 jas 0
+tetra1 1 tetra2 55 jas -6.35323
+tetra1 1 tetra2 56 jas 0
+tetra1 1 tetra2 57 jas -8.75042
+tetra1 1 tetra2 58 jas 0
+tetra1 1 tetra2 59 jas -6.35323
+tetra1 1 tetra2 60 jas 0
+tetra1 1 tetra2 61 jas -6.35323
+tetra1 1 tetra2 62 jas 0
+tetra1 1 tetra2 63 jas -6.35323
+tetra1 2 tetra2 0 jas -2.51521
+tetra1 2 tetra2 1 jas 0
+tetra1 2 tetra2 2 jas -5.31718
+tetra1 2 tetra2 3 jas 0
+tetra1 2 tetra2 4 jas -2.51521
+tetra1 2 tetra2 5 jas 0
+tetra1 2 tetra2 6 jas -2.51521
+tetra1 2 tetra2 7 jas 0
+tetra1 2 tetra2 8 jas -6.35323
+tetra1 2 tetra2 9 jas 0
+tetra1 2 tetra2 10 jas -5.70663
+tetra1 2 tetra2 11 jas 0
+tetra1 2 tetra2 12 jas -2.51521
+tetra1 2 tetra2 13 jas 0
+tetra1 2 tetra2 14 jas -2.51521
+tetra1 2 tetra2 15 jas 0
+tetra1 2 tetra2 16 jas -2.51521
+tetra1 2 tetra2 17 jas 0
+tetra1 2 tetra2 18 jas -5.70663
+tetra1 2 tetra2 19 jas 0
+tetra1 2 tetra2 20 jas -2.51521
+tetra1 2 tetra2 21 jas 0
+tetra1 2 tetra2 22 jas -6.35323
+tetra1 2 tetra2 23 jas 0
+tetra1 2 tetra2 24 jas -6.35323
+tetra1 2 tetra2 25 jas 0
+tetra1 2 tetra2 26 jas -6.35323
+tetra1 2 tetra2 27 jas 0
+tetra1 2 tetra2 28 jas -2.51521
+tetra1 2 tetra2 29 jas 0
+tetra1 2 tetra2 30 jas -6.35323
+tetra1 2 tetra2 31 jas 0
+tetra1 2 tetra2 32 jas -2.51521
+tetra1 2 tetra2 33 jas 0
+tetra1 2 tetra2 34 jas -5.70663
+tetra1 2 tetra2 35 jas 0
+tetra1 2 tetra2 36 jas -6.35323
+tetra1 2 tetra2 37 jas 0
+tetra1 2 tetra2 38 jas -2.51521
+tetra1 2 tetra2 39 jas 0
+tetra1 2 tetra2 40 jas -6.35323
+tetra1 2 tetra2 41 jas 0
+tetra1 2 tetra2 42 jas -6.35323
+tetra1 2 tetra2 43 jas 0
+tetra1 2 tetra2 44 jas -6.35323
+tetra1 2 tetra2 45 jas 0
+tetra1 2 tetra2 46 jas -2.51521
+tetra1 2 tetra2 47 jas 0
+tetra1 2 tetra2 48 jas -2.51521
+tetra1 2 tetra2 49 jas 0
+tetra1 2 tetra2 50 jas -6.35323
+tetra1 2 tetra2 51 jas 0
+tetra1 2 tetra2 52 jas -6.35323
+tetra1 2 tetra2 53 jas 0
+tetra1 2 tetra2 54 jas -6.35323
+tetra1 2 tetra2 55 jas 0
+tetra1 2 tetra2 56 jas -6.35323
+tetra1 2 tetra2 57 jas 0
+tetra1 2 tetra2 58 jas -8.75042
+tetra1 2 tetra2 59 jas 0
+tetra1 2 tetra2 60 jas -6.35323
+tetra1 2 tetra2 61 jas 0
+tetra1 2 tetra2 62 jas -6.35323
+tetra1 2 tetra2 63 jas 0
+tetra1 3 tetra2 0 jas 0
+tetra1 3 tetra2 1 jas -2.51521
+tetra1 3 tetra2 2 jas 0
+tetra1 3 tetra2 3 jas -5.31718
+tetra1 3 tetra2 4 jas 0
+tetra1 3 tetra2 5 jas -2.51521
+tetra1 3 tetra2 6 jas 0
+tetra1 3 tetra2 7 jas -2.51521
+tetra1 3 tetra2 8 jas 0
+tetra1 3 tetra2 9 jas -6.35323
+tetra1 3 tetra2 10 jas 0
+tetra1 3 tetra2 11 jas -5.70663
+tetra1 3 tetra2 12 jas 0
+tetra1 3 tetra2 13 jas -2.51521
+tetra1 3 tetra2 14 jas 0
+tetra1 3 tetra2 15 jas -2.51521
+tetra1 3 tetra2 16 jas 0
+tetra1 3 tetra2 17 jas -2.51521
+tetra1 3 tetra2 18 jas 0
+tetra1 3 tetra2 19 jas -5.70663
+tetra1 3 tetra2 20 jas 0
+tetra1 3 tetra2 21 jas -2.51521
+tetra1 3 tetra2 22 jas 0
+tetra1 3 tetra2 23 jas -6.35323
+tetra1 3 tetra2 24 jas 0
+tetra1 3 tetra2 25 jas -6.35323
+tetra1 3 tetra2 26 jas 0
+tetra1 3 tetra2 27 jas -6.35323
+tetra1 3 tetra2 28 jas 0
+tetra1 3 tetra2 29 jas -2.51521
+tetra1 3 tetra2 30 jas 0
+tetra1 3 tetra2 31 jas -6.35323
+tetra1 3 tetra2 32 jas 0
+tetra1 3 tetra2 33 jas -2.51521
+tetra1 3 tetra2 34 jas 0
+tetra1 3 tetra2 35 jas -5.70663
+tetra1 3 tetra2 36 jas 0
+tetra1 3 tetra2 37 jas -6.35323
+tetra1 3 tetra2 38 jas 0
+tetra1 3 tetra2 39 jas -2.51521
+tetra1 3 tetra2 40 jas 0
+tetra1 3 tetra2 41 jas -6.35323
+tetra1 3 tetra2 42 jas 0
+tetra1 3 tetra2 43 jas -6.35323
+tetra1 3 tetra2 44 jas 0
+tetra1 3 tetra2 45 jas -6.35323
+tetra1 3 tetra2 46 jas 0
+tetra1 3 tetra2 47 jas -2.51521
+tetra1 3 tetra2 48 jas 0
+tetra1 3 tetra2 49 jas -2.51521
+tetra1 3 tetra2 50 jas 0
+tetra1 3 tetra2 51 jas -6.35323
+tetra1 3 tetra2 52 jas 0
+tetra1 3 tetra2 53 jas -6.35323
+tetra1 3 tetra2 54 jas 0
+tetra1 3 tetra2 55 jas -6.35323
+tetra1 3 tetra2 56 jas 0
+tetra1 3 tetra2 57 jas -6.35323
+tetra1 3 tetra2 58 jas 0
+tetra1 3 tetra2 59 jas -8.75042
+tetra1 3 tetra2 60 jas 0
+tetra1 3 tetra2 61 jas -6.35323
+tetra1 3 tetra2 62 jas 0
+tetra1 3 tetra2 63 jas -6.35323
+tetra1 4 tetra2 0 jas -2.51521
+tetra1 4 tetra2 1 jas 0
+tetra1 4 tetra2 2 jas -2.51521
+tetra1 4 tetra2 3 jas 0
+tetra1 4 tetra2 4 jas -5.31718
+tetra1 4 tetra2 5 jas 0
+tetra1 4 tetra2 6 jas -2.51521
+tetra1 4 tetra2 7 jas 0
+tetra1 4 tetra2 8 jas -2.51521
+tetra1 4 tetra2 9 jas 0
+tetra1 4 tetra2 10 jas -2.51521
+tetra1 4 tetra2 11 jas 0
+tetra1 4 tetra2 12 jas -5.70663
+tetra1 4 tetra2 13 jas 0
+tetra1 4 tetra2 14 jas -6.35323
+tetra1 4 tetra2 15 jas 0
+tetra1 4 tetra2 16 jas -6.35323
+tetra1 4 tetra2 17 jas 0
+tetra1 4 tetra2 18 jas -2.51521
+tetra1 4 tetra2 19 jas 0
+tetra1 4 tetra2 20 jas -5.70663
+tetra1 4 tetra2 21 jas 0
+tetra1 4 tetra2 22 jas -2.51521
+tetra1 4 tetra2 23 jas 0
+tetra1 4 tetra2 24 jas -6.35323
+tetra1 4 tetra2 25 jas 0
+tetra1 4 tetra2 26 jas -2.51521
+tetra1 4 tetra2 27 jas 0
+tetra1 4 tetra2 28 jas -6.35323
+tetra1 4 tetra2 29 jas 0
+tetra1 4 tetra2 30 jas -6.35323
+tetra1 4 tetra2 31 jas 0
+tetra1 4 tetra2 32 jas -2.51521
+tetra1 4 tetra2 33 jas 0
+tetra1 4 tetra2 34 jas -6.35323
+tetra1 4 tetra2 35 jas 0
+tetra1 4 tetra2 36 jas -5.70663
+tetra1 4 tetra2 37 jas 0
+tetra1 4 tetra2 38 jas -2.51521
+tetra1 4 tetra2 39 jas 0
+tetra1 4 tetra2 40 jas -2.51521
+tetra1 4 tetra2 41 jas 0
+tetra1 4 tetra2 42 jas -6.35323
+tetra1 4 tetra2 43 jas 0
+tetra1 4 tetra2 44 jas -6.35323
+tetra1 4 tetra2 45 jas 0
+tetra1 4 tetra2 46 jas -6.35323
+tetra1 4 tetra2 47 jas 0
+tetra1 4 tetra2 48 jas -6.35323
+tetra1 4 tetra2 49 jas 0
+tetra1 4 tetra2 50 jas -6.35323
+tetra1 4 tetra2 51 jas 0
+tetra1 4 tetra2 52 jas -6.35323
+tetra1 4 tetra2 53 jas 0
+tetra1 4 tetra2 54 jas -2.51521
+tetra1 4 tetra2 55 jas 0
+tetra1 4 tetra2 56 jas -6.35323
+tetra1 4 tetra2 57 jas 0
+tetra1 4 tetra2 58 jas -6.35323
+tetra1 4 tetra2 59 jas 0
+tetra1 4 tetra2 60 jas -8.75042
+tetra1 4 tetra2 61 jas 0
+tetra1 4 tetra2 62 jas -6.35323
+tetra1 4 tetra2 63 jas 0
+tetra1 5 tetra2 0 jas 0
+tetra1 5 tetra2 1 jas -2.51521
+tetra1 5 tetra2 2 jas 0
+tetra1 5 tetra2 3 jas -2.51521
+tetra1 5 tetra2 4 jas 0
+tetra1 5 tetra2 5 jas -5.31718
+tetra1 5 tetra2 6 jas 0
+tetra1 5 tetra2 7 jas -2.51521
+tetra1 5 tetra2 8 jas 0
+tetra1 5 tetra2 9 jas -2.51521
+tetra1 5 tetra2 10 jas 0
+tetra1 5 tetra2 11 jas -2.51521
+tetra1 5 tetra2 12 jas 0
+tetra1 5 tetra2 13 jas -5.70663
+tetra1 5 tetra2 14 jas 0
+tetra1 5 tetra2 15 jas -6.35323
+tetra1 5 tetra2 16 jas 0
+tetra1 5 tetra2 17 jas -6.35323
+tetra1 5 tetra2 18 jas 0
+tetra1 5 tetra2 19 jas -2.51521
+tetra1 5 tetra2 20 jas 0
+tetra1 5 tetra2 21 jas -5.70663
+tetra1 5 tetra2 22 jas 0
+tetra1 5 tetra2 23 jas -2.51521
+tetra1 5 tetra2 24 jas 0
+tetra1 5 tetra2 25 jas -6.35323
+tetra1 5 tetra2 26 jas 0
+tetra1 5 tetra2 27 jas -2.51521
+tetra1 5 tetra2 28 jas 0
+tetra1 5 tetra2 29 jas -6.35323
+tetra1 5 tetra2 30 jas 0
+tetra1 5 tetra2 31 jas -6.35323
+tetra1 5 tetra2 32 jas 0
+tetra1 5 tetra2 33 jas -2.51521
+tetra1 5 tetra2 34 jas 0
+tetra1 5 tetra2 35 jas -6.35323
+tetra1 5 tetra2 36 jas 0
+tetra1 5 tetra2 37 jas -5.70663
+tetra1 5 tetra2 38 jas 0
+tetra1 5 tetra2 39 jas -2.51521
+tetra1 5 tetra2 40 jas 0
+tetra1 5 tetra2 41 jas -2.51521
+tetra1 5 tetra2 42 jas 0
+tetra1 5 tetra2 43 jas -6.35323
+tetra1 5 tetra2 44 jas 0
+tetra1 5 tetra2 45 jas -6.35323
+tetra1 5 tetra2 46 jas 0
+tetra1 5 tetra2 47 jas -6.35323
+tetra1 5 tetra2 48 jas 0
+tetra1 5 tetra2 49 jas -6.35323
+tetra1 5 tetra2 50 jas 0
+tetra1 5 tetra2 51 jas -6.35323
+tetra1 5 tetra2 52 jas 0
+tetra1 5 tetra2 53 jas -6.35323
+tetra1 5 tetra2 54 jas 0
+tetra1 5 tetra2 55 jas -2.51521
+tetra1 5 tetra2 56 jas 0
+tetra1 5 tetra2 57 jas -6.35323
+tetra1 5 tetra2 58 jas 0
+tetra1 5 tetra2 59 jas -6.35323
+tetra1 5 tetra2 60 jas 0
+tetra1 5 tetra2 61 jas -8.75042
+tetra1 5 tetra2 62 jas 0
+tetra1 5 tetra2 63 jas -6.35323
+tetra1 6 tetra2 0 jas -2.51521
+tetra1 6 tetra2 1 jas 0
+tetra1 6 tetra2 2 jas -2.51521
+tetra1 6 tetra2 3 jas 0
+tetra1 6 tetra2 4 jas -2.51521
+tetra1 6 tetra2 5 jas 0
+tetra1 6 tetra2 6 jas -5.31718
+tetra1 6 tetra2 7 jas 0
+tetra1 6 tetra2 8 jas -2.51521
+tetra1 6 tetra2 9 jas 0
+tetra1 6 tetra2 10 jas -2.51521
+tetra1 6 tetra2 11 jas 0
+tetra1 6 tetra2 12 jas -6.35323
+tetra1 6 tetra2 13 jas 0
+tetra1 6 tetra2 14 jas -5.70663
+tetra1 6 tetra2 15 jas 0
+tetra1 6 tetra2 16 jas -2.51521
+tetra1 6 tetra2 17 jas 0
+tetra1 6 tetra2 18 jas -6.35323
+tetra1 6 tetra2 19 jas 0
+tetra1 6 tetra2 20 jas -2.51521
+tetra1 6 tetra2 21 jas 0
+tetra1 6 tetra2 22 jas -5.70663
+tetra1 6 tetra2 23 jas 0
+tetra1 6 tetra2 24 jas -2.51521
+tetra1 6 tetra2 25 jas 0
+tetra1 6 tetra2 26 jas -6.35323
+tetra1 6 tetra2 27 jas 0
+tetra1 6 tetra2 28 jas -6.35323
+tetra1 6 tetra2 29 jas 0
+tetra1 6 tetra2 30 jas -6.35323
+tetra1 6 tetra2 31 jas 0
+tetra1 6 tetra2 32 jas -6.35323
+tetra1 6 tetra2 33 jas 0
+tetra1 6 tetra2 34 jas -2.51521
+tetra1 6 tetra2 35 jas 0
+tetra1 6 tetra2 36 jas -2.51521
+tetra1 6 tetra2 37 jas 0
+tetra1 6 tetra2 38 jas -5.70663
+tetra1 6 tetra2 39 jas 0
+tetra1 6 tetra2 40 jas -6.35323
+tetra1 6 tetra2 41 jas 0
+tetra1 6 tetra2 42 jas -2.51521
+tetra1 6 tetra2 43 jas 0
+tetra1 6 tetra2 44 jas -6.35323
+tetra1 6 tetra2 45 jas 0
+tetra1 6 tetra2 46 jas -6.35323
+tetra1 6 tetra2 47 jas 0
+tetra1 6 tetra2 48 jas -6.35323
+tetra1 6 tetra2 49 jas 0
+tetra1 6 tetra2 50 jas -6.35323
+tetra1 6 tetra2 51 jas 0
+tetra1 6 tetra2 52 jas -2.51521
+tetra1 6 tetra2 53 jas 0
+tetra1 6 tetra2 54 jas -6.35323
+tetra1 6 tetra2 55 jas 0
+tetra1 6 tetra2 56 jas -6.35323
+tetra1 6 tetra2 57 jas 0
+tetra1 6 tetra2 58 jas -6.35323
+tetra1 6 tetra2 59 jas 0
+tetra1 6 tetra2 60 jas -6.35323
+tetra1 6 tetra2 61 jas 0
+tetra1 6 tetra2 62 jas -8.75042
+tetra1 6 tetra2 63 jas 0
+tetra1 7 tetra2 0 jas 0
+tetra1 7 tetra2 1 jas -2.51521
+tetra1 7 tetra2 2 jas 0
+tetra1 7 tetra2 3 jas -2.51521
+tetra1 7 tetra2 4 jas 0
+tetra1 7 tetra2 5 jas -2.51521
+tetra1 7 tetra2 6 jas 0
+tetra1 7 tetra2 7 jas -5.31718
+tetra1 7 tetra2 8 jas 0
+tetra1 7 tetra2 9 jas -2.51521
+tetra1 7 tetra2 10 jas 0
+tetra1 7 tetra2 11 jas -2.51521
+tetra1 7 tetra2 12 jas 0
+tetra1 7 tetra2 13 jas -6.35323
+tetra1 7 tetra2 14 jas 0
+tetra1 7 tetra2 15 jas -5.70663
+tetra1 7 tetra2 16 jas 0
+tetra1 7 tetra2 17 jas -2.51521
+tetra1 7 tetra2 18 jas 0
+tetra1 7 tetra2 19 jas -6.35323
+tetra1 7 tetra2 20 jas 0
+tetra1 7 tetra2 21 jas -2.51521
+tetra1 7 tetra2 22 jas 0
+tetra1 7 tetra2 23 jas -5.70663
+tetra1 7 tetra2 24 jas 0
+tetra1 7 tetra2 25 jas -2.51521
+tetra1 7 tetra2 26 jas 0
+tetra1 7 tetra2 27 jas -6.35323
+tetra1 7 tetra2 28 jas 0
+tetra1 7 tetra2 29 jas -6.35323
+tetra1 7 tetra2 30 jas 0
+tetra1 7 tetra2 31 jas -6.35323
+tetra1 7 tetra2 32 jas 0
+tetra1 7 tetra2 33 jas -6.35323
+tetra1 7 tetra2 34 jas 0
+tetra1 7 tetra2 35 jas -2.51521
+tetra1 7 tetra2 36 jas 0
+tetra1 7 tetra2 37 jas -2.51521
+tetra1 7 tetra2 38 jas 0
+tetra1 7 tetra2 39 jas -5.70663
+tetra1 7 tetra2 40 jas 0
+tetra1 7 tetra2 41 jas -6.35323
+tetra1 7 tetra2 42 jas 0
+tetra1 7 tetra2 43 jas -2.51521
+tetra1 7 tetra2 44 jas 0
+tetra1 7 tetra2 45 jas -6.35323
+tetra1 7 tetra2 46 jas 0
+tetra1 7 tetra2 47 jas -6.35323
+tetra1 7 tetra2 48 jas 0
+tetra1 7 tetra2 49 jas -6.35323
+tetra1 7 tetra2 50 jas 0
+tetra1 7 tetra2 51 jas -6.35323
+tetra1 7 tetra2 52 jas 0
+tetra1 7 tetra2 53 jas -2.51521
+tetra1 7 tetra2 54 jas 0
+tetra1 7 tetra2 55 jas -6.35323
+tetra1 7 tetra2 56 jas 0
+tetra1 7 tetra2 57 jas -6.35323
+tetra1 7 tetra2 58 jas 0
+tetra1 7 tetra2 59 jas -6.35323
+tetra1 7 tetra2 60 jas 0
+tetra1 7 tetra2 61 jas -6.35323
+tetra1 7 tetra2 62 jas 0
+tetra1 7 tetra2 63 jas -8.75042
+tetra1 8 tetra2 0 jas -5.70663
+tetra1 8 tetra2 1 jas 0
+tetra1 8 tetra2 2 jas -6.35323
+tetra1 8 tetra2 3 jas 0
+tetra1 8 tetra2 4 jas -2.51521
+tetra1 8 tetra2 5 jas 0
+tetra1 8 tetra2 6 jas -2.51521
+tetra1 8 tetra2 7 jas 0
+tetra1 8 tetra2 8 jas -5.31718
+tetra1 8 tetra2 9 jas 0
+tetra1 8 tetra2 10 jas -2.51521
+tetra1 8 tetra2 11 jas 0
+tetra1 8 tetra2 12 jas -2.51521
+tetra1 8 tetra2 13 jas 0
+tetra1 8 tetra2 14 jas -2.51521
+tetra1 8 tetra2 15 jas 0
+tetra1 8 tetra2 16 jas -6.35323
+tetra1 8 tetra2 17 jas 0
+tetra1 8 tetra2 18 jas -6.35323
+tetra1 8 tetra2 19 jas 0
+tetra1 8 tetra2 20 jas -6.35323
+tetra1 8 tetra2 21 jas 0
+tetra1 8 tetra2 22 jas -2.51521
+tetra1 8 tetra2 23 jas 0
+tetra1 8 tetra2 24 jas -5.70663
+tetra1 8 tetra2 25 jas 0
+tetra1 8 tetra2 26 jas -2.51521
+tetra1 8 tetra2 27 jas 0
+tetra1 8 tetra2 28 jas -6.35323
+tetra1 8 tetra2 29 jas 0
+tetra1 8 tetra2 30 jas -2.51521
+tetra1 8 tetra2 31 jas 0
+tetra1 8 tetra2 32 jas -6.35323
+tetra1 8 tetra2 33 jas 0
+tetra1 8 tetra2 34 jas -6.35323
+tetra1 8 tetra2 35 jas 0
+tetra1 8 tetra2 36 jas -2.51521
+tetra1 8 tetra2 37 jas 0
+tetra1 8 tetra2 38 jas -6.35323
+tetra1 8 tetra2 39 jas 0
+tetra1 8 tetra2 40 jas -5.70663
+tetra1 8 tetra2 41 jas 0
+tetra1 8 tetra2 42 jas -2.51521
+tetra1 8 tetra2 43 jas 0
+tetra1 8 tetra2 44 jas -2.51521
+tetra1 8 tetra2 45 jas 0
+tetra1 8 tetra2 46 jas -6.35323
+tetra1 8 tetra2 47 jas 0
+tetra1 8 tetra2 48 jas -8.75042
+tetra1 8 tetra2 49 jas 0
+tetra1 8 tetra2 50 jas -6.35323
+tetra1 8 tetra2 51 jas 0
+tetra1 8 tetra2 52 jas -6.35323
+tetra1 8 tetra2 53 jas 0
+tetra1 8 tetra2 54 jas -6.35323
+tetra1 8 tetra2 55 jas 0
+tetra1 8 tetra2 56 jas -6.35323
+tetra1 8 tetra2 57 jas 0
+tetra1 8 tetra2 58 jas -2.51521
+tetra1 8 tetra2 59 jas 0
+tetra1 8 tetra2 60 jas -6.35323
+tetra1 8 tetra2 61 jas 0
+tetra1 8 tetra2 62 jas -6.35323
+tetra1 8 tetra2 63 jas 0
+tetra1 9 tetra2 0 jas 0
+tetra1 9 tetra2 1 jas -5.70663
+tetra1 9 tetra2 2 jas 0
+tetra1 9 tetra2 3 jas -6.35323
+tetra1 9 tetra2 4 jas 0
+tetra1 9 tetra2 5 jas -2.51521
+tetra1 9 tetra2 6 jas 0
+tetra1 9 tetra2 7 jas -2.51521
+tetra1 9 tetra2 8 jas 0
+tetra1 9 tetra2 9 jas -5.31718
+tetra1 9 tetra2 10 jas 0
+tetra1 9 tetra2 11 jas -2.51521
+tetra1 9 tetra2 12 jas 0
+tetra1 9 tetra2 13 jas -2.51521
+tetra1 9 tetra2 14 jas 0
+tetra1 9 tetra2 15 jas -2.51521
+tetra1 9 tetra2 16 jas 0
+tetra1 9 tetra2 17 jas -6.35323
+tetra1 9 tetra2 18 jas 0
+tetra1 9 tetra2 19 jas -6.35323
+tetra1 9 tetra2 20 jas 0
+tetra1 9 tetra2 21 jas -6.35323
+tetra1 9 tetra2 22 jas 0
+tetra1 9 tetra2 23 jas -2.51521
+tetra1 9 tetra2 24 jas 0
+tetra1 9 tetra2 25 jas -5.70663
+tetra1 9 tetra2 26 jas 0
+tetra1 9 tetra2 27 jas -2.51521
+tetra1 9 tetra2 28 jas 0
+tetra1 9 tetra2 29 jas -6.35323
+tetra1 9 tetra2 30 jas 0
+tetra1 9 tetra2 31 jas -2.51521
+tetra1 9 tetra2 32 jas 0
+tetra1 9 tetra2 33 jas -6.35323
+tetra1 9 tetra2 34 jas 0
+tetra1 9 tetra2 35 jas -6.35323
+tetra1 9 tetra2 36 jas 0
+tetra1 9 tetra2 37 jas -2.51521
+tetra1 9 tetra2 38 jas 0
+tetra1 9 tetra2 39 jas -6.35323
+tetra1 9 tetra2 40 jas 0
+tetra1 9 tetra2 41 jas -5.70663
+tetra1 9 tetra2 42 jas 0
+tetra1 9 tetra2 43 jas -2.51521
+tetra1 9 tetra2 44 jas 0
+tetra1 9 tetra2 45 jas -2.51521
+tetra1 9 tetra2 46 jas 0
+tetra1 9 tetra2 47 jas -6.35323
+tetra1 9 tetra2 48 jas 0
+tetra1 9 tetra2 49 jas -8.75042
+tetra1 9 tetra2 50 jas 0
+tetra1 9 tetra2 51 jas -6.35323
+tetra1 9 tetra2 52 jas 0
+tetra1 9 tetra2 53 jas -6.35323
+tetra1 9 tetra2 54 jas 0
+tetra1 9 tetra2 55 jas -6.35323
+tetra1 9 tetra2 56 jas 0
+tetra1 9 tetra2 57 jas -6.35323
+tetra1 9 tetra2 58 jas 0
+tetra1 9 tetra2 59 jas -2.51521
+tetra1 9 tetra2 60 jas 0
+tetra1 9 tetra2 61 jas -6.35323
+tetra1 9 tetra2 62 jas 0
+tetra1 9 tetra2 63 jas -6.35323
+tetra1 10 tetra2 0 jas -6.35323
+tetra1 10 tetra2 1 jas 0
+tetra1 10 tetra2 2 jas -5.70663
+tetra1 10 tetra2 3 jas 0
+tetra1 10 tetra2 4 jas -2.51521
+tetra1 10 tetra2 5 jas 0
+tetra1 10 tetra2 6 jas -2.51521
+tetra1 10 tetra2 7 jas 0
+tetra1 10 tetra2 8 jas -2.51521
+tetra1 10 tetra2 9 jas 0
+tetra1 10 tetra2 10 jas -5.31718
+tetra1 10 tetra2 11 jas 0
+tetra1 10 tetra2 12 jas -2.51521
+tetra1 10 tetra2 13 jas 0
+tetra1 10 tetra2 14 jas -2.51521
+tetra1 10 tetra2 15 jas 0
+tetra1 10 tetra2 16 jas -6.35323
+tetra1 10 tetra2 17 jas 0
+tetra1 10 tetra2 18 jas -6.35323
+tetra1 10 tetra2 19 jas 0
+tetra1 10 tetra2 20 jas -2.51521
+tetra1 10 tetra2 21 jas 0
+tetra1 10 tetra2 22 jas -6.35323
+tetra1 10 tetra2 23 jas 0
+tetra1 10 tetra2 24 jas -2.51521
+tetra1 10 tetra2 25 jas 0
+tetra1 10 tetra2 26 jas -5.70663
+tetra1 10 tetra2 27 jas 0
+tetra1 10 tetra2 28 jas -2.51521
+tetra1 10 tetra2 29 jas 0
+tetra1 10 tetra2 30 jas -6.35323
+tetra1 10 tetra2 31 jas 0
+tetra1 10 tetra2 32 jas -6.35323
+tetra1 10 tetra2 33 jas 0
+tetra1 10 tetra2 34 jas -6.35323
+tetra1 10 tetra2 35 jas 0
+tetra1 10 tetra2 36 jas -6.35323
+tetra1 10 tetra2 37 jas 0
+tetra1 10 tetra2 38 jas -2.51521
+tetra1 10 tetra2 39 jas 0
+tetra1 10 tetra2 40 jas -2.51521
+tetra1 10 tetra2 41 jas 0
+tetra1 10 tetra2 42 jas -5.70663
+tetra1 10 tetra2 43 jas 0
+tetra1 10 tetra2 44 jas -6.35323
+tetra1 10 tetra2 45 jas 0
+tetra1 10 tetra2 46 jas -2.51521
+tetra1 10 tetra2 47 jas 0
+tetra1 10 tetra2 48 jas -6.35323
+tetra1 10 tetra2 49 jas 0
+tetra1 10 tetra2 50 jas -8.75042
+tetra1 10 tetra2 51 jas 0
+tetra1 10 tetra2 52 jas -6.35323
+tetra1 10 tetra2 53 jas 0
+tetra1 10 tetra2 54 jas -6.35323
+tetra1 10 tetra2 55 jas 0
+tetra1 10 tetra2 56 jas -2.51521
+tetra1 10 tetra2 57 jas 0
+tetra1 10 tetra2 58 jas -6.35323
+tetra1 10 tetra2 59 jas 0
+tetra1 10 tetra2 60 jas -6.35323
+tetra1 10 tetra2 61 jas 0
+tetra1 10 tetra2 62 jas -6.35323
+tetra1 10 tetra2 63 jas 0
+tetra1 11 tetra2 0 jas 0
+tetra1 11 tetra2 1 jas -6.35323
+tetra1 11 tetra2 2 jas 0
+tetra1 11 tetra2 3 jas -5.70663
+tetra1 11 tetra2 4 jas 0
+tetra1 11 tetra2 5 jas -2.51521
+tetra1 11 tetra2 6 jas 0
+tetra1 11 tetra2 7 jas -2.51521
+tetra1 11 tetra2 8 jas 0
+tetra1 11 tetra2 9 jas -2.51521
+tetra1 11 tetra2 10 jas 0
+tetra1 11 tetra2 11 jas -5.31718
+tetra1 11 tetra2 12 jas 0
+tetra1 11 tetra2 13 jas -2.51521
+tetra1 11 tetra2 14 jas 0
+tetra1 11 tetra2 15 jas -2.51521
+tetra1 11 tetra2 16 jas 0
+tetra1 11 tetra2 17 jas -6.35323
+tetra1 11 tetra2 18 jas 0
+tetra1 11 tetra2 19 jas -6.35323
+tetra1 11 tetra2 20 jas 0
+tetra1 11 tetra2 21 jas -2.51521
+tetra1 11 tetra2 22 jas 0
+tetra1 11 tetra2 23 jas -6.35323
+tetra1 11 tetra2 24 jas 0
+tetra1 11 tetra2 25 jas -2.51521
+tetra1 11 tetra2 26 jas 0
+tetra1 11 tetra2 27 jas -5.70663
+tetra1 11 tetra2 28 jas 0
+tetra1 11 tetra2 29 jas -2.51521
+tetra1 11 tetra2 30 jas 0
+tetra1 11 tetra2 31 jas -6.35323
+tetra1 11 tetra2 32 jas 0
+tetra1 11 tetra2 33 jas -6.35323
+tetra1 11 tetra2 34 jas 0
+tetra1 11 tetra2 35 jas -6.35323
+tetra1 11 tetra2 36 jas 0
+tetra1 11 tetra2 37 jas -6.35323
+tetra1 11 tetra2 38 jas 0
+tetra1 11 tetra2 39 jas -2.51521
+tetra1 11 tetra2 40 jas 0
+tetra1 11 tetra2 41 jas -2.51521
+tetra1 11 tetra2 42 jas 0
+tetra1 11 tetra2 43 jas -5.70663
+tetra1 11 tetra2 44 jas 0
+tetra1 11 tetra2 45 jas -6.35323
+tetra1 11 tetra2 46 jas 0
+tetra1 11 tetra2 47 jas -2.51521
+tetra1 11 tetra2 48 jas 0
+tetra1 11 tetra2 49 jas -6.35323
+tetra1 11 tetra2 50 jas 0
+tetra1 11 tetra2 51 jas -8.75042
+tetra1 11 tetra2 52 jas 0
+tetra1 11 tetra2 53 jas -6.35323
+tetra1 11 tetra2 54 jas 0
+tetra1 11 tetra2 55 jas -6.35323
+tetra1 11 tetra2 56 jas 0
+tetra1 11 tetra2 57 jas -2.51521
+tetra1 11 tetra2 58 jas 0
+tetra1 11 tetra2 59 jas -6.35323
+tetra1 11 tetra2 60 jas 0
+tetra1 11 tetra2 61 jas -6.35323
+tetra1 11 tetra2 62 jas 0
+tetra1 11 tetra2 63 jas -6.35323
+tetra1 12 tetra2 0 jas -2.51521
+tetra1 12 tetra2 1 jas 0
+tetra1 12 tetra2 2 jas -2.51521
+tetra1 12 tetra2 3 jas 0
+tetra1 12 tetra2 4 jas -5.70663
+tetra1 12 tetra2 5 jas 0
+tetra1 12 tetra2 6 jas -6.35323
+tetra1 12 tetra2 7 jas 0
+tetra1 12 tetra2 8 jas -2.51521
+tetra1 12 tetra2 9 jas 0
+tetra1 12 tetra2 10 jas -2.51521
+tetra1 12 tetra2 11 jas 0
+tetra1 12 tetra2 12 jas -5.31718
+tetra1 12 tetra2 13 jas 0
+tetra1 12 tetra2 14 jas -2.51521
+tetra1 12 tetra2 15 jas 0
+tetra1 12 tetra2 16 jas -6.35323
+tetra1 12 tetra2 17 jas 0
+tetra1 12 tetra2 18 jas -2.51521
+tetra1 12 tetra2 19 jas 0
+tetra1 12 tetra2 20 jas -6.35323
+tetra1 12 tetra2 21 jas 0
+tetra1 12 tetra2 22 jas -6.35323
+tetra1 12 tetra2 23 jas 0
+tetra1 12 tetra2 24 jas -6.35323
+tetra1 12 tetra2 25 jas 0
+tetra1 12 tetra2 26 jas -2.51521
+tetra1 12 tetra2 27 jas 0
+tetra1 12 tetra2 28 jas -5.70663
+tetra1 12 tetra2 29 jas 0
+tetra1 12 tetra2 30 jas -2.51521
+tetra1 12 tetra2 31 jas 0
+tetra1 12 tetra2 32 jas -2.51521
+tetra1 12 tetra2 33 jas 0
+tetra1 12 tetra2 34 jas -6.35323
+tetra1 12 tetra2 35 jas 0
+tetra1 12 tetra2 36 jas -6.35323
+tetra1 12 tetra2 37 jas 0
+tetra1 12 tetra2 38 jas -6.35323
+tetra1 12 tetra2 39 jas 0
+tetra1 12 tetra2 40 jas -2.51521
+tetra1 12 tetra2 41 jas 0
+tetra1 12 tetra2 42 jas -6.35323
+tetra1 12 tetra2 43 jas 0
+tetra1 12 tetra2 44 jas -5.70663
+tetra1 12 tetra2 45 jas 0
+tetra1 12 tetra2 46 jas -2.51521
+tetra1 12 tetra2 47 jas 0
+tetra1 12 tetra2 48 jas -6.35323
+tetra1 12 tetra2 49 jas 0
+tetra1 12 tetra2 50 jas -6.35323
+tetra1 12 tetra2 51 jas 0
+tetra1 12 tetra2 52 jas -8.75042
+tetra1 12 tetra2 53 jas 0
+tetra1 12 tetra2 54 jas -6.35323
+tetra1 12 tetra2 55 jas 0
+tetra1 12 tetra2 56 jas -6.35323
+tetra1 12 tetra2 57 jas 0
+tetra1 12 tetra2 58 jas -6.35323
+tetra1 12 tetra2 59 jas 0
+tetra1 12 tetra2 60 jas -6.35323
+tetra1 12 tetra2 61 jas 0
+tetra1 12 tetra2 62 jas -2.51521
+tetra1 12 tetra2 63 jas 0
+tetra1 13 tetra2 0 jas 0
+tetra1 13 tetra2 1 jas -2.51521
+tetra1 13 tetra2 2 jas 0
+tetra1 13 tetra2 3 jas -2.51521
+tetra1 13 tetra2 4 jas 0
+tetra1 13 tetra2 5 jas -5.70663
+tetra1 13 tetra2 6 jas 0
+tetra1 13 tetra2 7 jas -6.35323
+tetra1 13 tetra2 8 jas 0
+tetra1 13 tetra2 9 jas -2.51521
+tetra1 13 tetra2 10 jas 0
+tetra1 13 tetra2 11 jas -2.51521
+tetra1 13 tetra2 12 jas 0
+tetra1 13 tetra2 13 jas -5.31718
+tetra1 13 tetra2 14 jas 0
+tetra1 13 tetra2 15 jas -2.51521
+tetra1 13 tetra2 16 jas 0
+tetra1 13 tetra2 17 jas -6.35323
+tetra1 13 tetra2 18 jas 0
+tetra1 13 tetra2 19 jas -2.51521
+tetra1 13 tetra2 20 jas 0
+tetra1 13 tetra2 21 jas -6.35323
+tetra1 13 tetra2 22 jas 0
+tetra1 13 tetra2 23 jas -6.35323
+tetra1 13 tetra2 24 jas 0
+tetra1 13 tetra2 25 jas -6.35323
+tetra1 13 tetra2 26 jas 0
+tetra1 13 tetra2 27 jas -2.51521
+tetra1 13 tetra2 28 jas 0
+tetra1 13 tetra2 29 jas -5.70663
+tetra1 13 tetra2 30 jas 0
+tetra1 13 tetra2 31 jas -2.51521
+tetra1 13 tetra2 32 jas 0
+tetra1 13 tetra2 33 jas -2.51521
+tetra1 13 tetra2 34 jas 0
+tetra1 13 tetra2 35 jas -6.35323
+tetra1 13 tetra2 36 jas 0
+tetra1 13 tetra2 37 jas -6.35323
+tetra1 13 tetra2 38 jas 0
+tetra1 13 tetra2 39 jas -6.35323
+tetra1 13 tetra2 40 jas 0
+tetra1 13 tetra2 41 jas -2.51521
+tetra1 13 tetra2 42 jas 0
+tetra1 13 tetra2 43 jas -6.35323
+tetra1 13 tetra2 44 jas 0
+tetra1 13 tetra2 45 jas -5.70663
+tetra1 13 tetra2 46 jas 0
+tetra1 13 tetra2 47 jas -2.51521
+tetra1 13 tetra2 48 jas 0
+tetra1 13 tetra2 49 jas -6.35323
+tetra1 13 tetra2 50 jas 0
+tetra1 13 tetra2 51 jas -6.35323
+tetra1 13 tetra2 52 jas 0
+tetra1 13 tetra2 53 jas -8.75042
+tetra1 13 tetra2 54 jas 0
+tetra1 13 tetra2 55 jas -6.35323
+tetra1 13 tetra2 56 jas 0
+tetra1 13 tetra2 57 jas -6.35323
+tetra1 13 tetra2 58 jas 0
+tetra1 13 tetra2 59 jas -6.35323
+tetra1 13 tetra2 60 jas 0
+tetra1 13 tetra2 61 jas -6.35323
+tetra1 13 tetra2 62 jas 0
+tetra1 13 tetra2 63 jas -2.51521
+tetra1 14 tetra2 0 jas -2.51521
+tetra1 14 tetra2 1 jas 0
+tetra1 14 tetra2 2 jas -2.51521
+tetra1 14 tetra2 3 jas 0
+tetra1 14 tetra2 4 jas -6.35323
+tetra1 14 tetra2 5 jas 0
+tetra1 14 tetra2 6 jas -5.70663
+tetra1 14 tetra2 7 jas 0
+tetra1 14 tetra2 8 jas -2.51521
+tetra1 14 tetra2 9 jas 0
+tetra1 14 tetra2 10 jas -2.51521
+tetra1 14 tetra2 11 jas 0
+tetra1 14 tetra2 12 jas -2.51521
+tetra1 14 tetra2 13 jas 0
+tetra1 14 tetra2 14 jas -5.31718
+tetra1 14 tetra2 15 jas 0
+tetra1 14 tetra2 16 jas -2.51521
+tetra1 14 tetra2 17 jas 0
+tetra1 14 tetra2 18 jas -6.35323
+tetra1 14 tetra2 19 jas 0
+tetra1 14 tetra2 20 jas -6.35323
+tetra1 14 tetra2 21 jas 0
+tetra1 14 tetra2 22 jas -6.35323
+tetra1 14 tetra2 23 jas 0
+tetra1 14 tetra2 24 jas -2.51521
+tetra1 14 tetra2 25 jas 0
+tetra1 14 tetra2 26 jas -6.35323
+tetra1 14 tetra2 27 jas 0
+tetra1 14 tetra2 28 jas -2.51521
+tetra1 14 tetra2 29 jas 0
+tetra1 14 tetra2 30 jas -5.70663
+tetra1 14 tetra2 31 jas 0
+tetra1 14 tetra2 32 jas -6.35323
+tetra1 14 tetra2 33 jas 0
+tetra1 14 tetra2 34 jas -2.51521
+tetra1 14 tetra2 35 jas 0
+tetra1 14 tetra2 36 jas -6.35323
+tetra1 14 tetra2 37 jas 0
+tetra1 14 tetra2 38 jas -6.35323
+tetra1 14 tetra2 39 jas 0
+tetra1 14 tetra2 40 jas -6.35323
+tetra1 14 tetra2 41 jas 0
+tetra1 14 tetra2 42 jas -2.51521
+tetra1 14 tetra2 43 jas 0
+tetra1 14 tetra2 44 jas -2.51521
+tetra1 14 tetra2 45 jas 0
+tetra1 14 tetra2 46 jas -5.70663
+tetra1 14 tetra2 47 jas 0
+tetra1 14 tetra2 48 jas -6.35323
+tetra1 14 tetra2 49 jas 0
+tetra1 14 tetra2 50 jas -6.35323
+tetra1 14 tetra2 51 jas 0
+tetra1 14 tetra2 52 jas -6.35323
+tetra1 14 tetra2 53 jas 0
+tetra1 14 tetra2 54 jas -8.75042
+tetra1 14 tetra2 55 jas 0
+tetra1 14 tetra2 56 jas -6.35323
+tetra1 14 tetra2 57 jas 0
+tetra1 14 tetra2 58 jas -6.35323
+tetra1 14 tetra2 59 jas 0
+tetra1 14 tetra2 60 jas -2.51521
+tetra1 14 tetra2 61 jas 0
+tetra1 14 tetra2 62 jas -6.35323
+tetra1 14 tetra2 63 jas 0
+tetra1 15 tetra2 0 jas 0
+tetra1 15 tetra2 1 jas -2.51521
+tetra1 15 tetra2 2 jas 0
+tetra1 15 tetra2 3 jas -2.51521
+tetra1 15 tetra2 4 jas 0
+tetra1 15 tetra2 5 jas -6.35323
+tetra1 15 tetra2 6 jas 0
+tetra1 15 tetra2 7 jas -5.70663
+tetra1 15 tetra2 8 jas 0
+tetra1 15 tetra2 9 jas -2.51521
+tetra1 15 tetra2 10 jas 0
+tetra1 15 tetra2 11 jas -2.51521
+tetra1 15 tetra2 12 jas 0
+tetra1 15 tetra2 13 jas -2.51521
+tetra1 15 tetra2 14 jas 0
+tetra1 15 tetra2 15 jas -5.31718
+tetra1 15 tetra2 16 jas 0
+tetra1 15 tetra2 17 jas -2.51521
+tetra1 15 tetra2 18 jas 0
+tetra1 15 tetra2 19 jas -6.35323
+tetra1 15 tetra2 20 jas 0
+tetra1 15 tetra2 21 jas -6.35323
+tetra1 15 tetra2 22 jas 0
+tetra1 15 tetra2 23 jas -6.35323
+tetra1 15 tetra2 24 jas 0
+tetra1 15 tetra2 25 jas -2.51521
+tetra1 15 tetra2 26 jas 0
+tetra1 15 tetra2 27 jas -6.35323
+tetra1 15 tetra2 28 jas 0
+tetra1 15 tetra2 29 jas -2.51521
+tetra1 15 tetra2 30 jas 0
+tetra1 15 tetra2 31 jas -5.70663
+tetra1 15 tetra2 32 jas 0
+tetra1 15 tetra2 33 jas -6.35323
+tetra1 15 tetra2 34 jas 0
+tetra1 15 tetra2 35 jas -2.51521
+tetra1 15 tetra2 36 jas 0
+tetra1 15 tetra2 37 jas -6.35323
+tetra1 15 tetra2 38 jas 0
+tetra1 15 tetra2 39 jas -6.35323
+tetra1 15 tetra2 40 jas 0
+tetra1 15 tetra2 41 jas -6.35323
+tetra1 15 tetra2 42 jas 0
+tetra1 15 tetra2 43 jas -2.51521
+tetra1 15 tetra2 44 jas 0
+tetra1 15 tetra2 45 jas -2.51521
+tetra1 15 tetra2 46 jas 0
+tetra1 15 tetra2 47 jas -5.70663
+tetra1 15 tetra2 48 jas 0
+tetra1 15 tetra2 49 jas -6.35323
+tetra1 15 tetra2 50 jas 0
+tetra1 15 tetra2 51 jas -6.35323
+tetra1 15 tetra2 52 jas 0
+tetra1 15 tetra2 53 jas -6.35323
+tetra1 15 tetra2 54 jas 0
+tetra1 15 tetra2 55 jas -8.75042
+tetra1 15 tetra2 56 jas 0
+tetra1 15 tetra2 57 jas -6.35323
+tetra1 15 tetra2 58 jas 0
+tetra1 15 tetra2 59 jas -6.35323
+tetra1 15 tetra2 60 jas 0
+tetra1 15 tetra2 61 jas -2.51521
+tetra1 15 tetra2 62 jas 0
+tetra1 15 tetra2 63 jas -6.35323
+tetra1 16 tetra2 0 jas -5.70663
+tetra1 16 tetra2 1 jas 0
+tetra1 16 tetra2 2 jas -2.51521
+tetra1 16 tetra2 3 jas 0
+tetra1 16 tetra2 4 jas -6.35323
+tetra1 16 tetra2 5 jas 0
+tetra1 16 tetra2 6 jas -2.51521
+tetra1 16 tetra2 7 jas 0
+tetra1 16 tetra2 8 jas -6.35323
+tetra1 16 tetra2 9 jas 0
+tetra1 16 tetra2 10 jas -6.35323
+tetra1 16 tetra2 11 jas 0
+tetra1 16 tetra2 12 jas -6.35323
+tetra1 16 tetra2 13 jas 0
+tetra1 16 tetra2 14 jas -2.51521
+tetra1 16 tetra2 15 jas 0
+tetra1 16 tetra2 16 jas -5.31718
+tetra1 16 tetra2 17 jas 0
+tetra1 16 tetra2 18 jas -2.51521
+tetra1 16 tetra2 19 jas 0
+tetra1 16 tetra2 20 jas -2.51521
+tetra1 16 tetra2 21 jas 0
+tetra1 16 tetra2 22 jas -2.51521
+tetra1 16 tetra2 23 jas 0
+tetra1 16 tetra2 24 jas -5.70663
+tetra1 16 tetra2 25 jas 0
+tetra1 16 tetra2 26 jas -6.35323
+tetra1 16 tetra2 27 jas 0
+tetra1 16 tetra2 28 jas -2.51521
+tetra1 16 tetra2 29 jas 0
+tetra1 16 tetra2 30 jas -2.51521
+tetra1 16 tetra2 31 jas 0
+tetra1 16 tetra2 32 jas -6.35323
+tetra1 16 tetra2 33 jas 0
+tetra1 16 tetra2 34 jas -2.51521
+tetra1 16 tetra2 35 jas 0
+tetra1 16 tetra2 36 jas -6.35323
+tetra1 16 tetra2 37 jas 0
+tetra1 16 tetra2 38 jas -6.35323
+tetra1 16 tetra2 39 jas 0
+tetra1 16 tetra2 40 jas -8.75042
+tetra1 16 tetra2 41 jas 0
+tetra1 16 tetra2 42 jas -6.35323
+tetra1 16 tetra2 43 jas 0
+tetra1 16 tetra2 44 jas -6.35323
+tetra1 16 tetra2 45 jas 0
+tetra1 16 tetra2 46 jas -6.35323
+tetra1 16 tetra2 47 jas 0
+tetra1 16 tetra2 48 jas -5.70663
+tetra1 16 tetra2 49 jas 0
+tetra1 16 tetra2 50 jas -2.51521
+tetra1 16 tetra2 51 jas 0
+tetra1 16 tetra2 52 jas -2.51521
+tetra1 16 tetra2 53 jas 0
+tetra1 16 tetra2 54 jas -6.35323
+tetra1 16 tetra2 55 jas 0
+tetra1 16 tetra2 56 jas -6.35323
+tetra1 16 tetra2 57 jas 0
+tetra1 16 tetra2 58 jas -6.35323
+tetra1 16 tetra2 59 jas 0
+tetra1 16 tetra2 60 jas -2.51521
+tetra1 16 tetra2 61 jas 0
+tetra1 16 tetra2 62 jas -6.35323
+tetra1 16 tetra2 63 jas 0
+tetra1 17 tetra2 0 jas 0
+tetra1 17 tetra2 1 jas -5.70663
+tetra1 17 tetra2 2 jas 0
+tetra1 17 tetra2 3 jas -2.51521
+tetra1 17 tetra2 4 jas 0
+tetra1 17 tetra2 5 jas -6.35323
+tetra1 17 tetra2 6 jas 0
+tetra1 17 tetra2 7 jas -2.51521
+tetra1 17 tetra2 8 jas 0
+tetra1 17 tetra2 9 jas -6.35323
+tetra1 17 tetra2 10 jas 0
+tetra1 17 tetra2 11 jas -6.35323
+tetra1 17 tetra2 12 jas 0
+tetra1 17 tetra2 13 jas -6.35323
+tetra1 17 tetra2 14 jas 0
+tetra1 17 tetra2 15 jas -2.51521
+tetra1 17 tetra2 16 jas 0
+tetra1 17 tetra2 17 jas -5.31718
+tetra1 17 tetra2 18 jas 0
+tetra1 17 tetra2 19 jas -2.51521
+tetra1 17 tetra2 20 jas 0
+tetra1 17 tetra2 21 jas -2.51521
+tetra1 17 tetra2 22 jas 0
+tetra1 17 tetra2 23 jas -2.51521
+tetra1 17 tetra2 24 jas 0
+tetra1 17 tetra2 25 jas -5.70663
+tetra1 17 tetra2 26 jas 0
+tetra1 17 tetra2 27 jas -6.35323
+tetra1 17 tetra2 28 jas 0
+tetra1 17 tetra2 29 jas -2.51521
+tetra1 17 tetra2 30 jas 0
+tetra1 17 tetra2 31 jas -2.51521
+tetra1 17 tetra2 32 jas 0
+tetra1 17 tetra2 33 jas -6.35323
+tetra1 17 tetra2 34 jas 0
+tetra1 17 tetra2 35 jas -2.51521
+tetra1 17 tetra2 36 jas 0
+tetra1 17 tetra2 37 jas -6.35323
+tetra1 17 tetra2 38 jas 0
+tetra1 17 tetra2 39 jas -6.35323
+tetra1 17 tetra2 40 jas 0
+tetra1 17 tetra2 41 jas -8.75042
+tetra1 17 tetra2 42 jas 0
+tetra1 17 tetra2 43 jas -6.35323
+tetra1 17 tetra2 44 jas 0
+tetra1 17 tetra2 45 jas -6.35323
+tetra1 17 tetra2 46 jas 0
+tetra1 17 tetra2 47 jas -6.35323
+tetra1 17 tetra2 48 jas 0
+tetra1 17 tetra2 49 jas -5.70663
+tetra1 17 tetra2 50 jas 0
+tetra1 17 tetra2 51 jas -2.51521
+tetra1 17 tetra2 52 jas 0
+tetra1 17 tetra2 53 jas -2.51521
+tetra1 17 tetra2 54 jas 0
+tetra1 17 tetra2 55 jas -6.35323
+tetra1 17 tetra2 56 jas 0
+tetra1 17 tetra2 57 jas -6.35323
+tetra1 17 tetra2 58 jas 0
+tetra1 17 tetra2 59 jas -6.35323
+tetra1 17 tetra2 60 jas 0
+tetra1 17 tetra2 61 jas -2.51521
+tetra1 17 tetra2 62 jas 0
+tetra1 17 tetra2 63 jas -6.35323
+tetra1 18 tetra2 0 jas -2.51521
+tetra1 18 tetra2 1 jas 0
+tetra1 18 tetra2 2 jas -5.70663
+tetra1 18 tetra2 3 jas 0
+tetra1 18 tetra2 4 jas -2.51521
+tetra1 18 tetra2 5 jas 0
+tetra1 18 tetra2 6 jas -6.35323
+tetra1 18 tetra2 7 jas 0
+tetra1 18 tetra2 8 jas -6.35323
+tetra1 18 tetra2 9 jas 0
+tetra1 18 tetra2 10 jas -6.35323
+tetra1 18 tetra2 11 jas 0
+tetra1 18 tetra2 12 jas -2.51521
+tetra1 18 tetra2 13 jas 0
+tetra1 18 tetra2 14 jas -6.35323
+tetra1 18 tetra2 15 jas 0
+tetra1 18 tetra2 16 jas -2.51521
+tetra1 18 tetra2 17 jas 0
+tetra1 18 tetra2 18 jas -5.31718
+tetra1 18 tetra2 19 jas 0
+tetra1 18 tetra2 20 jas -2.51521
+tetra1 18 tetra2 21 jas 0
+tetra1 18 tetra2 22 jas -2.51521
+tetra1 18 tetra2 23 jas 0
+tetra1 18 tetra2 24 jas -6.35323
+tetra1 18 tetra2 25 jas 0
+tetra1 18 tetra2 26 jas -5.70663
+tetra1 18 tetra2 27 jas 0
+tetra1 18 tetra2 28 jas -2.51521
+tetra1 18 tetra2 29 jas 0
+tetra1 18 tetra2 30 jas -2.51521
+tetra1 18 tetra2 31 jas 0
+tetra1 18 tetra2 32 jas -2.51521
+tetra1 18 tetra2 33 jas 0
+tetra1 18 tetra2 34 jas -6.35323
+tetra1 18 tetra2 35 jas 0
+tetra1 18 tetra2 36 jas -6.35323
+tetra1 18 tetra2 37 jas 0
+tetra1 18 tetra2 38 jas -6.35323
+tetra1 18 tetra2 39 jas 0
+tetra1 18 tetra2 40 jas -6.35323
+tetra1 18 tetra2 41 jas 0
+tetra1 18 tetra2 42 jas -8.75042
+tetra1 18 tetra2 43 jas 0
+tetra1 18 tetra2 44 jas -6.35323
+tetra1 18 tetra2 45 jas 0
+tetra1 18 tetra2 46 jas -6.35323
+tetra1 18 tetra2 47 jas 0
+tetra1 18 tetra2 48 jas -2.51521
+tetra1 18 tetra2 49 jas 0
+tetra1 18 tetra2 50 jas -5.70663
+tetra1 18 tetra2 51 jas 0
+tetra1 18 tetra2 52 jas -6.35323
+tetra1 18 tetra2 53 jas 0
+tetra1 18 tetra2 54 jas -2.51521
+tetra1 18 tetra2 55 jas 0
+tetra1 18 tetra2 56 jas -6.35323
+tetra1 18 tetra2 57 jas 0
+tetra1 18 tetra2 58 jas -6.35323
+tetra1 18 tetra2 59 jas 0
+tetra1 18 tetra2 60 jas -6.35323
+tetra1 18 tetra2 61 jas 0
+tetra1 18 tetra2 62 jas -2.51521
+tetra1 18 tetra2 63 jas 0
+tetra1 19 tetra2 0 jas 0
+tetra1 19 tetra2 1 jas -2.51521
+tetra1 19 tetra2 2 jas 0
+tetra1 19 tetra2 3 jas -5.70663
+tetra1 19 tetra2 4 jas 0
+tetra1 19 tetra2 5 jas -2.51521
+tetra1 19 tetra2 6 jas 0
+tetra1 19 tetra2 7 jas -6.35323
+tetra1 19 tetra2 8 jas 0
+tetra1 19 tetra2 9 jas -6.35323
+tetra1 19 tetra2 10 jas 0
+tetra1 19 tetra2 11 jas -6.35323
+tetra1 19 tetra2 12 jas 0
+tetra1 19 tetra2 13 jas -2.51521
+tetra1 19 tetra2 14 jas 0
+tetra1 19 tetra2 15 jas -6.35323
+tetra1 19 tetra2 16 jas 0
+tetra1 19 tetra2 17 jas -2.51521
+tetra1 19 tetra2 18 jas 0
+tetra1 19 tetra2 19 jas -5.31718
+tetra1 19 tetra2 20 jas 0
+tetra1 19 tetra2 21 jas -2.51521
+tetra1 19 tetra2 22 jas 0
+tetra1 19 tetra2 23 jas -2.51521
+tetra1 19 tetra2 24 jas 0
+tetra1 19 tetra2 25 jas -6.35323
+tetra1 19 tetra2 26 jas 0
+tetra1 19 tetra2 27 jas -5.70663
+tetra1 19 tetra2 28 jas 0
+tetra1 19 tetra2 29 jas -2.51521
+tetra1 19 tetra2 30 jas 0
+tetra1 19 tetra2 31 jas -2.51521
+tetra1 19 tetra2 32 jas 0
+tetra1 19 tetra2 33 jas -2.51521
+tetra1 19 tetra2 34 jas 0
+tetra1 19 tetra2 35 jas -6.35323
+tetra1 19 tetra2 36 jas 0
+tetra1 19 tetra2 37 jas -6.35323
+tetra1 19 tetra2 38 jas 0
+tetra1 19 tetra2 39 jas -6.35323
+tetra1 19 tetra2 40 jas 0
+tetra1 19 tetra2 41 jas -6.35323
+tetra1 19 tetra2 42 jas 0
+tetra1 19 tetra2 43 jas -8.75042
+tetra1 19 tetra2 44 jas 0
+tetra1 19 tetra2 45 jas -6.35323
+tetra1 19 tetra2 46 jas 0
+tetra1 19 tetra2 47 jas -6.35323
+tetra1 19 tetra2 48 jas 0
+tetra1 19 tetra2 49 jas -2.51521
+tetra1 19 tetra2 50 jas 0
+tetra1 19 tetra2 51 jas -5.70663
+tetra1 19 tetra2 52 jas 0
+tetra1 19 tetra2 53 jas -6.35323
+tetra1 19 tetra2 54 jas 0
+tetra1 19 tetra2 55 jas -2.51521
+tetra1 19 tetra2 56 jas 0
+tetra1 19 tetra2 57 jas -6.35323
+tetra1 19 tetra2 58 jas 0
+tetra1 19 tetra2 59 jas -6.35323
+tetra1 19 tetra2 60 jas 0
+tetra1 19 tetra2 61 jas -6.35323
+tetra1 19 tetra2 62 jas 0
+tetra1 19 tetra2 63 jas -2.51521
+tetra1 20 tetra2 0 jas -6.35323
+tetra1 20 tetra2 1 jas 0
+tetra1 20 tetra2 2 jas -2.51521
+tetra1 20 tetra2 3 jas 0
+tetra1 20 tetra2 4 jas -5.70663
+tetra1 20 tetra2 5 jas 0
+tetra1 20 tetra2 6 jas -2.51521
+tetra1 20 tetra2 7 jas 0
+tetra1 20 tetra2 8 jas -6.35323
+tetra1 20 tetra2 9 jas 0
+tetra1 20 tetra2 10 jas -2.51521
+tetra1 20 tetra2 11 jas 0
+tetra1 20 tetra2 12 jas -6.35323
+tetra1 20 tetra2 13 jas 0
+tetra1 20 tetra2 14 jas -6.35323
+tetra1 20 tetra2 15 jas 0
+tetra1 20 tetra2 16 jas -2.51521
+tetra1 20 tetra2 17 jas 0
+tetra1 20 tetra2 18 jas -2.51521
+tetra1 20 tetra2 19 jas 0
+tetra1 20 tetra2 20 jas -5.31718
+tetra1 20 tetra2 21 jas 0
+tetra1 20 tetra2 22 jas -2.51521
+tetra1 20 tetra2 23 jas 0
+tetra1 20 tetra2 24 jas -2.51521
+tetra1 20 tetra2 25 jas 0
+tetra1 20 tetra2 26 jas -2.51521
+tetra1 20 tetra2 27 jas 0
+tetra1 20 tetra2 28 jas -5.70663
+tetra1 20 tetra2 29 jas 0
+tetra1 20 tetra2 30 jas -6.35323
+tetra1 20 tetra2 31 jas 0
+tetra1 20 tetra2 32 jas -6.35323
+tetra1 20 tetra2 33 jas 0
+tetra1 20 tetra2 34 jas -6.35323
+tetra1 20 tetra2 35 jas 0
+tetra1 20 tetra2 36 jas -6.35323
+tetra1 20 tetra2 37 jas 0
+tetra1 20 tetra2 38 jas -2.51521
+tetra1 20 tetra2 39 jas 0
+tetra1 20 tetra2 40 jas -6.35323
+tetra1 20 tetra2 41 jas 0
+tetra1 20 tetra2 42 jas -6.35323
+tetra1 20 tetra2 43 jas 0
+tetra1 20 tetra2 44 jas -8.75042
+tetra1 20 tetra2 45 jas 0
+tetra1 20 tetra2 46 jas -6.35323
+tetra1 20 tetra2 47 jas 0
+tetra1 20 tetra2 48 jas -2.51521
+tetra1 20 tetra2 49 jas 0
+tetra1 20 tetra2 50 jas -6.35323
+tetra1 20 tetra2 51 jas 0
+tetra1 20 tetra2 52 jas -5.70663
+tetra1 20 tetra2 53 jas 0
+tetra1 20 tetra2 54 jas -2.51521
+tetra1 20 tetra2 55 jas 0
+tetra1 20 tetra2 56 jas -2.51521
+tetra1 20 tetra2 57 jas 0
+tetra1 20 tetra2 58 jas -6.35323
+tetra1 20 tetra2 59 jas 0
+tetra1 20 tetra2 60 jas -6.35323
+tetra1 20 tetra2 61 jas 0
+tetra1 20 tetra2 62 jas -6.35323
+tetra1 20 tetra2 63 jas 0
+tetra1 21 tetra2 0 jas 0
+tetra1 21 tetra2 1 jas -6.35323
+tetra1 21 tetra2 2 jas 0
+tetra1 21 tetra2 3 jas -2.51521
+tetra1 21 tetra2 4 jas 0
+tetra1 21 tetra2 5 jas -5.70663
+tetra1 21 tetra2 6 jas 0
+tetra1 21 tetra2 7 jas -2.51521
+tetra1 21 tetra2 8 jas 0
+tetra1 21 tetra2 9 jas -6.35323
+tetra1 21 tetra2 10 jas 0
+tetra1 21 tetra2 11 jas -2.51521
+tetra1 21 tetra2 12 jas 0
+tetra1 21 tetra2 13 jas -6.35323
+tetra1 21 tetra2 14 jas 0
+tetra1 21 tetra2 15 jas -6.35323
+tetra1 21 tetra2 16 jas 0
+tetra1 21 tetra2 17 jas -2.51521
+tetra1 21 tetra2 18 jas 0
+tetra1 21 tetra2 19 jas -2.51521
+tetra1 21 tetra2 20 jas 0
+tetra1 21 tetra2 21 jas -5.31718
+tetra1 21 tetra2 22 jas 0
+tetra1 21 tetra2 23 jas -2.51521
+tetra1 21 tetra2 24 jas 0
+tetra1 21 tetra2 25 jas -2.51521
+tetra1 21 tetra2 26 jas 0
+tetra1 21 tetra2 27 jas -2.51521
+tetra1 21 tetra2 28 jas 0
+tetra1 21 tetra2 29 jas -5.70663
+tetra1 21 tetra2 30 jas 0
+tetra1 21 tetra2 31 jas -6.35323
+tetra1 21 tetra2 32 jas 0
+tetra1 21 tetra2 33 jas -6.35323
+tetra1 21 tetra2 34 jas 0
+tetra1 21 tetra2 35 jas -6.35323
+tetra1 21 tetra2 36 jas 0
+tetra1 21 tetra2 37 jas -6.35323
+tetra1 21 tetra2 38 jas 0
+tetra1 21 tetra2 39 jas -2.51521
+tetra1 21 tetra2 40 jas 0
+tetra1 21 tetra2 41 jas -6.35323
+tetra1 21 tetra2 42 jas 0
+tetra1 21 tetra2 43 jas -6.35323
+tetra1 21 tetra2 44 jas 0
+tetra1 21 tetra2 45 jas -8.75042
+tetra1 21 tetra2 46 jas 0
+tetra1 21 tetra2 47 jas -6.35323
+tetra1 21 tetra2 48 jas 0
+tetra1 21 tetra2 49 jas -2.51521
+tetra1 21 tetra2 50 jas 0
+tetra1 21 tetra2 51 jas -6.35323
+tetra1 21 tetra2 52 jas 0
+tetra1 21 tetra2 53 jas -5.70663
+tetra1 21 tetra2 54 jas 0
+tetra1 21 tetra2 55 jas -2.51521
+tetra1 21 tetra2 56 jas 0
+tetra1 21 tetra2 57 jas -2.51521
+tetra1 21 tetra2 58 jas 0
+tetra1 21 tetra2 59 jas -6.35323
+tetra1 21 tetra2 60 jas 0
+tetra1 21 tetra2 61 jas -6.35323
+tetra1 21 tetra2 62 jas 0
+tetra1 21 tetra2 63 jas -6.35323
+tetra1 22 tetra2 0 jas -2.51521
+tetra1 22 tetra2 1 jas 0
+tetra1 22 tetra2 2 jas -6.35323
+tetra1 22 tetra2 3 jas 0
+tetra1 22 tetra2 4 jas -2.51521
+tetra1 22 tetra2 5 jas 0
+tetra1 22 tetra2 6 jas -5.70663
+tetra1 22 tetra2 7 jas 0
+tetra1 22 tetra2 8 jas -2.51521
+tetra1 22 tetra2 9 jas 0
+tetra1 22 tetra2 10 jas -6.35323
+tetra1 22 tetra2 11 jas 0
+tetra1 22 tetra2 12 jas -6.35323
+tetra1 22 tetra2 13 jas 0
+tetra1 22 tetra2 14 jas -6.35323
+tetra1 22 tetra2 15 jas 0
+tetra1 22 tetra2 16 jas -2.51521
+tetra1 22 tetra2 17 jas 0
+tetra1 22 tetra2 18 jas -2.51521
+tetra1 22 tetra2 19 jas 0
+tetra1 22 tetra2 20 jas -2.51521
+tetra1 22 tetra2 21 jas 0
+tetra1 22 tetra2 22 jas -5.31718
+tetra1 22 tetra2 23 jas 0
+tetra1 22 tetra2 24 jas -2.51521
+tetra1 22 tetra2 25 jas 0
+tetra1 22 tetra2 26 jas -2.51521
+tetra1 22 tetra2 27 jas 0
+tetra1 22 tetra2 28 jas -6.35323
+tetra1 22 tetra2 29 jas 0
+tetra1 22 tetra2 30 jas -5.70663
+tetra1 22 tetra2 31 jas 0
+tetra1 22 tetra2 32 jas -6.35323
+tetra1 22 tetra2 33 jas 0
+tetra1 22 tetra2 34 jas -6.35323
+tetra1 22 tetra2 35 jas 0
+tetra1 22 tetra2 36 jas -2.51521
+tetra1 22 tetra2 37 jas 0
+tetra1 22 tetra2 38 jas -6.35323
+tetra1 22 tetra2 39 jas 0
+tetra1 22 tetra2 40 jas -6.35323
+tetra1 22 tetra2 41 jas 0
+tetra1 22 tetra2 42 jas -6.35323
+tetra1 22 tetra2 43 jas 0
+tetra1 22 tetra2 44 jas -6.35323
+tetra1 22 tetra2 45 jas 0
+tetra1 22 tetra2 46 jas -8.75042
+tetra1 22 tetra2 47 jas 0
+tetra1 22 tetra2 48 jas -6.35323
+tetra1 22 tetra2 49 jas 0
+tetra1 22 tetra2 50 jas -2.51521
+tetra1 22 tetra2 51 jas 0
+tetra1 22 tetra2 52 jas -2.51521
+tetra1 22 tetra2 53 jas 0
+tetra1 22 tetra2 54 jas -5.70663
+tetra1 22 tetra2 55 jas 0
+tetra1 22 tetra2 56 jas -6.35323
+tetra1 22 tetra2 57 jas 0
+tetra1 22 tetra2 58 jas -2.51521
+tetra1 22 tetra2 59 jas 0
+tetra1 22 tetra2 60 jas -6.35323
+tetra1 22 tetra2 61 jas 0
+tetra1 22 tetra2 62 jas -6.35323
+tetra1 22 tetra2 63 jas 0
+tetra1 23 tetra2 0 jas 0
+tetra1 23 tetra2 1 jas -2.51521
+tetra1 23 tetra2 2 jas 0
+tetra1 23 tetra2 3 jas -6.35323
+tetra1 23 tetra2 4 jas 0
+tetra1 23 tetra2 5 jas -2.51521
+tetra1 23 tetra2 6 jas 0
+tetra1 23 tetra2 7 jas -5.70663
+tetra1 23 tetra2 8 jas 0
+tetra1 23 tetra2 9 jas -2.51521
+tetra1 23 tetra2 10 jas 0
+tetra1 23 tetra2 11 jas -6.35323
+tetra1 23 tetra2 12 jas 0
+tetra1 23 tetra2 13 jas -6.35323
+tetra1 23 tetra2 14 jas 0
+tetra1 23 tetra2 15 jas -6.35323
+tetra1 23 tetra2 16 jas 0
+tetra1 23 tetra2 17 jas -2.51521
+tetra1 23 tetra2 18 jas 0
+tetra1 23 tetra2 19 jas -2.51521
+tetra1 23 tetra2 20 jas 0
+tetra1 23 tetra2 21 jas -2.51521
+tetra1 23 tetra2 22 jas 0
+tetra1 23 tetra2 23 jas -5.31718
+tetra1 23 tetra2 24 jas 0
+tetra1 23 tetra2 25 jas -2.51521
+tetra1 23 tetra2 26 jas 0
+tetra1 23 tetra2 27 jas -2.51521
+tetra1 23 tetra2 28 jas 0
+tetra1 23 tetra2 29 jas -6.35323
+tetra1 23 tetra2 30 jas 0
+tetra1 23 tetra2 31 jas -5.70663
+tetra1 23 tetra2 32 jas 0
+tetra1 23 tetra2 33 jas -6.35323
+tetra1 23 tetra2 34 jas 0
+tetra1 23 tetra2 35 jas -6.35323
+tetra1 23 tetra2 36 jas 0
+tetra1 23 tetra2 37 jas -2.51521
+tetra1 23 tetra2 38 jas 0
+tetra1 23 tetra2 39 jas -6.35323
+tetra1 23 tetra2 40 jas 0
+tetra1 23 tetra2 41 jas -6.35323
+tetra1 23 tetra2 42 jas 0
+tetra1 23 tetra2 43 jas -6.35323
+tetra1 23 tetra2 44 jas 0
+tetra1 23 tetra2 45 jas -6.35323
+tetra1 23 tetra2 46 jas 0
+tetra1 23 tetra2 47 jas -8.75042
+tetra1 23 tetra2 48 jas 0
+tetra1 23 tetra2 49 jas -6.35323
+tetra1 23 tetra2 50 jas 0
+tetra1 23 tetra2 51 jas -2.51521
+tetra1 23 tetra2 52 jas 0
+tetra1 23 tetra2 53 jas -2.51521
+tetra1 23 tetra2 54 jas 0
+tetra1 23 tetra2 55 jas -5.70663
+tetra1 23 tetra2 56 jas 0
+tetra1 23 tetra2 57 jas -6.35323
+tetra1 23 tetra2 58 jas 0
+tetra1 23 tetra2 59 jas -2.51521
+tetra1 23 tetra2 60 jas 0
+tetra1 23 tetra2 61 jas -6.35323
+tetra1 23 tetra2 62 jas 0
+tetra1 23 tetra2 63 jas -6.35323
+tetra1 24 tetra2 0 jas -6.35323
+tetra1 24 tetra2 1 jas 0
+tetra1 24 tetra2 2 jas -6.35323
+tetra1 24 tetra2 3 jas 0
+tetra1 24 tetra2 4 jas -6.35323
+tetra1 24 tetra2 5 jas 0
+tetra1 24 tetra2 6 jas -2.51521
+tetra1 24 tetra2 7 jas 0
+tetra1 24 tetra2 8 jas -5.70663
+tetra1 24 tetra2 9 jas 0
+tetra1 24 tetra2 10 jas -2.51521
+tetra1 24 tetra2 11 jas 0
+tetra1 24 tetra2 12 jas -6.35323
+tetra1 24 tetra2 13 jas 0
+tetra1 24 tetra2 14 jas -2.51521
+tetra1 24 tetra2 15 jas 0
+tetra1 24 tetra2 16 jas -5.70663
+tetra1 24 tetra2 17 jas 0
+tetra1 24 tetra2 18 jas -6.35323
+tetra1 24 tetra2 19 jas 0
+tetra1 24 tetra2 20 jas -2.51521
+tetra1 24 tetra2 21 jas 0
+tetra1 24 tetra2 22 jas -2.51521
+tetra1 24 tetra2 23 jas 0
+tetra1 24 tetra2 24 jas -5.31718
+tetra1 24 tetra2 25 jas 0
+tetra1 24 tetra2 26 jas -2.51521
+tetra1 24 tetra2 27 jas 0
+tetra1 24 tetra2 28 jas -2.51521
+tetra1 24 tetra2 29 jas 0
+tetra1 24 tetra2 30 jas -2.51521
+tetra1 24 tetra2 31 jas 0
+tetra1 24 tetra2 32 jas -8.75042
+tetra1 24 tetra2 33 jas 0
+tetra1 24 tetra2 34 jas -6.35323
+tetra1 24 tetra2 35 jas 0
+tetra1 24 tetra2 36 jas -6.35323
+tetra1 24 tetra2 37 jas 0
+tetra1 24 tetra2 38 jas -6.35323
+tetra1 24 tetra2 39 jas 0
+tetra1 24 tetra2 40 jas -6.35323
+tetra1 24 tetra2 41 jas 0
+tetra1 24 tetra2 42 jas -2.51521
+tetra1 24 tetra2 43 jas 0
+tetra1 24 tetra2 44 jas -6.35323
+tetra1 24 tetra2 45 jas 0
+tetra1 24 tetra2 46 jas -6.35323
+tetra1 24 tetra2 47 jas 0
+tetra1 24 tetra2 48 jas -6.35323
+tetra1 24 tetra2 49 jas 0
+tetra1 24 tetra2 50 jas -6.35323
+tetra1 24 tetra2 51 jas 0
+tetra1 24 tetra2 52 jas -2.51521
+tetra1 24 tetra2 53 jas 0
+tetra1 24 tetra2 54 jas -6.35323
+tetra1 24 tetra2 55 jas 0
+tetra1 24 tetra2 56 jas -5.70663
+tetra1 24 tetra2 57 jas 0
+tetra1 24 tetra2 58 jas -2.51521
+tetra1 24 tetra2 59 jas 0
+tetra1 24 tetra2 60 jas -2.51521
+tetra1 24 tetra2 61 jas 0
+tetra1 24 tetra2 62 jas -6.35323
+tetra1 24 tetra2 63 jas 0
+tetra1 25 tetra2 0 jas 0
+tetra1 25 tetra2 1 jas -6.35323
+tetra1 25 tetra2 2 jas 0
+tetra1 25 tetra2 3 jas -6.35323
+tetra1 25 tetra2 4 jas 0
+tetra1 25 tetra2 5 jas -6.35323
+tetra1 25 tetra2 6 jas 0
+tetra1 25 tetra2 7 jas -2.51521
+tetra1 25 tetra2 8 jas 0
+tetra1 25 tetra2 9 jas -5.70663
+tetra1 25 tetra2 10 jas 0
+tetra1 25 tetra2 11 jas -2.51521
+tetra1 25 tetra2 12 jas 0
+tetra1 25 tetra2 13 jas -6.35323
+tetra1 25 tetra2 14 jas 0
+tetra1 25 tetra2 15 jas -2.51521
+tetra1 25 tetra2 16 jas 0
+tetra1 25 tetra2 17 jas -5.70663
+tetra1 25 tetra2 18 jas 0
+tetra1 25 tetra2 19 jas -6.35323
+tetra1 25 tetra2 20 jas 0
+tetra1 25 tetra2 21 jas -2.51521
+tetra1 25 tetra2 22 jas 0
+tetra1 25 tetra2 23 jas -2.51521
+tetra1 25 tetra2 24 jas 0
+tetra1 25 tetra2 25 jas -5.31718
+tetra1 25 tetra2 26 jas 0
+tetra1 25 tetra2 27 jas -2.51521
+tetra1 25 tetra2 28 jas 0
+tetra1 25 tetra2 29 jas -2.51521
+tetra1 25 tetra2 30 jas 0
+tetra1 25 tetra2 31 jas -2.51521
+tetra1 25 tetra2 32 jas 0
+tetra1 25 tetra2 33 jas -8.75042
+tetra1 25 tetra2 34 jas 0
+tetra1 25 tetra2 35 jas -6.35323
+tetra1 25 tetra2 36 jas 0
+tetra1 25 tetra2 37 jas -6.35323
+tetra1 25 tetra2 38 jas 0
+tetra1 25 tetra2 39 jas -6.35323
+tetra1 25 tetra2 40 jas 0
+tetra1 25 tetra2 41 jas -6.35323
+tetra1 25 tetra2 42 jas 0
+tetra1 25 tetra2 43 jas -2.51521
+tetra1 25 tetra2 44 jas 0
+tetra1 25 tetra2 45 jas -6.35323
+tetra1 25 tetra2 46 jas 0
+tetra1 25 tetra2 47 jas -6.35323
+tetra1 25 tetra2 48 jas 0
+tetra1 25 tetra2 49 jas -6.35323
+tetra1 25 tetra2 50 jas 0
+tetra1 25 tetra2 51 jas -6.35323
+tetra1 25 tetra2 52 jas 0
+tetra1 25 tetra2 53 jas -2.51521
+tetra1 25 tetra2 54 jas 0
+tetra1 25 tetra2 55 jas -6.35323
+tetra1 25 tetra2 56 jas 0
+tetra1 25 tetra2 57 jas -5.70663
+tetra1 25 tetra2 58 jas 0
+tetra1 25 tetra2 59 jas -2.51521
+tetra1 25 tetra2 60 jas 0
+tetra1 25 tetra2 61 jas -2.51521
+tetra1 25 tetra2 62 jas 0
+tetra1 25 tetra2 63 jas -6.35323
+tetra1 26 tetra2 0 jas -6.35323
+tetra1 26 tetra2 1 jas 0
+tetra1 26 tetra2 2 jas -6.35323
+tetra1 26 tetra2 3 jas 0
+tetra1 26 tetra2 4 jas -2.51521
+tetra1 26 tetra2 5 jas 0
+tetra1 26 tetra2 6 jas -6.35323
+tetra1 26 tetra2 7 jas 0
+tetra1 26 tetra2 8 jas -2.51521
+tetra1 26 tetra2 9 jas 0
+tetra1 26 tetra2 10 jas -5.70663
+tetra1 26 tetra2 11 jas 0
+tetra1 26 tetra2 12 jas -2.51521
+tetra1 26 tetra2 13 jas 0
+tetra1 26 tetra2 14 jas -6.35323
+tetra1 26 tetra2 15 jas 0
+tetra1 26 tetra2 16 jas -6.35323
+tetra1 26 tetra2 17 jas 0
+tetra1 26 tetra2 18 jas -5.70663
+tetra1 26 tetra2 19 jas 0
+tetra1 26 tetra2 20 jas -2.51521
+tetra1 26 tetra2 21 jas 0
+tetra1 26 tetra2 22 jas -2.51521
+tetra1 26 tetra2 23 jas 0
+tetra1 26 tetra2 24 jas -2.51521
+tetra1 26 tetra2 25 jas 0
+tetra1 26 tetra2 26 jas -5.31718
+tetra1 26 tetra2 27 jas 0
+tetra1 26 tetra2 28 jas -2.51521
+tetra1 26 tetra2 29 jas 0
+tetra1 26 tetra2 30 jas -2.51521
+tetra1 26 tetra2 31 jas 0
+tetra1 26 tetra2 32 jas -6.35323
+tetra1 26 tetra2 33 jas 0
+tetra1 26 tetra2 34 jas -8.75042
+tetra1 26 tetra2 35 jas 0
+tetra1 26 tetra2 36 jas -6.35323
+tetra1 26 tetra2 37 jas 0
+tetra1 26 tetra2 38 jas -6.35323
+tetra1 26 tetra2 39 jas 0
+tetra1 26 tetra2 40 jas -2.51521
+tetra1 26 tetra2 41 jas 0
+tetra1 26 tetra2 42 jas -6.35323
+tetra1 26 tetra2 43 jas 0
+tetra1 26 tetra2 44 jas -6.35323
+tetra1 26 tetra2 45 jas 0
+tetra1 26 tetra2 46 jas -6.35323
+tetra1 26 tetra2 47 jas 0
+tetra1 26 tetra2 48 jas -6.35323
+tetra1 26 tetra2 49 jas 0
+tetra1 26 tetra2 50 jas -6.35323
+tetra1 26 tetra2 51 jas 0
+tetra1 26 tetra2 52 jas -6.35323
+tetra1 26 tetra2 53 jas 0
+tetra1 26 tetra2 54 jas -2.51521
+tetra1 26 tetra2 55 jas 0
+tetra1 26 tetra2 56 jas -2.51521
+tetra1 26 tetra2 57 jas 0
+tetra1 26 tetra2 58 jas -5.70663
+tetra1 26 tetra2 59 jas 0
+tetra1 26 tetra2 60 jas -6.35323
+tetra1 26 tetra2 61 jas 0
+tetra1 26 tetra2 62 jas -2.51521
+tetra1 26 tetra2 63 jas 0
+tetra1 27 tetra2 0 jas 0
+tetra1 27 tetra2 1 jas -6.35323
+tetra1 27 tetra2 2 jas 0
+tetra1 27 tetra2 3 jas -6.35323
+tetra1 27 tetra2 4 jas 0
+tetra1 27 tetra2 5 jas -2.51521
+tetra1 27 tetra2 6 jas 0
+tetra1 27 tetra2 7 jas -6.35323
+tetra1 27 tetra2 8 jas 0
+tetra1 27 tetra2 9 jas -2.51521
+tetra1 27 tetra2 10 jas 0
+tetra1 27 tetra2 11 jas -5.70663
+tetra1 27 tetra2 12 jas 0
+tetra1 27 tetra2 13 jas -2.51521
+tetra1 27 tetra2 14 jas 0
+tetra1 27 tetra2 15 jas -6.35323
+tetra1 27 tetra2 16 jas 0
+tetra1 27 tetra2 17 jas -6.35323
+tetra1 27 tetra2 18 jas 0
+tetra1 27 tetra2 19 jas -5.70663
+tetra1 27 tetra2 20 jas 0
+tetra1 27 tetra2 21 jas -2.51521
+tetra1 27 tetra2 22 jas 0
+tetra1 27 tetra2 23 jas -2.51521
+tetra1 27 tetra2 24 jas 0
+tetra1 27 tetra2 25 jas -2.51521
+tetra1 27 tetra2 26 jas 0
+tetra1 27 tetra2 27 jas -5.31718
+tetra1 27 tetra2 28 jas 0
+tetra1 27 tetra2 29 jas -2.51521
+tetra1 27 tetra2 30 jas 0
+tetra1 27 tetra2 31 jas -2.51521
+tetra1 27 tetra2 32 jas 0
+tetra1 27 tetra2 33 jas -6.35323
+tetra1 27 tetra2 34 jas 0
+tetra1 27 tetra2 35 jas -8.75042
+tetra1 27 tetra2 36 jas 0
+tetra1 27 tetra2 37 jas -6.35323
+tetra1 27 tetra2 38 jas 0
+tetra1 27 tetra2 39 jas -6.35323
+tetra1 27 tetra2 40 jas 0
+tetra1 27 tetra2 41 jas -2.51521
+tetra1 27 tetra2 42 jas 0
+tetra1 27 tetra2 43 jas -6.35323
+tetra1 27 tetra2 44 jas 0
+tetra1 27 tetra2 45 jas -6.35323
+tetra1 27 tetra2 46 jas 0
+tetra1 27 tetra2 47 jas -6.35323
+tetra1 27 tetra2 48 jas 0
+tetra1 27 tetra2 49 jas -6.35323
+tetra1 27 tetra2 50 jas 0
+tetra1 27 tetra2 51 jas -6.35323
+tetra1 27 tetra2 52 jas 0
+tetra1 27 tetra2 53 jas -6.35323
+tetra1 27 tetra2 54 jas 0
+tetra1 27 tetra2 55 jas -2.51521
+tetra1 27 tetra2 56 jas 0
+tetra1 27 tetra2 57 jas -2.51521
+tetra1 27 tetra2 58 jas 0
+tetra1 27 tetra2 59 jas -5.70663
+tetra1 27 tetra2 60 jas 0
+tetra1 27 tetra2 61 jas -6.35323
+tetra1 27 tetra2 62 jas 0
+tetra1 27 tetra2 63 jas -2.51521
+tetra1 28 tetra2 0 jas -6.35323
+tetra1 28 tetra2 1 jas 0
+tetra1 28 tetra2 2 jas -2.51521
+tetra1 28 tetra2 3 jas 0
+tetra1 28 tetra2 4 jas -6.35323
+tetra1 28 tetra2 5 jas 0
+tetra1 28 tetra2 6 jas -6.35323
+tetra1 28 tetra2 7 jas 0
+tetra1 28 tetra2 8 jas -6.35323
+tetra1 28 tetra2 9 jas 0
+tetra1 28 tetra2 10 jas -2.51521
+tetra1 28 tetra2 11 jas 0
+tetra1 28 tetra2 12 jas -5.70663
+tetra1 28 tetra2 13 jas 0
+tetra1 28 tetra2 14 jas -2.51521
+tetra1 28 tetra2 15 jas 0
+tetra1 28 tetra2 16 jas -2.51521
+tetra1 28 tetra2 17 jas 0
+tetra1 28 tetra2 18 jas -2.51521
+tetra1 28 tetra2 19 jas 0
+tetra1 28 tetra2 20 jas -5.70663
+tetra1 28 tetra2 21 jas 0
+tetra1 28 tetra2 22 jas -6.35323
+tetra1 28 tetra2 23 jas 0
+tetra1 28 tetra2 24 jas -2.51521
+tetra1 28 tetra2 25 jas 0
+tetra1 28 tetra2 26 jas -2.51521
+tetra1 28 tetra2 27 jas 0
+tetra1 28 tetra2 28 jas -5.31718
+tetra1 28 tetra2 29 jas 0
+tetra1 28 tetra2 30 jas -2.51521
+tetra1 28 tetra2 31 jas 0
+tetra1 28 tetra2 32 jas -6.35323
+tetra1 28 tetra2 33 jas 0
+tetra1 28 tetra2 34 jas -6.35323
+tetra1 28 tetra2 35 jas 0
+tetra1 28 tetra2 36 jas -8.75042
+tetra1 28 tetra2 37 jas 0
+tetra1 28 tetra2 38 jas -6.35323
+tetra1 28 tetra2 39 jas 0
+tetra1 28 tetra2 40 jas -6.35323
+tetra1 28 tetra2 41 jas 0
+tetra1 28 tetra2 42 jas -6.35323
+tetra1 28 tetra2 43 jas 0
+tetra1 28 tetra2 44 jas -6.35323
+tetra1 28 tetra2 45 jas 0
+tetra1 28 tetra2 46 jas -2.51521
+tetra1 28 tetra2 47 jas 0
+tetra1 28 tetra2 48 jas -2.51521
+tetra1 28 tetra2 49 jas 0
+tetra1 28 tetra2 50 jas -6.35323
+tetra1 28 tetra2 51 jas 0
+tetra1 28 tetra2 52 jas -6.35323
+tetra1 28 tetra2 53 jas 0
+tetra1 28 tetra2 54 jas -6.35323
+tetra1 28 tetra2 55 jas 0
+tetra1 28 tetra2 56 jas -2.51521
+tetra1 28 tetra2 57 jas 0
+tetra1 28 tetra2 58 jas -6.35323
+tetra1 28 tetra2 59 jas 0
+tetra1 28 tetra2 60 jas -5.70663
+tetra1 28 tetra2 61 jas 0
+tetra1 28 tetra2 62 jas -2.51521
+tetra1 28 tetra2 63 jas 0
+tetra1 29 tetra2 0 jas 0
+tetra1 29 tetra2 1 jas -6.35323
+tetra1 29 tetra2 2 jas 0
+tetra1 29 tetra2 3 jas -2.51521
+tetra1 29 tetra2 4 jas 0
+tetra1 29 tetra2 5 jas -6.35323
+tetra1 29 tetra2 6 jas 0
+tetra1 29 tetra2 7 jas -6.35323
+tetra1 29 tetra2 8 jas 0
+tetra1 29 tetra2 9 jas -6.35323
+tetra1 29 tetra2 10 jas 0
+tetra1 29 tetra2 11 jas -2.51521
+tetra1 29 tetra2 12 jas 0
+tetra1 29 tetra2 13 jas -5.70663
+tetra1 29 tetra2 14 jas 0
+tetra1 29 tetra2 15 jas -2.51521
+tetra1 29 tetra2 16 jas 0
+tetra1 29 tetra2 17 jas -2.51521
+tetra1 29 tetra2 18 jas 0
+tetra1 29 tetra2 19 jas -2.51521
+tetra1 29 tetra2 20 jas 0
+tetra1 29 tetra2 21 jas -5.70663
+tetra1 29 tetra2 22 jas 0
+tetra1 29 tetra2 23 jas -6.35323
+tetra1 29 tetra2 24 jas 0
+tetra1 29 tetra2 25 jas -2.51521
+tetra1 29 tetra2 26 jas 0
+tetra1 29 tetra2 27 jas -2.51521
+tetra1 29 tetra2 28 jas 0
+tetra1 29 tetra2 29 jas -5.31718
+tetra1 29 tetra2 30 jas 0
+tetra1 29 tetra2 31 jas -2.51521
+tetra1 29 tetra2 32 jas 0
+tetra1 29 tetra2 33 jas -6.35323
+tetra1 29 tetra2 34 jas 0
+tetra1 29 tetra2 35 jas -6.35323
+tetra1 29 tetra2 36 jas 0
+tetra1 29 tetra2 37 jas -8.75042
+tetra1 29 tetra2 38 jas 0
+tetra1 29 tetra2 39 jas -6.35323
+tetra1 29 tetra2 40 jas 0
+tetra1 29 tetra2 41 jas -6.35323
+tetra1 29 tetra2 42 jas 0
+tetra1 29 tetra2 43 jas -6.35323
+tetra1 29 tetra2 44 jas 0
+tetra1 29 tetra2 45 jas -6.35323
+tetra1 29 tetra2 46 jas 0
+tetra1 29 tetra2 47 jas -2.51521
+tetra1 29 tetra2 48 jas 0
+tetra1 29 tetra2 49 jas -2.51521
+tetra1 29 tetra2 50 jas 0
+tetra1 29 tetra2 51 jas -6.35323
+tetra1 29 tetra2 52 jas 0
+tetra1 29 tetra2 53 jas -6.35323
+tetra1 29 tetra2 54 jas 0
+tetra1 29 tetra2 55 jas -6.35323
+tetra1 29 tetra2 56 jas 0
+tetra1 29 tetra2 57 jas -2.51521
+tetra1 29 tetra2 58 jas 0
+tetra1 29 tetra2 59 jas -6.35323
+tetra1 29 tetra2 60 jas 0
+tetra1 29 tetra2 61 jas -5.70663
+tetra1 29 tetra2 62 jas 0
+tetra1 29 tetra2 63 jas -2.51521
+tetra1 30 tetra2 0 jas -2.51521
+tetra1 30 tetra2 1 jas 0
+tetra1 30 tetra2 2 jas -6.35323
+tetra1 30 tetra2 3 jas 0
+tetra1 30 tetra2 4 jas -6.35323
+tetra1 30 tetra2 5 jas 0
+tetra1 30 tetra2 6 jas -6.35323
+tetra1 30 tetra2 7 jas 0
+tetra1 30 tetra2 8 jas -2.51521
+tetra1 30 tetra2 9 jas 0
+tetra1 30 tetra2 10 jas -6.35323
+tetra1 30 tetra2 11 jas 0
+tetra1 30 tetra2 12 jas -2.51521
+tetra1 30 tetra2 13 jas 0
+tetra1 30 tetra2 14 jas -5.70663
+tetra1 30 tetra2 15 jas 0
+tetra1 30 tetra2 16 jas -2.51521
+tetra1 30 tetra2 17 jas 0
+tetra1 30 tetra2 18 jas -2.51521
+tetra1 30 tetra2 19 jas 0
+tetra1 30 tetra2 20 jas -6.35323
+tetra1 30 tetra2 21 jas 0
+tetra1 30 tetra2 22 jas -5.70663
+tetra1 30 tetra2 23 jas 0
+tetra1 30 tetra2 24 jas -2.51521
+tetra1 30 tetra2 25 jas 0
+tetra1 30 tetra2 26 jas -2.51521
+tetra1 30 tetra2 27 jas 0
+tetra1 30 tetra2 28 jas -2.51521
+tetra1 30 tetra2 29 jas 0
+tetra1 30 tetra2 30 jas -5.31718
+tetra1 30 tetra2 31 jas 0
+tetra1 30 tetra2 32 jas -6.35323
+tetra1 30 tetra2 33 jas 0
+tetra1 30 tetra2 34 jas -6.35323
+tetra1 30 tetra2 35 jas 0
+tetra1 30 tetra2 36 jas -6.35323
+tetra1 30 tetra2 37 jas 0
+tetra1 30 tetra2 38 jas -8.75042
+tetra1 30 tetra2 39 jas 0
+tetra1 30 tetra2 40 jas -6.35323
+tetra1 30 tetra2 41 jas 0
+tetra1 30 tetra2 42 jas -6.35323
+tetra1 30 tetra2 43 jas 0
+tetra1 30 tetra2 44 jas -2.51521
+tetra1 30 tetra2 45 jas 0
+tetra1 30 tetra2 46 jas -6.35323
+tetra1 30 tetra2 47 jas 0
+tetra1 30 tetra2 48 jas -6.35323
+tetra1 30 tetra2 49 jas 0
+tetra1 30 tetra2 50 jas -2.51521
+tetra1 30 tetra2 51 jas 0
+tetra1 30 tetra2 52 jas -6.35323
+tetra1 30 tetra2 53 jas 0
+tetra1 30 tetra2 54 jas -6.35323
+tetra1 30 tetra2 55 jas 0
+tetra1 30 tetra2 56 jas -6.35323
+tetra1 30 tetra2 57 jas 0
+tetra1 30 tetra2 58 jas -2.51521
+tetra1 30 tetra2 59 jas 0
+tetra1 30 tetra2 60 jas -2.51521
+tetra1 30 tetra2 61 jas 0
+tetra1 30 tetra2 62 jas -5.70663
+tetra1 30 tetra2 63 jas 0
+tetra1 31 tetra2 0 jas 0
+tetra1 31 tetra2 1 jas -2.51521
+tetra1 31 tetra2 2 jas 0
+tetra1 31 tetra2 3 jas -6.35323
+tetra1 31 tetra2 4 jas 0
+tetra1 31 tetra2 5 jas -6.35323
+tetra1 31 tetra2 6 jas 0
+tetra1 31 tetra2 7 jas -6.35323
+tetra1 31 tetra2 8 jas 0
+tetra1 31 tetra2 9 jas -2.51521
+tetra1 31 tetra2 10 jas 0
+tetra1 31 tetra2 11 jas -6.35323
+tetra1 31 tetra2 12 jas 0
+tetra1 31 tetra2 13 jas -2.51521
+tetra1 31 tetra2 14 jas 0
+tetra1 31 tetra2 15 jas -5.70663
+tetra1 31 tetra2 16 jas 0
+tetra1 31 tetra2 17 jas -2.51521
+tetra1 31 tetra2 18 jas 0
+tetra1 31 tetra2 19 jas -2.51521
+tetra1 31 tetra2 20 jas 0
+tetra1 31 tetra2 21 jas -6.35323
+tetra1 31 tetra2 22 jas 0
+tetra1 31 tetra2 23 jas -5.70663
+tetra1 31 tetra2 24 jas 0
+tetra1 31 tetra2 25 jas -2.51521
+tetra1 31 tetra2 26 jas 0
+tetra1 31 tetra2 27 jas -2.51521
+tetra1 31 tetra2 28 jas 0
+tetra1 31 tetra2 29 jas -2.51521
+tetra1 31 tetra2 30 jas 0
+tetra1 31 tetra2 31 jas -5.31718
+tetra1 31 tetra2 32 jas 0
+tetra1 31 tetra2 33 jas -6.35323
+tetra1 31 tetra2 34 jas 0
+tetra1 31 tetra2 35 jas -6.35323
+tetra1 31 tetra2 36 jas 0
+tetra1 31 tetra2 37 jas -6.35323
+tetra1 31 tetra2 38 jas 0
+tetra1 31 tetra2 39 jas -8.75042
+tetra1 31 tetra2 40 jas 0
+tetra1 31 tetra2 41 jas -6.35323
+tetra1 31 tetra2 42 jas 0
+tetra1 31 tetra2 43 jas -6.35323
+tetra1 31 tetra2 44 jas 0
+tetra1 31 tetra2 45 jas -2.51521
+tetra1 31 tetra2 46 jas 0
+tetra1 31 tetra2 47 jas -6.35323
+tetra1 31 tetra2 48 jas 0
+tetra1 31 tetra2 49 jas -6.35323
+tetra1 31 tetra2 50 jas 0
+tetra1 31 tetra2 51 jas -2.51521
+tetra1 31 tetra2 52 jas 0
+tetra1 31 tetra2 53 jas -6.35323
+tetra1 31 tetra2 54 jas 0
+tetra1 31 tetra2 55 jas -6.35323
+tetra1 31 tetra2 56 jas 0
+tetra1 31 tetra2 57 jas -6.35323
+tetra1 31 tetra2 58 jas 0
+tetra1 31 tetra2 59 jas -2.51521
+tetra1 31 tetra2 60 jas 0
+tetra1 31 tetra2 61 jas -2.51521
+tetra1 31 tetra2 62 jas 0
+tetra1 31 tetra2 63 jas -5.70663
+tetra1 32 tetra2 0 jas -5.70663
+tetra1 32 tetra2 1 jas 0
+tetra1 32 tetra2 2 jas -2.51521
+tetra1 32 tetra2 3 jas 0
+tetra1 32 tetra2 4 jas -2.51521
+tetra1 32 tetra2 5 jas 0
+tetra1 32 tetra2 6 jas -6.35323
+tetra1 32 tetra2 7 jas 0
+tetra1 32 tetra2 8 jas -6.35323
+tetra1 32 tetra2 9 jas 0
+tetra1 32 tetra2 10 jas -6.35323
+tetra1 32 tetra2 11 jas 0
+tetra1 32 tetra2 12 jas -2.51521
+tetra1 32 tetra2 13 jas 0
+tetra1 32 tetra2 14 jas -6.35323
+tetra1 32 tetra2 15 jas 0
+tetra1 32 tetra2 16 jas -6.35323
+tetra1 32 tetra2 17 jas 0
+tetra1 32 tetra2 18 jas -2.51521
+tetra1 32 tetra2 19 jas 0
+tetra1 32 tetra2 20 jas -6.35323
+tetra1 32 tetra2 21 jas 0
+tetra1 32 tetra2 22 jas -6.35323
+tetra1 32 tetra2 23 jas 0
+tetra1 32 tetra2 24 jas -8.75042
+tetra1 32 tetra2 25 jas 0
+tetra1 32 tetra2 26 jas -6.35323
+tetra1 32 tetra2 27 jas 0
+tetra1 32 tetra2 28 jas -6.35323
+tetra1 32 tetra2 29 jas 0
+tetra1 32 tetra2 30 jas -6.35323
+tetra1 32 tetra2 31 jas 0
+tetra1 32 tetra2 32 jas -5.31718
+tetra1 32 tetra2 33 jas 0
+tetra1 32 tetra2 34 jas -2.51521
+tetra1 32 tetra2 35 jas 0
+tetra1 32 tetra2 36 jas -2.51521
+tetra1 32 tetra2 37 jas 0
+tetra1 32 tetra2 38 jas -2.51521
+tetra1 32 tetra2 39 jas 0
+tetra1 32 tetra2 40 jas -5.70663
+tetra1 32 tetra2 41 jas 0
+tetra1 32 tetra2 42 jas -6.35323
+tetra1 32 tetra2 43 jas 0
+tetra1 32 tetra2 44 jas -2.51521
+tetra1 32 tetra2 45 jas 0
+tetra1 32 tetra2 46 jas -2.51521
+tetra1 32 tetra2 47 jas 0
+tetra1 32 tetra2 48 jas -5.70663
+tetra1 32 tetra2 49 jas 0
+tetra1 32 tetra2 50 jas -2.51521
+tetra1 32 tetra2 51 jas 0
+tetra1 32 tetra2 52 jas -6.35323
+tetra1 32 tetra2 53 jas 0
+tetra1 32 tetra2 54 jas -2.51521
+tetra1 32 tetra2 55 jas 0
+tetra1 32 tetra2 56 jas -6.35323
+tetra1 32 tetra2 57 jas 0
+tetra1 32 tetra2 58 jas -6.35323
+tetra1 32 tetra2 59 jas 0
+tetra1 32 tetra2 60 jas -6.35323
+tetra1 32 tetra2 61 jas 0
+tetra1 32 tetra2 62 jas -2.51521
+tetra1 32 tetra2 63 jas 0
+tetra1 33 tetra2 0 jas 0
+tetra1 33 tetra2 1 jas -5.70663
+tetra1 33 tetra2 2 jas 0
+tetra1 33 tetra2 3 jas -2.51521
+tetra1 33 tetra2 4 jas 0
+tetra1 33 tetra2 5 jas -2.51521
+tetra1 33 tetra2 6 jas 0
+tetra1 33 tetra2 7 jas -6.35323
+tetra1 33 tetra2 8 jas 0
+tetra1 33 tetra2 9 jas -6.35323
+tetra1 33 tetra2 10 jas 0
+tetra1 33 tetra2 11 jas -6.35323
+tetra1 33 tetra2 12 jas 0
+tetra1 33 tetra2 13 jas -2.51521
+tetra1 33 tetra2 14 jas 0
+tetra1 33 tetra2 15 jas -6.35323
+tetra1 33 tetra2 16 jas 0
+tetra1 33 tetra2 17 jas -6.35323
+tetra1 33 tetra2 18 jas 0
+tetra1 33 tetra2 19 jas -2.51521
+tetra1 33 tetra2 20 jas 0
+tetra1 33 tetra2 21 jas -6.35323
+tetra1 33 tetra2 22 jas 0
+tetra1 33 tetra2 23 jas -6.35323
+tetra1 33 tetra2 24 jas 0
+tetra1 33 tetra2 25 jas -8.75042
+tetra1 33 tetra2 26 jas 0
+tetra1 33 tetra2 27 jas -6.35323
+tetra1 33 tetra2 28 jas 0
+tetra1 33 tetra2 29 jas -6.35323
+tetra1 33 tetra2 30 jas 0
+tetra1 33 tetra2 31 jas -6.35323
+tetra1 33 tetra2 32 jas 0
+tetra1 33 tetra2 33 jas -5.31718
+tetra1 33 tetra2 34 jas 0
+tetra1 33 tetra2 35 jas -2.51521
+tetra1 33 tetra2 36 jas 0
+tetra1 33 tetra2 37 jas -2.51521
+tetra1 33 tetra2 38 jas 0
+tetra1 33 tetra2 39 jas -2.51521
+tetra1 33 tetra2 40 jas 0
+tetra1 33 tetra2 41 jas -5.70663
+tetra1 33 tetra2 42 jas 0
+tetra1 33 tetra2 43 jas -6.35323
+tetra1 33 tetra2 44 jas 0
+tetra1 33 tetra2 45 jas -2.51521
+tetra1 33 tetra2 46 jas 0
+tetra1 33 tetra2 47 jas -2.51521
+tetra1 33 tetra2 48 jas 0
+tetra1 33 tetra2 49 jas -5.70663
+tetra1 33 tetra2 50 jas 0
+tetra1 33 tetra2 51 jas -2.51521
+tetra1 33 tetra2 52 jas 0
+tetra1 33 tetra2 53 jas -6.35323
+tetra1 33 tetra2 54 jas 0
+tetra1 33 tetra2 55 jas -2.51521
+tetra1 33 tetra2 56 jas 0
+tetra1 33 tetra2 57 jas -6.35323
+tetra1 33 tetra2 58 jas 0
+tetra1 33 tetra2 59 jas -6.35323
+tetra1 33 tetra2 60 jas 0
+tetra1 33 tetra2 61 jas -6.35323
+tetra1 33 tetra2 62 jas 0
+tetra1 33 tetra2 63 jas -2.51521
+tetra1 34 tetra2 0 jas -2.51521
+tetra1 34 tetra2 1 jas 0
+tetra1 34 tetra2 2 jas -5.70663
+tetra1 34 tetra2 3 jas 0
+tetra1 34 tetra2 4 jas -6.35323
+tetra1 34 tetra2 5 jas 0
+tetra1 34 tetra2 6 jas -2.51521
+tetra1 34 tetra2 7 jas 0
+tetra1 34 tetra2 8 jas -6.35323
+tetra1 34 tetra2 9 jas 0
+tetra1 34 tetra2 10 jas -6.35323
+tetra1 34 tetra2 11 jas 0
+tetra1 34 tetra2 12 jas -6.35323
+tetra1 34 tetra2 13 jas 0
+tetra1 34 tetra2 14 jas -2.51521
+tetra1 34 tetra2 15 jas 0
+tetra1 34 tetra2 16 jas -2.51521
+tetra1 34 tetra2 17 jas 0
+tetra1 34 tetra2 18 jas -6.35323
+tetra1 34 tetra2 19 jas 0
+tetra1 34 tetra2 20 jas -6.35323
+tetra1 34 tetra2 21 jas 0
+tetra1 34 tetra2 22 jas -6.35323
+tetra1 34 tetra2 23 jas 0
+tetra1 34 tetra2 24 jas -6.35323
+tetra1 34 tetra2 25 jas 0
+tetra1 34 tetra2 26 jas -8.75042
+tetra1 34 tetra2 27 jas 0
+tetra1 34 tetra2 28 jas -6.35323
+tetra1 34 tetra2 29 jas 0
+tetra1 34 tetra2 30 jas -6.35323
+tetra1 34 tetra2 31 jas 0
+tetra1 34 tetra2 32 jas -2.51521
+tetra1 34 tetra2 33 jas 0
+tetra1 34 tetra2 34 jas -5.31718
+tetra1 34 tetra2 35 jas 0
+tetra1 34 tetra2 36 jas -2.51521
+tetra1 34 tetra2 37 jas 0
+tetra1 34 tetra2 38 jas -2.51521
+tetra1 34 tetra2 39 jas 0
+tetra1 34 tetra2 40 jas -6.35323
+tetra1 34 tetra2 41 jas 0
+tetra1 34 tetra2 42 jas -5.70663
+tetra1 34 tetra2 43 jas 0
+tetra1 34 tetra2 44 jas -2.51521
+tetra1 34 tetra2 45 jas 0
+tetra1 34 tetra2 46 jas -2.51521
+tetra1 34 tetra2 47 jas 0
+tetra1 34 tetra2 48 jas -2.51521
+tetra1 34 tetra2 49 jas 0
+tetra1 34 tetra2 50 jas -5.70663
+tetra1 34 tetra2 51 jas 0
+tetra1 34 tetra2 52 jas -2.51521
+tetra1 34 tetra2 53 jas 0
+tetra1 34 tetra2 54 jas -6.35323
+tetra1 34 tetra2 55 jas 0
+tetra1 34 tetra2 56 jas -6.35323
+tetra1 34 tetra2 57 jas 0
+tetra1 34 tetra2 58 jas -6.35323
+tetra1 34 tetra2 59 jas 0
+tetra1 34 tetra2 60 jas -2.51521
+tetra1 34 tetra2 61 jas 0
+tetra1 34 tetra2 62 jas -6.35323
+tetra1 34 tetra2 63 jas 0
+tetra1 35 tetra2 0 jas 0
+tetra1 35 tetra2 1 jas -2.51521
+tetra1 35 tetra2 2 jas 0
+tetra1 35 tetra2 3 jas -5.70663
+tetra1 35 tetra2 4 jas 0
+tetra1 35 tetra2 5 jas -6.35323
+tetra1 35 tetra2 6 jas 0
+tetra1 35 tetra2 7 jas -2.51521
+tetra1 35 tetra2 8 jas 0
+tetra1 35 tetra2 9 jas -6.35323
+tetra1 35 tetra2 10 jas 0
+tetra1 35 tetra2 11 jas -6.35323
+tetra1 35 tetra2 12 jas 0
+tetra1 35 tetra2 13 jas -6.35323
+tetra1 35 tetra2 14 jas 0
+tetra1 35 tetra2 15 jas -2.51521
+tetra1 35 tetra2 16 jas 0
+tetra1 35 tetra2 17 jas -2.51521
+tetra1 35 tetra2 18 jas 0
+tetra1 35 tetra2 19 jas -6.35323
+tetra1 35 tetra2 20 jas 0
+tetra1 35 tetra2 21 jas -6.35323
+tetra1 35 tetra2 22 jas 0
+tetra1 35 tetra2 23 jas -6.35323
+tetra1 35 tetra2 24 jas 0
+tetra1 35 tetra2 25 jas -6.35323
+tetra1 35 tetra2 26 jas 0
+tetra1 35 tetra2 27 jas -8.75042
+tetra1 35 tetra2 28 jas 0
+tetra1 35 tetra2 29 jas -6.35323
+tetra1 35 tetra2 30 jas 0
+tetra1 35 tetra2 31 jas -6.35323
+tetra1 35 tetra2 32 jas 0
+tetra1 35 tetra2 33 jas -2.51521
+tetra1 35 tetra2 34 jas 0
+tetra1 35 tetra2 35 jas -5.31718
+tetra1 35 tetra2 36 jas 0
+tetra1 35 tetra2 37 jas -2.51521
+tetra1 35 tetra2 38 jas 0
+tetra1 35 tetra2 39 jas -2.51521
+tetra1 35 tetra2 40 jas 0
+tetra1 35 tetra2 41 jas -6.35323
+tetra1 35 tetra2 42 jas 0
+tetra1 35 tetra2 43 jas -5.70663
+tetra1 35 tetra2 44 jas 0
+tetra1 35 tetra2 45 jas -2.51521
+tetra1 35 tetra2 46 jas 0
+tetra1 35 tetra2 47 jas -2.51521
+tetra1 35 tetra2 48 jas 0
+tetra1 35 tetra2 49 jas -2.51521
+tetra1 35 tetra2 50 jas 0
+tetra1 35 tetra2 51 jas -5.70663
+tetra1 35 tetra2 52 jas 0
+tetra1 35 tetra2 53 jas -2.51521
+tetra1 35 tetra2 54 jas 0
+tetra1 35 tetra2 55 jas -6.35323
+tetra1 35 tetra2 56 jas 0
+tetra1 35 tetra2 57 jas -6.35323
+tetra1 35 tetra2 58 jas 0
+tetra1 35 tetra2 59 jas -6.35323
+tetra1 35 tetra2 60 jas 0
+tetra1 35 tetra2 61 jas -2.51521
+tetra1 35 tetra2 62 jas 0
+tetra1 35 tetra2 63 jas -6.35323
+tetra1 36 tetra2 0 jas -2.51521
+tetra1 36 tetra2 1 jas 0
+tetra1 36 tetra2 2 jas -6.35323
+tetra1 36 tetra2 3 jas 0
+tetra1 36 tetra2 4 jas -5.70663
+tetra1 36 tetra2 5 jas 0
+tetra1 36 tetra2 6 jas -2.51521
+tetra1 36 tetra2 7 jas 0
+tetra1 36 tetra2 8 jas -2.51521
+tetra1 36 tetra2 9 jas 0
+tetra1 36 tetra2 10 jas -6.35323
+tetra1 36 tetra2 11 jas 0
+tetra1 36 tetra2 12 jas -6.35323
+tetra1 36 tetra2 13 jas 0
+tetra1 36 tetra2 14 jas -6.35323
+tetra1 36 tetra2 15 jas 0
+tetra1 36 tetra2 16 jas -6.35323
+tetra1 36 tetra2 17 jas 0
+tetra1 36 tetra2 18 jas -6.35323
+tetra1 36 tetra2 19 jas 0
+tetra1 36 tetra2 20 jas -6.35323
+tetra1 36 tetra2 21 jas 0
+tetra1 36 tetra2 22 jas -2.51521
+tetra1 36 tetra2 23 jas 0
+tetra1 36 tetra2 24 jas -6.35323
+tetra1 36 tetra2 25 jas 0
+tetra1 36 tetra2 26 jas -6.35323
+tetra1 36 tetra2 27 jas 0
+tetra1 36 tetra2 28 jas -8.75042
+tetra1 36 tetra2 29 jas 0
+tetra1 36 tetra2 30 jas -6.35323
+tetra1 36 tetra2 31 jas 0
+tetra1 36 tetra2 32 jas -2.51521
+tetra1 36 tetra2 33 jas 0
+tetra1 36 tetra2 34 jas -2.51521
+tetra1 36 tetra2 35 jas 0
+tetra1 36 tetra2 36 jas -5.31718
+tetra1 36 tetra2 37 jas 0
+tetra1 36 tetra2 38 jas -2.51521
+tetra1 36 tetra2 39 jas 0
+tetra1 36 tetra2 40 jas -2.51521
+tetra1 36 tetra2 41 jas 0
+tetra1 36 tetra2 42 jas -2.51521
+tetra1 36 tetra2 43 jas 0
+tetra1 36 tetra2 44 jas -5.70663
+tetra1 36 tetra2 45 jas 0
+tetra1 36 tetra2 46 jas -6.35323
+tetra1 36 tetra2 47 jas 0
+tetra1 36 tetra2 48 jas -6.35323
+tetra1 36 tetra2 49 jas 0
+tetra1 36 tetra2 50 jas -2.51521
+tetra1 36 tetra2 51 jas 0
+tetra1 36 tetra2 52 jas -5.70663
+tetra1 36 tetra2 53 jas 0
+tetra1 36 tetra2 54 jas -2.51521
+tetra1 36 tetra2 55 jas 0
+tetra1 36 tetra2 56 jas -6.35323
+tetra1 36 tetra2 57 jas 0
+tetra1 36 tetra2 58 jas -2.51521
+tetra1 36 tetra2 59 jas 0
+tetra1 36 tetra2 60 jas -6.35323
+tetra1 36 tetra2 61 jas 0
+tetra1 36 tetra2 62 jas -6.35323
+tetra1 36 tetra2 63 jas 0
+tetra1 37 tetra2 0 jas 0
+tetra1 37 tetra2 1 jas -2.51521
+tetra1 37 tetra2 2 jas 0
+tetra1 37 tetra2 3 jas -6.35323
+tetra1 37 tetra2 4 jas 0
+tetra1 37 tetra2 5 jas -5.70663
+tetra1 37 tetra2 6 jas 0
+tetra1 37 tetra2 7 jas -2.51521
+tetra1 37 tetra2 8 jas 0
+tetra1 37 tetra2 9 jas -2.51521
+tetra1 37 tetra2 10 jas 0
+tetra1 37 tetra2 11 jas -6.35323
+tetra1 37 tetra2 12 jas 0
+tetra1 37 tetra2 13 jas -6.35323
+tetra1 37 tetra2 14 jas 0
+tetra1 37 tetra2 15 jas -6.35323
+tetra1 37 tetra2 16 jas 0
+tetra1 37 tetra2 17 jas -6.35323
+tetra1 37 tetra2 18 jas 0
+tetra1 37 tetra2 19 jas -6.35323
+tetra1 37 tetra2 20 jas 0
+tetra1 37 tetra2 21 jas -6.35323
+tetra1 37 tetra2 22 jas 0
+tetra1 37 tetra2 23 jas -2.51521
+tetra1 37 tetra2 24 jas 0
+tetra1 37 tetra2 25 jas -6.35323
+tetra1 37 tetra2 26 jas 0
+tetra1 37 tetra2 27 jas -6.35323
+tetra1 37 tetra2 28 jas 0
+tetra1 37 tetra2 29 jas -8.75042
+tetra1 37 tetra2 30 jas 0
+tetra1 37 tetra2 31 jas -6.35323
+tetra1 37 tetra2 32 jas 0
+tetra1 37 tetra2 33 jas -2.51521
+tetra1 37 tetra2 34 jas 0
+tetra1 37 tetra2 35 jas -2.51521
+tetra1 37 tetra2 36 jas 0
+tetra1 37 tetra2 37 jas -5.31718
+tetra1 37 tetra2 38 jas 0
+tetra1 37 tetra2 39 jas -2.51521
+tetra1 37 tetra2 40 jas 0
+tetra1 37 tetra2 41 jas -2.51521
+tetra1 37 tetra2 42 jas 0
+tetra1 37 tetra2 43 jas -2.51521
+tetra1 37 tetra2 44 jas 0
+tetra1 37 tetra2 45 jas -5.70663
+tetra1 37 tetra2 46 jas 0
+tetra1 37 tetra2 47 jas -6.35323
+tetra1 37 tetra2 48 jas 0
+tetra1 37 tetra2 49 jas -6.35323
+tetra1 37 tetra2 50 jas 0
+tetra1 37 tetra2 51 jas -2.51521
+tetra1 37 tetra2 52 jas 0
+tetra1 37 tetra2 53 jas -5.70663
+tetra1 37 tetra2 54 jas 0
+tetra1 37 tetra2 55 jas -2.51521
+tetra1 37 tetra2 56 jas 0
+tetra1 37 tetra2 57 jas -6.35323
+tetra1 37 tetra2 58 jas 0
+tetra1 37 tetra2 59 jas -2.51521
+tetra1 37 tetra2 60 jas 0
+tetra1 37 tetra2 61 jas -6.35323
+tetra1 37 tetra2 62 jas 0
+tetra1 37 tetra2 63 jas -6.35323
+tetra1 38 tetra2 0 jas -6.35323
+tetra1 38 tetra2 1 jas 0
+tetra1 38 tetra2 2 jas -2.51521
+tetra1 38 tetra2 3 jas 0
+tetra1 38 tetra2 4 jas -2.51521
+tetra1 38 tetra2 5 jas 0
+tetra1 38 tetra2 6 jas -5.70663
+tetra1 38 tetra2 7 jas 0
+tetra1 38 tetra2 8 jas -6.35323
+tetra1 38 tetra2 9 jas 0
+tetra1 38 tetra2 10 jas -2.51521
+tetra1 38 tetra2 11 jas 0
+tetra1 38 tetra2 12 jas -6.35323
+tetra1 38 tetra2 13 jas 0
+tetra1 38 tetra2 14 jas -6.35323
+tetra1 38 tetra2 15 jas 0
+tetra1 38 tetra2 16 jas -6.35323
+tetra1 38 tetra2 17 jas 0
+tetra1 38 tetra2 18 jas -6.35323
+tetra1 38 tetra2 19 jas 0
+tetra1 38 tetra2 20 jas -2.51521
+tetra1 38 tetra2 21 jas 0
+tetra1 38 tetra2 22 jas -6.35323
+tetra1 38 tetra2 23 jas 0
+tetra1 38 tetra2 24 jas -6.35323
+tetra1 38 tetra2 25 jas 0
+tetra1 38 tetra2 26 jas -6.35323
+tetra1 38 tetra2 27 jas 0
+tetra1 38 tetra2 28 jas -6.35323
+tetra1 38 tetra2 29 jas 0
+tetra1 38 tetra2 30 jas -8.75042
+tetra1 38 tetra2 31 jas 0
+tetra1 38 tetra2 32 jas -2.51521
+tetra1 38 tetra2 33 jas 0
+tetra1 38 tetra2 34 jas -2.51521
+tetra1 38 tetra2 35 jas 0
+tetra1 38 tetra2 36 jas -2.51521
+tetra1 38 tetra2 37 jas 0
+tetra1 38 tetra2 38 jas -5.31718
+tetra1 38 tetra2 39 jas 0
+tetra1 38 tetra2 40 jas -2.51521
+tetra1 38 tetra2 41 jas 0
+tetra1 38 tetra2 42 jas -2.51521
+tetra1 38 tetra2 43 jas 0
+tetra1 38 tetra2 44 jas -6.35323
+tetra1 38 tetra2 45 jas 0
+tetra1 38 tetra2 46 jas -5.70663
+tetra1 38 tetra2 47 jas 0
+tetra1 38 tetra2 48 jas -2.51521
+tetra1 38 tetra2 49 jas 0
+tetra1 38 tetra2 50 jas -6.35323
+tetra1 38 tetra2 51 jas 0
+tetra1 38 tetra2 52 jas -2.51521
+tetra1 38 tetra2 53 jas 0
+tetra1 38 tetra2 54 jas -5.70663
+tetra1 38 tetra2 55 jas 0
+tetra1 38 tetra2 56 jas -2.51521
+tetra1 38 tetra2 57 jas 0
+tetra1 38 tetra2 58 jas -6.35323
+tetra1 38 tetra2 59 jas 0
+tetra1 38 tetra2 60 jas -6.35323
+tetra1 38 tetra2 61 jas 0
+tetra1 38 tetra2 62 jas -6.35323
+tetra1 38 tetra2 63 jas 0
+tetra1 39 tetra2 0 jas 0
+tetra1 39 tetra2 1 jas -6.35323
+tetra1 39 tetra2 2 jas 0
+tetra1 39 tetra2 3 jas -2.51521
+tetra1 39 tetra2 4 jas 0
+tetra1 39 tetra2 5 jas -2.51521
+tetra1 39 tetra2 6 jas 0
+tetra1 39 tetra2 7 jas -5.70663
+tetra1 39 tetra2 8 jas 0
+tetra1 39 tetra2 9 jas -6.35323
+tetra1 39 tetra2 10 jas 0
+tetra1 39 tetra2 11 jas -2.51521
+tetra1 39 tetra2 12 jas 0
+tetra1 39 tetra2 13 jas -6.35323
+tetra1 39 tetra2 14 jas 0
+tetra1 39 tetra2 15 jas -6.35323
+tetra1 39 tetra2 16 jas 0
+tetra1 39 tetra2 17 jas -6.35323
+tetra1 39 tetra2 18 jas 0
+tetra1 39 tetra2 19 jas -6.35323
+tetra1 39 tetra2 20 jas 0
+tetra1 39 tetra2 21 jas -2.51521
+tetra1 39 tetra2 22 jas 0
+tetra1 39 tetra2 23 jas -6.35323
+tetra1 39 tetra2 24 jas 0
+tetra1 39 tetra2 25 jas -6.35323
+tetra1 39 tetra2 26 jas 0
+tetra1 39 tetra2 27 jas -6.35323
+tetra1 39 tetra2 28 jas 0
+tetra1 39 tetra2 29 jas -6.35323
+tetra1 39 tetra2 30 jas 0
+tetra1 39 tetra2 31 jas -8.75042
+tetra1 39 tetra2 32 jas 0
+tetra1 39 tetra2 33 jas -2.51521
+tetra1 39 tetra2 34 jas 0
+tetra1 39 tetra2 35 jas -2.51521
+tetra1 39 tetra2 36 jas 0
+tetra1 39 tetra2 37 jas -2.51521
+tetra1 39 tetra2 38 jas 0
+tetra1 39 tetra2 39 jas -5.31718
+tetra1 39 tetra2 40 jas 0
+tetra1 39 tetra2 41 jas -2.51521
+tetra1 39 tetra2 42 jas 0
+tetra1 39 tetra2 43 jas -2.51521
+tetra1 39 tetra2 44 jas 0
+tetra1 39 tetra2 45 jas -6.35323
+tetra1 39 tetra2 46 jas 0
+tetra1 39 tetra2 47 jas -5.70663
+tetra1 39 tetra2 48 jas 0
+tetra1 39 tetra2 49 jas -2.51521
+tetra1 39 tetra2 50 jas 0
+tetra1 39 tetra2 51 jas -6.35323
+tetra1 39 tetra2 52 jas 0
+tetra1 39 tetra2 53 jas -2.51521
+tetra1 39 tetra2 54 jas 0
+tetra1 39 tetra2 55 jas -5.70663
+tetra1 39 tetra2 56 jas 0
+tetra1 39 tetra2 57 jas -2.51521
+tetra1 39 tetra2 58 jas 0
+tetra1 39 tetra2 59 jas -6.35323
+tetra1 39 tetra2 60 jas 0
+tetra1 39 tetra2 61 jas -6.35323
+tetra1 39 tetra2 62 jas 0
+tetra1 39 tetra2 63 jas -6.35323
+tetra1 40 tetra2 0 jas -6.35323
+tetra1 40 tetra2 1 jas 0
+tetra1 40 tetra2 2 jas -6.35323
+tetra1 40 tetra2 3 jas 0
+tetra1 40 tetra2 4 jas -2.51521
+tetra1 40 tetra2 5 jas 0
+tetra1 40 tetra2 6 jas -6.35323
+tetra1 40 tetra2 7 jas 0
+tetra1 40 tetra2 8 jas -5.70663
+tetra1 40 tetra2 9 jas 0
+tetra1 40 tetra2 10 jas -2.51521
+tetra1 40 tetra2 11 jas 0
+tetra1 40 tetra2 12 jas -2.51521
+tetra1 40 tetra2 13 jas 0
+tetra1 40 tetra2 14 jas -6.35323
+tetra1 40 tetra2 15 jas 0
+tetra1 40 tetra2 16 jas -8.75042
+tetra1 40 tetra2 17 jas 0
+tetra1 40 tetra2 18 jas -6.35323
+tetra1 40 tetra2 19 jas 0
+tetra1 40 tetra2 20 jas -6.35323
+tetra1 40 tetra2 21 jas 0
+tetra1 40 tetra2 22 jas -6.35323
+tetra1 40 tetra2 23 jas 0
+tetra1 40 tetra2 24 jas -6.35323
+tetra1 40 tetra2 25 jas 0
+tetra1 40 tetra2 26 jas -2.51521
+tetra1 40 tetra2 27 jas 0
+tetra1 40 tetra2 28 jas -6.35323
+tetra1 40 tetra2 29 jas 0
+tetra1 40 tetra2 30 jas -6.35323
+tetra1 40 tetra2 31 jas 0
+tetra1 40 tetra2 32 jas -5.70663
+tetra1 40 tetra2 33 jas 0
+tetra1 40 tetra2 34 jas -6.35323
+tetra1 40 tetra2 35 jas 0
+tetra1 40 tetra2 36 jas -2.51521
+tetra1 40 tetra2 37 jas 0
+tetra1 40 tetra2 38 jas -2.51521
+tetra1 40 tetra2 39 jas 0
+tetra1 40 tetra2 40 jas -5.31718
+tetra1 40 tetra2 41 jas 0
+tetra1 40 tetra2 42 jas -2.51521
+tetra1 40 tetra2 43 jas 0
+tetra1 40 tetra2 44 jas -2.51521
+tetra1 40 tetra2 45 jas 0
+tetra1 40 tetra2 46 jas -2.51521
+tetra1 40 tetra2 47 jas 0
+tetra1 40 tetra2 48 jas -6.35323
+tetra1 40 tetra2 49 jas 0
+tetra1 40 tetra2 50 jas -6.35323
+tetra1 40 tetra2 51 jas 0
+tetra1 40 tetra2 52 jas -6.35323
+tetra1 40 tetra2 53 jas 0
+tetra1 40 tetra2 54 jas -2.51521
+tetra1 40 tetra2 55 jas 0
+tetra1 40 tetra2 56 jas -5.70663
+tetra1 40 tetra2 57 jas 0
+tetra1 40 tetra2 58 jas -2.51521
+tetra1 40 tetra2 59 jas 0
+tetra1 40 tetra2 60 jas -6.35323
+tetra1 40 tetra2 61 jas 0
+tetra1 40 tetra2 62 jas -2.51521
+tetra1 40 tetra2 63 jas 0
+tetra1 41 tetra2 0 jas 0
+tetra1 41 tetra2 1 jas -6.35323
+tetra1 41 tetra2 2 jas 0
+tetra1 41 tetra2 3 jas -6.35323
+tetra1 41 tetra2 4 jas 0
+tetra1 41 tetra2 5 jas -2.51521
+tetra1 41 tetra2 6 jas 0
+tetra1 41 tetra2 7 jas -6.35323
+tetra1 41 tetra2 8 jas 0
+tetra1 41 tetra2 9 jas -5.70663
+tetra1 41 tetra2 10 jas 0
+tetra1 41 tetra2 11 jas -2.51521
+tetra1 41 tetra2 12 jas 0
+tetra1 41 tetra2 13 jas -2.51521
+tetra1 41 tetra2 14 jas 0
+tetra1 41 tetra2 15 jas -6.35323
+tetra1 41 tetra2 16 jas 0
+tetra1 41 tetra2 17 jas -8.75042
+tetra1 41 tetra2 18 jas 0
+tetra1 41 tetra2 19 jas -6.35323
+tetra1 41 tetra2 20 jas 0
+tetra1 41 tetra2 21 jas -6.35323
+tetra1 41 tetra2 22 jas 0
+tetra1 41 tetra2 23 jas -6.35323
+tetra1 41 tetra2 24 jas 0
+tetra1 41 tetra2 25 jas -6.35323
+tetra1 41 tetra2 26 jas 0
+tetra1 41 tetra2 27 jas -2.51521
+tetra1 41 tetra2 28 jas 0
+tetra1 41 tetra2 29 jas -6.35323
+tetra1 41 tetra2 30 jas 0
+tetra1 41 tetra2 31 jas -6.35323
+tetra1 41 tetra2 32 jas 0
+tetra1 41 tetra2 33 jas -5.70663
+tetra1 41 tetra2 34 jas 0
+tetra1 41 tetra2 35 jas -6.35323
+tetra1 41 tetra2 36 jas 0
+tetra1 41 tetra2 37 jas -2.51521
+tetra1 41 tetra2 38 jas 0
+tetra1 41 tetra2 39 jas -2.51521
+tetra1 41 tetra2 40 jas 0
+tetra1 41 tetra2 41 jas -5.31718
+tetra1 41 tetra2 42 jas 0
+tetra1 41 tetra2 43 jas -2.51521
+tetra1 41 tetra2 44 jas 0
+tetra1 41 tetra2 45 jas -2.51521
+tetra1 41 tetra2 46 jas 0
+tetra1 41 tetra2 47 jas -2.51521
+tetra1 41 tetra2 48 jas 0
+tetra1 41 tetra2 49 jas -6.35323
+tetra1 41 tetra2 50 jas 0
+tetra1 41 tetra2 51 jas -6.35323
+tetra1 41 tetra2 52 jas 0
+tetra1 41 tetra2 53 jas -6.35323
+tetra1 41 tetra2 54 jas 0
+tetra1 41 tetra2 55 jas -2.51521
+tetra1 41 tetra2 56 jas 0
+tetra1 41 tetra2 57 jas -5.70663
+tetra1 41 tetra2 58 jas 0
+tetra1 41 tetra2 59 jas -2.51521
+tetra1 41 tetra2 60 jas 0
+tetra1 41 tetra2 61 jas -6.35323
+tetra1 41 tetra2 62 jas 0
+tetra1 41 tetra2 63 jas -2.51521
+tetra1 42 tetra2 0 jas -6.35323
+tetra1 42 tetra2 1 jas 0
+tetra1 42 tetra2 2 jas -6.35323
+tetra1 42 tetra2 3 jas 0
+tetra1 42 tetra2 4 jas -6.35323
+tetra1 42 tetra2 5 jas 0
+tetra1 42 tetra2 6 jas -2.51521
+tetra1 42 tetra2 7 jas 0
+tetra1 42 tetra2 8 jas -2.51521
+tetra1 42 tetra2 9 jas 0
+tetra1 42 tetra2 10 jas -5.70663
+tetra1 42 tetra2 11 jas 0
+tetra1 42 tetra2 12 jas -6.35323
+tetra1 42 tetra2 13 jas 0
+tetra1 42 tetra2 14 jas -2.51521
+tetra1 42 tetra2 15 jas 0
+tetra1 42 tetra2 16 jas -6.35323
+tetra1 42 tetra2 17 jas 0
+tetra1 42 tetra2 18 jas -8.75042
+tetra1 42 tetra2 19 jas 0
+tetra1 42 tetra2 20 jas -6.35323
+tetra1 42 tetra2 21 jas 0
+tetra1 42 tetra2 22 jas -6.35323
+tetra1 42 tetra2 23 jas 0
+tetra1 42 tetra2 24 jas -2.51521
+tetra1 42 tetra2 25 jas 0
+tetra1 42 tetra2 26 jas -6.35323
+tetra1 42 tetra2 27 jas 0
+tetra1 42 tetra2 28 jas -6.35323
+tetra1 42 tetra2 29 jas 0
+tetra1 42 tetra2 30 jas -6.35323
+tetra1 42 tetra2 31 jas 0
+tetra1 42 tetra2 32 jas -6.35323
+tetra1 42 tetra2 33 jas 0
+tetra1 42 tetra2 34 jas -5.70663
+tetra1 42 tetra2 35 jas 0
+tetra1 42 tetra2 36 jas -2.51521
+tetra1 42 tetra2 37 jas 0
+tetra1 42 tetra2 38 jas -2.51521
+tetra1 42 tetra2 39 jas 0
+tetra1 42 tetra2 40 jas -2.51521
+tetra1 42 tetra2 41 jas 0
+tetra1 42 tetra2 42 jas -5.31718
+tetra1 42 tetra2 43 jas 0
+tetra1 42 tetra2 44 jas -2.51521
+tetra1 42 tetra2 45 jas 0
+tetra1 42 tetra2 46 jas -2.51521
+tetra1 42 tetra2 47 jas 0
+tetra1 42 tetra2 48 jas -6.35323
+tetra1 42 tetra2 49 jas 0
+tetra1 42 tetra2 50 jas -6.35323
+tetra1 42 tetra2 51 jas 0
+tetra1 42 tetra2 52 jas -2.51521
+tetra1 42 tetra2 53 jas 0
+tetra1 42 tetra2 54 jas -6.35323
+tetra1 42 tetra2 55 jas 0
+tetra1 42 tetra2 56 jas -2.51521
+tetra1 42 tetra2 57 jas 0
+tetra1 42 tetra2 58 jas -5.70663
+tetra1 42 tetra2 59 jas 0
+tetra1 42 tetra2 60 jas -2.51521
+tetra1 42 tetra2 61 jas 0
+tetra1 42 tetra2 62 jas -6.35323
+tetra1 42 tetra2 63 jas 0
+tetra1 43 tetra2 0 jas 0
+tetra1 43 tetra2 1 jas -6.35323
+tetra1 43 tetra2 2 jas 0
+tetra1 43 tetra2 3 jas -6.35323
+tetra1 43 tetra2 4 jas 0
+tetra1 43 tetra2 5 jas -6.35323
+tetra1 43 tetra2 6 jas 0
+tetra1 43 tetra2 7 jas -2.51521
+tetra1 43 tetra2 8 jas 0
+tetra1 43 tetra2 9 jas -2.51521
+tetra1 43 tetra2 10 jas 0
+tetra1 43 tetra2 11 jas -5.70663
+tetra1 43 tetra2 12 jas 0
+tetra1 43 tetra2 13 jas -6.35323
+tetra1 43 tetra2 14 jas 0
+tetra1 43 tetra2 15 jas -2.51521
+tetra1 43 tetra2 16 jas 0
+tetra1 43 tetra2 17 jas -6.35323
+tetra1 43 tetra2 18 jas 0
+tetra1 43 tetra2 19 jas -8.75042
+tetra1 43 tetra2 20 jas 0
+tetra1 43 tetra2 21 jas -6.35323
+tetra1 43 tetra2 22 jas 0
+tetra1 43 tetra2 23 jas -6.35323
+tetra1 43 tetra2 24 jas 0
+tetra1 43 tetra2 25 jas -2.51521
+tetra1 43 tetra2 26 jas 0
+tetra1 43 tetra2 27 jas -6.35323
+tetra1 43 tetra2 28 jas 0
+tetra1 43 tetra2 29 jas -6.35323
+tetra1 43 tetra2 30 jas 0
+tetra1 43 tetra2 31 jas -6.35323
+tetra1 43 tetra2 32 jas 0
+tetra1 43 tetra2 33 jas -6.35323
+tetra1 43 tetra2 34 jas 0
+tetra1 43 tetra2 35 jas -5.70663
+tetra1 43 tetra2 36 jas 0
+tetra1 43 tetra2 37 jas -2.51521
+tetra1 43 tetra2 38 jas 0
+tetra1 43 tetra2 39 jas -2.51521
+tetra1 43 tetra2 40 jas 0
+tetra1 43 tetra2 41 jas -2.51521
+tetra1 43 tetra2 42 jas 0
+tetra1 43 tetra2 43 jas -5.31718
+tetra1 43 tetra2 44 jas 0
+tetra1 43 tetra2 45 jas -2.51521
+tetra1 43 tetra2 46 jas 0
+tetra1 43 tetra2 47 jas -2.51521
+tetra1 43 tetra2 48 jas 0
+tetra1 43 tetra2 49 jas -6.35323
+tetra1 43 tetra2 50 jas 0
+tetra1 43 tetra2 51 jas -6.35323
+tetra1 43 tetra2 52 jas 0
+tetra1 43 tetra2 53 jas -2.51521
+tetra1 43 tetra2 54 jas 0
+tetra1 43 tetra2 55 jas -6.35323
+tetra1 43 tetra2 56 jas 0
+tetra1 43 tetra2 57 jas -2.51521
+tetra1 43 tetra2 58 jas 0
+tetra1 43 tetra2 59 jas -5.70663
+tetra1 43 tetra2 60 jas 0
+tetra1 43 tetra2 61 jas -2.51521
+tetra1 43 tetra2 62 jas 0
+tetra1 43 tetra2 63 jas -6.35323
+tetra1 44 tetra2 0 jas -2.51521
+tetra1 44 tetra2 1 jas 0
+tetra1 44 tetra2 2 jas -6.35323
+tetra1 44 tetra2 3 jas 0
+tetra1 44 tetra2 4 jas -6.35323
+tetra1 44 tetra2 5 jas 0
+tetra1 44 tetra2 6 jas -6.35323
+tetra1 44 tetra2 7 jas 0
+tetra1 44 tetra2 8 jas -2.51521
+tetra1 44 tetra2 9 jas 0
+tetra1 44 tetra2 10 jas -6.35323
+tetra1 44 tetra2 11 jas 0
+tetra1 44 tetra2 12 jas -5.70663
+tetra1 44 tetra2 13 jas 0
+tetra1 44 tetra2 14 jas -2.51521
+tetra1 44 tetra2 15 jas 0
+tetra1 44 tetra2 16 jas -6.35323
+tetra1 44 tetra2 17 jas 0
+tetra1 44 tetra2 18 jas -6.35323
+tetra1 44 tetra2 19 jas 0
+tetra1 44 tetra2 20 jas -8.75042
+tetra1 44 tetra2 21 jas 0
+tetra1 44 tetra2 22 jas -6.35323
+tetra1 44 tetra2 23 jas 0
+tetra1 44 tetra2 24 jas -6.35323
+tetra1 44 tetra2 25 jas 0
+tetra1 44 tetra2 26 jas -6.35323
+tetra1 44 tetra2 27 jas 0
+tetra1 44 tetra2 28 jas -6.35323
+tetra1 44 tetra2 29 jas 0
+tetra1 44 tetra2 30 jas -2.51521
+tetra1 44 tetra2 31 jas 0
+tetra1 44 tetra2 32 jas -2.51521
+tetra1 44 tetra2 33 jas 0
+tetra1 44 tetra2 34 jas -2.51521
+tetra1 44 tetra2 35 jas 0
+tetra1 44 tetra2 36 jas -5.70663
+tetra1 44 tetra2 37 jas 0
+tetra1 44 tetra2 38 jas -6.35323
+tetra1 44 tetra2 39 jas 0
+tetra1 44 tetra2 40 jas -2.51521
+tetra1 44 tetra2 41 jas 0
+tetra1 44 tetra2 42 jas -2.51521
+tetra1 44 tetra2 43 jas 0
+tetra1 44 tetra2 44 jas -5.31718
+tetra1 44 tetra2 45 jas 0
+tetra1 44 tetra2 46 jas -2.51521
+tetra1 44 tetra2 47 jas 0
+tetra1 44 tetra2 48 jas -6.35323
+tetra1 44 tetra2 49 jas 0
+tetra1 44 tetra2 50 jas -2.51521
+tetra1 44 tetra2 51 jas 0
+tetra1 44 tetra2 52 jas -6.35323
+tetra1 44 tetra2 53 jas 0
+tetra1 44 tetra2 54 jas -6.35323
+tetra1 44 tetra2 55 jas 0
+tetra1 44 tetra2 56 jas -6.35323
+tetra1 44 tetra2 57 jas 0
+tetra1 44 tetra2 58 jas -2.51521
+tetra1 44 tetra2 59 jas 0
+tetra1 44 tetra2 60 jas -5.70663
+tetra1 44 tetra2 61 jas 0
+tetra1 44 tetra2 62 jas -2.51521
+tetra1 44 tetra2 63 jas 0
+tetra1 45 tetra2 0 jas 0
+tetra1 45 tetra2 1 jas -2.51521
+tetra1 45 tetra2 2 jas 0
+tetra1 45 tetra2 3 jas -6.35323
+tetra1 45 tetra2 4 jas 0
+tetra1 45 tetra2 5 jas -6.35323
+tetra1 45 tetra2 6 jas 0
+tetra1 45 tetra2 7 jas -6.35323
+tetra1 45 tetra2 8 jas 0
+tetra1 45 tetra2 9 jas -2.51521
+tetra1 45 tetra2 10 jas 0
+tetra1 45 tetra2 11 jas -6.35323
+tetra1 45 tetra2 12 jas 0
+tetra1 45 tetra2 13 jas -5.70663
+tetra1 45 tetra2 14 jas 0
+tetra1 45 tetra2 15 jas -2.51521
+tetra1 45 tetra2 16 jas 0
+tetra1 45 tetra2 17 jas -6.35323
+tetra1 45 tetra2 18 jas 0
+tetra1 45 tetra2 19 jas -6.35323
+tetra1 45 tetra2 20 jas 0
+tetra1 45 tetra2 21 jas -8.75042
+tetra1 45 tetra2 22 jas 0
+tetra1 45 tetra2 23 jas -6.35323
+tetra1 45 tetra2 24 jas 0
+tetra1 45 tetra2 25 jas -6.35323
+tetra1 45 tetra2 26 jas 0
+tetra1 45 tetra2 27 jas -6.35323
+tetra1 45 tetra2 28 jas 0
+tetra1 45 tetra2 29 jas -6.35323
+tetra1 45 tetra2 30 jas 0
+tetra1 45 tetra2 31 jas -2.51521
+tetra1 45 tetra2 32 jas 0
+tetra1 45 tetra2 33 jas -2.51521
+tetra1 45 tetra2 34 jas 0
+tetra1 45 tetra2 35 jas -2.51521
+tetra1 45 tetra2 36 jas 0
+tetra1 45 tetra2 37 jas -5.70663
+tetra1 45 tetra2 38 jas 0
+tetra1 45 tetra2 39 jas -6.35323
+tetra1 45 tetra2 40 jas 0
+tetra1 45 tetra2 41 jas -2.51521
+tetra1 45 tetra2 42 jas 0
+tetra1 45 tetra2 43 jas -2.51521
+tetra1 45 tetra2 44 jas 0
+tetra1 45 tetra2 45 jas -5.31718
+tetra1 45 tetra2 46 jas 0
+tetra1 45 tetra2 47 jas -2.51521
+tetra1 45 tetra2 48 jas 0
+tetra1 45 tetra2 49 jas -6.35323
+tetra1 45 tetra2 50 jas 0
+tetra1 45 tetra2 51 jas -2.51521
+tetra1 45 tetra2 52 jas 0
+tetra1 45 tetra2 53 jas -6.35323
+tetra1 45 tetra2 54 jas 0
+tetra1 45 tetra2 55 jas -6.35323
+tetra1 45 tetra2 56 jas 0
+tetra1 45 tetra2 57 jas -6.35323
+tetra1 45 tetra2 58 jas 0
+tetra1 45 tetra2 59 jas -2.51521
+tetra1 45 tetra2 60 jas 0
+tetra1 45 tetra2 61 jas -5.70663
+tetra1 45 tetra2 62 jas 0
+tetra1 45 tetra2 63 jas -2.51521
+tetra1 46 tetra2 0 jas -6.35323
+tetra1 46 tetra2 1 jas 0
+tetra1 46 tetra2 2 jas -2.51521
+tetra1 46 tetra2 3 jas 0
+tetra1 46 tetra2 4 jas -6.35323
+tetra1 46 tetra2 5 jas 0
+tetra1 46 tetra2 6 jas -6.35323
+tetra1 46 tetra2 7 jas 0
+tetra1 46 tetra2 8 jas -6.35323
+tetra1 46 tetra2 9 jas 0
+tetra1 46 tetra2 10 jas -2.51521
+tetra1 46 tetra2 11 jas 0
+tetra1 46 tetra2 12 jas -2.51521
+tetra1 46 tetra2 13 jas 0
+tetra1 46 tetra2 14 jas -5.70663
+tetra1 46 tetra2 15 jas 0
+tetra1 46 tetra2 16 jas -6.35323
+tetra1 46 tetra2 17 jas 0
+tetra1 46 tetra2 18 jas -6.35323
+tetra1 46 tetra2 19 jas 0
+tetra1 46 tetra2 20 jas -6.35323
+tetra1 46 tetra2 21 jas 0
+tetra1 46 tetra2 22 jas -8.75042
+tetra1 46 tetra2 23 jas 0
+tetra1 46 tetra2 24 jas -6.35323
+tetra1 46 tetra2 25 jas 0
+tetra1 46 tetra2 26 jas -6.35323
+tetra1 46 tetra2 27 jas 0
+tetra1 46 tetra2 28 jas -2.51521
+tetra1 46 tetra2 29 jas 0
+tetra1 46 tetra2 30 jas -6.35323
+tetra1 46 tetra2 31 jas 0
+tetra1 46 tetra2 32 jas -2.51521
+tetra1 46 tetra2 33 jas 0
+tetra1 46 tetra2 34 jas -2.51521
+tetra1 46 tetra2 35 jas 0
+tetra1 46 tetra2 36 jas -6.35323
+tetra1 46 tetra2 37 jas 0
+tetra1 46 tetra2 38 jas -5.70663
+tetra1 46 tetra2 39 jas 0
+tetra1 46 tetra2 40 jas -2.51521
+tetra1 46 tetra2 41 jas 0
+tetra1 46 tetra2 42 jas -2.51521
+tetra1 46 tetra2 43 jas 0
+tetra1 46 tetra2 44 jas -2.51521
+tetra1 46 tetra2 45 jas 0
+tetra1 46 tetra2 46 jas -5.31718
+tetra1 46 tetra2 47 jas 0
+tetra1 46 tetra2 48 jas -2.51521
+tetra1 46 tetra2 49 jas 0
+tetra1 46 tetra2 50 jas -6.35323
+tetra1 46 tetra2 51 jas 0
+tetra1 46 tetra2 52 jas -6.35323
+tetra1 46 tetra2 53 jas 0
+tetra1 46 tetra2 54 jas -6.35323
+tetra1 46 tetra2 55 jas 0
+tetra1 46 tetra2 56 jas -2.51521
+tetra1 46 tetra2 57 jas 0
+tetra1 46 tetra2 58 jas -6.35323
+tetra1 46 tetra2 59 jas 0
+tetra1 46 tetra2 60 jas -2.51521
+tetra1 46 tetra2 61 jas 0
+tetra1 46 tetra2 62 jas -5.70663
+tetra1 46 tetra2 63 jas 0
+tetra1 47 tetra2 0 jas 0
+tetra1 47 tetra2 1 jas -6.35323
+tetra1 47 tetra2 2 jas 0
+tetra1 47 tetra2 3 jas -2.51521
+tetra1 47 tetra2 4 jas 0
+tetra1 47 tetra2 5 jas -6.35323
+tetra1 47 tetra2 6 jas 0
+tetra1 47 tetra2 7 jas -6.35323
+tetra1 47 tetra2 8 jas 0
+tetra1 47 tetra2 9 jas -6.35323
+tetra1 47 tetra2 10 jas 0
+tetra1 47 tetra2 11 jas -2.51521
+tetra1 47 tetra2 12 jas 0
+tetra1 47 tetra2 13 jas -2.51521
+tetra1 47 tetra2 14 jas 0
+tetra1 47 tetra2 15 jas -5.70663
+tetra1 47 tetra2 16 jas 0
+tetra1 47 tetra2 17 jas -6.35323
+tetra1 47 tetra2 18 jas 0
+tetra1 47 tetra2 19 jas -6.35323
+tetra1 47 tetra2 20 jas 0
+tetra1 47 tetra2 21 jas -6.35323
+tetra1 47 tetra2 22 jas 0
+tetra1 47 tetra2 23 jas -8.75042
+tetra1 47 tetra2 24 jas 0
+tetra1 47 tetra2 25 jas -6.35323
+tetra1 47 tetra2 26 jas 0
+tetra1 47 tetra2 27 jas -6.35323
+tetra1 47 tetra2 28 jas 0
+tetra1 47 tetra2 29 jas -2.51521
+tetra1 47 tetra2 30 jas 0
+tetra1 47 tetra2 31 jas -6.35323
+tetra1 47 tetra2 32 jas 0
+tetra1 47 tetra2 33 jas -2.51521
+tetra1 47 tetra2 34 jas 0
+tetra1 47 tetra2 35 jas -2.51521
+tetra1 47 tetra2 36 jas 0
+tetra1 47 tetra2 37 jas -6.35323
+tetra1 47 tetra2 38 jas 0
+tetra1 47 tetra2 39 jas -5.70663
+tetra1 47 tetra2 40 jas 0
+tetra1 47 tetra2 41 jas -2.51521
+tetra1 47 tetra2 42 jas 0
+tetra1 47 tetra2 43 jas -2.51521
+tetra1 47 tetra2 44 jas 0
+tetra1 47 tetra2 45 jas -2.51521
+tetra1 47 tetra2 46 jas 0
+tetra1 47 tetra2 47 jas -5.31718
+tetra1 47 tetra2 48 jas 0
+tetra1 47 tetra2 49 jas -2.51521
+tetra1 47 tetra2 50 jas 0
+tetra1 47 tetra2 51 jas -6.35323
+tetra1 47 tetra2 52 jas 0
+tetra1 47 tetra2 53 jas -6.35323
+tetra1 47 tetra2 54 jas 0
+tetra1 47 tetra2 55 jas -6.35323
+tetra1 47 tetra2 56 jas 0
+tetra1 47 tetra2 57 jas -2.51521
+tetra1 47 tetra2 58 jas 0
+tetra1 47 tetra2 59 jas -6.35323
+tetra1 47 tetra2 60 jas 0
+tetra1 47 tetra2 61 jas -2.51521
+tetra1 47 tetra2 62 jas 0
+tetra1 47 tetra2 63 jas -5.70663
+tetra1 48 tetra2 0 jas -6.35323
+tetra1 48 tetra2 1 jas 0
+tetra1 48 tetra2 2 jas -2.51521
+tetra1 48 tetra2 3 jas 0
+tetra1 48 tetra2 4 jas -6.35323
+tetra1 48 tetra2 5 jas 0
+tetra1 48 tetra2 6 jas -6.35323
+tetra1 48 tetra2 7 jas 0
+tetra1 48 tetra2 8 jas -8.75042
+tetra1 48 tetra2 9 jas 0
+tetra1 48 tetra2 10 jas -6.35323
+tetra1 48 tetra2 11 jas 0
+tetra1 48 tetra2 12 jas -6.35323
+tetra1 48 tetra2 13 jas 0
+tetra1 48 tetra2 14 jas -6.35323
+tetra1 48 tetra2 15 jas 0
+tetra1 48 tetra2 16 jas -5.70663
+tetra1 48 tetra2 17 jas 0
+tetra1 48 tetra2 18 jas -2.51521
+tetra1 48 tetra2 19 jas 0
+tetra1 48 tetra2 20 jas -2.51521
+tetra1 48 tetra2 21 jas 0
+tetra1 48 tetra2 22 jas -6.35323
+tetra1 48 tetra2 23 jas 0
+tetra1 48 tetra2 24 jas -6.35323
+tetra1 48 tetra2 25 jas 0
+tetra1 48 tetra2 26 jas -6.35323
+tetra1 48 tetra2 27 jas 0
+tetra1 48 tetra2 28 jas -2.51521
+tetra1 48 tetra2 29 jas 0
+tetra1 48 tetra2 30 jas -6.35323
+tetra1 48 tetra2 31 jas 0
+tetra1 48 tetra2 32 jas -5.70663
+tetra1 48 tetra2 33 jas 0
+tetra1 48 tetra2 34 jas -2.51521
+tetra1 48 tetra2 35 jas 0
+tetra1 48 tetra2 36 jas -6.35323
+tetra1 48 tetra2 37 jas 0
+tetra1 48 tetra2 38 jas -2.51521
+tetra1 48 tetra2 39 jas 0
+tetra1 48 tetra2 40 jas -6.35323
+tetra1 48 tetra2 41 jas 0
+tetra1 48 tetra2 42 jas -6.35323
+tetra1 48 tetra2 43 jas 0
+tetra1 48 tetra2 44 jas -6.35323
+tetra1 48 tetra2 45 jas 0
+tetra1 48 tetra2 46 jas -2.51521
+tetra1 48 tetra2 47 jas 0
+tetra1 48 tetra2 48 jas -5.31718
+tetra1 48 tetra2 49 jas 0
+tetra1 48 tetra2 50 jas -2.51521
+tetra1 48 tetra2 51 jas 0
+tetra1 48 tetra2 52 jas -2.51521
+tetra1 48 tetra2 53 jas 0
+tetra1 48 tetra2 54 jas -2.51521
+tetra1 48 tetra2 55 jas 0
+tetra1 48 tetra2 56 jas -5.70663
+tetra1 48 tetra2 57 jas 0
+tetra1 48 tetra2 58 jas -6.35323
+tetra1 48 tetra2 59 jas 0
+tetra1 48 tetra2 60 jas -2.51521
+tetra1 48 tetra2 61 jas 0
+tetra1 48 tetra2 62 jas -2.51521
+tetra1 48 tetra2 63 jas 0
+tetra1 49 tetra2 0 jas 0
+tetra1 49 tetra2 1 jas -6.35323
+tetra1 49 tetra2 2 jas 0
+tetra1 49 tetra2 3 jas -2.51521
+tetra1 49 tetra2 4 jas 0
+tetra1 49 tetra2 5 jas -6.35323
+tetra1 49 tetra2 6 jas 0
+tetra1 49 tetra2 7 jas -6.35323
+tetra1 49 tetra2 8 jas 0
+tetra1 49 tetra2 9 jas -8.75042
+tetra1 49 tetra2 10 jas 0
+tetra1 49 tetra2 11 jas -6.35323
+tetra1 49 tetra2 12 jas 0
+tetra1 49 tetra2 13 jas -6.35323
+tetra1 49 tetra2 14 jas 0
+tetra1 49 tetra2 15 jas -6.35323
+tetra1 49 tetra2 16 jas 0
+tetra1 49 tetra2 17 jas -5.70663
+tetra1 49 tetra2 18 jas 0
+tetra1 49 tetra2 19 jas -2.51521
+tetra1 49 tetra2 20 jas 0
+tetra1 49 tetra2 21 jas -2.51521
+tetra1 49 tetra2 22 jas 0
+tetra1 49 tetra2 23 jas -6.35323
+tetra1 49 tetra2 24 jas 0
+tetra1 49 tetra2 25 jas -6.35323
+tetra1 49 tetra2 26 jas 0
+tetra1 49 tetra2 27 jas -6.35323
+tetra1 49 tetra2 28 jas 0
+tetra1 49 tetra2 29 jas -2.51521
+tetra1 49 tetra2 30 jas 0
+tetra1 49 tetra2 31 jas -6.35323
+tetra1 49 tetra2 32 jas 0
+tetra1 49 tetra2 33 jas -5.70663
+tetra1 49 tetra2 34 jas 0
+tetra1 49 tetra2 35 jas -2.51521
+tetra1 49 tetra2 36 jas 0
+tetra1 49 tetra2 37 jas -6.35323
+tetra1 49 tetra2 38 jas 0
+tetra1 49 tetra2 39 jas -2.51521
+tetra1 49 tetra2 40 jas 0
+tetra1 49 tetra2 41 jas -6.35323
+tetra1 49 tetra2 42 jas 0
+tetra1 49 tetra2 43 jas -6.35323
+tetra1 49 tetra2 44 jas 0
+tetra1 49 tetra2 45 jas -6.35323
+tetra1 49 tetra2 46 jas 0
+tetra1 49 tetra2 47 jas -2.51521
+tetra1 49 tetra2 48 jas 0
+tetra1 49 tetra2 49 jas -5.31718
+tetra1 49 tetra2 50 jas 0
+tetra1 49 tetra2 51 jas -2.51521
+tetra1 49 tetra2 52 jas 0
+tetra1 49 tetra2 53 jas -2.51521
+tetra1 49 tetra2 54 jas 0
+tetra1 49 tetra2 55 jas -2.51521
+tetra1 49 tetra2 56 jas 0
+tetra1 49 tetra2 57 jas -5.70663
+tetra1 49 tetra2 58 jas 0
+tetra1 49 tetra2 59 jas -6.35323
+tetra1 49 tetra2 60 jas 0
+tetra1 49 tetra2 61 jas -2.51521
+tetra1 49 tetra2 62 jas 0
+tetra1 49 tetra2 63 jas -2.51521
+tetra1 50 tetra2 0 jas -2.51521
+tetra1 50 tetra2 1 jas 0
+tetra1 50 tetra2 2 jas -6.35323
+tetra1 50 tetra2 3 jas 0
+tetra1 50 tetra2 4 jas -6.35323
+tetra1 50 tetra2 5 jas 0
+tetra1 50 tetra2 6 jas -6.35323
+tetra1 50 tetra2 7 jas 0
+tetra1 50 tetra2 8 jas -6.35323
+tetra1 50 tetra2 9 jas 0
+tetra1 50 tetra2 10 jas -8.75042
+tetra1 50 tetra2 11 jas 0
+tetra1 50 tetra2 12 jas -6.35323
+tetra1 50 tetra2 13 jas 0
+tetra1 50 tetra2 14 jas -6.35323
+tetra1 50 tetra2 15 jas 0
+tetra1 50 tetra2 16 jas -2.51521
+tetra1 50 tetra2 17 jas 0
+tetra1 50 tetra2 18 jas -5.70663
+tetra1 50 tetra2 19 jas 0
+tetra1 50 tetra2 20 jas -6.35323
+tetra1 50 tetra2 21 jas 0
+tetra1 50 tetra2 22 jas -2.51521
+tetra1 50 tetra2 23 jas 0
+tetra1 50 tetra2 24 jas -6.35323
+tetra1 50 tetra2 25 jas 0
+tetra1 50 tetra2 26 jas -6.35323
+tetra1 50 tetra2 27 jas 0
+tetra1 50 tetra2 28 jas -6.35323
+tetra1 50 tetra2 29 jas 0
+tetra1 50 tetra2 30 jas -2.51521
+tetra1 50 tetra2 31 jas 0
+tetra1 50 tetra2 32 jas -2.51521
+tetra1 50 tetra2 33 jas 0
+tetra1 50 tetra2 34 jas -5.70663
+tetra1 50 tetra2 35 jas 0
+tetra1 50 tetra2 36 jas -2.51521
+tetra1 50 tetra2 37 jas 0
+tetra1 50 tetra2 38 jas -6.35323
+tetra1 50 tetra2 39 jas 0
+tetra1 50 tetra2 40 jas -6.35323
+tetra1 50 tetra2 41 jas 0
+tetra1 50 tetra2 42 jas -6.35323
+tetra1 50 tetra2 43 jas 0
+tetra1 50 tetra2 44 jas -2.51521
+tetra1 50 tetra2 45 jas 0
+tetra1 50 tetra2 46 jas -6.35323
+tetra1 50 tetra2 47 jas 0
+tetra1 50 tetra2 48 jas -2.51521
+tetra1 50 tetra2 49 jas 0
+tetra1 50 tetra2 50 jas -5.31718
+tetra1 50 tetra2 51 jas 0
+tetra1 50 tetra2 52 jas -2.51521
+tetra1 50 tetra2 53 jas 0
+tetra1 50 tetra2 54 jas -2.51521
+tetra1 50 tetra2 55 jas 0
+tetra1 50 tetra2 56 jas -6.35323
+tetra1 50 tetra2 57 jas 0
+tetra1 50 tetra2 58 jas -5.70663
+tetra1 50 tetra2 59 jas 0
+tetra1 50 tetra2 60 jas -2.51521
+tetra1 50 tetra2 61 jas 0
+tetra1 50 tetra2 62 jas -2.51521
+tetra1 50 tetra2 63 jas 0
+tetra1 51 tetra2 0 jas 0
+tetra1 51 tetra2 1 jas -2.51521
+tetra1 51 tetra2 2 jas 0
+tetra1 51 tetra2 3 jas -6.35323
+tetra1 51 tetra2 4 jas 0
+tetra1 51 tetra2 5 jas -6.35323
+tetra1 51 tetra2 6 jas 0
+tetra1 51 tetra2 7 jas -6.35323
+tetra1 51 tetra2 8 jas 0
+tetra1 51 tetra2 9 jas -6.35323
+tetra1 51 tetra2 10 jas 0
+tetra1 51 tetra2 11 jas -8.75042
+tetra1 51 tetra2 12 jas 0
+tetra1 51 tetra2 13 jas -6.35323
+tetra1 51 tetra2 14 jas 0
+tetra1 51 tetra2 15 jas -6.35323
+tetra1 51 tetra2 16 jas 0
+tetra1 51 tetra2 17 jas -2.51521
+tetra1 51 tetra2 18 jas 0
+tetra1 51 tetra2 19 jas -5.70663
+tetra1 51 tetra2 20 jas 0
+tetra1 51 tetra2 21 jas -6.35323
+tetra1 51 tetra2 22 jas 0
+tetra1 51 tetra2 23 jas -2.51521
+tetra1 51 tetra2 24 jas 0
+tetra1 51 tetra2 25 jas -6.35323
+tetra1 51 tetra2 26 jas 0
+tetra1 51 tetra2 27 jas -6.35323
+tetra1 51 tetra2 28 jas 0
+tetra1 51 tetra2 29 jas -6.35323
+tetra1 51 tetra2 30 jas 0
+tetra1 51 tetra2 31 jas -2.51521
+tetra1 51 tetra2 32 jas 0
+tetra1 51 tetra2 33 jas -2.51521
+tetra1 51 tetra2 34 jas 0
+tetra1 51 tetra2 35 jas -5.70663
+tetra1 51 tetra2 36 jas 0
+tetra1 51 tetra2 37 jas -2.51521
+tetra1 51 tetra2 38 jas 0
+tetra1 51 tetra2 39 jas -6.35323
+tetra1 51 tetra2 40 jas 0
+tetra1 51 tetra2 41 jas -6.35323
+tetra1 51 tetra2 42 jas 0
+tetra1 51 tetra2 43 jas -6.35323
+tetra1 51 tetra2 44 jas 0
+tetra1 51 tetra2 45 jas -2.51521
+tetra1 51 tetra2 46 jas 0
+tetra1 51 tetra2 47 jas -6.35323
+tetra1 51 tetra2 48 jas 0
+tetra1 51 tetra2 49 jas -2.51521
+tetra1 51 tetra2 50 jas 0
+tetra1 51 tetra2 51 jas -5.31718
+tetra1 51 tetra2 52 jas 0
+tetra1 51 tetra2 53 jas -2.51521
+tetra1 51 tetra2 54 jas 0
+tetra1 51 tetra2 55 jas -2.51521
+tetra1 51 tetra2 56 jas 0
+tetra1 51 tetra2 57 jas -6.35323
+tetra1 51 tetra2 58 jas 0
+tetra1 51 tetra2 59 jas -5.70663
+tetra1 51 tetra2 60 jas 0
+tetra1 51 tetra2 61 jas -2.51521
+tetra1 51 tetra2 62 jas 0
+tetra1 51 tetra2 63 jas -2.51521
+tetra1 52 tetra2 0 jas -6.35323
+tetra1 52 tetra2 1 jas 0
+tetra1 52 tetra2 2 jas -6.35323
+tetra1 52 tetra2 3 jas 0
+tetra1 52 tetra2 4 jas -6.35323
+tetra1 52 tetra2 5 jas 0
+tetra1 52 tetra2 6 jas -2.51521
+tetra1 52 tetra2 7 jas 0
+tetra1 52 tetra2 8 jas -6.35323
+tetra1 52 tetra2 9 jas 0
+tetra1 52 tetra2 10 jas -6.35323
+tetra1 52 tetra2 11 jas 0
+tetra1 52 tetra2 12 jas -8.75042
+tetra1 52 tetra2 13 jas 0
+tetra1 52 tetra2 14 jas -6.35323
+tetra1 52 tetra2 15 jas 0
+tetra1 52 tetra2 16 jas -2.51521
+tetra1 52 tetra2 17 jas 0
+tetra1 52 tetra2 18 jas -6.35323
+tetra1 52 tetra2 19 jas 0
+tetra1 52 tetra2 20 jas -5.70663
+tetra1 52 tetra2 21 jas 0
+tetra1 52 tetra2 22 jas -2.51521
+tetra1 52 tetra2 23 jas 0
+tetra1 52 tetra2 24 jas -2.51521
+tetra1 52 tetra2 25 jas 0
+tetra1 52 tetra2 26 jas -6.35323
+tetra1 52 tetra2 27 jas 0
+tetra1 52 tetra2 28 jas -6.35323
+tetra1 52 tetra2 29 jas 0
+tetra1 52 tetra2 30 jas -6.35323
+tetra1 52 tetra2 31 jas 0
+tetra1 52 tetra2 32 jas -6.35323
+tetra1 52 tetra2 33 jas 0
+tetra1 52 tetra2 34 jas -2.51521
+tetra1 52 tetra2 35 jas 0
+tetra1 52 tetra2 36 jas -5.70663
+tetra1 52 tetra2 37 jas 0
+tetra1 52 tetra2 38 jas -2.51521
+tetra1 52 tetra2 39 jas 0
+tetra1 52 tetra2 40 jas -6.35323
+tetra1 52 tetra2 41 jas 0
+tetra1 52 tetra2 42 jas -2.51521
+tetra1 52 tetra2 43 jas 0
+tetra1 52 tetra2 44 jas -6.35323
+tetra1 52 tetra2 45 jas 0
+tetra1 52 tetra2 46 jas -6.35323
+tetra1 52 tetra2 47 jas 0
+tetra1 52 tetra2 48 jas -2.51521
+tetra1 52 tetra2 49 jas 0
+tetra1 52 tetra2 50 jas -2.51521
+tetra1 52 tetra2 51 jas 0
+tetra1 52 tetra2 52 jas -5.31718
+tetra1 52 tetra2 53 jas 0
+tetra1 52 tetra2 54 jas -2.51521
+tetra1 52 tetra2 55 jas 0
+tetra1 52 tetra2 56 jas -2.51521
+tetra1 52 tetra2 57 jas 0
+tetra1 52 tetra2 58 jas -2.51521
+tetra1 52 tetra2 59 jas 0
+tetra1 52 tetra2 60 jas -5.70663
+tetra1 52 tetra2 61 jas 0
+tetra1 52 tetra2 62 jas -6.35323
+tetra1 52 tetra2 63 jas 0
+tetra1 53 tetra2 0 jas 0
+tetra1 53 tetra2 1 jas -6.35323
+tetra1 53 tetra2 2 jas 0
+tetra1 53 tetra2 3 jas -6.35323
+tetra1 53 tetra2 4 jas 0
+tetra1 53 tetra2 5 jas -6.35323
+tetra1 53 tetra2 6 jas 0
+tetra1 53 tetra2 7 jas -2.51521
+tetra1 53 tetra2 8 jas 0
+tetra1 53 tetra2 9 jas -6.35323
+tetra1 53 tetra2 10 jas 0
+tetra1 53 tetra2 11 jas -6.35323
+tetra1 53 tetra2 12 jas 0
+tetra1 53 tetra2 13 jas -8.75042
+tetra1 53 tetra2 14 jas 0
+tetra1 53 tetra2 15 jas -6.35323
+tetra1 53 tetra2 16 jas 0
+tetra1 53 tetra2 17 jas -2.51521
+tetra1 53 tetra2 18 jas 0
+tetra1 53 tetra2 19 jas -6.35323
+tetra1 53 tetra2 20 jas 0
+tetra1 53 tetra2 21 jas -5.70663
+tetra1 53 tetra2 22 jas 0
+tetra1 53 tetra2 23 jas -2.51521
+tetra1 53 tetra2 24 jas 0
+tetra1 53 tetra2 25 jas -2.51521
+tetra1 53 tetra2 26 jas 0
+tetra1 53 tetra2 27 jas -6.35323
+tetra1 53 tetra2 28 jas 0
+tetra1 53 tetra2 29 jas -6.35323
+tetra1 53 tetra2 30 jas 0
+tetra1 53 tetra2 31 jas -6.35323
+tetra1 53 tetra2 32 jas 0
+tetra1 53 tetra2 33 jas -6.35323
+tetra1 53 tetra2 34 jas 0
+tetra1 53 tetra2 35 jas -2.51521
+tetra1 53 tetra2 36 jas 0
+tetra1 53 tetra2 37 jas -5.70663
+tetra1 53 tetra2 38 jas 0
+tetra1 53 tetra2 39 jas -2.51521
+tetra1 53 tetra2 40 jas 0
+tetra1 53 tetra2 41 jas -6.35323
+tetra1 53 tetra2 42 jas 0
+tetra1 53 tetra2 43 jas -2.51521
+tetra1 53 tetra2 44 jas 0
+tetra1 53 tetra2 45 jas -6.35323
+tetra1 53 tetra2 46 jas 0
+tetra1 53 tetra2 47 jas -6.35323
+tetra1 53 tetra2 48 jas 0
+tetra1 53 tetra2 49 jas -2.51521
+tetra1 53 tetra2 50 jas 0
+tetra1 53 tetra2 51 jas -2.51521
+tetra1 53 tetra2 52 jas 0
+tetra1 53 tetra2 53 jas -5.31718
+tetra1 53 tetra2 54 jas 0
+tetra1 53 tetra2 55 jas -2.51521
+tetra1 53 tetra2 56 jas 0
+tetra1 53 tetra2 57 jas -2.51521
+tetra1 53 tetra2 58 jas 0
+tetra1 53 tetra2 59 jas -2.51521
+tetra1 53 tetra2 60 jas 0
+tetra1 53 tetra2 61 jas -5.70663
+tetra1 53 tetra2 62 jas 0
+tetra1 53 tetra2 63 jas -6.35323
+tetra1 54 tetra2 0 jas -6.35323
+tetra1 54 tetra2 1 jas 0
+tetra1 54 tetra2 2 jas -6.35323
+tetra1 54 tetra2 3 jas 0
+tetra1 54 tetra2 4 jas -2.51521
+tetra1 54 tetra2 5 jas 0
+tetra1 54 tetra2 6 jas -6.35323
+tetra1 54 tetra2 7 jas 0
+tetra1 54 tetra2 8 jas -6.35323
+tetra1 54 tetra2 9 jas 0
+tetra1 54 tetra2 10 jas -6.35323
+tetra1 54 tetra2 11 jas 0
+tetra1 54 tetra2 12 jas -6.35323
+tetra1 54 tetra2 13 jas 0
+tetra1 54 tetra2 14 jas -8.75042
+tetra1 54 tetra2 15 jas 0
+tetra1 54 tetra2 16 jas -6.35323
+tetra1 54 tetra2 17 jas 0
+tetra1 54 tetra2 18 jas -2.51521
+tetra1 54 tetra2 19 jas 0
+tetra1 54 tetra2 20 jas -2.51521
+tetra1 54 tetra2 21 jas 0
+tetra1 54 tetra2 22 jas -5.70663
+tetra1 54 tetra2 23 jas 0
+tetra1 54 tetra2 24 jas -6.35323
+tetra1 54 tetra2 25 jas 0
+tetra1 54 tetra2 26 jas -2.51521
+tetra1 54 tetra2 27 jas 0
+tetra1 54 tetra2 28 jas -6.35323
+tetra1 54 tetra2 29 jas 0
+tetra1 54 tetra2 30 jas -6.35323
+tetra1 54 tetra2 31 jas 0
+tetra1 54 tetra2 32 jas -2.51521
+tetra1 54 tetra2 33 jas 0
+tetra1 54 tetra2 34 jas -6.35323
+tetra1 54 tetra2 35 jas 0
+tetra1 54 tetra2 36 jas -2.51521
+tetra1 54 tetra2 37 jas 0
+tetra1 54 tetra2 38 jas -5.70663
+tetra1 54 tetra2 39 jas 0
+tetra1 54 tetra2 40 jas -2.51521
+tetra1 54 tetra2 41 jas 0
+tetra1 54 tetra2 42 jas -6.35323
+tetra1 54 tetra2 43 jas 0
+tetra1 54 tetra2 44 jas -6.35323
+tetra1 54 tetra2 45 jas 0
+tetra1 54 tetra2 46 jas -6.35323
+tetra1 54 tetra2 47 jas 0
+tetra1 54 tetra2 48 jas -2.51521
+tetra1 54 tetra2 49 jas 0
+tetra1 54 tetra2 50 jas -2.51521
+tetra1 54 tetra2 51 jas 0
+tetra1 54 tetra2 52 jas -2.51521
+tetra1 54 tetra2 53 jas 0
+tetra1 54 tetra2 54 jas -5.31718
+tetra1 54 tetra2 55 jas 0
+tetra1 54 tetra2 56 jas -2.51521
+tetra1 54 tetra2 57 jas 0
+tetra1 54 tetra2 58 jas -2.51521
+tetra1 54 tetra2 59 jas 0
+tetra1 54 tetra2 60 jas -6.35323
+tetra1 54 tetra2 61 jas 0
+tetra1 54 tetra2 62 jas -5.70663
+tetra1 54 tetra2 63 jas 0
+tetra1 55 tetra2 0 jas 0
+tetra1 55 tetra2 1 jas -6.35323
+tetra1 55 tetra2 2 jas 0
+tetra1 55 tetra2 3 jas -6.35323
+tetra1 55 tetra2 4 jas 0
+tetra1 55 tetra2 5 jas -2.51521
+tetra1 55 tetra2 6 jas 0
+tetra1 55 tetra2 7 jas -6.35323
+tetra1 55 tetra2 8 jas 0
+tetra1 55 tetra2 9 jas -6.35323
+tetra1 55 tetra2 10 jas 0
+tetra1 55 tetra2 11 jas -6.35323
+tetra1 55 tetra2 12 jas 0
+tetra1 55 tetra2 13 jas -6.35323
+tetra1 55 tetra2 14 jas 0
+tetra1 55 tetra2 15 jas -8.75042
+tetra1 55 tetra2 16 jas 0
+tetra1 55 tetra2 17 jas -6.35323
+tetra1 55 tetra2 18 jas 0
+tetra1 55 tetra2 19 jas -2.51521
+tetra1 55 tetra2 20 jas 0
+tetra1 55 tetra2 21 jas -2.51521
+tetra1 55 tetra2 22 jas 0
+tetra1 55 tetra2 23 jas -5.70663
+tetra1 55 tetra2 24 jas 0
+tetra1 55 tetra2 25 jas -6.35323
+tetra1 55 tetra2 26 jas 0
+tetra1 55 tetra2 27 jas -2.51521
+tetra1 55 tetra2 28 jas 0
+tetra1 55 tetra2 29 jas -6.35323
+tetra1 55 tetra2 30 jas 0
+tetra1 55 tetra2 31 jas -6.35323
+tetra1 55 tetra2 32 jas 0
+tetra1 55 tetra2 33 jas -2.51521
+tetra1 55 tetra2 34 jas 0
+tetra1 55 tetra2 35 jas -6.35323
+tetra1 55 tetra2 36 jas 0
+tetra1 55 tetra2 37 jas -2.51521
+tetra1 55 tetra2 38 jas 0
+tetra1 55 tetra2 39 jas -5.70663
+tetra1 55 tetra2 40 jas 0
+tetra1 55 tetra2 41 jas -2.51521
+tetra1 55 tetra2 42 jas 0
+tetra1 55 tetra2 43 jas -6.35323
+tetra1 55 tetra2 44 jas 0
+tetra1 55 tetra2 45 jas -6.35323
+tetra1 55 tetra2 46 jas 0
+tetra1 55 tetra2 47 jas -6.35323
+tetra1 55 tetra2 48 jas 0
+tetra1 55 tetra2 49 jas -2.51521
+tetra1 55 tetra2 50 jas 0
+tetra1 55 tetra2 51 jas -2.51521
+tetra1 55 tetra2 52 jas 0
+tetra1 55 tetra2 53 jas -2.51521
+tetra1 55 tetra2 54 jas 0
+tetra1 55 tetra2 55 jas -5.31718
+tetra1 55 tetra2 56 jas 0
+tetra1 55 tetra2 57 jas -2.51521
+tetra1 55 tetra2 58 jas 0
+tetra1 55 tetra2 59 jas -2.51521
+tetra1 55 tetra2 60 jas 0
+tetra1 55 tetra2 61 jas -6.35323
+tetra1 55 tetra2 62 jas 0
+tetra1 55 tetra2 63 jas -5.70663
+tetra1 56 tetra2 0 jas -8.75042
+tetra1 56 tetra2 1 jas 0
+tetra1 56 tetra2 2 jas -6.35323
+tetra1 56 tetra2 3 jas 0
+tetra1 56 tetra2 4 jas -6.35323
+tetra1 56 tetra2 5 jas 0
+tetra1 56 tetra2 6 jas -6.35323
+tetra1 56 tetra2 7 jas 0
+tetra1 56 tetra2 8 jas -6.35323
+tetra1 56 tetra2 9 jas 0
+tetra1 56 tetra2 10 jas -2.51521
+tetra1 56 tetra2 11 jas 0
+tetra1 56 tetra2 12 jas -6.35323
+tetra1 56 tetra2 13 jas 0
+tetra1 56 tetra2 14 jas -6.35323
+tetra1 56 tetra2 15 jas 0
+tetra1 56 tetra2 16 jas -6.35323
+tetra1 56 tetra2 17 jas 0
+tetra1 56 tetra2 18 jas -6.35323
+tetra1 56 tetra2 19 jas 0
+tetra1 56 tetra2 20 jas -2.51521
+tetra1 56 tetra2 21 jas 0
+tetra1 56 tetra2 22 jas -6.35323
+tetra1 56 tetra2 23 jas 0
+tetra1 56 tetra2 24 jas -5.70663
+tetra1 56 tetra2 25 jas 0
+tetra1 56 tetra2 26 jas -2.51521
+tetra1 56 tetra2 27 jas 0
+tetra1 56 tetra2 28 jas -2.51521
+tetra1 56 tetra2 29 jas 0
+tetra1 56 tetra2 30 jas -6.35323
+tetra1 56 tetra2 31 jas 0
+tetra1 56 tetra2 32 jas -6.35323
+tetra1 56 tetra2 33 jas 0
+tetra1 56 tetra2 34 jas -6.35323
+tetra1 56 tetra2 35 jas 0
+tetra1 56 tetra2 36 jas -6.35323
+tetra1 56 tetra2 37 jas 0
+tetra1 56 tetra2 38 jas -2.51521
+tetra1 56 tetra2 39 jas 0
+tetra1 56 tetra2 40 jas -5.70663
+tetra1 56 tetra2 41 jas 0
+tetra1 56 tetra2 42 jas -2.51521
+tetra1 56 tetra2 43 jas 0
+tetra1 56 tetra2 44 jas -6.35323
+tetra1 56 tetra2 45 jas 0
+tetra1 56 tetra2 46 jas -2.51521
+tetra1 56 tetra2 47 jas 0
+tetra1 56 tetra2 48 jas -5.70663
+tetra1 56 tetra2 49 jas 0
+tetra1 56 tetra2 50 jas -6.35323
+tetra1 56 tetra2 51 jas 0
+tetra1 56 tetra2 52 jas -2.51521
+tetra1 56 tetra2 53 jas 0
+tetra1 56 tetra2 54 jas -2.51521
+tetra1 56 tetra2 55 jas 0
+tetra1 56 tetra2 56 jas -5.31718
+tetra1 56 tetra2 57 jas 0
+tetra1 56 tetra2 58 jas -2.51521
+tetra1 56 tetra2 59 jas 0
+tetra1 56 tetra2 60 jas -2.51521
+tetra1 56 tetra2 61 jas 0
+tetra1 56 tetra2 62 jas -2.51521
+tetra1 56 tetra2 63 jas 0
+tetra1 57 tetra2 0 jas 0
+tetra1 57 tetra2 1 jas -8.75042
+tetra1 57 tetra2 2 jas 0
+tetra1 57 tetra2 3 jas -6.35323
+tetra1 57 tetra2 4 jas 0
+tetra1 57 tetra2 5 jas -6.35323
+tetra1 57 tetra2 6 jas 0
+tetra1 57 tetra2 7 jas -6.35323
+tetra1 57 tetra2 8 jas 0
+tetra1 57 tetra2 9 jas -6.35323
+tetra1 57 tetra2 10 jas 0
+tetra1 57 tetra2 11 jas -2.51521
+tetra1 57 tetra2 12 jas 0
+tetra1 57 tetra2 13 jas -6.35323
+tetra1 57 tetra2 14 jas 0
+tetra1 57 tetra2 15 jas -6.35323
+tetra1 57 tetra2 16 jas 0
+tetra1 57 tetra2 17 jas -6.35323
+tetra1 57 tetra2 18 jas 0
+tetra1 57 tetra2 19 jas -6.35323
+tetra1 57 tetra2 20 jas 0
+tetra1 57 tetra2 21 jas -2.51521
+tetra1 57 tetra2 22 jas 0
+tetra1 57 tetra2 23 jas -6.35323
+tetra1 57 tetra2 24 jas 0
+tetra1 57 tetra2 25 jas -5.70663
+tetra1 57 tetra2 26 jas 0
+tetra1 57 tetra2 27 jas -2.51521
+tetra1 57 tetra2 28 jas 0
+tetra1 57 tetra2 29 jas -2.51521
+tetra1 57 tetra2 30 jas 0
+tetra1 57 tetra2 31 jas -6.35323
+tetra1 57 tetra2 32 jas 0
+tetra1 57 tetra2 33 jas -6.35323
+tetra1 57 tetra2 34 jas 0
+tetra1 57 tetra2 35 jas -6.35323
+tetra1 57 tetra2 36 jas 0
+tetra1 57 tetra2 37 jas -6.35323
+tetra1 57 tetra2 38 jas 0
+tetra1 57 tetra2 39 jas -2.51521
+tetra1 57 tetra2 40 jas 0
+tetra1 57 tetra2 41 jas -5.70663
+tetra1 57 tetra2 42 jas 0
+tetra1 57 tetra2 43 jas -2.51521
+tetra1 57 tetra2 44 jas 0
+tetra1 57 tetra2 45 jas -6.35323
+tetra1 57 tetra2 46 jas 0
+tetra1 57 tetra2 47 jas -2.51521
+tetra1 57 tetra2 48 jas 0
+tetra1 57 tetra2 49 jas -5.70663
+tetra1 57 tetra2 50 jas 0
+tetra1 57 tetra2 51 jas -6.35323
+tetra1 57 tetra2 52 jas 0
+tetra1 57 tetra2 53 jas -2.51521
+tetra1 57 tetra2 54 jas 0
+tetra1 57 tetra2 55 jas -2.51521
+tetra1 57 tetra2 56 jas 0
+tetra1 57 tetra2 57 jas -5.31718
+tetra1 57 tetra2 58 jas 0
+tetra1 57 tetra2 59 jas -2.51521
+tetra1 57 tetra2 60 jas 0
+tetra1 57 tetra2 61 jas -2.51521
+tetra1 57 tetra2 62 jas 0
+tetra1 57 tetra2 63 jas -2.51521
+tetra1 58 tetra2 0 jas -6.35323
+tetra1 58 tetra2 1 jas 0
+tetra1 58 tetra2 2 jas -8.75042
+tetra1 58 tetra2 3 jas 0
+tetra1 58 tetra2 4 jas -6.35323
+tetra1 58 tetra2 5 jas 0
+tetra1 58 tetra2 6 jas -6.35323
+tetra1 58 tetra2 7 jas 0
+tetra1 58 tetra2 8 jas -2.51521
+tetra1 58 tetra2 9 jas 0
+tetra1 58 tetra2 10 jas -6.35323
+tetra1 58 tetra2 11 jas 0
+tetra1 58 tetra2 12 jas -6.35323
+tetra1 58 tetra2 13 jas 0
+tetra1 58 tetra2 14 jas -6.35323
+tetra1 58 tetra2 15 jas 0
+tetra1 58 tetra2 16 jas -6.35323
+tetra1 58 tetra2 17 jas 0
+tetra1 58 tetra2 18 jas -6.35323
+tetra1 58 tetra2 19 jas 0
+tetra1 58 tetra2 20 jas -6.35323
+tetra1 58 tetra2 21 jas 0
+tetra1 58 tetra2 22 jas -2.51521
+tetra1 58 tetra2 23 jas 0
+tetra1 58 tetra2 24 jas -2.51521
+tetra1 58 tetra2 25 jas 0
+tetra1 58 tetra2 26 jas -5.70663
+tetra1 58 tetra2 27 jas 0
+tetra1 58 tetra2 28 jas -6.35323
+tetra1 58 tetra2 29 jas 0
+tetra1 58 tetra2 30 jas -2.51521
+tetra1 58 tetra2 31 jas 0
+tetra1 58 tetra2 32 jas -6.35323
+tetra1 58 tetra2 33 jas 0
+tetra1 58 tetra2 34 jas -6.35323
+tetra1 58 tetra2 35 jas 0
+tetra1 58 tetra2 36 jas -2.51521
+tetra1 58 tetra2 37 jas 0
+tetra1 58 tetra2 38 jas -6.35323
+tetra1 58 tetra2 39 jas 0
+tetra1 58 tetra2 40 jas -2.51521
+tetra1 58 tetra2 41 jas 0
+tetra1 58 tetra2 42 jas -5.70663
+tetra1 58 tetra2 43 jas 0
+tetra1 58 tetra2 44 jas -2.51521
+tetra1 58 tetra2 45 jas 0
+tetra1 58 tetra2 46 jas -6.35323
+tetra1 58 tetra2 47 jas 0
+tetra1 58 tetra2 48 jas -6.35323
+tetra1 58 tetra2 49 jas 0
+tetra1 58 tetra2 50 jas -5.70663
+tetra1 58 tetra2 51 jas 0
+tetra1 58 tetra2 52 jas -2.51521
+tetra1 58 tetra2 53 jas 0
+tetra1 58 tetra2 54 jas -2.51521
+tetra1 58 tetra2 55 jas 0
+tetra1 58 tetra2 56 jas -2.51521
+tetra1 58 tetra2 57 jas 0
+tetra1 58 tetra2 58 jas -5.31718
+tetra1 58 tetra2 59 jas 0
+tetra1 58 tetra2 60 jas -2.51521
+tetra1 58 tetra2 61 jas 0
+tetra1 58 tetra2 62 jas -2.51521
+tetra1 58 tetra2 63 jas 0
+tetra1 59 tetra2 0 jas 0
+tetra1 59 tetra2 1 jas -6.35323
+tetra1 59 tetra2 2 jas 0
+tetra1 59 tetra2 3 jas -8.75042
+tetra1 59 tetra2 4 jas 0
+tetra1 59 tetra2 5 jas -6.35323
+tetra1 59 tetra2 6 jas 0
+tetra1 59 tetra2 7 jas -6.35323
+tetra1 59 tetra2 8 jas 0
+tetra1 59 tetra2 9 jas -2.51521
+tetra1 59 tetra2 10 jas 0
+tetra1 59 tetra2 11 jas -6.35323
+tetra1 59 tetra2 12 jas 0
+tetra1 59 tetra2 13 jas -6.35323
+tetra1 59 tetra2 14 jas 0
+tetra1 59 tetra2 15 jas -6.35323
+tetra1 59 tetra2 16 jas 0
+tetra1 59 tetra2 17 jas -6.35323
+tetra1 59 tetra2 18 jas 0
+tetra1 59 tetra2 19 jas -6.35323
+tetra1 59 tetra2 20 jas 0
+tetra1 59 tetra2 21 jas -6.35323
+tetra1 59 tetra2 22 jas 0
+tetra1 59 tetra2 23 jas -2.51521
+tetra1 59 tetra2 24 jas 0
+tetra1 59 tetra2 25 jas -2.51521
+tetra1 59 tetra2 26 jas 0
+tetra1 59 tetra2 27 jas -5.70663
+tetra1 59 tetra2 28 jas 0
+tetra1 59 tetra2 29 jas -6.35323
+tetra1 59 tetra2 30 jas 0
+tetra1 59 tetra2 31 jas -2.51521
+tetra1 59 tetra2 32 jas 0
+tetra1 59 tetra2 33 jas -6.35323
+tetra1 59 tetra2 34 jas 0
+tetra1 59 tetra2 35 jas -6.35323
+tetra1 59 tetra2 36 jas 0
+tetra1 59 tetra2 37 jas -2.51521
+tetra1 59 tetra2 38 jas 0
+tetra1 59 tetra2 39 jas -6.35323
+tetra1 59 tetra2 40 jas 0
+tetra1 59 tetra2 41 jas -2.51521
+tetra1 59 tetra2 42 jas 0
+tetra1 59 tetra2 43 jas -5.70663
+tetra1 59 tetra2 44 jas 0
+tetra1 59 tetra2 45 jas -2.51521
+tetra1 59 tetra2 46 jas 0
+tetra1 59 tetra2 47 jas -6.35323
+tetra1 59 tetra2 48 jas 0
+tetra1 59 tetra2 49 jas -6.35323
+tetra1 59 tetra2 50 jas 0
+tetra1 59 tetra2 51 jas -5.70663
+tetra1 59 tetra2 52 jas 0
+tetra1 59 tetra2 53 jas -2.51521
+tetra1 59 tetra2 54 jas 0
+tetra1 59 tetra2 55 jas -2.51521
+tetra1 59 tetra2 56 jas 0
+tetra1 59 tetra2 57 jas -2.51521
+tetra1 59 tetra2 58 jas 0
+tetra1 59 tetra2 59 jas -5.31718
+tetra1 59 tetra2 60 jas 0
+tetra1 59 tetra2 61 jas -2.51521
+tetra1 59 tetra2 62 jas 0
+tetra1 59 tetra2 63 jas -2.51521
+tetra1 60 tetra2 0 jas -6.35323
+tetra1 60 tetra2 1 jas 0
+tetra1 60 tetra2 2 jas -6.35323
+tetra1 60 tetra2 3 jas 0
+tetra1 60 tetra2 4 jas -8.75042
+tetra1 60 tetra2 5 jas 0
+tetra1 60 tetra2 6 jas -6.35323
+tetra1 60 tetra2 7 jas 0
+tetra1 60 tetra2 8 jas -6.35323
+tetra1 60 tetra2 9 jas 0
+tetra1 60 tetra2 10 jas -6.35323
+tetra1 60 tetra2 11 jas 0
+tetra1 60 tetra2 12 jas -6.35323
+tetra1 60 tetra2 13 jas 0
+tetra1 60 tetra2 14 jas -2.51521
+tetra1 60 tetra2 15 jas 0
+tetra1 60 tetra2 16 jas -2.51521
+tetra1 60 tetra2 17 jas 0
+tetra1 60 tetra2 18 jas -6.35323
+tetra1 60 tetra2 19 jas 0
+tetra1 60 tetra2 20 jas -6.35323
+tetra1 60 tetra2 21 jas 0
+tetra1 60 tetra2 22 jas -6.35323
+tetra1 60 tetra2 23 jas 0
+tetra1 60 tetra2 24 jas -2.51521
+tetra1 60 tetra2 25 jas 0
+tetra1 60 tetra2 26 jas -6.35323
+tetra1 60 tetra2 27 jas 0
+tetra1 60 tetra2 28 jas -5.70663
+tetra1 60 tetra2 29 jas 0
+tetra1 60 tetra2 30 jas -2.51521
+tetra1 60 tetra2 31 jas 0
+tetra1 60 tetra2 32 jas -6.35323
+tetra1 60 tetra2 33 jas 0
+tetra1 60 tetra2 34 jas -2.51521
+tetra1 60 tetra2 35 jas 0
+tetra1 60 tetra2 36 jas -6.35323
+tetra1 60 tetra2 37 jas 0
+tetra1 60 tetra2 38 jas -6.35323
+tetra1 60 tetra2 39 jas 0
+tetra1 60 tetra2 40 jas -6.35323
+tetra1 60 tetra2 41 jas 0
+tetra1 60 tetra2 42 jas -2.51521
+tetra1 60 tetra2 43 jas 0
+tetra1 60 tetra2 44 jas -5.70663
+tetra1 60 tetra2 45 jas 0
+tetra1 60 tetra2 46 jas -2.51521
+tetra1 60 tetra2 47 jas 0
+tetra1 60 tetra2 48 jas -2.51521
+tetra1 60 tetra2 49 jas 0
+tetra1 60 tetra2 50 jas -2.51521
+tetra1 60 tetra2 51 jas 0
+tetra1 60 tetra2 52 jas -5.70663
+tetra1 60 tetra2 53 jas 0
+tetra1 60 tetra2 54 jas -6.35323
+tetra1 60 tetra2 55 jas 0
+tetra1 60 tetra2 56 jas -2.51521
+tetra1 60 tetra2 57 jas 0
+tetra1 60 tetra2 58 jas -2.51521
+tetra1 60 tetra2 59 jas 0
+tetra1 60 tetra2 60 jas -5.31718
+tetra1 60 tetra2 61 jas 0
+tetra1 60 tetra2 62 jas -2.51521
+tetra1 60 tetra2 63 jas 0
+tetra1 61 tetra2 0 jas 0
+tetra1 61 tetra2 1 jas -6.35323
+tetra1 61 tetra2 2 jas 0
+tetra1 61 tetra2 3 jas -6.35323
+tetra1 61 tetra2 4 jas 0
+tetra1 61 tetra2 5 jas -8.75042
+tetra1 61 tetra2 6 jas 0
+tetra1 61 tetra2 7 jas -6.35323
+tetra1 61 tetra2 8 jas 0
+tetra1 61 tetra2 9 jas -6.35323
+tetra1 61 tetra2 10 jas 0
+tetra1 61 tetra2 11 jas -6.35323
+tetra1 61 tetra2 12 jas 0
+tetra1 61 tetra2 13 jas -6.35323
+tetra1 61 tetra2 14 jas 0
+tetra1 61 tetra2 15 jas -2.51521
+tetra1 61 tetra2 16 jas 0
+tetra1 61 tetra2 17 jas -2.51521
+tetra1 61 tetra2 18 jas 0
+tetra1 61 tetra2 19 jas -6.35323
+tetra1 61 tetra2 20 jas 0
+tetra1 61 tetra2 21 jas -6.35323
+tetra1 61 tetra2 22 jas 0
+tetra1 61 tetra2 23 jas -6.35323
+tetra1 61 tetra2 24 jas 0
+tetra1 61 tetra2 25 jas -2.51521
+tetra1 61 tetra2 26 jas 0
+tetra1 61 tetra2 27 jas -6.35323
+tetra1 61 tetra2 28 jas 0
+tetra1 61 tetra2 29 jas -5.70663
+tetra1 61 tetra2 30 jas 0
+tetra1 61 tetra2 31 jas -2.51521
+tetra1 61 tetra2 32 jas 0
+tetra1 61 tetra2 33 jas -6.35323
+tetra1 61 tetra2 34 jas 0
+tetra1 61 tetra2 35 jas -2.51521
+tetra1 61 tetra2 36 jas 0
+tetra1 61 tetra2 37 jas -6.35323
+tetra1 61 tetra2 38 jas 0
+tetra1 61 tetra2 39 jas -6.35323
+tetra1 61 tetra2 40 jas 0
+tetra1 61 tetra2 41 jas -6.35323
+tetra1 61 tetra2 42 jas 0
+tetra1 61 tetra2 43 jas -2.51521
+tetra1 61 tetra2 44 jas 0
+tetra1 61 tetra2 45 jas -5.70663
+tetra1 61 tetra2 46 jas 0
+tetra1 61 tetra2 47 jas -2.51521
+tetra1 61 tetra2 48 jas 0
+tetra1 61 tetra2 49 jas -2.51521
+tetra1 61 tetra2 50 jas 0
+tetra1 61 tetra2 51 jas -2.51521
+tetra1 61 tetra2 52 jas 0
+tetra1 61 tetra2 53 jas -5.70663
+tetra1 61 tetra2 54 jas 0
+tetra1 61 tetra2 55 jas -6.35323
+tetra1 61 tetra2 56 jas 0
+tetra1 61 tetra2 57 jas -2.51521
+tetra1 61 tetra2 58 jas 0
+tetra1 61 tetra2 59 jas -2.51521
+tetra1 61 tetra2 60 jas 0
+tetra1 61 tetra2 61 jas -5.31718
+tetra1 61 tetra2 62 jas 0
+tetra1 61 tetra2 63 jas -2.51521
+tetra1 62 tetra2 0 jas -6.35323
+tetra1 62 tetra2 1 jas 0
+tetra1 62 tetra2 2 jas -6.35323
+tetra1 62 tetra2 3 jas 0
+tetra1 62 tetra2 4 jas -6.35323
+tetra1 62 tetra2 5 jas 0
+tetra1 62 tetra2 6 jas -8.75042
+tetra1 62 tetra2 7 jas 0
+tetra1 62 tetra2 8 jas -6.35323
+tetra1 62 tetra2 9 jas 0
+tetra1 62 tetra2 10 jas -6.35323
+tetra1 62 tetra2 11 jas 0
+tetra1 62 tetra2 12 jas -2.51521
+tetra1 62 tetra2 13 jas 0
+tetra1 62 tetra2 14 jas -6.35323
+tetra1 62 tetra2 15 jas 0
+tetra1 62 tetra2 16 jas -6.35323
+tetra1 62 tetra2 17 jas 0
+tetra1 62 tetra2 18 jas -2.51521
+tetra1 62 tetra2 19 jas 0
+tetra1 62 tetra2 20 jas -6.35323
+tetra1 62 tetra2 21 jas 0
+tetra1 62 tetra2 22 jas -6.35323
+tetra1 62 tetra2 23 jas 0
+tetra1 62 tetra2 24 jas -6.35323
+tetra1 62 tetra2 25 jas 0
+tetra1 62 tetra2 26 jas -2.51521
+tetra1 62 tetra2 27 jas 0
+tetra1 62 tetra2 28 jas -2.51521
+tetra1 62 tetra2 29 jas 0
+tetra1 62 tetra2 30 jas -5.70663
+tetra1 62 tetra2 31 jas 0
+tetra1 62 tetra2 32 jas -2.51521
+tetra1 62 tetra2 33 jas 0
+tetra1 62 tetra2 34 jas -6.35323
+tetra1 62 tetra2 35 jas 0
+tetra1 62 tetra2 36 jas -6.35323
+tetra1 62 tetra2 37 jas 0
+tetra1 62 tetra2 38 jas -6.35323
+tetra1 62 tetra2 39 jas 0
+tetra1 62 tetra2 40 jas -2.51521
+tetra1 62 tetra2 41 jas 0
+tetra1 62 tetra2 42 jas -6.35323
+tetra1 62 tetra2 43 jas 0
+tetra1 62 tetra2 44 jas -2.51521
+tetra1 62 tetra2 45 jas 0
+tetra1 62 tetra2 46 jas -5.70663
+tetra1 62 tetra2 47 jas 0
+tetra1 62 tetra2 48 jas -2.51521
+tetra1 62 tetra2 49 jas 0
+tetra1 62 tetra2 50 jas -2.51521
+tetra1 62 tetra2 51 jas 0
+tetra1 62 tetra2 52 jas -6.35323
+tetra1 62 tetra2 53 jas 0
+tetra1 62 tetra2 54 jas -5.70663
+tetra1 62 tetra2 55 jas 0
+tetra1 62 tetra2 56 jas -2.51521
+tetra1 62 tetra2 57 jas 0
+tetra1 62 tetra2 58 jas -2.51521
+tetra1 62 tetra2 59 jas 0
+tetra1 62 tetra2 60 jas -2.51521
+tetra1 62 tetra2 61 jas 0
+tetra1 62 tetra2 62 jas -5.31718
+tetra1 62 tetra2 63 jas 0
+tetra1 63 tetra2 0 jas 0
+tetra1 63 tetra2 1 jas -6.35323
+tetra1 63 tetra2 2 jas 0
+tetra1 63 tetra2 3 jas -6.35323
+tetra1 63 tetra2 4 jas 0
+tetra1 63 tetra2 5 jas -6.35323
+tetra1 63 tetra2 6 jas 0
+tetra1 63 tetra2 7 jas -8.75042
+tetra1 63 tetra2 8 jas 0
+tetra1 63 tetra2 9 jas -6.35323
+tetra1 63 tetra2 10 jas 0
+tetra1 63 tetra2 11 jas -6.35323
+tetra1 63 tetra2 12 jas 0
+tetra1 63 tetra2 13 jas -2.51521
+tetra1 63 tetra2 14 jas 0
+tetra1 63 tetra2 15 jas -6.35323
+tetra1 63 tetra2 16 jas 0
+tetra1 63 tetra2 17 jas -6.35323
+tetra1 63 tetra2 18 jas 0
+tetra1 63 tetra2 19 jas -2.51521
+tetra1 63 tetra2 20 jas 0
+tetra1 63 tetra2 21 jas -6.35323
+tetra1 63 tetra2 22 jas 0
+tetra1 63 tetra2 23 jas -6.35323
+tetra1 63 tetra2 24 jas 0
+tetra1 63 tetra2 25 jas -6.35323
+tetra1 63 tetra2 26 jas 0
+tetra1 63 tetra2 27 jas -2.51521
+tetra1 63 tetra2 28 jas 0
+tetra1 63 tetra2 29 jas -2.51521
+tetra1 63 tetra2 30 jas 0
+tetra1 63 tetra2 31 jas -5.70663
+tetra1 63 tetra2 32 jas 0
+tetra1 63 tetra2 33 jas -2.51521
+tetra1 63 tetra2 34 jas 0
+tetra1 63 tetra2 35 jas -6.35323
+tetra1 63 tetra2 36 jas 0
+tetra1 63 tetra2 37 jas -6.35323
+tetra1 63 tetra2 38 jas 0
+tetra1 63 tetra2 39 jas -6.35323
+tetra1 63 tetra2 40 jas 0
+tetra1 63 tetra2 41 jas -2.51521
+tetra1 63 tetra2 42 jas 0
+tetra1 63 tetra2 43 jas -6.35323
+tetra1 63 tetra2 44 jas 0
+tetra1 63 tetra2 45 jas -2.51521
+tetra1 63 tetra2 46 jas 0
+tetra1 63 tetra2 47 jas -5.70663
+tetra1 63 tetra2 48 jas 0
+tetra1 63 tetra2 49 jas -2.51521
+tetra1 63 tetra2 50 jas 0
+tetra1 63 tetra2 51 jas -2.51521
+tetra1 63 tetra2 52 jas 0
+tetra1 63 tetra2 53 jas -6.35323
+tetra1 63 tetra2 54 jas 0
+tetra1 63 tetra2 55 jas -5.70663
+tetra1 63 tetra2 56 jas 0
+tetra1 63 tetra2 57 jas -2.51521
+tetra1 63 tetra2 58 jas 0
+tetra1 63 tetra2 59 jas -2.51521
+tetra1 63 tetra2 60 jas 0
+tetra1 63 tetra2 61 jas -2.51521
+tetra1 63 tetra2 62 jas 0
+tetra1 63 tetra2 63 jas -5.31718

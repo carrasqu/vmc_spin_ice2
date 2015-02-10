@@ -1,1 +1,1 @@
- clang++ mainvmc.cpp -o cmainvmc.x 
+ clang++ -g    mainvmc.cpp -o cmainvmc.x 
