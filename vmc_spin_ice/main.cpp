@@ -22,7 +22,7 @@ int main()
 
     // insert code here...
     // system size L*L*L*4*4
-    int L=2;
+    int L=4;
     int nh;
     int ntetra;
     //density
@@ -80,9 +80,8 @@ int main()
                 {
                     for(site=0;site<4;site++)
                     {
-                        std::cout<<"(x,y,z) is:"<<(double)x+disvec[pyro][0]-disvec[site][0]<<'\t'<<(double)y+disvec[pyro][1]-disvec[site][1]<<'\t'<<(double)z+disvec[pyro][2]-disvec[site][2]<<'\n';
+                        std::cout<<x<<"\t"<<y<<"\t"<<z<<" true (x,y,z) is:"<<(double)x+disvec[pyro][0]-disvec[site][0]<<'\t'<<(double)y+disvec[pyro][1]-disvec[site][1]<<'\t'<<(double)z+disvec[pyro][2]-disvec[site][2]<<'\n';
                         std::cout<<"mu_1: "<<pyro<<", "<<"mu_2: "<<site<<"\t"<<correl[z*zpro+y*ypro+x][pyro*4+site]<<'\n';
-                        
                         
                     }
                 }
@@ -92,7 +91,7 @@ int main()
     
 
     
-  int x1,y1,z1,x2,y2,z2,d,loc1,loc2,tlab1,tlab2,tindex1,tindex2;
+  int x1,y1,z1,x2,y2,z2,d,loc1,loc2,tlab1,tlab2,tindex1,tindex2,flag_here;
   double jast[ntetra][ntetra]; 
  
     for (z1=0;z1<L;z1++)
@@ -111,15 +110,17 @@ int main()
                          {
                             
                              loc2=x2+y2*L+z2*L*L;
-                             d=correl_index(loc1,loc2,L);
+                             d=correl_index(loc1,loc2,L,flag_here);
                              for(tlab1=0;tlab1<4;tlab1++)
                              {
                                  for(tlab2=0;tlab2<4;tlab2++)
                                  {
                                    tindex1=z1*L*L*8+y1*L*8+x1*8+2*tlab1;
                                    tindex2=z2*L*L*8+y2*L*8+x2*8+2*tlab2;
-                                   // std::cout<<"tetras considered "<<tindex1<<" "<<tindex2<<"\n" ;                                 
-                                   jast[tindex1][tindex2]=correl[d][tlab1*4+tlab2];  
+                                   // std::cout<<"tetras considered "<<tindex1<<" "<<tindex2<<"\n" ;
+                                   if(flag_here==0)
+                                   {
+                                   jast[tindex1][tindex2]=correl[d][tlab1*4+tlab2];
                                    tindex1=tindex1+1;
                                    tindex2=tindex2+1;
                                    jast[tindex1][tindex2]=correl[d][tlab1*4+tlab2];
@@ -127,8 +128,21 @@ int main()
                                    jast[tindex1][tindex2]=0;
                                    tindex1=tindex1+1;
                                    tindex2=tindex2-1;  
-                                   jast[tindex1][tindex2]=0; 
-                                 }     
+                                   jast[tindex1][tindex2]=0;
+                                   }
+                                    else if(flag_here==1)
+                                    {
+                                        jast[tindex1][tindex2]=correl[d][tlab2*4+tlab1];
+                                        tindex1=tindex1+1;
+                                        tindex2=tindex2+1;
+                                        jast[tindex1][tindex2]=correl[d][tlab2*4+tlab1];
+                                        tindex1=tindex1-1;
+                                        jast[tindex1][tindex2]=0;
+                                        tindex1=tindex1+1;
+                                        tindex2=tindex2-1;
+                                        jast[tindex1][tindex2]=0;
+                                    }
+                                 }
                              }   
                          }
                      }
@@ -140,10 +154,11 @@ int main()
   
     for(tlab1=0;tlab1<ntetra;tlab1++)
     {
-        for(tlab2=0;tlab2<ntetra;tlab2++)
+        for(tlab2=tlab1;tlab2<ntetra;tlab2++)
         {
-
-           std::cout<<"tetra1 "<<tlab1<<" tetra2 "<<tlab2<<" jas "<<jast[tlab1][tlab2]<<"\n";  
+            if(abs(jast[tlab1][tlab2]-jast[tlab2][tlab1])>0.000000001){
+            std::cout<<"tetra1 "<<tlab1<<" tetra2 "<<tlab2<<" jas "<<jast[tlab1][tlab2]<<" jas2 "<<jast[tlab2][tlab1]<<" diff "<<jast[tlab1][tlab2]-jast[tlab2][tlab1]<<"\n";
+            }
         }
     } 
     return 0;

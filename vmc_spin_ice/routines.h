@@ -278,9 +278,10 @@ void spinon_correlation(double correl[][16],double &t_tilde,double &eta,int &L,d
     return;
 }
 //Let us use one more simple routine to compute indtemp from x1,y1,z1,x2,y2,z2
-int correl_index(int &t1,int &t2,int&L)
+int correl_index(int &t1,int &t2,int&L,int &flag)
 {
     int zpro=pow(L,2);
+    flag=0;
     int x1,y1,z1,x2,y2,z2;
     z1=t1/zpro;
     y1=(t1-z1*zpro)/L;
@@ -308,18 +309,22 @@ int correl_index(int &t1,int &t2,int&L)
     //the next four cases, the "2" is in front of 1.
     else if((z1<z2)&&(y1<y2)&&(x1>=x2))
     {
+        flag=1;
         return (z2-z1)*zpro+(y2-y1)*L+(x2-x1+L)%L;
     }
     else if((z1>=z2)&&(y1<y2)&&(x1<x2))
     {
+        flag=1;
         return ((z2-z1+L)%L)*zpro+(y2-y1)*L+(x2-x1);
     }
     else if((z1<z2)&&(y1>=y2)&&(x1<x2))
     {
+        flag=1;
         return (z2-z1)*zpro+((y2-y1+L)%L)*L+(x2-x1);
     }
     else
     {
+        flag=1;
         return (z2-z1)*zpro+(y2-y1)*L+(x2-x1);
     }
 }
@@ -327,55 +332,7 @@ int correl_index(int &t1,int &t2,int&L)
 
 //we need to define more functions which take a special spinon configuration, charge_pair, to compute the would-be coefficient of the configuration
 //amp is the computed amplitude
-void many_spinon_amplitude(charge_pair &chargepairs,double &densitysquare,double &amp,int &statlimit,int&flag,double correl[][16],int &L,MTRand *myrand)
-{//flag tells us whether we are dealing with the bosons on the even sublattice or the odd sublattice.
-    int n;
-    double ntemp;
-    int t1,t2,mu1,mu2;//holders for pairs of tetrahedrons and their sublattices.
-    //int x1,y1,z1,x2,y2,z2;
-    //int zpro=pow(L,2);
-    int indtemp;
-    if(flag==0){
-        //even sublattice
-        //n store the size of the vector.
-        n=chargepairs.pposeven.size();
-        ntemp=(double)n-1.0;
-        //several different cases: n=1, 1<n<nc, n>nc.
-        if(n==1){
-            //directly using the pair wise
-            mu1=chargepairs.pposeven[0];
-            mu2=chargepairs.nposeven[0];
-            //a tetrahedron is labelled as z*8*L^2+y*8*L+x*8+mu
-            t1=mu1/8;
-            t2=mu2/8;
-            //back out sublattice
-            mu1-=t1*8;
-            mu2-=t2*8;
-            //back out the indtemp!!!!!!!!!!!!!!(Is this correct? No. We need to figure out dx1,dy1 and dz1//Now we consider different cases.
-            indtemp=correl_index(t1,t2,L);
-            //We already know that mu1 and mu2 are on the even sublattice! so mu1 and mu2 must be even!
-            if(mu1%2==1){std::cout<<"What? Mismatching sublattices! /n";
-                return;
-            }
-            mu1=mu1/2;
-            mu2=mu2/2;
-            //now we use t1,mu1 and t2,mu2 to find the amplitude!
-            amp=correl[indtemp][mu1*4+mu2];
-        }
-        else if(2*pow(2*3.1415926535*ntemp,0.5)*pow(ntemp/2.71828,ntemp)<statlimit){
-            //in this case, we directly compute the "partition function"
-            
-        }
-        else{
-            //in this case, we sample the partition function by statlimit
-            
-        }
-    }
-    else{
-        //odd sublattice.
-    }
-    return;
-}
+
 
 /* we also need code to attempt a pair spin flip. Is this better/needed?
  we generate the seed from a random process in the main program*/
