@@ -240,7 +240,7 @@ inline double correl_compute(double &z,double &y,double&x,int&L,double &t_tilde,
         }
     }
     //divide by two factors of twos. The first one is from the reciprocal space normalization. the second one is from the formula to compute the correlation. 
-    return log(result/((double)pow(L,3)*2.0*2.0*pow(densitysquare,0.5)));
+    return log(result/((double)pow(L,3)*2.0*2.0));
 }
 
 void spinon_correlation(double correl[][16],double &t_tilde,double &eta,int &L,double &densitysquare)
