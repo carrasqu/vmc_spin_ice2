@@ -1605,9 +1605,40 @@ void collect(double&tempature, double&eclassical,double&esquare,double data[],do
     //output << "Specific: " << (aver[1]-pow(aver[0],2.0))/(pow(tempature,2.0))/(nh/16) <<" pm "<<(err[1]+2.0*err[0]*aver[0] )/(pow(tempature,2.0))/(nh/16)<< "\n"; 
     output.close();
     eclassical=0.0;
-    esquare=0.0; 
-
+    esquare=0.0;
 }
+
+void collect2(double&tempature, double&eclassical,double&esquare,double data[],double data2[],int&ndat ,int&nh, int&msteps, int&i,std::ofstream &output_data,double &density,double &t_tilde)
+{
+    double err[ndat];
+    double aver[ndat];
+    int ii;
+    data[0]=data[0]+eclassical/(msteps);
+    data[1]=data[1]+esquare/msteps;
+    data2[0]=data2[0]+pow(eclassical/(msteps),2.0);
+    data2[1]=data2[1]+pow(esquare/msteps,2.0);
+    
+    for(ii=0;ii<ndat;ii++)
+    {
+        aver[ii]=data[ii]/((double)i+1.0);
+        err[ii]=sqrt( abs( pow(data[ii]/((double)i+1.0),2.0)-data2[ii]/((double)i+1.0)  )/( (double)i+1.0));
+    }
+    
+    //ofstream output;
+    //output.open("results.txt");
+    //output << "bins:          " << i+1  <<"\n";
+    //output << "Energy:        " << aver[0]/(nh) <<" pm "<<err[0]/(nh)<< "\n";
+    //output << "Variance TotE: " << (aver[1]-pow(aver[0],2.0)) <<" pm "<<(err[1]+2.0*err[0]*aver[0])<< "\n";
+    //output << "Specific: " << (aver[1]-pow(aver[0],2.0))/(pow(tempature,2.0))/(nh/16) <<" pm "<<(err[1]+2.0*err[0]*aver[0] )/(pow(tempature,2.0))/(nh/16)<< "\n";
+    
+    //output.close();
+    output_data<< density << "\t" << t_tilde << "\t";
+    output_data<< i+1 << "\t" << aver[0]/(double)nh <<"\t"<<err[0]/(double)(nh)<< "\t";
+    output_data<< (aver[1]-pow(aver[0],2.0))<<"\t"<<(err[1]+2.0*err[0]*aver[0])<< "\n";
+    eclassical=0.0;
+    esquare=0.0;
+}
+
 
 
 void loopupdate(int *config, int ivic[][6],int tetra[][4],int connect[][2], int &L, int &nh, int &ntetra,int &visits,int &went, MTRand *myrand)

@@ -341,7 +341,7 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
     //pos2 will be a random number from 0 to 5.
     //We choose a random position which opposite of pos.
   
-    int l,nhh,flag=0;
+    int flag=0;
 //    
 //    cout<<"config"<< "\n ";  
 //    nhh=pow(L,3)*16;
