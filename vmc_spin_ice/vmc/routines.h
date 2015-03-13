@@ -278,9 +278,10 @@ void spinon_correlation(double correl[][16],double &t_tilde,double &eta,int &L,d
     return;
 }
 //Let us use one more simple routine to compute indtemp from x1,y1,z1,x2,y2,z2
-int correl_index(int &t1,int &t2,int&L)
+int correl_index(int &t1,int &t2,int&L,int &flag)
 {
     int zpro=pow(L,2);
+    flag=0;
     int x1,y1,z1,x2,y2,z2;
     z1=t1/zpro;
     y1=(t1-z1*zpro)/L;
@@ -308,21 +309,26 @@ int correl_index(int &t1,int &t2,int&L)
     //the next four cases, the "2" is in front of 1.
     else if((z1<z2)&&(y1<y2)&&(x1>=x2))
     {
+        flag=1;
         return (z2-z1)*zpro+(y2-y1)*L+(x2-x1+L)%L;
     }
     else if((z1>=z2)&&(y1<y2)&&(x1<x2))
     {
+        flag=1;
         return ((z2-z1+L)%L)*zpro+(y2-y1)*L+(x2-x1);
     }
     else if((z1<z2)&&(y1>=y2)&&(x1<x2))
     {
+        flag=1;
         return (z2-z1)*zpro+((y2-y1+L)%L)*L+(x2-x1);
     }
     else
     {
+        flag=1;
         return (z2-z1)*zpro+(y2-y1)*L+(x2-x1);
     }
 }
+
 
 
 //we need to define more functions which take a special spinon configuration, charge_pair, to compute the would-be coefficient of the configuration
@@ -334,7 +340,7 @@ void many_spinon_amplitude(charge_pair &chargepairs,double &densitysquare,double
     int t1,t2,mu1,mu2;//holders for pairs of tetrahedrons and their sublattices.
     //int x1,y1,z1,x2,y2,z2;
     //int zpro=pow(L,2);
-    int indtemp;
+    int indtemp,flag_here;
     if(flag==0){
         //even sublattice
         //n store the size of the vector.
@@ -352,7 +358,7 @@ void many_spinon_amplitude(charge_pair &chargepairs,double &densitysquare,double
             mu1-=t1*8;
             mu2-=t2*8;
             //back out the indtemp!!!!!!!!!!!!!!(Is this correct? No. We need to figure out dx1,dy1 and dz1//Now we consider different cases.
-            indtemp=correl_index(t1,t2,L);
+            indtemp=correl_index(t1,t2,L,flag_here);
             //We already know that mu1 and mu2 are on the even sublattice! so mu1 and mu2 must be even!
             if(mu1%2==1){std::cout<<"What? Mismatching sublattices! /n";
                 return;
@@ -608,7 +614,7 @@ if(c1/2==0&&f1/2==1)
        {  
         table[n][0]=table[n][0]+jast[t1+ntetra*n];
        } 
-      }
+     }
   }
   else if(t1%2==1)
   {
@@ -727,7 +733,7 @@ for (i=1;i<ntetra;i+=2)
 
 par=exp(par+impar);
 
-for (i=0;i<ntetra;i++)
+/*for (i=0;i<ntetra;i++)
 {
  cout<<"tetra spinonc "<<i<<" "<<spinonc[i]<<"\n";  
 }
@@ -737,7 +743,7 @@ cout<<"par "<<par<<" \n";
 cout<<"manual 110 136 "<<exp(jast[110+ntetra*136]*spinonc[110]*spinonc[136])<<" \n";
 
 cout<<"jastrow[110 136]"<<jast[110+ntetra*136]<<" "<<jast[136+ntetra*110]<<" \n";
-
+*/
 return par;
 
 }
@@ -1461,13 +1467,13 @@ void latt(int ivic[][6],int tetra[][4],int connect[][2], int &L, int &nh, int &n
         }
     }
     
-    cout<<ntetra<<"\n"<<tetracount<<"\n";
+    /*cout<<ntetra<<"\n"<<tetracount<<"\n";
     cout<<"sites belongin to each tetrahedra z"<<"\n";
     for (z=0;z<ntetra;z++)
     {
         cout<<z<<"    "<<tetra[z][0]<<" "<<tetra[z][1]<<" "<<tetra[z][2]<<" "<<tetra[z][3]<<"\n";
     }
-    cout<<"\n";
+    cout<<"\n";*/
     
     
     //finding which tetrahedra each site connects to
@@ -1505,7 +1511,7 @@ void latt(int ivic[][6],int tetra[][4],int connect[][2], int &L, int &nh, int &n
         }
     }
     
-    cout<<" site x connects which tetrahedra"<<"\n";
+    /*cout<<" site x connects which tetrahedra"<<"\n";
     for (z=0;z<nh;z++)
     {
         cout<<"x="<<z<<"   tetrahedra "<<connect[z][0]<<" "<<connect[z][1]<<"\n";
@@ -1515,7 +1521,7 @@ void latt(int ivic[][6],int tetra[][4],int connect[][2], int &L, int &nh, int &n
     for (z=0;z<nh;z++)
     {
         cout<<"x="<<z<<" "<<ivic[z][0]<<" "<<ivic[z][1]<<" "<<ivic[z][2]<<" "<<ivic[z][3]<<" "<<ivic[z][4]<<" "<<ivic[z][5]<<"\n ";
-    }
+    }*/
 
     
 }

@@ -240,8 +240,8 @@ int main()
     double esquare=0,eclassical=0,estep;
     
     thbins=20;
-    nbins=5000;
-    msteps=1000;
+    nbins=10;
+    msteps=100;
     nloops=100;
     
     
@@ -249,7 +249,7 @@ int main()
     flag=0;
     e0total(config,tetra,ntetra,L,estep); 
     cout <<"charge^2"<<estep<<"\n"; 
-      
+    return 0;  
     // Thermalization
     seedin=myrand->randInt();
     for(i=0;i<thbins;i++)

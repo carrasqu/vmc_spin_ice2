@@ -1,4 +1,4 @@
-//
+
 //  main.cpp
 //  vmc_spin_ice
 //
@@ -48,7 +48,7 @@ int main()
     output_data.open("results.txt");
     output_data << "density\t t_tilde\t bins\t Energy\t EnVariance\t VarianceofTotE\t VarianceOfV \n";
     int nh;
-    int ntetra;
+    int ntetra,flag_here;
     //density
     double rho;
     //spin configuration and
@@ -106,7 +106,7 @@ int main()
     spinon_correlation(correl, t_tilde, eta, L,densitysquare);
     zpro=pow(L,2);
     ypro=L;
-    for(z=0;z<L;z++)
+   /* for(z=0;z<L;z++)
     {
         for(y=0;y<L;y++)
         {
@@ -126,7 +126,7 @@ int main()
                 }
             }
         }
-    }
+    }*/
     
   
     
@@ -148,34 +148,40 @@ int main()
                          {
                             
                              loc2=x2+y2*L+z2*L*L;
-                             d=correl_index(loc1,loc2,L);
+			     d=correl_index(loc1,loc2,L,flag_here);
                              for(tlab1=0;tlab1<4;tlab1++)
                              {
                                  for(tlab2=0;tlab2<4;tlab2++)
                                  {
                                    tindex1=z1*L*L*8+y1*L*8+x1*8+2*tlab1;
                                    tindex2=z2*L*L*8+y2*L*8+x2*8+2*tlab2;
-                                   // std::cout<<"tetras considered "<<tindex1<<" "<<tindex2<<"\n" ;                                
- 
-                                   //jast[tindex1][tindex2]=correl[d][tlab1*4+tlab2];  
-                                   jast[tindex1+ntetra*tindex2]=correl[d][tlab1*4+tlab2];
-                                   jast[tindex2+ntetra*tindex1]=jast[tindex1+ntetra*tindex2]; 
+                                   // std::cout<<"tetras considered "<<tindex1<<" "<<tindex2<<"\n" ;
+                                   if(flag_here==0)
+                                   {
+                                   jast[tindex1*ntetra+tindex2]=correl[d][tlab1*4+tlab2];
                                    tindex1=tindex1+1;
                                    tindex2=tindex2+1;
-                                   //jast[tindex1][tindex2]=correl[d][tlab1*4+tlab2];
-                                   jast[tindex1+ntetra*tindex2]=correl[d][tlab1*4+tlab2];
-                                   jast[tindex2+ntetra*tindex1]=jast[tindex1+ntetra*tindex2];
+                                   jast[tindex1*ntetra+tindex2]=correl[d][tlab1*4+tlab2];
                                    tindex1=tindex1-1;
-                                   //jast[tindex1][tindex2]=0;
-                                   jast[tindex1+ntetra*tindex2]=0;
-                                    jast[tindex2+ntetra*tindex1]=0;
+                                   jast[tindex1*ntetra+tindex2]=0;
                                    tindex1=tindex1+1;
-                                   tindex2=tindex2-1;  
-                                   //jast[tindex1][tindex2]=0; 
-                                   jast[tindex1+ntetra*tindex2]=0; 
-                                    jast[tindex2+ntetra*tindex1]=0; 
-                                 }     
-                             }   
+                                   tindex2=tindex2-1; 
+                                   jast[tindex1*ntetra+tindex2]=0;
+                                   }
+                                    else if(flag_here==1)
+                                    {
+                                        jast[tindex1*ntetra+tindex2]=correl[d][tlab2*4+tlab1];
+                                        tindex1=tindex1+1;
+                                        tindex2=tindex2+1;
+                                        jast[tindex1*ntetra+tindex2]=correl[d][tlab2*4+tlab1];
+                                        tindex1=tindex1-1;
+                                        jast[tindex1*ntetra+tindex2]=0;
+                                        tindex1=tindex1+1;
+                                        tindex2=tindex2-1;
+                                        jast[tindex1*ntetra+tindex2]=0;
+                                    }
+                                 }
+                             }  
                          }
                      }
                 }
@@ -184,21 +190,21 @@ int main()
     }   
 
   
-    for(tlab1=0;tlab1<ntetra;tlab1++)
+    /*for(tlab1=0;tlab1<ntetra;tlab1++)
     {
         for(tlab2=0;tlab2<ntetra;tlab2++)
         {
 
            std::cout<<"tetra1 "<<tlab1<<" tetra2 "<<tlab2<<" jas "<<jast[tlab1+ntetra*tlab2]<<"\n";  
         }
-    } 
- 
+    }*/ 
     
+    //return 0;
     
     tempature=0.0;     
     flag=0;
     e0total(config,tetra,ntetra,L,estep); 
-    //cout <<"charge^2"<<estep<<"\n";
+    cout <<"charge^2"<<estep<<"\n";
       
     // Thermalization
     seedin=myrand->randInt();
@@ -206,7 +212,7 @@ int main()
     {
       //compute jastrow from scratch
        jastrow(ntetra,spinonc, table, jast); 
-      cout<<i<<" "<<nloops <<"\n";
+      //cout<<i<<" "<<nloops <<"\n";
       for(k=0;k<msteps;k++)
       {
          // pair spin flip
@@ -254,7 +260,7 @@ int main()
       }  
 
     }
-    cout<<i<<" "<<"avvisit "<<ave <<" nloops "<<nloops << "crit "<<nh/(2*(int)ave) <<"\n";
+    //cout<<i<<" "<<"avvisit "<<ave <<" nloops "<<nloops << "crit "<<nh/(2*(int)ave) <<"\n";
 
     // initialize measurements
     eclassical=0.0;
@@ -292,6 +298,7 @@ int main()
          }
          energy_est2(config,tetra,ntetra,ivic,connect,L,nh,density,jp,estep,table,jast,spinonc);
          eclassical+=estep;
+         //std::cout<<"the energy is "<<estep<<"\n";
          estep=pow(estep,2.0);
          esquare+=estep;   
       }
