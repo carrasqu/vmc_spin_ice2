@@ -41,9 +41,11 @@ int main()
     para.open("parameters.txt");
     para >> L >> jp >> seedin;
     para >> density_low >> density_high >> density_step >> t_tilde_low >> t_tilde_high >> t_tilde_step;
+    para >> eta;
     para >> thbins >> nbins >> msteps >>nloops;
     //cout << "give me L"<<"\n";
     para.close();
+    cout << "L is " <<L<<"\n";
     std::ofstream output_data;
     output_data.open("results.txt");
     output_data << "density\t t_tilde\t bins\t Energy\t EnVariance\t VarianceofTotE\t VarianceOfV \n";
@@ -103,10 +105,10 @@ int main()
     
     
     //now we call the function
-    spinon_correlation(correl, t_tilde, eta, L,densitysquare);
+    spinon_correlation(correl, t_tilde, eta, L,density);
     zpro=pow(L,2);
     ypro=L;
-   /* for(z=0;z<L;z++)
+    /*for(z=0;z<L;z++)
     {
         for(y=0;y<L;y++)
         {
@@ -128,7 +130,8 @@ int main()
         }
     }*/
     
-  
+   	
+    //return 0;
     
   
  
@@ -138,7 +141,7 @@ int main()
         {
             for (x1=0;x1<L;x1++)
             {
-              loc1=x1+y1*L+z1*L*L; 
+              loc1=x1+y1*L+z1*zpro; 
 
                 for (z2=0;z2<L;z2++)
                 {
@@ -147,7 +150,7 @@ int main()
                          for (x2=0;x2<L;x2++)
                          {
                             
-                             loc2=x2+y2*L+z2*L*L;
+                             loc2=x2+y2*L+z2*zpro;
 			     d=correl_index(loc1,loc2,L,flag_here);
                              for(tlab1=0;tlab1<4;tlab1++)
                              {
@@ -189,22 +192,22 @@ int main()
         }
     }   
 
-  
     /*for(tlab1=0;tlab1<ntetra;tlab1++)
     {
-        for(tlab2=0;tlab2<ntetra;tlab2++)
+        for(tlab2=tlab1;tlab2<ntetra;tlab2++)
         {
-
-           std::cout<<"tetra1 "<<tlab1<<" tetra2 "<<tlab2<<" jas "<<jast[tlab1+ntetra*tlab2]<<"\n";  
+	   if(abs(jast[tlab1+ntetra*tlab2]-jast[tlab2+ntetra*tlab1])>pow(10.0,-8.0)){
+           std::cout<<"tetra1 "<<tlab1<<" tetra2 "<<tlab2<<" jas "<<jast[tlab1+ntetra*tlab2]<<" and "<<jast[tlab2+ntetra*tlab1]<<"\n";
+           }  
         }
-    }*/ 
+    } */
     
     //return 0;
     
     tempature=0.0;     
     flag=0;
     e0total(config,tetra,ntetra,L,estep); 
-    cout <<"charge^2"<<estep<<"\n";
+    //cout <<"charge^2"<<estep<<"\n";
       
     // Thermalization
     seedin=myrand->randInt();
@@ -223,9 +226,11 @@ int main()
          prob=myrand->rand();
          //cout<<"pos pos2 nh prob "<<pos<<" "<<pos2<<" "<<nh<<" "<<prob<<" \n"; 
          //pair_flip(config,ivic,tetra,connect,L,densitysquare,pos,pos2,prob);    
-         pair_flip2(config,spinonc,ivic,tetra,connect,L,densitysquare,density,pos,pos2,prob,ntetra,table,jast);
+         pair_flip3(config,spinonc,ivic,tetra,connect,L,pos,pos2,prob,ntetra,table,jast);
          }
          
+    e0total(config,tetra,ntetra,L,estep); 
+    //cout <<"charge^2: "<<estep<<"\n";
         // singlespin_sweep_new(config,ivic,tetra,connect,L,tempature,flag,myrand);
   
          //loop update
@@ -286,7 +291,7 @@ int main()
          pos=myrand->randInt(nh-1); // random spin  to flip
          pos2=myrand->randInt(5);   // random neighbor  to flip
          prob=myrand->rand();
-         pair_flip2(config,spinonc,ivic,tetra,connect,L,densitysquare,density,pos,pos2,prob,ntetra,table,jast);
+         pair_flip3(config,spinonc,ivic,tetra,connect,L,pos,pos2,prob,ntetra,table,jast);
          }
 
 
@@ -296,7 +301,7 @@ int main()
          {
           loopupdate(config,ivic,tetra,connect,L,nh,ntetra,visits,went,myrand);
          }
-         energy_est2(config,tetra,ntetra,ivic,connect,L,nh,density,jp,estep,table,jast,spinonc);
+         energy_est3(config,tetra,ntetra,ivic,connect,L,nh,jp,estep,table,jast,spinonc);
          eclassical+=estep;
          //std::cout<<"the energy is "<<estep<<"\n";
          estep=pow(estep,2.0);

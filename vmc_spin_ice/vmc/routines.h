@@ -221,7 +221,7 @@ void singlespin_update_new(int *config,int tetra[][4],int connect[][2],int &L,in
  model the positive and negative monopole correlator using non-interacting bosons. 
  2. create a pair of static monopoles along high symmetry directions
 */
-inline double correl_compute(double &z,double &y,double&x,int&L,double &t_tilde,double &densitysquare)
+inline double correl_compute(double &z,double &y,double&x,int&L,double &t_tilde,double &density)
 {
     double pi=3.14159265359,result=0.0,rho;
     double kx,ky,kz;
@@ -239,11 +239,12 @@ inline double correl_compute(double &z,double &y,double&x,int&L,double &t_tilde,
             }
         }
     }
-    //divide by two factors of twos. The first one is from the reciprocal space normalization. the second one is from the formula to compute the correlation. 
-    return log(result/((double)pow(L,3)*2.0*2.0*pow(densitysquare,0.5)));
+    //divide by two factors of twos. The first one is from the reciprocal space normalization. the second one is from the formula to compute the correlation.
+    //log the full corrlation function 
+    return log(result/((double)pow(L,3)*2.0*2.0)+density);
 }
 
-void spinon_correlation(double correl[][16],double &t_tilde,double &eta,int &L,double &densitysquare)
+void spinon_correlation(double correl[][16],double &t_tilde,double &eta,int &L,double &density)
 {
     //correl is the holder for the table, t_tilde/4 is the hopping amplitude of spinons, eta is the overlap between the RK state and the interacting ground state. eta is usually approximated to be 1.
     //double pi=3.14159265359;
@@ -267,7 +268,7 @@ void spinon_correlation(double correl[][16],double &t_tilde,double &eta,int &L,d
                         ytemp=(double)y+disvec[mu_1][1]-disvec[mu_2][1];
                         xtemp=(double)x+disvec[mu_1][0]-disvec[mu_2][0];
                         //determine the correlator
-                        temp=eta*correl_compute(ztemp,ytemp,xtemp,L,t_tilde,densitysquare);
+                        temp=eta*correl_compute(ztemp,ytemp,xtemp,L,t_tilde,density);
                         //stock the table
                         correl[indtemp][mu_1*4+mu_2]=temp;
                     }
@@ -330,58 +331,9 @@ int correl_index(int &t1,int &t2,int&L,int &flag)
 }
 
 
-
 //we need to define more functions which take a special spinon configuration, charge_pair, to compute the would-be coefficient of the configuration
 //amp is the computed amplitude
-void many_spinon_amplitude(charge_pair &chargepairs,double &densitysquare,double &amp,int &statlimit,int&flag,double correl[][16],int &L,MTRand *myrand)
-{//flag tells us whether we are dealing with the bosons on the even sublattice or the odd sublattice.
-    int n;
-    double ntemp;
-    int t1,t2,mu1,mu2;//holders for pairs of tetrahedrons and their sublattices.
-    //int x1,y1,z1,x2,y2,z2;
-    //int zpro=pow(L,2);
-    int indtemp,flag_here;
-    if(flag==0){
-        //even sublattice
-        //n store the size of the vector.
-        n=chargepairs.pposeven.size();
-        ntemp=(double)n-1.0;
-        //several different cases: n=1, 1<n<nc, n>nc.
-        if(n==1){
-            //directly using the pair wise
-            mu1=chargepairs.pposeven[0];
-            mu2=chargepairs.nposeven[0];
-            //a tetrahedron is labelled as z*8*L^2+y*8*L+x*8+mu
-            t1=mu1/8;
-            t2=mu2/8;
-            //back out sublattice
-            mu1-=t1*8;
-            mu2-=t2*8;
-            //back out the indtemp!!!!!!!!!!!!!!(Is this correct? No. We need to figure out dx1,dy1 and dz1//Now we consider different cases.
-            indtemp=correl_index(t1,t2,L,flag_here);
-            //We already know that mu1 and mu2 are on the even sublattice! so mu1 and mu2 must be even!
-            if(mu1%2==1){std::cout<<"What? Mismatching sublattices! /n";
-                return;
-            }
-            mu1=mu1/2;
-            mu2=mu2/2;
-            //now we use t1,mu1 and t2,mu2 to find the amplitude!
-            amp=correl[indtemp][mu1*4+mu2];
-        }
-        else if(2*pow(2*3.1415926535*ntemp,0.5)*pow(ntemp/2.71828,ntemp)<statlimit){
-            //in this case, we directly compute the "partition function"
-            
-        }
-        else{
-            //in this case, we sample the partition function by statlimit
-            
-        }
-    }
-    else{
-        //odd sublattice.
-    }
-    return;
-}
+
 
 /* we also need code to attempt a pair spin flip. Is this better/needed?
  we generate the seed from a random process in the main program*/
@@ -390,7 +342,7 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
     //pos2 will be a random number from 0 to 5.
     //We choose a random position which opposite of pos.
   
-    int l,nhh,flag=0;
+    int flag=0;
 //    
 //    cout<<"config"<< "\n ";  
 //    nhh=pow(L,3)*16;
@@ -614,7 +566,7 @@ if(c1/2==0&&f1/2==1)
        {  
         table[n][0]=table[n][0]+jast[t1+ntetra*n];
        } 
-     }
+      }
   }
   else if(t1%2==1)
   {
@@ -848,9 +800,10 @@ void pair_flip2(int *config,int spinonc[],int ivic[][6],int tetra[][4],int conne
              //           -jast[t1+ntetra*t2]*double(c2/2)*double(f1/2)*0.5*(1.0-double(c2/2)*double(f1/2))
              //           +jast[t1+ntetra*t2]*double(c1/2)*double(c2/2)*0.5*(1.0-double(c1/2)*double(c2/2)))<<"\n";
     
-     //cout<<"jastrow= "<<jastr<<"manual"<< exp( jast[t1+t2*ntetra]*f1*f2/4 )<<"\n"; 
+     //cout<<"jastrow= "<<jastr<<"manual"<< exp( jast[t1+t2*ntetra]*f1*f2/4 )<<"\n";
+     //cout<<"initial rat is "<<rat<<"\n"; 
      rat=rat*pow(jastr,2.0); 
-
+     //cout<<"rat is "<<rat<<" jastr is "<<jastr<<" prob is "<<prob<<"\n";
      //jasi=jastrowfactor(jast,spinonc,ntetra);
      //spinonc[t1]=f1/2;
      //spinonc[t2]=f2/2;
@@ -908,7 +861,167 @@ void pair_flip2(int *config,int spinonc[],int ivic[][6],int tetra[][4],int conne
    
     return;
 }
+//include the new Jastrow factor and new way of implement the density
+void pair_flip3(int *config,int spinonc[],int ivic[][6],int tetra[][4],int connect[][2],int &L,int&pos,int &pos2,double &prob,int &ntetra,double table[][2], double jast[])
+{
+   
+    int l,nhh;
+    double rat,jastr,jasi,jasf;
+    double tablec[ntetra][2]; 
+ 
+    pos2=ivic[pos][pos2];
+    //cout<<"spins"<<"\n";
+    //cout<<"positions "<<pos<<" "<<pos2<<"\n";
+    //cout<<"conf "<<config[pos]<<" "<<config[pos2]<<"\n"; 
+    if(config[pos]*config[pos2]==1)
+    {
+       // cout<<"nospin flip"<<"\n";
+        return;
+    }
+    int t1,t2;
+    t1=connect[pos][0];
+    t2=connect[pos][1];
+    //repeated tetrahedra are deleted.
+    if(t1==connect[pos2][0])
+    {
+        //In this case, the pair of spins connect two tetrahedron on "odd sublattice"
+        t1=connect[pos2][1];
+    }
+    else if(t2==connect[pos2][1])
+    {
+        //the pair of spins connect two tetrahedron on "even sublattice"
+        t2=connect[pos2][0];
+    }
+    //
+    int c1,c2,f1,f2;
+    c1=qcharge(t1,tetra,config);
+    c2=qcharge(t2,tetra,config);
+    
+    config[pos]=-config[pos];
+    config[pos2]=-config[pos2];
+    f1=qcharge(t1,tetra,config);
+    f2=qcharge(t2,tetra,config);
+    config[pos]=-config[pos];
+    config[pos2]=-config[pos2];
+    
+    if(abs(f1)==4||abs(f2)==4)
+    {
+         // wave function for Q =\pm 2  charges is zero  	 
+     	 return;
 
+    }  
+  
+     //cout<<"configuration x \n";
+     //for(l=0;l<ntetra;l++)
+     //{
+     //cout<<l<<" "<<spinonc[l]<<" table "<<table[l][0]<<" "<<table[l][1]<<"\n"; 
+        
+     //}  
+     
+    //cout<<"position changes t1="<<t1<<" t2="<<t2<<"\n";
+
+    //cout<<"charges c1 c2 f1 f2 "<<c1/2<<" "<<c2/2<<" "<<f1/2<<" "<<f2/2<<" \n"; 
+    //cout<<"prob "<<prob<<" \n"; 
+
+    
+
+    jastr=1.0; 
+    if(-(f1/2+c1/2)==-1)
+    { 
+    jastr=jastr*exp(table[t1][1]*(f1/2-c1/2));
+    } 
+    else if(-(f1/2+c1/2)==1)
+    {
+    jastr=jastr*exp(table[t1][0]*(f1/2-c1/2));
+    }
+   
+    if(-(f2/2+c2/2)==-1)
+    {
+    jastr=jastr*exp(table[t2][1]*(f2/2-c2/2));
+    }  
+    else if(-(f2/2+c2/2)==1)
+    {
+    jastr=jastr*exp(table[t2][0]*(f2/2-c2/2));
+    }
+
+    //n=1 m=2
+      //cout<<"t1 t2 "<<t1<<" "<<t2<<"\n";  
+      //cout<<"f1 f2 "<< f1 << " "<<f2 <<"\n";
+     //  cout<< "f1*f2 " << jast[t1+ntetra*t2]*double(f1/2)*double(f2/2)*0.5*(1.0-double(f1/2)*double(f2/2))<<"\n";
+      // cout<<"c1 c2 "<< c1 << " "<<c2 <<"\n";
+     //  cout<< "c1*c2 " << jast[t1+ntetra*t2]*double(c1/2)*double(c2/2)*0.5*(1.0-double(c1/2)*double(c2/2))<<"\n";
+
+     //cout<<"should be 1 "<<jastr<<" \n";  
+     jastr=jastr*exp(   
+                        +jast[t1+ntetra*t2]*double(f1/2)*double(f2/2)*0.5*(1.0-double(f1/2)*double(f2/2))
+                       
+                        +jast[t1+ntetra*t2]*double(c1/2)*double(c2/2)*0.5*(1.0-double(c1/2)*double(c2/2)));   
+             //cout<<exp(   -jast[t1+ntetra*t2]*double(c1/2)*double(f2/2)*0.5*(1.0-double(c1/2)*double(f2/2))
+             //           +jast[t1+ntetra*t2]*double(f1/2)*double(f2/2)*0.5*(1.0-double(f1/2)*double(f2/2))
+             //           -jast[t1+ntetra*t2]*double(c2/2)*double(f1/2)*0.5*(1.0-double(c2/2)*double(f1/2))
+             //           +jast[t1+ntetra*t2]*double(c1/2)*double(c2/2)*0.5*(1.0-double(c1/2)*double(c2/2)))<<"\n";
+    
+     //cout<<"jastrow= "<<jastr<<"manual"<< exp( jast[t1+t2*ntetra]*f1*f2/4 )<<"\n";
+     //cout<<"initial rat is "<<rat<<"\n"; 
+     rat=pow(jastr,2.0); 
+     //cout<<"rat is "<<rat<<" jastr is "<<jastr<<" prob is "<<prob<<"\n";
+     //jasi=jastrowfactor(jast,spinonc,ntetra);
+     //spinonc[t1]=f1/2;
+     //spinonc[t2]=f2/2;
+     //jasf=jastrowfactor(jast,spinonc,ntetra);  
+     //spinonc[t1]=c1/2;
+     //spinonc[t2]=c2/2; 
+     //rat=rat*pow(jasf/jasi,2.0);
+     //cout<<"jastrow[t1 t2]"<<jast[t1+ntetra*t2]<<" "<<jast[t2+ntetra*t1]<<" \n";  
+     //cout<<"comparison jasf/jasi vs ratio"<< jasf/jasi<<" "<<jastr <<" \n";
+
+     //if(abs(jasf/jasi-jastr)>0.00001) 
+     //{
+     // cout<<"eeeeeeeeeeeeeeeeeeeeeeeee"<< abs(jasf/jasi-jastr)<< " \n";
+         
+     // exit(0);
+     //}  
+    //cout<<"rat= "<<rat<<" prob "<<prob<<"\n";
+     //cout<<"ratio "<<rat<<" \n"; 
+    if(rat<1.0)
+    {
+      if(prob<rat)
+      {
+      	config[pos]=-config[pos];
+        config[pos2]=-config[pos2];
+        spinonc[t1]=f1/2;
+        spinonc[t2]=f2/2;
+        //cout<<"accepted"<<"\n";
+        updatejas(table,jast,t1,c1,f1,ntetra);
+        updatejas(table,jast,t2,c2,f2,ntetra);
+         //jastrow(ntetra,spinonc, table, jast);
+
+
+
+     //for(l=0;l<ntetra;l++)
+    //{
+     //cout<<l<<" "<<spinonc[l]<<" table "<<table[l][0]<<" "<<table[l][1]<<"\n";
+     //cout<<"V04 "<<jast[0+ntetra*4]<<" V02 "<<jast[0+ntetra*2]<<"\n";
+
+     //} 
+           
+        
+      }	
+    	
+    }
+    else
+    {
+     	config[pos]=-config[pos];
+        config[pos2]=-config[pos2];
+        spinonc[t1]=f1/2;
+        spinonc[t2]=f2/2;
+        updatejas(table,jast,t1,c1,f1,ntetra);
+        updatejas(table,jast,t2,c2,f2,ntetra);
+        //jastrow(ntetra,spinonc, table, jast); 
+    } 
+   
+    return;
+}
 
 void singlespin_sweep_new(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,double &densitysquare,int&flag,MTRand *myrand)
 {
@@ -1468,7 +1581,7 @@ void latt(int ivic[][6],int tetra[][4],int connect[][2], int &L, int &nh, int &n
     }
     
     /*cout<<ntetra<<"\n"<<tetracount<<"\n";
-    cout<<"sites belongin to each tetrahedra z"<<"\n";
+    //cout<<"sites belongin to each tetrahedra z"<<"\n";
     for (z=0;z<ntetra;z++)
     {
         cout<<z<<"    "<<tetra[z][0]<<" "<<tetra[z][1]<<" "<<tetra[z][2]<<" "<<tetra[z][3]<<"\n";
@@ -1517,8 +1630,8 @@ void latt(int ivic[][6],int tetra[][4],int connect[][2], int &L, int &nh, int &n
         cout<<"x="<<z<<"   tetrahedra "<<connect[z][0]<<" "<<connect[z][1]<<"\n";
     }
 
-    cout<<" table of nearest neighbors of site x "<<"\n";
-    for (z=0;z<nh;z++)
+    cout<<" table of nearest neighbors of site x "<<"\n";*/
+    /*for (z=0;z<nh;z++)
     {
         cout<<"x="<<z<<" "<<ivic[z][0]<<" "<<ivic[z][1]<<" "<<ivic[z][2]<<" "<<ivic[z][3]<<" "<<ivic[z][4]<<" "<<ivic[z][5]<<"\n ";
     }*/
@@ -1611,40 +1724,9 @@ void collect(double&tempature, double&eclassical,double&esquare,double data[],do
     //output << "Specific: " << (aver[1]-pow(aver[0],2.0))/(pow(tempature,2.0))/(nh/16) <<" pm "<<(err[1]+2.0*err[0]*aver[0] )/(pow(tempature,2.0))/(nh/16)<< "\n"; 
     output.close();
     eclassical=0.0;
-    esquare=0.0;
-}
+    esquare=0.0; 
 
-void collect2(double&tempature, double&eclassical,double&esquare,double data[],double data2[],int&ndat ,int&nh, int&msteps, int&i,std::ofstream &output_data,double &density,double &t_tilde)
-{
-    double err[ndat];
-    double aver[ndat];
-    int ii;
-    data[0]=data[0]+eclassical/(msteps);
-    data[1]=data[1]+esquare/msteps;
-    data2[0]=data2[0]+pow(eclassical/(msteps),2.0);
-    data2[1]=data2[1]+pow(esquare/msteps,2.0);
-    
-    for(ii=0;ii<ndat;ii++)
-    {
-        aver[ii]=data[ii]/((double)i+1.0);
-        err[ii]=sqrt( abs( pow(data[ii]/((double)i+1.0),2.0)-data2[ii]/((double)i+1.0)  )/( (double)i+1.0));
-    }
-    
-    //ofstream output;
-    //output.open("results.txt");
-    //output << "bins:          " << i+1  <<"\n";
-    //output << "Energy:        " << aver[0]/(nh) <<" pm "<<err[0]/(nh)<< "\n";
-    //output << "Variance TotE: " << (aver[1]-pow(aver[0],2.0)) <<" pm "<<(err[1]+2.0*err[0]*aver[0])<< "\n";
-    //output << "Specific: " << (aver[1]-pow(aver[0],2.0))/(pow(tempature,2.0))/(nh/16) <<" pm "<<(err[1]+2.0*err[0]*aver[0] )/(pow(tempature,2.0))/(nh/16)<< "\n";
-    
-    //output.close();
-    output_data<< density << "\t" << t_tilde << "\t";
-    output_data<< i+1 << "\t" << aver[0]/(double)nh <<"\t"<<err[0]/(double)(nh)<< "\t";
-    output_data<< (aver[1]-pow(aver[0],2.0))<<"\t"<<(err[1]+2.0*err[0]*aver[0])<< "\n";
-    eclassical=0.0;
-    esquare=0.0;
 }
-
 
 
 void loopupdate(int *config, int ivic[][6],int tetra[][4],int connect[][2], int &L, int &nh, int &ntetra,int &visits,int &went, MTRand *myrand)
@@ -1785,3 +1867,33 @@ void loopupdate(int *config, int ivic[][6],int tetra[][4],int connect[][2], int 
     return;
 }
 
+void collect2(double&tempature, double&eclassical,double&esquare,double data[],double data2[],int&ndat ,int&nh, int&msteps, int&i,std::ofstream &output_data,double &density,double &t_tilde)
+{
+    double err[ndat];
+    double aver[ndat];
+    int ii;
+    data[0]=data[0]+eclassical/(msteps);
+    data[1]=data[1]+esquare/msteps;
+    data2[0]=data2[0]+pow(eclassical/(msteps),2.0);
+    data2[1]=data2[1]+pow(esquare/msteps,2.0);
+    
+    for(ii=0;ii<ndat;ii++)
+    {
+        aver[ii]=data[ii]/((double)i+1.0);
+        err[ii]=sqrt( abs( pow(data[ii]/((double)i+1.0),2.0)-data2[ii]/((double)i+1.0)  )/( (double)i+1.0));
+    }
+    
+    //ofstream output;
+    //output.open("results.txt");
+    //output << "bins:          " << i+1  <<"\n";
+    //output << "Energy:        " << aver[0]/(nh) <<" pm "<<err[0]/(nh)<< "\n";
+    //output << "Variance TotE: " << (aver[1]-pow(aver[0],2.0)) <<" pm "<<(err[1]+2.0*err[0]*aver[0])<< "\n";
+    //output << "Specific: " << (aver[1]-pow(aver[0],2.0))/(pow(tempature,2.0))/(nh/16) <<" pm "<<(err[1]+2.0*err[0]*aver[0] )/(pow(tempature,2.0))/(nh/16)<< "\n";
+    
+    //output.close();
+    output_data<< density << "\t" << t_tilde << "\t";
+    output_data<< i+1 << "\t" << aver[0]/(double)nh <<"\t"<<err[0]/(double)(nh)<< "\t";
+    output_data<< (aver[1]-pow(aver[0],2.0))<<"\t"<<(err[1]+2.0*err[0]*aver[0])<< "\n";
+    eclassical=0.0;
+    esquare=0.0;
+}
