@@ -116,7 +116,7 @@ void initialize_spinice_X(int *config,int &L)
 }
 // Did it work?
 
-/*obsolete code---------------------*/
+/*obslte code---------------------*/
 
 //We use a routine to output the charge before and after we flip a spin.
 //c1: uptetrahedron, before flipping. c2:down tetrahedron, before flipping. f1:uptetrahedron, after flipping. f2:downtetrahedron after flipping.
@@ -334,6 +334,137 @@ int correl_index(int &t1,int &t2,int&L,int &flag)
 //we need to define more functions which take a special spinon configuration, charge_pair, to compute the would-be coefficient of the configuration
 //amp is the computed amplitude
 
+void pair_flip_nodrift(int *neighbour,int neighbour_connect[][2],int first_neighbour[][12],int &ntetra,int *config,int *spinonc,int ivic[][6],int tetra[][4],int connect[][2],int &L,double &prob,int &pos,int&pos2,double &pair_density)
+{//We are trying this idea of only accept pair creation/annilation
+  //cout<<"in flip\n";
+  pos2=ivic[pos][pos2];
+  int range=1;
+  if(config[pos]*config[pos2]==1)
+  {
+    return;//If the two spins are not flippable, we go back. 
+  }
+  int t1,t2,cter;
+  t1=connect[pos][0];
+  t2=connect[pos][1];
+  //repeated tetrahedra are deleted.
+  if(t1==connect[pos2][0])
+  {
+                              //In this case, the pair of spins connect two tetrahedron on "odd sublattice"
+    t1=connect[pos2][1];
+   }
+  else if(t2==connect[pos2][1])
+  {
+    //the pair of spins connect two tetrahedron on "even sublattice"
+    t2=connect[pos2][0];
+  }
+  int c1,c2,f1,f2,x,y,temp1,temp2,l1,l2,total=ntetra/2;
+  c1=qcharge(t1,tetra,config);
+  c2=qcharge(t2,tetra,config);
+  config[pos]=-config[pos];
+  config[pos2]=-config[pos2];
+  f1=qcharge(t1,tetra,config);
+  f2=qcharge(t2,tetra,config);
+  config[pos]=-config[pos];
+  config[pos2]=-config[pos2];
+  //
+  //cout<<c1<<" "<<c2<<" "<<f1<<" "<<f2<<"\n";
+  //
+  if(abs(f1)==4||abs(f2)==4)
+  {
+    return;
+  }
+  //
+  if((c1==0)&&(c2==0))
+  {
+    //in this case, we create a pair.
+    if(prob<pow(pair_density,2.0))
+    {
+      config[pos]=-config[pos];
+      config[pos2]=-config[pos2];
+    }
+  }
+  int flag1=0,flag2=0,flag=0,lt1,lt2;
+  if((c1==2)&&(c2==-2)&&(f1==0)&&(f2==0))
+  {
+    //we just flip
+    for(x=0;x<12;x++)
+    {
+      if(first_neighbour[t1][x]==t2){continue;}
+      l1=first_neighbour[t1][x];
+      temp1=qcharge(l1,tetra,config);
+      if(temp1==-2){flag1=1;}
+      for(y=0;y<12;y++){
+        if(first_neighbour[t2][y]==t1){continue;}
+      //we have one more
+        l2=first_neighbour[t2][y];
+        temp2=qcharge(l2,tetra,config);
+        if(temp2==2){flag2=1;}
+        if((flag1==1)&&(flag2==1))
+        {
+          lt1=l1/2;
+          lt2=l2/2;
+          if(neighbour[lt1*total+lt2]>range){
+            flag=1;
+          }
+          else if(neighbour[lt1*total+lt2]==1){
+            //in this case, we need to see the two sites. 
+            for(cter=0;cter<12;cter++){
+              if(l2==first_neighbour[l1][cter]){break;}
+            }
+            if(config[neighbour_connect[l1*12+cter][0]]==config[neighbour_connect[l1*12+cter][1]]){flag=1;}
+          }
+        }
+        flag2=0;
+      }
+      flag1=0;
+    }
+    if(flag==0)
+    {
+    config[pos]=-config[pos];
+    config[pos2]=-config[pos2];
+    }
+  }
+  else if((c1==-2)&&(c2==2)&&(f1==0)&&(f2==0)){
+    for(x=0;x<12;x++)
+    {
+      if(first_neighbour[t1][x]==t2){continue;}
+      l1=first_neighbour[t1][x];
+      temp1=qcharge(l1,tetra,config);
+      if(temp1==2){flag1=1;}
+      for(y=0;y<12;y++){
+        if(first_neighbour[t2][y]==t1){continue;}
+      //we have one more
+        l2=first_neighbour[t2][y];
+        temp2=qcharge(l2,tetra,config);
+        if(temp2==-2){flag2=1;}
+        if((flag1==1)&&(flag2==1))
+        {
+          lt1=l1/2;
+          lt2=l2/2;
+          if(neighbour[lt1*total+lt2]>range){
+            flag=1;
+          }
+          //nearest neighbour case
+          else if(neighbour[lt1*total+lt2]==1){
+            //in this case, we need to see the two sites. 
+            for(cter=0;cter<12;cter++){
+              if(l2==first_neighbour[l1][cter]){break;}
+            }
+            if(config[neighbour_connect[l1*12+cter][0]]==config[neighbour_connect[l1*12+cter][1]]){flag=1;}
+          }
+        }
+        flag2=0;
+      }
+      flag1=0;
+    }
+    if(flag==0)
+    {
+    config[pos]=-config[pos];
+    config[pos2]=-config[pos2];
+    }
+  }
+  return;
+}
 
 /* we also need code to attempt a pair spin flip. Is this better/needed?
  we generate the seed from a random process in the main program*/
@@ -496,6 +627,196 @@ void pair_flip(int *config,int ivic[][6],int tetra[][4],int connect[][2],int &L,
         }
     }
     return;
+}
+//we need yet another table: ntetra*12 2. This tells us given the two tetrathedra, which two spins (locations) connect them. 
+void first_neighbour_table(int &ntetra,int first_neighbour[][12],int neighbour_connect[][2],int connect[][2],int tetra[][4])
+{
+  int x,y,t1,t2,a,b,temp1,temp2,flag,c1,c2,f1,f2;
+  for(x=0;x<ntetra;x++){
+    for(y=0;y<12;y++){
+      flag=0;
+      t1=x;
+      t2=first_neighbour[x][y];
+      //we get the two tetrahedrons.
+      for(a=0;a<4;a++)
+      {
+        temp1=tetra[t1][a];
+        //find the two connected tetrahedron
+        c1=connect[temp1][0];
+        c2=connect[temp1][1];
+        for(b=0;b<4;b++)
+        {
+          temp2=tetra[t2][b];
+          f1=connect[temp2][0];
+          f2=connect[temp2][1];
+          if(t1%2==0)
+          {
+            if(f2==c2){
+              flag=1;
+              break;}
+          }
+          else
+          {
+            if(f1==c1){
+              flag=1;
+              break;}
+          }
+          if(flag==1){
+            break;
+          }
+        }
+        //now we find the two spins, temp1,temp2.
+        neighbour_connect[x*12+y][0]=temp1;
+        neighbour_connect[x*12+y][1]=temp2;
+      }
+    }
+  }
+  return;
+}
+
+//comparator for sort
+bool comparator(pair<int,double> p1,pair<int,double> p2)
+{
+   return (p1.second<p2.second);
+}
+//we are trying to optimize all possible distances for jastro
+//----------------------------
+//New Jastrow!
+//first routine: given system size, figure out all the neighbours.
+//--
+//neighbour is of size 4*4*L^3,distance is  
+void count_neighbour(int &L,double (&disvec)[4][3],int *neighbour,vector<double> &dist,vector<int> &coord,int first_neighbour[][12])
+{
+int x,y,zpro=4*pow(L,2),ypro=4*L,total=4*pow(L,3);//counters
+int xtetra,ytetra,ztetra,pyro,temp,coord_num;
+double x1,y1,z1,x2,y2,z2,distemp,dx,dy,dz,v,tol=0.00000001;
+pair<int,double> pair_temp;
+vector<pair<int,double> > dis_collect;
+distemp=(double)L;
+double shift[10][3]={{distemp,0,0},{0,distemp,0},{0,0,distemp},{distemp,distemp,0},{distemp,-distemp,0},{distemp,0,distemp},{distemp,0,-distemp},{0,distemp,distemp},{0,distemp,-distemp},{distemp,distemp,distemp}};
+//we are going through pairs of sites xy. Neighbour: 0: same tetra, n(n>1): nth neighbour.
+for(x=0;x<total;x++)
+{
+    ztetra=x/zpro;
+    temp=x-ztetra*zpro;
+    ytetra=temp/ypro;
+    temp=temp-ytetra*ypro;
+    xtetra=temp/4;
+    pyro=temp-xtetra*4;
+   //find out the location of pyro1 and pyro2,figure out the minimum distance;
+    x1=disvec[pyro][0]+(double)xtetra;
+    y1=disvec[pyro][1]+(double)ytetra;
+    z1=disvec[pyro][2]+(double)ztetra;
+  for(y=0;y<total;y++)
+  {
+   //translate y into x,y,z,pyro
+    ztetra=y/zpro;
+    temp=y-ztetra*zpro;
+    ytetra=temp/ypro;
+    temp=temp-ytetra*ypro;
+    xtetra=temp/4;
+    pyro=temp-xtetra*4;
+   //find out the location of pyro1 and pyro2,figure out the minimum distance;
+    x2=disvec[pyro][0]+(double)xtetra;
+    y2=disvec[pyro][1]+(double)ytetra;
+    z2=disvec[pyro][2]+(double)ztetra;
+    //now we go through every possible "periodical shift" to find the minimum distance. 
+    dx=x2-x1;
+    dy=y2-y1;
+    dz=z2-z1;
+    distemp=pow(pow(dx,2.0)+pow(dy,2.0)+pow(dz,2.0),0.5);
+    //xyztetra are no longer useful now
+    for(xtetra=0;xtetra<10;xtetra++)
+    {
+      v=pow(pow(dx+shift[xtetra][0],2.0)+pow(dy+shift[xtetra][1],2.0)+pow(dz+shift[xtetra][2],2.0),0.5);
+      if(v<distemp){distemp=v;}
+      v=pow(pow(dx-shift[xtetra][0],2.0)+pow(dy-shift[xtetra][1],2.0)+pow(dz-shift[xtetra][2],2.0),0.5);
+      if(v<distemp){distemp=v;}
+    }
+    pair_temp=make_pair(y,distemp);
+    dis_collect.push_back(pair_temp);
+    } 
+  sort(dis_collect.begin(),dis_collect.end(),comparator);
+ //reload
+  ytetra=0;
+  distemp=0.0;
+  coord_num=0;
+  if(x==0){dist.push_back(distemp);}
+  for(xtetra=0;xtetra<total;xtetra++){
+    if(abs(dis_collect[xtetra].second-distemp)>tol)
+    {
+      ytetra++;
+      //we want to keep a record of distances.
+      if(x==0){ 
+      dist.push_back(dis_collect[xtetra].second);
+      coord.push_back(coord_num);
+      coord_num=0;
+      }
+    }
+    //table for first neibhours on the fcc lattice. 
+    distemp=dis_collect[xtetra].second;
+    //labelling of "ytetra"th label.
+    neighbour[x*total+dis_collect[xtetra].first]=ytetra;
+    //get the coordination number
+    if(x==0){
+    coord_num++;
+    //lookin
+    //cout<<"y is "<<dis_collect[xtetra].first<<" and the distance is"<<dis_collect[xtetra].second<<" \n";
+    }
+  }
+  if(x==0){coord.push_back(coord_num);}
+  dis_collect.clear();   
+}
+  //if(x==0){//we 
+    //now that dis_collect holds all the distances to every site.
+  //}
+  //we get the first neighbour correctly. 
+  for(x=0;x<total;x++){
+    xtetra=0;
+    for(y=0;y<total;y++){
+      if(neighbour[x*total+y]==1)
+      {
+        first_neighbour[2*x][xtetra]=2*y;
+        first_neighbour[2*x+1][xtetra]=2*y+1;
+        xtetra++;
+      }
+    }
+  }
+  return;
+}
+//give two locations, figure out a position in the neighbour table to find.
+//we expect i and j to be both even or both odd.  
+
+//given the system size, the vector for mu_n,build the jast matrix. 
+void build_jast(int &L,int &ntetra,double *mu_n,int *neighbour,double *jast){
+//some counters
+int total=4*L*L*L,i,j,itemp,jtemp,ind;
+for(i=0;i<ntetra;i++){
+  for(j=0;j<ntetra;j++){
+     //even and odd sublattices
+     if((i%2==0)&&(j%2==0)){
+       itemp=i/2;
+       jtemp=j/2;
+       //which nearest neighour are we?
+       ind=neighbour[itemp*total+jtemp];
+       //get the jast factor
+       //if(ind<temp){
+       jast[i*ntetra+j]=mu_n[ind];
+       //}
+     }
+     else if((i%2==1)&&(j%2==1)){
+       itemp=(i-1)/2;
+       jtemp=(j-1)/2;
+       //which nearest neighour are we?
+       ind=neighbour[itemp*total+jtemp];
+       //get the jast factor
+       jast[i*ntetra+j]=mu_n[ind];
+     }
+     else{
+       jast[i*ntetra+j]=0;
+     }  
+  }
+}
 }
 
 
@@ -862,6 +1183,7 @@ void pair_flip2(int *config,int spinonc[],int ivic[][6],int tetra[][4],int conne
     return;
 }
 //include the new Jastrow factor and new way of implement the density
+//we also add range. If flip a pair of spins create
 void pair_flip3(int *config,int spinonc[],int ivic[][6],int tetra[][4],int connect[][2],int &L,int&pos,int &pos2,double &prob,int &ntetra,double table[][2], double jast[])
 {
    
@@ -1580,13 +1902,13 @@ void latt(int ivic[][6],int tetra[][4],int connect[][2], int &L, int &nh, int &n
         }
     }
     
-    /*cout<<ntetra<<"\n"<<tetracount<<"\n";
-    //cout<<"sites belongin to each tetrahedra z"<<"\n";
+    cout<<ntetra<<"\n"<<tetracount<<"\n";
+    cout<<"sites belongin to each tetrahedra z"<<"\n";
     for (z=0;z<ntetra;z++)
     {
         cout<<z<<"    "<<tetra[z][0]<<" "<<tetra[z][1]<<" "<<tetra[z][2]<<" "<<tetra[z][3]<<"\n";
     }
-    cout<<"\n";*/
+    cout<<"\n";
     
     
     //finding which tetrahedra each site connects to
@@ -1896,4 +2218,46 @@ void collect2(double&tempature, double&eclassical,double&esquare,double data[],d
     output_data<< (aver[1]-pow(aver[0],2.0))<<"\t"<<(err[1]+2.0*err[0]*aver[0])<< "\n";
     eclassical=0.0;
     esquare=0.0;
+}
+
+//We are adding more functions:
+inline double fn_mag(double *f_n,int &size)
+{
+	double result=0.0;
+	//we are ignoring the first element
+	for(int i=1;i<size;i++){
+		result+=pow(f_n[i],2.0);
+	}
+	return pow(result,0.5);
+}
+
+//get inverse of a matrix. We directly use the inverse matrix to replace the original matirx
+void get_inverse(int &temp,double *smatrix,int &error)
+{
+  error=0;
+  int *pivot;
+  double *workspace;
+  pivot=new int[temp];
+  workspace=new double[temp];
+  /*LU factorization*/
+  dgetrf_(&temp,&temp,smatrix,&temp,pivot,&error);
+  if(error!=0)
+  {
+    cout<<"error is "<<error<<"\n";
+    delete [] pivot;
+    delete [] workspace;
+    return;
+  }
+  /*matrix inversion*/
+  dgetri_(&temp,smatrix,&temp,pivot,workspace,&temp,&error);
+  if(error!=0)
+  {
+    cout<<"error is "<<error<<"\n";
+    delete [] pivot;
+    delete [] workspace;
+    return;
+  }
+  delete [] pivot;
+  delete [] workspace;
+  return;
 }

@@ -8,6 +8,9 @@
 
 #include <iostream>
 #include <fstream>
+#include <algorithm>
+#include <cmath>
+#include <stdlib.h>
 #include <vector>
 #include "MersenneTwister.h"
 #include "routines.h"
@@ -61,13 +64,16 @@ int main()
     double *alpha;
     double cp;
     config=new int[L*L*L*4*4];
+    int *neighbour;
+    vector<double> dist;
+    vector<int> coord;
     //initialization!!!!!!!!!!!!!!!!!!!! TEST
     //Notice X only works with even L. 
     //initialize_spinice_X(config,L);
-    //initialize_spinice_q0(config,L);
     //
     nh=16*(int)pow(L,3);
     ntetra=8*(int)pow(L,3);
+    neighbour=new int[ntetra*ntetra/4];
     int ivic[nh][6];  // each site its 6 neighbours
     int tetra[ntetra][4]; // each tetrahedron and their 4 sites
     int connect[nh][2]; // each site connects two tetrahedra
@@ -75,13 +81,43 @@ int main()
     // initialization of config and spinonc
     int pos,pos2;
     int c1,c2,f1,f2,t,flag;
+    initialize_spinice_q0(config,spinonc,L,ntetra);
+    latt(ivic,tetra,connect,L,nh,ntetra);
+    //test of our neighbour figuring out routine. 
+    count_neighbour(L,disvec,neighbour,dist,coord); 
+    //out put some stuff;
     //Let's try the single spin update.
     int x,y,z,pyro,site,temp,count,x0,total=10;
+    double jast[ntetra*ntetra]; // jastrow factor
+    double *mu_n;
+    //mu_n stores the nth neighbour jastrow factor
+    mu_n=new double[dist.size()];
+    //this is just for testing
+    for(x=0;x<dist.size();x++)
+    {
+	mu_n[x]=0.1*(double)(x);
+    }
+    build_jast(L,ntetra,mu_n,neighbour,jast); 
+    //print stuff
+    for(x=0;x<4*L*L*L;x++)
+    {
+      for(y=0;y<4*L*L*L;y++)
+      {
+        cout<<"tetra 1 is: "<<x<<" tetra2 is: "<<y<<" they are "<<neighbour[x*4*L*L*L+y]<<" th neighbour\n";
+	if((abs(jast[2*x*ntetra+2*y]-0.1*neighbour[4*x*L*L*L+y])>0.000000001)||(abs(jast[(2*x+1)*ntetra+2*y+1]-0.1*neighbour[4*x*L*L*L+y])>0.00000001)){cout<<"something is wrong at "<<x<<" and "<<y<<" \n"<<"\n";}
+	//cout<<"even sublattice: "<<jast[2*x*ntetra+2*y]<<" odd sublattice: "<<jast[(2*x+1)*ntetra+2*y+1]<<"\n";
+      }
+    }
+    for(x=0;x<dist.size();x++)
+    {
+      cout<<x<<"th neighbour distance is "<<dist[x]<<"\n";
+      cout<<"the coordination number is "<<coord[x]<<"\n";
+    }
+    return 0;
     int stat=1000000;
     int zpro=16*pow(L,2);
     int ypro=16*L;
     int xpro=16;
-    double jast[ntetra*ntetra]; // jastrow factor
     double table[ntetra][2];
     int llgg=pow(L,3);
     double correl[llgg][16];
@@ -216,10 +252,10 @@ int main()
                                    tindex1=z1*L*L*8+y1*L*8+x1*8+2*tlab1;
                                    tindex2=z2*L*L*8+y2*L*8+x2*8+2*tlab2;
                                    // std::cout<<"tetras considered "<<tindex1<<" "<<tindex2<<"\n" ;
-                                   jastr[tindex1*netra+tindex2]=log(density);
+                                   jast[tindex1*ntetra+tindex2]=eta*log(density);
                                    tindex1=tindex1+1;
                                    tindex2=tindex2+1;
-                                   jast[tindex1*ntetra+tindex2]=log(density);
+                                   jast[tindex1*ntetra+tindex2]=eta*log(density);
                                    tindex1=tindex1-1;
                                    jast[tindex1*ntetra+tindex2]=0;
                                    tindex1=tindex1+1;
@@ -270,7 +306,7 @@ int main()
          pair_flip3(config,spinonc,ivic,tetra,connect,L,pos,pos2,prob,ntetra,table,jast);
          }
          
-    e0total(config,tetra,ntetra,L,estep); 
+//    e0total(config,tetra,ntetra,L,estep); 
     //cout <<"charge^2: "<<estep<<"\n";
         // singlespin_sweep_new(config,ivic,tetra,connect,L,tempature,flag,myrand);
   

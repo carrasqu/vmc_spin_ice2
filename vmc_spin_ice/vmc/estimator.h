@@ -134,6 +134,158 @@ void energy_est(int *config,int tetra[][4],int connect[][2],int &L,double &densi
     return;
 }
 
+//no drift
+void energy_est_nodrift(int *neighbour,int neighbour_connect[][2],int first_neighbour[][12],int &ntetra,int *config,int tetra[][4],int connect[][2],int &L,double &jp,double &pair_density,double &estep){
+  //simplest form of vmc
+  //cout<<"in est\n";
+  estep=0.0;
+  int x,y,z,pos,pos2,total=ntetra/2;
+  int ztetra=8*pow(L,2),ytetra=8*L;
+  int xx,yy;
+  int cter,cc,temp,c1,c2,t1,t2,f1,f2,spin1,spin2,charge,cc1,cc2,l1,l2,lt1,lt2;
+  int flag1,flag2,flag,temp1,temp2;
+  int range=1;
+  for(z=0;z<L;z++)
+  {
+    for(y=0;y<L;y++)
+    {
+      for(x=0;x<L;x++)
+      {
+        //diagonal part;
+        for(cc=0;cc<8;cc++)
+        {
+          temp=z*ztetra+y*ytetra+x*8+cc;
+          charge=qcharge(temp,tetra,config);
+          estep+=pow((double)charge,2.0)/8.0;
+          //off-diagonal part;
+          for(cc1=0;cc1<4;cc1++)
+          {
+            for(cc2=cc1+1;cc2<4;cc2++)
+            {//c1 and c2 are the two spins on the particular tetrahedron.
+              spin1=tetra[temp][cc1];
+              spin2=tetra[temp][cc2];
+              //if the bond is not flippable, next pair
+              if(config[spin1]==config[spin2]){continue;}
+              else{
+                //we have a pair of flippalbe spins. What are locations of two tetrahedrons?
+                if(connect[spin1][0]!=temp)
+                {
+                  t1=connect[spin1][0];
+                }
+                else
+                {
+                  t1=connect[spin1][1];
+                }
+                //similar for spin2
+                if(connect[spin2][0]!=temp)
+                {
+                  t2=connect[spin2][0];
+                }
+                else
+                {
+                  t2=connect[spin2][1];
+                }
+                //now we only consider case
+                c1=qcharge(t1,tetra,config);
+                c2=qcharge(t2,tetra,config);
+                config[spin1]=-config[spin1];
+                config[spin2]=-config[spin2];
+                f1=qcharge(t1,tetra,config);
+                f2=qcharge(t2,tetra,config);
+                config[spin1]=-config[spin1];
+                config[spin2]=-config[spin2];
+                flag1=0;
+                flag2=0;
+                flag=0;
+                //only consider two cases
+                if((c1==0)&&(c2==0))
+                {//the final state have two charges.
+                  estep+=-jp*0.5*pair_density;
+                }
+                else if((c1==-2)&&(c2==2)&&(f1==0)&&(f2==0))
+                {
+                  for(xx=0;xx<12;xx++)
+                  {
+                    if(first_neighbour[t1][xx]==t2){continue;}
+                    l1=first_neighbour[t1][xx];
+                    temp1=qcharge(l1,tetra,config);
+                    if(temp1==2){flag1=1;}
+                    for(yy=0;yy<12;yy++){
+                      if(first_neighbour[t2][yy]==t1){continue;}
+                      l2=first_neighbour[t2][yy];
+                      temp2=qcharge(l2,tetra,config);
+                      if(temp2==-2){flag2=1;}
+                      if((flag1==1)&&(flag2==1))
+                      {
+                        lt1=l1/2;
+                        lt2=l2/2;
+                        if(neighbour[lt1*total+lt2]>range){flag=1;}
+                      }
+else if(neighbour[lt1*total+lt2]==1){
+              //in this case, we need to see the two sites. 
+             for(cter=0;cter<12;cter++){
+                if(l2==first_neighbour[l1][cter]){break;}
+             }
+             if(config[neighbour_connect[l1*12+cter][0]]==config[neighbour_connect[l1*12+cter][1]]){flag=1;}
+            }
+                      flag2=0;
+                    }
+                    flag1=0;
+                  }
+                  if(flag==0)
+                  {
+                  estep+=-jp*0.5/pair_density;
+                  }
+                }
+                else if((c1==2)&&(c2==-2)&&(f1==0)&&(f2==0))
+                { 
+                  for(xx=0;xx<12;xx++)
+                  {
+                    if(first_neighbour[t1][xx]==t2){continue;}
+                    l1=first_neighbour[t1][xx];
+                    temp1=qcharge(l1,tetra,config);
+                    if(temp1==-2){flag1=1;}
+                    for(yy=0;yy<12;yy++){
+                      if(first_neighbour[t2][yy]==t1){continue;}
+                      l2=first_neighbour[t2][yy];
+                      temp2=qcharge(l2,tetra,config);
+                      if(temp2==2){flag2=1;}
+                      if((flag1==1)&&(flag2==1))
+                      {
+                        lt1=l1/2;
+                        lt2=l2/2;
+                        if(neighbour[lt1*total+lt2]>range){flag=1;}
+                      }
+else if(neighbour[lt1*total+lt2]==1){
+              //in this case, we need to see the two sites. 
+             for(cter=0;cter<12;cter++){
+                if(l2==first_neighbour[l1][cter]){break;}
+             }
+             if(config[neighbour_connect[l1*12+cter][0]]==config[neighbour_connect[l1*12+cter][1]]){flag=1;}
+
+            }
+                      flag2=0;
+                    }
+                    flag1=0;
+                  }
+                  if(flag==0){
+                  estep+=-jp*0.5/pair_density;
+                  }
+                }
+                else{
+                  continue;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  //cout<<"out est\n";
+  return;
+}
+
 void energy_est3(int *config,int tetra[][4],int &ntetra,int ivic[][6],int connect[][2],int &L,int &nh,double &jp,double &estep,double table[][2],double jast[],int spinonc[])
 {
     //We go through each tetrahedron and compute both the diagonal and off-diagonal energies
@@ -426,3 +578,46 @@ void energy_est2(int *config,int tetra[][4],int &ntetra,int ivic[][6],int connec
     //cout<<"total energy "<< estep<< "\n";
    return;
 }
+
+//A new function to compute the # of nth neighbour pairs times the product of the charges on this two pairs. 
+
+void pn_count(int &ntetra,int *spinonc,int *neighbour,int *pn)
+{//pn is a vector of size dist.size() and each element is the number of + - charge pairs at nth neighbour. 
+  int x,y,temp=ntetra/2,xtemp,ytemp;
+  //even sublattice
+  for(x=0;x<ntetra;x+=2){
+     for(y=x;y<ntetra;y+=2){
+       	if(x==y){continue;}
+       	if((spinonc[x]==1)&&(spinonc[y]==-1)){
+	  pn[neighbour[(x*temp+y)/2]]+=-1; 
+       	}
+	else if((spinonc[x]==-1)&&(spinonc[y]==1)){
+          pn[neighbour[(x*temp+y)/2]]+=-1;
+	}
+     }
+  }
+  //odd sublattice
+  for(x=1;x<ntetra;x+=2){
+     for(y=x;y<ntetra;y+=2){
+	if(x==y){continue;}
+	xtemp=(x-1)/2;
+	ytemp=(y-1)/2;
+       	if((spinonc[x]==1)&&(spinonc[y]==-1)){
+	  pn[neighbour[xtemp*temp+ytemp]]+=-1; 
+       	}
+	else if((spinonc[x]==-1)&&(spinonc[y]==1)){
+          pn[neighbour[xtemp*temp+ytemp]]+=-1;
+	}	
+     }
+  }
+  return;
+}
+
+/*We are trying to write the center piece of the code. From a set of mu_n, we are trying to determine fn
+void fn_evaluate(int *config,int *mu_n,int *neighbour,int *spinonc,int *tetra,int *connect,int &L,int &ntetra,MTRand,*myrand,int *fn)
+{
+  //variable definition. 
+  int x,y,z;
+  //use mu_n,neighbour,we construct jastrow
+  return;
+}*/
